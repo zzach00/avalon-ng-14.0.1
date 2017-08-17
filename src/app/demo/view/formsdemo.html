@@ -5,33 +5,19 @@
             <h1>InputText</h1>
             <div class="ui-g form-group">
                 <div class="ui-g-12 ui-md-4">
-                    <span class="md-inputfield">
-                        <input type="text" pInputText>
-                        <label>Name</label>
-                    </span>
+                    <input type="text" pInputText placeholder="Name">
                 </div>
                 <div class="ui-g-12 ui-md-4">
-                    <span class="md-inputfield">
-                        <input type="text" pInputText>
-                        <label>Email</label>
-                    </span>
+                    <input type="text" pInputText placeholder="Email">
                 </div>
                 <div class="ui-g-12 ui-md-4">
-                    <span class="md-inputfield">
-                        <input type="text" pInputText>
-                        <label>Phone</label>
-                    </span>
+                    <input type="text" pInputText placeholder="Phone">
                 </div>
                 <div class="ui-g-12 ui-md-4">
                     <input type="text" pInputText placeholder="Disabled" disabled="disabled">
                 </div>
                 <div class="ui-g-12 ui-md-4">
-                    <span class="md-inputfield">
-                        <input type="text" pInputText class="ng-dirty ng-invalid" placeholder="Invalid">
-                        <div class="ui-message ui-messages-error ui-corner-all">
-                            This field is required
-                        </div>
-                    </span>
+                    <input type="text" pInputText class="ng-dirty ng-invalid" placeholder="Invalid" readonly="true">
                 </div>
                 <div class="ui-g-12 ui-md-4">
                     <input type="text" pInputText>
@@ -171,44 +157,32 @@
             <div class="ui-g form-group">
                 <div class="ui-g-12 ui-md-6">
                     <div class="ui-inputgroup">
-                        <span class="ui-inputgroup-addon"><i class="material-icons">account_circle</i></span>
-                        <span class="md-inputfield">
-                            <input type="text" pInputText> 
-                            <label>Username</label>        
-                        </span>
+                        <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" pInputText placeholder="Username">    
                     </div>
                 </div>
                 
                 <div class="ui-g-12 ui-md-6">
                     <div class="ui-inputgroup">
-                        <span class="ui-inputgroup-addon"><i class="material-icons">credit_card</i></span>  
-                        <span class="ui-inputgroup-addon"><i class="material-icons">card_travel</i></span>   
-                        <span class="md-inputfield">
-                            <input type="text" pInputText> 
-                            <label>Price</label>        
-                        </span>
+                        <span class="ui-inputgroup-addon"><i class="fa fa-credit-card"></i></span>  
+                        <span class="ui-inputgroup-addon"><i class="fa fa-cc-visa"></i></span>   
+                        <input type="text" pInputText placeholder="Price"> 
                         <span class="ui-inputgroup-addon">$</span>  
-                        <span class="ui-inputgroup-addon">.00</span>      
+                        <span class="ui-inputgroup-addon">.00</span>    
                     </div>
                 </div>
                             
                 <div class="ui-g-12 ui-md-6">
                     <div class="ui-inputgroup">
-                        <span class="md-inputfield">
-                            <input type="text" pInputText> 
-                            <label>Keyword</label>        
-                        </span>
-                        <button pButton type="button" icon="ui-icon-search"></button>      
+                        <button pButton type="button" label="Search"></button>
+                        <input type="text" pInputText placeholder="Keyword">        
                     </div>
                 </div>
                 
                 <div class="ui-g-12 ui-md-6">
                     <div class="ui-inputgroup">
                         <span class="ui-inputgroup-addon"><p-checkbox></p-checkbox></span>
-                        <span class="md-inputfield">
-                            <input type="text" pInputText> 
-                            <label>Confirm</label>        
-                        </span>         
+                        <input type="text" pInputText placeholder="Username">       
                     </div>
                 </div>
             </div>
@@ -245,17 +219,17 @@
                     
                     <div class="ui-g-12">Left Icon</div>
                     <div class="ui-g-12">
-                        <button type="button" label="Clear" pButton icon="ui-icon-clear"></button>
+                        <button type="button" label="Clear" pButton icon="fa-close"></button>
                     </div>
                     
                     <div class="ui-g-12">Right Icon</div>
                     <div class="ui-g-12">
-                        <button type="button" label="Clear" pButton icon="ui-icon-clear" iconPos="right"></button>
+                        <button type="button" label="Clear" pButton icon="fa-close" iconPos="right"></button>
                     </div>
                     
                     <div class="ui-g-12">Icon Only</div>
                     <div class="ui-g-12">
-                        <button type="button" icon="ui-icon-add" pButton></button>
+                        <button type="button" icon="fa-check" pButton></button>
                     </div>
                     
                     <div class="ui-g-12">Link</div>
@@ -271,62 +245,22 @@
         <div class="ui-g-12 ui-lg-6" style="padding-top:0">
             <div class="card card-w-title">
                 <h1>Colored Buttons</h1>
-                <p>Raised and Flat buttons with various color alternatives.</p>
+                <p>Flat buttons with various color alternatives.</p>
                 <div class="ui-g">
-                    <div class="ui-g-12 ui-md-6" style="text-align:center">
-                        <button pButton type="button" label="Primary Button" style="margin-bottom:10px"></button>
-                                                
-                        <button pButton type="button" label="Inline Button" style="margin-bottom:10px;width:auto"></button>
+                    <div class="ui-g-12" style="text-align:center">
+                        <button pButton type="button" label="Primary" style="margin-bottom:10px"></button>
+                                                                        
+                        <button pButton type="button" label="Secondary" style="margin-bottom:10px" class="secondary-btn"></button>
                         
-                        <button pButton type="button" label="Blue-Grey Button" style="margin-bottom:10px" class="blue-grey-btn"></button>
+                        <button pButton type="button" label="Inline" style="margin-bottom:10px;width:auto"></button>
                         
-                        <button pButton type="button" label="Cyan Button" style="margin-bottom:10px" class="cyan-btn"></button>
+                        <button pButton type="button" label="Success" style="margin-bottom:10px" class="success-btn"></button>
                         
-                        <button pButton type="button" label="Amber Button" style="margin-bottom:10px" class="amber-btn"></button>
+                        <button pButton type="button" label="Info" style="margin-bottom:10px" class="info-btn"></button>
                         
-                        <button pButton type="button" label="Teal Button" style="margin-bottom:10px" class="teal-btn"></button>
+                        <button pButton type="button" label="Warning" style="margin-bottom:10px" class="warning-btn"></button>
                         
-                        <button pButton type="button" label="Red Button" style="margin-bottom:10px" class="red-btn"></button>
-                        
-                        <button pButton type="button" label="Orange Button" style="margin-bottom:10px" class="orange-btn"></button>
-                        
-                        <button pButton type="button" label="Green Button" style="margin-bottom:10px" class="green-btn"></button>
-                        
-                        <button pButton type="button" label="Deep-Orange Button" style="margin-bottom:10px" class="deep-orange-btn"></button>
-                        
-                        <button pButton type="button" label="Purple Button" style="margin-bottom:10px" class="purple-btn"></button>
-                        
-                        <button pButton type="button" label="Indigo Button" style="margin-bottom:10px" class="indigo-btn"></button>
-                        
-                        <button pButton type="button" label="Pink Button" style="margin-bottom:10px" class="pink-btn"></button>
-                    </div>
-                    
-                    <div class="ui-g-12 ui-md-6" style="text-align:center">                                
-                        <button pButton type="button" label="Primary Button" style="margin-bottom:10px" styleClass="flat"></button>
-                        
-                        <button pButton type="button" label="Inline Button" style="margin-bottom:10px;width:auto" styleClass="flat"></button>
-                        
-                        <button pButton type="button" label="Blue-Grey Button" style="margin-bottom:10px" class="blue-grey-btn flat"></button>
-                        
-                        <button pButton type="button" label="Cyan Button" style="margin-bottom:10px" class="cyan-btn flat"></button>
-                        
-                        <button pButton type="button" label="Amber Button" style="margin-bottom:10px" class="amber-btn flat"></button>
-                        
-                        <button pButton type="button" label="Teal Button" style="margin-bottom:10px" class="teal-btn flat"></button>
-                        
-                        <button pButton type="button" label="Red Button" style="margin-bottom:10px" class="red-btn flat"></button>
-                        
-                        <button pButton type="button" label="Orange Button" style="margin-bottom:10px" class="orange-btn flat"></button>
-                        
-                        <button pButton type="button" label="Green Button" style="margin-bottom:10px" class="green-btn flat"></button>
-                        
-                        <button pButton type="button" label="Deep-Orange Button" style="margin-bottom:10px" class="deep-orange-btn flat"></button>
-                        
-                        <button pButton type="button" label="Purple Button" style="margin-bottom:10px" class="purple-btn flat"></button>
-                        
-                        <button pButton type="button" label="Indigo Button" style="margin-bottom:10px" class="indigo-btn flat"></button>
-                        
-                        <button pButton type="button" label="Pink Button" style="margin-bottom:10px" class="pink-btn flat"></button>
+                        <button pButton type="button" label="Danger" style="margin-bottom:10px" class="danger-btn"></button>
                     </div>
                 </div>
             </div>

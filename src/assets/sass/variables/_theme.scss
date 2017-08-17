@@ -1,24 +1,71 @@
-@import './variables';
+@import './_common';
 
-$headerFontSize: 1em;
-$headerPadding: .625em 1em;
-$contentFontSize: 1em;
-$contentPadding: .625em 1em;
-$inputHeaderFontSize: 1em;
-$inputHeaderPadding: .625em 1em;
-$inputBorderColor: #bdbdbd;
-$inputBorderErrorColor: #e62a10;  
-$inputFontSize: 1em;
-$buttonFontSize: 1em;
-$inputOptionFontSize: 1em;
-$inputOptionPadding: .625em .875em;
-$hoverBgColor: #e8e8e8;
-$hoverTextColor: #000000;
-$dividerColor: #bdbdbd;
-$dividerLightColor: #cacaca;
-$grayBgColor: #757575;
-$iconFontSize: 1.5em;
-$invalidInputLabelColor: #e62a10;
-$invalidInputBorderColor: #e62a10;
-$activeMenuItemBadgeColor: #ffffff;
-$activeMenuItemBadgeTextColor: #212121;
+/* Icons */
+$iconFontSize:1em;
+$iconWidth:1.1em;
+
+/* Error */
+$errorColor:#a94442;
+$disabledColor:#eeeeee;
+
+/*  Invalid Input */
+$inputInvalidBorderColor:#a94442;
+$inputInvalidBgColor:#ffffff;
+
+/* Headers */
+$headerPadding: 0.714em 1.071em;
+
+/* Contents */
+$contentPadding: 1.071em;
+$contentBorderColor:#dddddd;
+$contentBgColor:#ffffff;
+$contentLineHeight:1.43;
+
+/* Forms */
+$inputBgColor:#ffffff;
+$inputPadding: 0.429em 0.857em;
+$inputBorderColor:#cccccc;
+$inputHoverBorderColor:#cccccc;
+
+/* Buttons */
+$buttonTextColor:#ffffff;
+$toggleButtonBgColor:#ffffff;
+$toggleButtonBorderColor:#cccccc;
+$toggleButtonHoverBgColor:#e6e6e6;
+$toggleButtonHoverBorderColor:#adadad;
+
+/* List Items */
+$listItemPadding:0.429em 1.429em;
+$listItemHoverBgColor:#f5f5f5;
+$listItemHoverTextColor:#292B2C;
+
+/* Messages */
+$infoMessageBgColor:#d9edf7;
+$infoMessageBorderColor:#bce8f1;
+$infoMessageTextColor:#31708f;
+$successMessageBgColor:#d9edf7;
+$successMessageBorderColor:#bce8f1;
+$successMessageTextColor:#31708f;
+$warnMessageBgColor:#fcf8e3;
+$warnMessageBorderColor:#faebcc;
+$warnMessageTextColor:#8a6d3b;
+$errorMessageBgColor:#f2dede;
+$errorMessageBorderColor:#ebccd1;
+$errorMessageTextColor:#a94442;
+$fatalMessageBgColor:#999999;
+$fatalMessageBorderColor:#6b6b6b;
+$fatalMessageTextColor:#ffffff;
+
+/* Overlays */
+$overlayBorderColor:#cccccc;
+
+/* Data */
+$datatableCellBorderColor:#dddddd;
+$datatableCellPadding:0.571em;
+$paginatorBgColor:#ffffff;
+
+/* TabView */
+$tabHeaderPadding:.6em 1em;
+
+/* Panel */
+$panelContentBorderColor:#DCE1E7;

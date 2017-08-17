@@ -1,9 +1,16 @@
-$primaryColor: #03A9F4;
-$primaryDarkColor: #0277BD;
-$primaryLightColor: #81D4FA;
-$accentColor: #FFC107;
-$accentDarkColor: #FF8F00;
-$accentLightColor: #FFE082;
-$accentTextColor: #212121;
+$primaryColor:#337ab7;
+$primaryTextColor:#ffffff;
+$inputFocusBorderColor:#66afe9;
+$highlightBgColor:#337ab7;
+$highlightTextColor:#ffffff;
+$headerBgColor:#f5f5f5;
+$headerHoverBgColor:#dcdcdc;
+$headerHoverBorderColor:#c4c4c4;
+$headerTextColor:#292B2C;
+$headerBorderColor:#dddddd;
+$headerIconColor:#999999;
+$headerIconHoverColor:#777777;
+$datableEvenRowBgColor:#f9f9f9;
+$datatableHoverBgColor:#f5f5f5;
 
 @import '../sass/theme/_theme';
