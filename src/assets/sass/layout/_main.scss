@@ -378,6 +378,10 @@ body {
                     @include transition(transform .3s);
                 }
                 
+                .submenu-arrow {
+                    display: none;
+                }
+                
                 &:hover {
                     background-color: $menuHoverBgColor;
                 }
@@ -718,9 +722,8 @@ body {
                             overflow-x: visible;
                         }  
                         
-                        ul:last-child {
-                            margin-top: 0px;
-                            padding-bottom: 0px;
+                        .layout-main-menu {
+                            padding: 0;
                         }
                     }
                     
@@ -755,23 +758,11 @@ body {
                             position: absolute;
                             top: 50px;
                             left: 0px;
-                            display: none;
                             width: 250px;
                             background-color: #ffffff;
                             border-top: 4px solid $menuitemActiveColor;
+                            @include box-sizing(border-box);
                             @include multi-shadow(0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2));
-                            
-                            &:before {
-                                width: 0;
-                                height: 0;
-                                border-left: 8px solid transparent;
-                                border-right: 8px solid transparent;
-                                border-bottom: 15px solid $menuitemActiveColor;
-                                content: " ";
-                                position: absolute;
-                                top: -15px;
-                                left: 20px;
-                           }
                             
                             li {
                                 a {
@@ -830,6 +821,17 @@ body {
                         }
                         
                         &.active-menuitem {
+                            > .submenu-arrow {
+                                width: 0;
+                                height: 0;
+                                border-left: 8px solid transparent;
+                                border-right: 8px solid transparent;
+                                border-bottom: 15px solid $menuitemActiveColor;
+                                content: " ";
+                                position: absolute;
+                                top: 38px;
+                                left: 20px;
+                            }
                             > a {
                                 color: $menuitemActiveColor;
                                 background-color: $menuitemActiveBgColor;

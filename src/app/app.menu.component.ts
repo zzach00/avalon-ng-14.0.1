@@ -192,6 +192,7 @@ export class AppMenuComponent implements OnInit {
                     <div class="layout-menu-tooltip-arrow"></div>
                     <div class="layout-menu-tooltip-text">{{child.label}}</div>
                 </div>
+                <div class="submenu-arrow"></div>
                 <ul app-submenu [item]="child" *ngIf="child.items" [visible]="isActive(i)" [reset]="reset"
                     [@children]="(app.isSlim()||app.isHorizontal())&&root ? isActive(i) ? 'visible' : 'hidden' : isActive(i) ? 'visibleAnimated' : 'hiddenAnimated'"></ul>
             </li>
@@ -206,10 +207,10 @@ export class AppMenuComponent implements OnInit {
                 height: '*'
             })),
             state('visible', style({
-                height: '*'
+                display: 'block'
             })),
             state('hidden', style({
-                height: '0px'
+                display: 'none'
             })),
             transition('visibleAnimated => hiddenAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
             transition('hiddenAnimated => visibleAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)'))
