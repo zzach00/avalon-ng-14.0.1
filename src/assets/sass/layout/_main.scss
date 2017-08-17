@@ -832,6 +832,7 @@ body {
                                 top: 38px;
                                 left: 20px;
                             }
+                            
                             > a {
                                 color: $menuitemActiveColor;
                                 background-color: $menuitemActiveBgColor;
@@ -849,6 +850,11 @@ body {
                             .menuitem-badge {
                                 margin-right: 0;
                                 margin-left: 4px;
+                                margin-top: 0;
+                            }
+                            
+                            .menuitem-toggle-icon {
+                                margin-top: 0;
                             }
                         }
                     }
