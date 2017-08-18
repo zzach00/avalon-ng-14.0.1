@@ -9,7 +9,7 @@ body {
         &.ui-messages-info {
             display: none;
             background-color: $infoMessageBgColor;
-            border-color: $infoMessageBgColor;
+            border-color: $infoMessageBorderColor;
             color: $infoMessageTextColor;
             
             .ui-messages-icon {
@@ -25,7 +25,7 @@ body {
         
         &.ui-messages-warn {
             background-color: $warnMessageBgColor;
-            border-color: $warnMessageBgColor;
+            border-color: $warnMessageBorderColor;
             color: $warnMessageTextColor;
             
             .ui-messages-icon {
@@ -41,7 +41,7 @@ body {
         
         &.ui-messages-error {
             background-color: $errorMessageBgColor;
-            border-color: $errorMessageBgColor;
+            border-color: $errorMessageBorderColor;
             color: $errorMessageTextColor;
             
             .ui-messages-icon {
@@ -57,7 +57,7 @@ body {
         
         &.ui-messages-success {
             background-color: $successMessageBgColor;
-            border-color: $successMessageBgColor;
+            border-color: $successMessageBorderColor;
             color: $successMessageTextColor;
             
             .ui-messages-icon {
@@ -72,7 +72,12 @@ body {
         }
         
         .ui-messages-close {
+            @include opacity(.2);
             font-size: 1.5em;
+            
+            &:hover {
+                @include opacity(.5);
+            }
         }
     }
         
@@ -82,6 +87,7 @@ body {
         .ui-growl-item-container {
             @include opacity(.95);
             @include overlay-shadow();
+            border: 1px solid;
             
             .ui-growl-message {
                 margin-left: 4em;
@@ -91,9 +97,17 @@ body {
                 font-size: 2.769em;
             }
             
+            .ui-growl-icon-close {
+                @include opacity(.2);
+                
+                &:hover {
+                    @include opacity(.5);
+                }
+            }
+            
             &.ui-growl-message-info {
                 background-color: $infoMessageBgColor;
-                border-color: $infoMessageBgColor;
+                border-color: $infoMessageBorderColor;
                 color: $infoMessageTextColor;
                 
                 .ui-growl-image {
@@ -103,7 +117,7 @@ body {
             
             &.ui-growl-message-warn {
                 background-color: $warnMessageBgColor;
-                border-color: $warnMessageBgColor;
+                border-color: $warnMessageBorderColor;
                 color: $warnMessageTextColor;
                 
                 .ui-growl-image {
@@ -113,7 +127,7 @@ body {
             
             &.ui-growl-message-error {
                 background-color: $errorMessageBgColor;
-                border-color: $errorMessageBgColor;
+                border-color: $errorMessageBorderColor;
                 color: $errorMessageTextColor;
                 
                 .ui-growl-image {
@@ -123,7 +137,7 @@ body {
             
             &.ui-growl-message-success {
                 background-color: $successMessageBgColor;
-                border-color: $successMessageBgColor;
+                border-color: $successMessageBorderColor;
                 color: $successMessageTextColor;
                 
                 .ui-growl-image {

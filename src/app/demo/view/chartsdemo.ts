@@ -23,13 +23,13 @@ export class ChartsDemo implements OnInit {
                     label: 'First Dataset',
                     data: [65, 59, 80, 81, 56, 55, 40],
                     fill: false,
-                    borderColor: '#03A9F4'
+                    borderColor: '#9189fd'
                 },
                 {
                     label: 'Second Dataset',
                     data: [28, 48, 40, 19, 86, 27, 90],
                     fill: false,
-                    borderColor: '#FFC107'
+                    borderColor: '#ffbf79'
                 }
             ]
         };
@@ -39,14 +39,14 @@ export class ChartsDemo implements OnInit {
             datasets: [
                 {
                     label: 'My First dataset',
-                    backgroundColor: '#03A9F4',
-                    borderColor: '#03A9F4',
+                    backgroundColor: '#337ab7',
+                    borderColor: '#6F5499',
                     data: [65, 59, 80, 81, 56, 55, 40]
                 },
                 {
                     label: 'My Second dataset',
-                    backgroundColor: '#FFC107',
-                    borderColor: '#FFC107',
+                    backgroundColor: '#ffbf79',
+                    borderColor: '#ffbf79',
                     data: [28, 48, 40, 19, 86, 27, 90]
                 }
             ]
@@ -58,14 +58,14 @@ export class ChartsDemo implements OnInit {
                 {
                     data: [300, 50, 100],
                     backgroundColor: [
-                        "#FFC107",
-                        "#03A9F4",
-                        "#4CAF50"
+                        "#6F5499",
+                        "#FF8800",
+                        "#7cb342"
                     ],
                     hoverBackgroundColor: [
-                        "#FFE082",
-                        "#81D4FA",
-                        "#A5D6A7"
+                        "#6F5499",
+                        "#FF8800",
+                        "#7cb342"
                     ]
                 }]    
             };
@@ -80,20 +80,20 @@ export class ChartsDemo implements OnInit {
                     14
                 ],
                 backgroundColor: [
-                    "#FFC107",
-                    "#03A9F4",
-                    "#4CAF50",
-                    "#E91E63",
-                    "#9C27B0"
+                    "#6F5499",
+                    "#FF8800",
+                    "#d81b60",
+                    "#7cb342",
+                    "#ffb300"
                 ],
                 label: 'My dataset'
             }],
             labels: [
-                "Red",
+                "Purple",
+                "Orange",
+                "Pink",
                 "Green",
-                "Yellow",
-                "Grey",
-                "Blue"
+                "Yellow"
             ]
         };
         
