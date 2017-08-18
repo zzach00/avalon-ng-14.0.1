@@ -1,34 +1,34 @@
 body {
     .ui-overlaypanel {
-        @include overlay-shadow();
-        border: grey;
+        @include overlay();
         
         .ui-overlaypanel-close {
             background-color: $primaryColor;
             color: $primaryTextColor;
+            width: 1.5em;
+            height: 1.5em;
             text-align: center;
-            width: 1.538em;
-            height: 1.538em;
-            line-height: 1.538em;
+            line-height: 1.5em;      
+            left: -.75em;   
+            top: -.75em;      
             @include transition(background-color $transitionDuration);
             
             &:hover {
                 background-color: darken($primaryColor, 5%);
-                color: $primaryTextColor;
             }
             
             span {
-                width: 0.692em;
+                font-size: $fontSize + 3;
+                display: inline-block;
+                font-size: inherit;
+                margin-top: -1px;
                 line-height: inherit;
-                position: relative;
-                right: .05em;
             }
         }
     }
     
     .ui-dialog {
-        @include overlay-shadow();
-        border: grey;
+        @include overlay();
         
         .ui-dialog-titlebar {
             padding: $headerPadding;
@@ -146,11 +146,11 @@ body {
             
             .ui-lightbox-close {
                 padding: 0;
-                color: $headerTextColor;
-                @include transition(color .3s);
+                color: $headerIconColor;
+                @include transition(color $transitionDuration);
                 
                 &:hover {
-                    color: lighten($primaryColor, 10%);
+                    color: $headerIconHoverColor;
                 }
             }
         }
@@ -187,9 +187,13 @@ body {
                     display: none;
                 }
             }
-            
-            .ui-lightbox-content.ui-lightbox-loading ~ a {
-                display: none;
+        }
+        
+        &.ui-lightbox-loading {
+            .ui-lightbox-content-wrapper {
+                > .ui-lightbox-nav-left, > .ui-lightbox-nav-right {
+                    display: none;
+                }
             }
         }
     }
