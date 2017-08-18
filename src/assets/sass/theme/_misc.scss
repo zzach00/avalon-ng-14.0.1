@@ -1,13 +1,14 @@
 body {
     .ui-progressbar {
         border: 0 none;
+        @include border-radius($borderRadius);
         background-color: #e3e3e3;
 
         .ui-progressbar-value {
             border: 0 none;
             background: lighten($primaryColor,10%);   
             margin: 0;
-            @include border-radius(0);
+            @include border-radius($borderRadius);
         }
         
         .ui-progressbar-label {
