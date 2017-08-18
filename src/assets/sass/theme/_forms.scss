@@ -546,12 +546,6 @@ body {
                     padding: $listItemPadding;
                 }
             }
-
-            .ui-selectonemenu-item-group {
-                @include border-radius(0);
-                padding: $listItemPadding;
-                background-color: $dividerColor;
-            }
         }
     }
     

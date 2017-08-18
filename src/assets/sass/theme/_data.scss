@@ -1,63 +1,86 @@
 body {
     .ui-paginator {
-        background-color: $primaryColor;
-        border-color: darken($primaryColor, 5%);
+        background-color: $paginatorBgColor;
+        border-color: $headerBorderColor;
         
         .ui-paginator-first,.ui-paginator-prev,.ui-paginator-next,.ui-paginator-last {
-            color: $headerTextColor;
-            @include transition(background-color .3s);
-            min-height: 1em;
-            width: 1.5em;
-            padding: .1em .5em;
+            color: $primaryColor;
+            min-width: 34px;
+            min-height: 34px;
+            border: 1px solid $datatableCellBorderColor;
+            margin: 0;
+            vertical-align: top;
+            @include border-radius(0);
+            border-left: 0 none;
+            border-right: 0 none;
             
             span {
                 display: none;
             }
             
             &:not(.ui-state-disabled):not(.ui-state-active):hover {
-                color: $primaryColor;
-                background-color: $headerIconHoverColor;
-                padding-bottom: .2em;
+                background-color: $datatableHoverBgColor;
+            }
+            
+            &.ui-state-disabled {
+                @include opacity(1);
+                background-color: $disabledColor;
+            }
+
+            &:before {
+                position: relative;
             }
             
             &:focus {
+                background-color: $datatableHoverBgColor;
                 outline: 0 none;
             }
         }
         
         .ui-paginator-first {
             @include icon-override("\f048");
+            background-color: #ffffff;
+            border-left: 1px solid $datatableCellBorderColor;
+            @include border-radius-left($borderRadius);
+            margin-right: -4px;
             
             &:before {
-                position: relative;
-                top: 1px;
+                line-height: 2em;
             }
         }
         
         .ui-paginator-prev {
             @include icon-override("\f04b");
             @include rotate(180deg);
+            background-color: #ffffff;
+            border-right: 1px solid $datatableCellBorderColor;
+            margin-right: -4px;
             
             &:before {
-                position: relative;
+                line-height: 2em;
             }
         }
         
         .ui-paginator-next {
             @include icon-override("\f04b");
+            background-color: #ffffff;
+            border-right: 1px solid $datatableCellBorderColor;
+            margin-left: -4px;
             
             &:before {
-                position: relative;
-                top: 1px;
+                line-height: 2em;
             }
         }
         
         .ui-paginator-last {
             @include icon-override("\f051");
+            background-color: #ffffff;
+            border-right: 1px solid $datatableCellBorderColor;
+            @include border-radius-right($borderRadius);
+            margin-left: -4px;
             
             &:before {
-                position: relative;
-                top: 1px;
+                line-height: 2em;
             }
         }
                 
@@ -65,28 +88,38 @@ body {
             padding: 0;
             vertical-align: middle;
             display: inline-block;
-            @include border-radius(2);
+            margin: 0;
             
             .ui-paginator-page {
-                color: $headerTextColor;
-                min-height: 1em;
-                padding: .1em .5em;
-                border: 1px solid transparent;
-                @include transition(background-color .3s);
+                padding: 7px 12px;
+                margin-right: 0;
+                margin-left: 0;
+                border: 1px solid $datatableCellBorderColor;
+                background-color: #ffffff;
+                border-right: 0 none;
+                color: $primaryColor;
+                min-width: 34px;
+                min-height: 34px;
+                @include border-radius(0);
                 
                 &.ui-state-active {
-                    background-color: $primaryTextColor;
-                    color: $primaryColor;
+                    background-color: $primaryColor;
+                    color: $primaryTextColor;
+                    border-color: $primaryColor; 
+                    
+                    &:focus {
+                        @include focused-input();
+                        background-color: $primaryColor;
+                    }
                 }
                 
-                &:not(.ui-state-active):hover {
-                    background-color: $headerIconHoverColor;
-                    color: $primaryColor;
-                }
-                
-                &:focus {
+                &:not(.ui-state-active):hover, &:focus {
+                    background-color: $datatableHoverBgColor;
                     outline: 0 none;
-                    border: 1px solid $primaryColor;
+                }
+                
+                &:last-child {
+                    border-right: 1px solid $datatableCellBorderColor;
                 }
             }
         }
@@ -114,24 +147,18 @@ body {
         .ui-datatable-thead {
             > tr {
                 > th {
-                    padding: $headerPadding;
-                    color: $primaryTextColor;
-                    
-                    .ui-dropdown-item,
-                    .ui-multiselect-item {
-                        color: $textColor;
-                        
-                        &.ui-state-highlight {
-                            color: $primaryTextColor;
-                        }
-                    }
-                    
+                    background: $datatableHeaderBgColor;
+                    padding: $datatableCellPadding;
+                    border-color: $datatableCellBorderColor;
+                    outline: 0 none;
+                    border-bottom-width: 2px;
+                                        
                     &.ui-selection-column {
-                        padding: 0.5em 0.6em;
+                        padding: 0.286em 0.857em;
                     }
                     
                     &.ui-sortable-column:not(.ui-state-active):hover {
-
+                        background-color:$datatableHoverBgColor;
                     }
                     
                     &.ui-state-active {
@@ -143,6 +170,11 @@ body {
                     .ui-column-title {
                         font-weight: 700;
                     }
+                    
+                    .ui-sortable-column-icon {
+                        margin: -2px 0 0 4px;
+                        vertical-align: middle;
+                    }
                 }
             }
         }
@@ -150,8 +182,9 @@ body {
         .ui-datatable-tfoot {
             > tr {
                 > td {
-                    padding: $headerPadding;
-                    color: $primaryTextColor;
+                    font-weight: 700;
+                    background: $datatableFooterBgColor;
+                    padding: $datatableCellPadding;
                 }
             }
         }
@@ -162,10 +195,14 @@ body {
                 border-color: $datatableCellBorderColor;
                 
                 &.ui-rowgroup-header {
-                    background-color: $primaryColor;
+                    background-color: $headerBgColor;
                     
-                    .fa:hover {
-                        color: lighten($primaryColor, 5%);
+                    .fa {
+                        color: $headerIconColor;
+                        
+                        &:hover {
+                            color: $headerIconHoverColor;
+                        }
                     }
                 }
                 
@@ -200,27 +237,14 @@ body {
                 }
                                                 
                 td {
-                    padding: $contentPadding;
+                    padding: $datatableCellPadding;
                     
                     &.ui-selection-column {
-                        padding: 0.5em 0.6em;
+                        padding: 0.286em 0.857em;
                     }
-                    
-                    &.ui-editable-column {
-                        &.ui-cell-editing {
-                            .ui-inputtext {
-                                border-color: $primaryColor;
-                            }
-                            
-                            .ui-datepicker table td a,
-                            .ui-datepicker table td span {
-                                min-width: 1.8em;
-                            }
-                        }
-                    }
-                    
+                                        
                     .ui-row-toggler {
-                        color: $textColor;
+                        color: $textSecondaryColor;
                         @include transition(color .3s);
                         
                         &.fa-chevron-circle-right {
@@ -232,20 +256,20 @@ body {
                         }
                         
                         &:hover {
-                            color: $primaryColor;
+                            color: $textColor;
                         }
                     }
                 }
                 
                 &.ui-widget-header {
-                    border: 1px solid $contentBorderColor;
+                    border: 1px solid $headerBorderColor;
                     
                     a {
-                        color: $headerTextColor;
+                        color: $headerIconColor;
                         @include transition(color .3s);
                         
                         &:hover {
-                            color: $primaryColor;
+                            color: $headerIconHoverColor;
                         }
                     }
                 }
@@ -261,7 +285,7 @@ body {
                 
         .ui-datatable-scrollable-header,
         .ui-datatable-scrollable-footer {
-            background-color: #f0f3f5;
+            background-color: $headerBgColor;
             
             .ui-datatable-scrollable-header-box {
                 td {
@@ -278,13 +302,6 @@ body {
         
         .ui-paginator {
             padding: $headerPadding;
-        }
-        
-        .ui-panel-titlebar {
-            background-color: lighten($primaryColor, 45%);
-            border: 1px solid $panelContentBorderColor;
-            border-bottom-color: lighten($primaryColor, 45%);
-            color: $textColor;
         }
     }
     
@@ -307,6 +324,8 @@ body {
     
     .ui-picklist {
         .ui-picklist-buttons {
+            padding: $contentPadding;
+            
             button {
                 font-size: $fontSize + 2;
             }            
@@ -314,17 +333,20 @@ body {
         
         .ui-picklist-caption {
             padding: $headerPadding;
+            @include border-radius-top($borderRadius);
         }
         
-        .ui-picklist-filter-container {
-            margin-bottom: -1px;
-            
+        .ui-picklist-filter-container {            
             .fa {
                 color: $textSecondaryColor;
+                margin-top: -.5em;
+                margin-left: 0.286em;
             }
         }
                 
         .ui-picklist-list {
+            padding: 0.357em 0;
+            
             .ui-picklist-item {
                 padding: $listItemPadding;
                 margin: 0;
@@ -352,20 +374,19 @@ body {
         
         .ui-orderlist-caption {
             padding: $headerPadding;
-            box-sizing: border-box;
-            width: 200px;
+            @include border-radius-top($borderRadius);
         }
         
-        .ui-orderlist-filter-container {
-            margin-bottom: -1px;
-            
+        .ui-orderlist-filter-container {            
             .fa {
+                margin-top: -.5em;
+                margin-left: 0.286em;
                 color: $textSecondaryColor;
             }
         }
         
         .ui-orderlist-list {   
-            box-sizing: border-box;
+            padding: 0.357em 0;
                      
             .ui-orderlist-item {
                 padding: $listItemPadding;
@@ -456,14 +477,6 @@ body {
             &.ui-organizationchart-selectable-node:not(.ui-state-highlight):hover {
                 @include list-item-hover();
             }
-            
-            &.ui-state-highlight {
-                .ui-node-toggler {
-                    i {
-                        color: darken($primaryColor, 25%);
-                    }
-                }
-            }
         }
         .ui-organizationchart-line-down {
             background-color: darken($contentBorderColor, 10%);
@@ -486,7 +499,7 @@ body {
         }
         
         .ui-organizationchart-node-content .ui-node-toggler {
-            color: darken($contentBorderColor, 10%);
+            color: $primaryColor;
             bottom: -.7em;
             margin-left: -.46em;
         }
@@ -503,9 +516,9 @@ body {
                 
         thead {
             th {
-                background-color: #ffffff;
-                padding: $headerPadding;
-                border-color: $contentBorderColor;
+                background-color: $datatableHeaderBgColor;
+                padding: $datatableCellPadding;
+                border-color: $datatableCellBorderColor;
                 color: $textColor;
                 
                 &.ui-state-hover {
@@ -513,8 +526,9 @@ body {
                 }
                 
                 &.ui-state-active {
-                    background-color: $primaryColor;
-                    border-color: darken($primaryColor,5%);
+                    background-color: $highlightBgColor;
+                    color: $highlightTextColor;
+                    border-color: darken($highlightBgColor, 5%);
                 }
                 
                 .ui-column-title {
@@ -525,9 +539,9 @@ body {
         
         tfoot {
             td {
-                background-color: #ffffff;
-                padding: $headerPadding;
-                border-color: $dividerColor;
+                background-color: $datatableHeaderBgColor;
+                padding: $datatableCellPadding;
+                border-color: $datatableCellBorderColor;
             }
         }
         
@@ -543,16 +557,17 @@ body {
                     
                     &.ui-state-highlight {
                         background-color: $highlightBgColor;
-                        border-color: darken($primaryColor,5%);
+                        color: $highlightTextColor;
+                        border-color: darken($highlightBgColor,5%);
                         
                         .ui-treetable-toggler {
-                            color: #ffffff;
+                            color: $highlightTextColor;
                         }
                     }
                 }
                 
                 td {
-                    padding: $contentPadding;
+                    padding: $datatableCellPadding;
                     
                     .ui-treetable-toggler {
                         font-size: $fontSize + 2;
