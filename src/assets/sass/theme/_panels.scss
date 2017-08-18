@@ -1,22 +1,23 @@
 body {
     .ui-panel {
         padding: 0;
-        border-color: $panelContentBorderColor;
+        border: 0 none;
         
         .ui-panel-titlebar {
-            border: 0 none;
+            border: 1px solid $headerBorderColor;
             border-bottom: 1px solid $headerBorderColor;
             padding: $headerPadding;
             @include border-radius-top($borderRadius);
             @include border-radius-bottom(0px);
             
             .ui-panel-title {
-                vertical-align: middle;
+                line-height: 1.5em;
+                margin: 0;
+                font-size: 1.143em;
             }
             
             .ui-panel-titlebar-icon {
                 margin: 0;
-                position: relative;
                 font-size: $fontSize + 3;
                 color: $headerIconColor;
                 border: 1px solid transparent;
@@ -25,31 +26,20 @@ body {
                 &:hover {
                     color: $headerIconHoverColor;
                 }
-                
-                .fa-minus {
-                    &:hover {
-                        color: darken($headerIconHoverColor, 10%);
-                    }
-                }
-
-                .fa-plus {
-                    &:hover {
-                        color: darken($headerIconHoverColor, 10%);
-                    }
-                }
             }
         }
         
         .ui-panel-content {
-            height: 100%;
-            box-sizing: border-box;
+            border: 1px solid $panelContentBorderColor;
+            border-top: 0 none;
+            line-height: $contentLineHeight;
             padding: $contentPadding;
         }
         
         .ui-panel-footer {
             padding: $headerPadding;
-            border: 0 none;
-            border-top: 1px solid $contentBorderColor;
+            border: 1px solid $contentBorderColor;
+            border-top: 0 none;
             margin: 0;
         }
         
@@ -64,30 +54,32 @@ body {
         padding: 0 0 .5em 0;
                
         .ui-fieldset-legend {
-            border: 1px solid $headerBorderColor;
             color: $headerTextColor;
             background-color: $headerBgColor;
-            margin-left: .75em;
-            padding: $headerPadding;
-            @include transition(background-color $transitionDuration);
+            margin-left: .714em;
+            border: 1px solid $headerBorderColor;
             
             .ui-fieldset-toggler {
                 float: none;
                 display: inline-block;
                 vertical-align: middle;
-                margin-right: .5em;
+                margin: 0 0.286em;
+                height: $fontSize;
+                margin-top: 0;
+                padding: 0;
                 color: $headerIconColor;
             }
         }
         
         &.ui-fieldset-toggleable {
             .ui-fieldset-legend {
-                &:hover {
-                    background-color: darken($primaryColor, 5%);
-                }
-                
-                &:focus {
-                    background-color: darken($primaryColor, 5%);
+                &:hover, &:focus {
+                    background-color: $headerHoverBgColor;
+                    border-color: $headerHoverBorderColor;
+                    
+                    .ui-fieldset-toggler {
+                        color: $headerIconHoverColor;
+                    }
                 }
             }
         }
@@ -104,63 +96,50 @@ body {
     
     .ui-accordion {
         .ui-accordion-header {
-            background-color: $contentBgColor;
+            background-color: $headerBgColor;
+            padding: 0;
             color: $textColor;
             font-size: $fontSize;
-            border: 1px solid $contentBorderColor;
-            @include transition(background-color $transitionDuration);
+            border: 1px solid $headerBorderColor;
             margin-bottom: 0;
+            font-weight: bold;
+            margin-top: 0.357em;
             
-            &:not(.ui-state-active):not(.ui-state-disabled):hover {
+            &:not(.ui-state-active):not(.ui-state-disabled) > a:hover {
+                border-color: $headerHoverBorderColor;
                 background-color: $headerHoverBgColor;
-                
-                a {
-                    background-color: $headerHoverBgColor;
-                }
             }
             
-            &:not(.ui-state-disabled).ui-state-active {
-                background-color: $primaryColor;
-                color: $primaryTextColor;
+            > .fa {
+                color: $textColor;
                 
-                a {
-                    color: $primaryTextColor;
+                &.fa-caret-right {
+                    @include icon_override("\f054");
+                    font-size: $fontSize + 2;
                     
-                    &:focus {
-                        background-color: darken($primaryColor ,10%);
-                    }  
                 }
                 
-                span {
-                    color: $primaryTextColor;
-                }
-
-                .fa {
-                    color: $primaryTextColor;
+                &.fa-caret-down {
+                    @include icon_override("\f078");
+                    font-size: $fontSize + 2;
                 }
             }
-            
-            .fa-caret-right {
-                @include icon_override("\f054");
-            }
-            
-            .fa-caret-down {
-                @include icon_override("\f078");
+                        
+            &.ui-state-active {
+                @include border-radius-bottom(0);
             }
             
             > a {
-                padding: .5em 1em .5em 2em;
+                padding: $headerPadding;
+                padding-left: 2em;
+                font-size: $fontSize + 2;
                 color: $textColor;
-                outline: 0 none;     
-                @include transition(background-color $transitionDuration);
+                outline: 0 none;   
                 
                 &:focus {
+                    border-color: $headerHoverBorderColor;
                     background-color: $headerHoverBgColor;
-                }         
-            }
-            
-            > span {
-                color: $textColor;
+                } 
             }
         }
         
@@ -172,32 +151,28 @@ body {
     .ui-tabview {
         padding: 0;
         
-        &.ui-tabview-top,&.ui-tabview-bottom,&.ui-tabview-left,&.ui-tabview-right {
+        &.ui-tabview-top, &.ui-tabview-bottom, &.ui-tabview-left, &.ui-tabview-right {
             border: 0 none;
             background: transparent;
             
             .ui-tabview-nav {
                 padding: 0;
                 border: 0 none;
-                background: $primaryColor;
-                @include box-sizing(border-box);
+                background: $contentBgColor;
                 @include border-radius(0);
                 
                 li {
                     position: static;
-                    @include transition(background-color $transitionDuration);
                     @include border-radius(0);
                     margin: 0;
                     box-sizing: border-box;
-                    background-color: $primaryColor;
-                    border-right: 1px solid darken($primaryColor, 5%);
-                    margin-right: 0;
+                    background: $contentBgColor;
+                    border: 1px solid transparent;
                     
                     a {
-                        @include transition(background-color $transitionDuration);
-                        padding: $tabHeaderPadding;
-                        color: $headerTextColor;
-                        outline: 0 none;
+                        padding: $headerPadding;
+                        color: $primaryColor;
+                        font-weight: normal;
                         
                         .ui-tabview-left-icon {
                             margin-right: .25em;
@@ -206,10 +181,6 @@ body {
                         .ui-tabview-right-icon {
                             margin-left: .25em;
                         }
-                        
-                        &:focus {
-                            background-color: darken($primaryColor, 15%);
-                        }
                     }
                     
                     .ui-tabview-close {
@@ -217,7 +188,7 @@ body {
                     }
                     
                     &:not(.ui-state-active):not(.ui-state-disabled):hover {
-                        background-color: darken($primaryColor, 15%);
+                        background-color: $headerBgColor;
                         
                         .fa-times {
                             color: $headerIconHoverColor;
@@ -225,53 +196,113 @@ body {
                     }
                                         
                     &.ui-state-active {
-                        background-color: $highlightBgColor;
-                        color: $primaryTextColor;
-                        
-                        a {
-                            color: $primaryTextColor;
-                            
-                            &:focus {
-                                background-color: darken($highlightBgColor, 15%);
-                            }
-                        }
-
-                        .ui-icon-close {
-                            color: $highlightTextColor;
-                        }
-                    }
-                    
-                    .ui-icon-close {
-                        color: $headerIconColor;
-                        margin-top: .5em;
+                        border: 1px solid $headerBorderColor;
+                        background-color: #ffffff;
                     }
                 }
             }
         }
         
-        &.ui-tabview-left,&.ui-tabview-right {
+        
+        &.ui-tabview-top {
             .ui-tabview-nav {
-                li, li a {
+                li {
+                    margin-right: 2px;
+                    border-bottom: 1px solid $headerBorderColor;
+                    @include border-radius-top($borderRadius);
+                    @include border-radius-bottom(0);
+                    
+                    &.ui-state-active {
+                        border-bottom-color: $contentBgColor;
+                    }
+                }
+            }
+            
+            .ui-tabview-panels {
+                border-top: 1px solid $contentBorderColor;
+                margin-top: -1px;
+            }
+        }
+        
+        &.ui-tabview-left,&.ui-tabs-right {
+            .ui-tabview-nav {
+                width: 25%;
+                
+                li {
                     width: 100%;
                 }
-            }    
-            
-            .ui-tabview-panel {
-                border-top: 1px solid $contentBorderColor;
-                border-left: 0 none;
-                border-right: 0 none;
+            }  
+        }
+        
+        &.ui-tabview-left {
+            .ui-tabview-nav {
+                li {
+                    margin-bottom: 2px;
+                    border-right: 1px solid $headerBorderColor;
+                    @include border-radius-left($borderRadius);
+                    @include border-radius-right(0);
+                    
+                    &.ui-state-active {
+                        border-right-color: $contentBgColor;
+                    }
+                }
+            }
+                        
+            .ui-tabview-panels {
+                position: relative;
+                left: -1px;
+                border-left: 1px solid $contentBorderColor;
             }
         }
         
-        .ui-tabview-panel {
+        &.ui-tabview-right {
+            .ui-tabview-nav {
+                li {
+                    margin-bottom: 2px;
+                    border-left: 1px solid $headerBorderColor;
+                    @include border-radius-right($borderRadius);
+                    @include border-radius-left(0);
+                    
+                    &.ui-state-active {
+                        border-left-color: $contentBgColor;
+                    }
+                }
+            }
+                        
+            .ui-tabview-panels {
+                position: relative;
+                right: -1px;
+                border-right: 1px solid $contentBorderColor;
+            }
+        }
+        
+        &.ui-tabview-bottom {
+            .ui-tabview-nav {
+                li {
+                    margin-right: 2px;
+                    border-top-color: transparent;    
+                    @include border-radius-bottom($borderRadius);
+                    @include border-radius-top(0);
+                    
+                    &.ui-state-active {
+                        border-top-color: $contentBgColor; 
+                    }
+                }
+            }
+            
+            .ui-tabview-panels {
+                border-bottom: 1px solid $contentBorderColor;
+                margin-bottom: 1px;
+            }  
+        }
+        
+        .ui-tabs-panel {
             padding: $contentPadding;
-            border: 1px solid $contentBorderColor;
-            border-top: 0 none;
         }
     }
     
     .ui-toolbar {
-        background-color: $contentBgColor;
+        background-color: $headerBgColor;
         border-color: $contentBorderColor;
         padding: $headerPadding;
     }
