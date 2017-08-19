@@ -31,12 +31,14 @@ body {
         @include overlay();
         
         .ui-dialog-titlebar {
-            padding: $headerPadding;
+            padding: 1em;
+            border-bottom: 1px solid $headerBorderColor;
             
             .ui-dialog-title {
                 margin: 0;
                 float: none;
                 vertical-align: middle;
+                font-size: $fontSize + 4;
             }
             
             .ui-dialog-titlebar-icon {

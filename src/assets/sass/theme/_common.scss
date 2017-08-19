@@ -32,9 +32,7 @@ body {
 
     .ui-state-disabled,
     .ui-widget:disabled {
-        opacity: .35; 
-        filter: Alpha(Opacity= 35); 
-        background-image: none; 
+        background-color: $disabledBgColor;
         cursor: default !important;
         
         * {

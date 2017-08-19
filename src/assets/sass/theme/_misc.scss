@@ -22,9 +22,10 @@ body {
             font-size: 18px;
             margin-bottom: -5px;
             margin-left: -5px;
+            color: $textSecondaryColor;
             
             &:hover {
-                color: $primaryColor;
+                color: $textColor;
             }
         }
         
@@ -33,9 +34,10 @@ body {
             font-size: 18px;  
             margin-bottom: -5px; 
             margin-right: -5px;
+            color: $textSecondaryColor;
             
             &:hover {
-                color: $primaryColor;
+                color: $textColor;
             }
         }
     }

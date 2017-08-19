@@ -1,4 +1,11 @@
 body {
+    .ui-menu-separator {        
+        &.ui-widget-content {
+            border-width: 1px 0 0 0;
+            border-color: $dividerColor;
+        }
+    }
+    
     .ui-breadcrumb {
         background-color: $headerBgColor;
         border: 0 none;
@@ -68,7 +75,7 @@ body {
                     display: inline-block;
                     background-color: $primaryColor;
                     @include border-radius(50%);
-                    padding: 0.5em 0 0.5em 0;
+                    padding: 0.643em 0 0 0;
                     font-size: 1em;
                     color: $primaryTextColor;
                     position: relative;
@@ -209,12 +216,6 @@ body {
                 }
             }
             
-        }
-        
-        .ui-menu-separator {
-            &.ui-widget-content {
-                border-color: $dividerColor;
-            }
         }
         
         &.ui-menubar {

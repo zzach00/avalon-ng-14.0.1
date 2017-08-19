@@ -62,6 +62,11 @@ body {
             background-color: darken($primaryColor,10%);
             @include shadow(inset 0 3px 5px rgba(0,0,0,.125));
         }
+        
+        &.ui-state-disabled, &:disabled {
+            background-color: $primaryColor;
+            @include opacity(.65);
+        }
                 
         &.ui-button-text-only {
             .ui-button-text {
@@ -243,6 +248,12 @@ body {
                 color: $primaryColor;
                 @include focused-input();
             }
+            
+            &.ui-state-disabled {
+                background-color: $disabledBgColor;
+                border-color: $inputBorderColor;
+                color: $textSecondaryColor;
+            }
                         
             .ui-chkbox-icon {
                 font-size: $fontSize + 2;
@@ -300,6 +311,17 @@ body {
                 
                 &:before {
                     display: none;
+                }
+            }
+            
+            &.ui-state-disabled {
+                background-color: $disabledBgColor;
+                border-color: $inputBorderColor;
+
+                &.ui-state-active {
+                    .ui-radiobutton-icon {
+                        background-color: $textSecondaryColor;
+                    }
                 }
             }
         }
@@ -371,12 +393,10 @@ body {
         &.ui-autocomplete-multiple {
             .ui-autocomplete-multiple-container {
                 padding: 0.286em 0.857em;
-                border-right: 0 none;
                 @include input-shadow-vertical();
                     
                 &:not(.ui-state-disabled).ui-state-focus {
                     @include focused-input();
-                    border-right: 0 none;
                 }
                 
                 .ui-autocomplete-input-token {
@@ -394,6 +414,17 @@ body {
                 .ui-autocomplete-token {
                     margin-right: .25em;
                     font-size: $fontSize;
+                }
+            }
+            
+            &.ui-autocomplete-dd {
+                &.ui-autocomplete-multiple-container {
+                    border-right: 0 none;
+                    
+                    &:not(.ui-state-disabled).ui-state-focus {
+
+                        border-right: 0 none;
+                    }
                 }
             }
         }
@@ -477,6 +508,7 @@ body {
         @include transition(box-shadow $transitionDuration, border-color $transitionDuration);
         @include box-sizing(border-box);
         border: 1px solid $inputBorderColor;
+        min-width: 10em;
         
         .ui-dropdown-label:focus,
         .ui-dropdown-label:hover {
@@ -513,6 +545,12 @@ body {
                 .fa-caret-down {
                     color: $primaryColor;
                 }
+            }
+        }
+        
+        &.ui-state-disabled {
+            > * {
+                @include disabled-input();
             }
         }
     }
@@ -589,6 +627,12 @@ body {
                 .fa {
                     color: $primaryColor;
                 }
+            }
+        }
+        
+        &.ui-state-disabled {
+            > * {
+                @include disabled-input();
             }
         }
     }
@@ -719,7 +763,13 @@ body {
             margin: 0;
             @include border-radius(0);
             
-            .ui-listbox-filter-container {                
+            .ui-chkbox {
+                margin-left: .358em;
+            }
+            
+            .ui-listbox-filter-container {    
+                width: calc(100% - 3em);
+                           
                 input {
                     width: 100%;
                     padding: $inputPadding;
@@ -762,6 +812,10 @@ body {
         
         &.ui-state-disabled {
             .ui-chkbox-box {
+                background-color: $disabledBgColor;
+                border-color: $inputBorderColor;
+                color: $textSecondaryColor;
+                
                 &:not(.ui-state-disabled):not(.ui-state-active):hover {
                     border: 1px solid $inputBorderColor;
                 }
@@ -791,18 +845,30 @@ body {
             &:focus {
                 outline: 0 none;
             }
+            
+            .fa {
+                font-size: 20px;
+                height: 20px;
+                width: 20px;
+                
+                &.fa-ban {
+                    color: $pink;
+                    
+                    &:hover {
+                        color: lighten($pink,5%);
+                    }
+                }
+            }
         }
         
-        .fa {
-            font-size: 20px;
-            height: 20px;
-            width: 20px;
+        &.ui-state-disabled {
+            background: transparent;
             
-            &.fa-ban {
-                color: $pink;
+            a {
+                color: $disabledBgColor;
                 
-                &:hover {
-                    color: lighten($pink,5%);
+                .fa.fa-ban {
+                    color: $disabledBgColor;
                 }
             }
         }
@@ -829,6 +895,7 @@ body {
 
                 &:not(.ui-state-disabled):active {
                     color: $headerIconHoverColor;
+                    @include no-shadow();
                 }
                 
                 &.ui-spinner-up {
@@ -878,6 +945,16 @@ body {
                 border: 0 none;
             }
         }
+        
+        &.ui-state-disabled {
+            .ui-slider-handle {
+                background-color: $disabledBgColor;
+            }
+            
+            .ui-slider-range {
+                background-color: darken($dividerColor, 5%);
+            }
+        }
     }
     
     .ui-togglebutton {
@@ -900,6 +977,15 @@ body {
             
             &.ui-state-focus {
                 background-color: darken($primaryColor, 5%);
+            }
+        }
+        
+        &.ui-state-disabled {
+            background-color: $toggleButtonBgColor;
+            @include opacity(.65);
+            
+            &.ui-state-active {
+                background-color: $primaryColor;
             }
         }
     }
@@ -1085,6 +1171,14 @@ body {
         .ui-datepicker-trigger.ui-button {
             width: 2em;
             @include border-radius-left(0);
+            
+            &.ui-state-disabled {
+                border-color: $inputBorderColor;
+                
+                .fa {
+                    color: $textSecondaryColor;
+                }
+            }
         }
     }
     
