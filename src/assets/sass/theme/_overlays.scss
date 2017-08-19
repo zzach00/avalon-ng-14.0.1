@@ -9,7 +9,7 @@ body {
             height: 1.5em;
             text-align: center;
             line-height: 1.5em;      
-            left: -.75em;   
+            right: -.75em;   
             top: -.75em;      
             @include transition(background-color $transitionDuration);
             
@@ -79,11 +79,6 @@ body {
                     vertical-align: middle;
                     line-height: $fontSize;
                     margin: 0;
-                    
-                    &.ui-icon {
-                        margin-right: .35em;
-                        font-size: $fontSize + 2;
-                    }
                 }
             }
         }

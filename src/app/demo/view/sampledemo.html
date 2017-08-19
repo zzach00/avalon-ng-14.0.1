@@ -8,10 +8,7 @@
                         <label for="input">Input</label>
                     </div>
                     <div class="ui-g-12 ui-md-4">
-                        <span class="md-inputfield">
-                            <input id="input" type="text" pInputText/>
-                            <label>Username</label>
-                        </span>
+                        <input id="input" type="text" pInputText/>
                     </div>
                     <div class="ui-g-12 ui-md-2">
                         <label for="textarea">Textarea</label>
@@ -91,14 +88,14 @@
                         Button
                     </div>
                     <div class="ui-g-12 ui-md-4">
-                        <button pButton type="button" label="Edit" icon="ui-icon-edit"></button>
+                        <button pButton type="button" label="Edit" icon="fa-edit"></button>
                     </div>
                     
                     <div class="ui-g-12 ui-md-2">
                         SplitButton
                     </div>
                     <div class="ui-g-12 ui-md-4">
-                        <p-splitButton label="Save" icon="ui-icon-save" [model]="splitButtonItems"></p-splitButton>
+                        <p-splitButton label="Save" icon="fa-check" [model]="splitButtonItems"></p-splitButton>
                     </div>
                     <div class="ui-g-12 ui-md-2">
                         <label for="multiselect">MultiSelect</label>
@@ -130,29 +127,23 @@
                         Dialog
                     </div>
                     <div class="ui-g-12 ui-md-4">
-                        <button type="button" label="Login" icon="ui-icon-open-in-new" (click)="dialogVisible=true" pButton></button>
+                        <button type="button" label="Login" icon="fa-external-link" (click)="dialogVisible=true" pButton></button>
                     </div>
                 </div>
 
-                <p-dialog header="Login" [resizable]="false" responsive="true" [(visible)]="dialogVisible">
+                <p-dialog header="Login" [resizable]="false" responsive="true" [(visible)]="dialogVisible" modal="true">
                     <div class="ui-g form-group" style="margin-bottom: 16px;">
                         <div class="ui-g-12">
-                            <span class="md-inputfield">
-                                <input type="text" pInputText>
-                                <label>Name</label>
-                            </span>
+                            <input type="text" pInputText placeholder="Username">
                         </div>
                         <div class="ui-g-12">
-                            <span class="md-inputfield">
-                                <input type="password" pInputText>
-                                <label>Password</label>
-                            </span>
+                            <input type="password" pInputText placeholder="Password">
                         </div>
                     </div>
                     
                     <p-footer>
                         <div class="ui-dialog-buttonpane ui-helper-clearfix">
-                            <button type="button" label="Login" icon="ui-icon-person" (click)="dialogVisible=false" pButton></button>
+                            <button type="button" label="Login" icon="fa-user" (click)="dialogVisible=false" pButton></button>
                         </div>
                     </p-footer>
                 </p-dialog>
@@ -181,7 +172,7 @@
                     <ng-template let-car pTemplate="item">
                         <div style="padding:3px" class="ui-g-12 ui-md-3">
                             <p-panel [header]="car.vin" [style]="{'text-align':'center'}">
-                                <img src="assets/demo/images/car/{{car.brand}}.gif">
+                                <img src="assets/demo/images/car/{{car.brand}}.png" width="50">
                                 <div class="car-detail">{{car.year}} - {{car.color}}</div>
                             </p-panel>
                         </div>
@@ -230,7 +221,7 @@
                 <p-orderList [value]="orderListCars" [listStyle]="{'height':'250px'}" [responsive]="true" header="OrderList">
                     <ng-template let-car pTemplate="item">
                         <div class="ui-helper-clearfix">
-                            <img src="assets/demo/images/car/{{car.brand}}.gif" style="display:inline-block;margin:2px 0 2px 2px" />
+                            <img src="assets/demo/images/car/{{car.brand}}.png" style="display:inline-block;margin:2px 0 2px 2px" width="50"/>
                             <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{car.brand}} - {{car.year}} - {{car.color}}</div>
                         </div>
                     </ng-template>
@@ -275,7 +266,7 @@
                     <ng-template let-car pTemplate="item">
                         <div class="ui-g" style="text-align:center">
                             <div class="ui-g-12" style="text-align:Center">
-                                <img src="assets/demo/images/car/{{car.brand}}.gif" />
+                                <img src="assets/demo/images/car/{{car.brand}}.png" />
                             </div>
                             <div class="ui-g-6">Vin: </div>
                             <div class="ui-g-6" style="font-weight:bold">{{car.vin}}</div>
