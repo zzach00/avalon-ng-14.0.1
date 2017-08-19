@@ -3,16 +3,17 @@
         <div class="card docs"> 
             
             <h1>Getting Started</h1>
-            <p>Ultima is a true native application template for Angular and is distributed as a CLI project. If you don't have CLI installed already run the following commands to set it up. In case
-            you have an application that do not use CLI, skip the <a href="#noncli">Integration with an Existing Non CLI Application</a> part.</p>
+            <p>Avalon is a true native application template for Angular and is distributed as a CLI project. If you don't have CLI installed already run the following commands to set it up. In case
+            you have an application that do not use CLI, skip the <a href="#noncli">Integration with an Existing Non CLI Application</a> part. 
+            Avalon is distributed with PrimeNG 4.1.x and Angular 4.x based on Angular CLI 1.3.0.</p>
 <pre>
 npm install -g @angular/cli
 </pre>
 
-            <p>Once CLI is ready in your system, extract the contents of the ultima zip file distribution, cd to the directory, 
+            <p>Once CLI is ready in your system, extract the contents of the avalon zip file distribution, cd to the directory, 
             install the libraries from npm and then execute "ng serve" to run the application in your local environment at http://localhost:4200/.</p>
 <pre>
-cd ultima
+cd avalon
 npm install
 ng serve
 </pre>
@@ -36,47 +37,42 @@ Run 'ng help' for more options.
 </pre>            
                                     
             <h1>Structure</h1>
-            <p>Ultima consists of 3 main parts; the application layout, layout resources and theme resources for PrimeNG components. <i>app.component.html</i> inside app folder is the html template for the base layout, 
+            <p>avalon consists of 3 main parts; the application layout, layout resources and theme resources for PrimeNG components. <i>app.component.html</i> inside app folder is the html template for the base layout, 
                 required resources for the layout are placed inside the <i>src/assets/layout</i> folder and similarly theme resources are inside <i>src/assets/theme</i> folder. 
             </p>
 
             <h1>Template</h1>
             <p>Main layout is the html view of the app.component.ts, it is divided into a couple of sections such as topbar, profile, menu and footer. Here is the code for
-                the main template. The component class app.component.ts implements the logic such as opening menus, layout modes and so on.
+                the main template. The component class app.component.ts implements the logic such as opening menus, managing layout modes and so on.
             </p>
 <pre>
-&lt;div class="layout-wrapper" [ngClass]="&#123;'layout-compact':layoutCompact&#125;" (click)="onLayoutClick()"&gt;
+&lt;div class="layout-wrapper" (click)="onLayoutClick()"
+    [ngClass]="&#123;'menu-layout-static': !isOverlay(),
+                'menu-layout-overlay': isOverlay(),
+                'layout-menu-overlay-active': overlayMenuActive,
+                'menu-layout-horizontal': isHorizontal(),
+                'menu-layout-slim': isSlim(),
+                'layout-menu-static-inactive': staticMenuDesktopInactive,
+                'layout-menu-static-active': staticMenuMobileActive&#125;"&gt;
 
-    &lt;div #layoutContainer class="layout-container" 
-            [ngClass]="&#123;'menu-layout-static': !isOverlay(),
-            'menu-layout-overlay': isOverlay(),
-            'layout-menu-overlay-active': overlayMenuActive,
-            'menu-layout-horizontal': isHorizontal(),
-            'menu-layout-slim': isSlim(),
-            'layout-menu-static-inactive': staticMenuDesktopInactive,
-            'layout-menu-static-active': staticMenuMobileActive&#125;"&gt;
+    &lt;app-topbar&gt;&lt;/app-topbar&gt;
 
-        &lt;app-topbar&gt;&lt;/app-topbar&gt;
-
-        &lt;div class="layout-menu" [ngClass]="&#123;'layout-menu-dark':darkMenu&#125;" (click)="onMenuClick($event)"&gt;
-            &lt;div #layoutMenuScroller class="nano"&gt;
-                &lt;div class="nano-content menu-scroll-content"&gt;
-                    &lt;inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"&gt;&lt;/inline-profile&gt;
-                    &lt;app-menu [reset]="resetMenu"&gt;&lt;/app-menu&gt;
-                &lt;/div&gt;
+    &lt;div class="layout-menu-container" [ngClass]="&#123;'layout-menu-dark':darkMenu&#125;" (click)="onMenuClick($event)"&gt;
+        &lt;div #layoutMenuScroller class="nano"&gt;
+            &lt;div class="nano-content menu-scroll-content"&gt;
+                &lt;inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"&gt;&lt;/inline-profile&gt;
+                &lt;app-menu [reset]="resetMenu"&gt;&lt;/app-menu&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-        
-        &lt;div class="layout-main"&gt;
-            &lt;router-outlet&gt;&lt;/router-outlet&gt;
-            
-            &lt;app-footer&gt;&lt;/app-footer&gt;
-        &lt;/div&gt;
-        
-        &lt;app-rightpanel&gt;&lt;/app-rightpanel&gt;
-        
-        &lt;div class="layout-mask"&gt;&lt;/div&gt;
     &lt;/div&gt;
+    
+    &lt;div class="layout-main"&gt;
+        &lt;router-outlet&gt;&lt;/router-outlet&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="layout-mask"&gt;&lt;/div&gt;
+    
+    &lt;app-footer&gt;&lt;/app-footer&gt;
 
 &lt;/div&gt;
 </pre>
@@ -86,7 +82,8 @@ Run 'ng help' for more options.
             navigate to this file and define your own model as a nested structure. Here is the menu component from the sample application. The helper
             app-submenu component is also available in the same file.</p>
 <pre>
-import &#123;Component,Input,OnInit,EventEmitter,ViewChild,trigger,state,transition,style,animate&#125; from '@angular/core';
+import &#123;Component,Input,OnInit,EventEmitter,ViewChild&#125; from '@angular/core';
+import &#123;trigger,state,style,transition,animate&#125; from '@angular/animations';
 import &#123;Location&#125; from '@angular/common';
 import &#123;Router&#125; from '@angular/router';
 import &#123;MenuItem&#125; from 'primeng/primeng';
@@ -95,93 +92,162 @@ import &#123;AppComponent&#125; from './app.component';
 @Component(&#123;
     selector: 'app-menu',
     template: `
-        &lt;ul app-submenu [item]="model" root="true" class="ultima-menu ultima-main-menu  clearfix" [reset]="reset"&gt;&lt;/ul&gt;
+        &lt;ul app-submenu [item]="model" root="true" class="layout-menu layout-main-menu clearfix" [reset]="reset" visible="true"&gt;&lt;/ul&gt;
     `
 &#125;)
 export class AppMenuComponent implements OnInit &#123;
 
     @Input() reset: boolean;
 
-    model: MenuItem[];
+    model: any[];
 
-    constructor(public app:AppComponent) &#123;&#125;
+    constructor(public app: AppComponent) &#123;&#125;
     
     ngOnInit() &#123;
         this.model = [
-            &#123;label: 'Dashboard', icon: 'dashboard', routerLink: ['/']&#125;,
+            &#123;label: 'Dashboard', icon: 'fa fa-fw fa-home', routerLink: ['/']&#125;,
             &#123;
-                label: 'Components', icon: 'list',
+                label: 'Customization', icon: 'fa fa-fw fa-bars' ,badge: '8',
                 items: [
-                    &#123;label: 'Sample Page', icon: 'desktop_mac', routerLink: ['/sample']&#125;,
-                    &#123;label: 'Forms', icon: 'input', routerLink: ['/forms']&#125;,
-                    &#123;label: 'Data', icon: 'grid_on', routerLink: ['/data']&#125;,
-                    &#123;label: 'Panels', icon: 'content_paste', routerLink: ['/panels']&#125;,
-                    &#123;label: 'Overlays', icon: 'content_copy', routerLink: ['/overlays']&#125;,
-                    &#123;label: 'Menus', icon: 'menu', routerLink: ['/menus']&#125;,
-                    &#123;label: 'Messages', icon: 'message', routerLink: ['/messages']&#125;,
-                    &#123;label: 'Charts', icon: 'insert_chart', routerLink: ['/charts']&#125;,
-                    &#123;label: 'File', icon: 'attach_file', routerLink: ['/file']&#125;,
-                    &#123;label: 'Misc', icon: 'toys', routerLink: ['/misc']&#125;
+                    &#123;label: 'Static Menu', icon: 'fa fa-fw fa-bars',  command: () => this.app.changeToStaticMenu()&#125;,
+                    &#123;label: 'Overlay Menu', icon: 'fa fa-fw fa-bars',  command: () => this.app.changeToOverlayMenu()&#125;,
+                    &#123;label: 'Slim Menu', icon: 'fa fa-fw fa-bars',  command: () => this.app.changeToSlimMenu()&#125;,
+                    &#123;label: 'Horizontal Menu', icon: 'fa fa-fw fa-bars',  command: () => this.app.changeToHorizontalMenu()&#125;,
+                    &#123;label: 'Inline Profile', icon: 'fa fa-sun-o fa-fw',  command: () => this.app.profileMode = 'inline'&#125;,
+                    &#123;label: 'Top Profile', icon: 'fa fa-moon-o fa-fw',  command: () => this.app.profileMode = 'top'&#125;,
+                    &#123;label: 'Light Menu', icon: 'fa fa-sun-o fa-fw',  command: () => this.app.darkMenu = false&#125;,
+                    &#123;label: 'Dark Menu', icon: 'fa fa-moon-o fa-fw',  command: () => this.app.darkMenu = true&#125;
                 ]
             &#125;,
             &#123;
-                label: 'Template Pages', icon: 'get_app',
-                items: [
-                    &#123;label: 'Empty Page', icon: 'hourglass_empty', routerLink: ['/empty']&#125;,
-                    &#123;label: 'Landing Page', icon: 'flight_land', url: 'landing.html'&#125;,
-                    &#123;label: 'Login Page', icon: 'verified_user', url: 'login.html'&#125;,
-                    &#123;label: 'Error Page', icon: 'error', url: 'error.html'&#125;,
-                    &#123;label: '404 Page', icon: 'error_outline', url: '404.html'&#125;,
-                    &#123;label: 'Access Denied Page', icon: 'security', url: 'access.html'&#125;
-                ]
-            &#125;,
-            &#123;
-                label: 'Menu Hierarchy', icon: 'menu',
+                label: 'Layout Colors', icon: 'fa fa-fw fa-magic',
                 items: [
                     &#123;
-                        label: 'Submenu 1', icon: 'subject',
+                        label: 'Flat', 
+                        icon: 'fa fa-fw fa-circle',
+                        items: [
+                            &#123;label: 'Blue', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('blue')&#125;&#125;,
+                            &#123;label: 'Purple', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('purple')&#125;&#125;,
+                            &#123;label: 'Cyan', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('cyan')&#125;&#125;,
+                            &#123;label: 'Indigo', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('indigo')&#125;&#125;,
+                            &#123;label: 'Teal', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('teal')&#125;&#125;,
+                            &#123;label: 'Pink', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('pink')&#125;&#125;,
+                            &#123;label: 'Lime', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('lime')&#125;&#125;,
+                            &#123;label: 'Green', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('green')&#125;&#125;,
+                            &#123;label: 'Amber', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('amber')&#125;&#125;,
+                            &#123;label: 'Dark Grey', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('darkgrey')&#125;&#125;,
+                        ]
+                    &#125;,
+                    &#123;
+                        label: 'Special', 
+                        icon: 'fa fa-fw fa-fire',
+                        items: [
+                            &#123;label: 'Influenza', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('influenza', true)&#125;&#125;,
+                            &#123;label: 'Suzy', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('suzy', true)&#125;&#125;,
+                            &#123;label: 'Calm', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('calm', true)&#125;&#125;,
+                            &#123;label: 'Crimson', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('crimson', true)&#125;&#125;,
+                            &#123;label: 'Night', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('night', true)&#125;&#125;,
+                            &#123;label: 'Skyling', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('skyline', true)&#125;&#125;,
+                            &#123;label: 'Sunkist', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('sunkist', true)&#125;&#125;,
+                            &#123;label: 'Little Leaf', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('littleleaf', true)&#125;&#125;,
+                            &#123;label: 'Joomla', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('joomla', true)&#125;&#125;,
+                            &#123;label: 'Firewatch', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('firewatch', true)&#125;&#125;
+                        ]
+                    &#125;
+                ]
+            &#125;,
+            &#123;
+                label: 'Themes', icon: 'fa fa-fw fa-paint-brush', badge: '5',
+                items: [
+                    &#123;label: 'Blue', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('blue')&#125;&#125;,
+                    &#123;label: 'Cyan', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('cyan')&#125;&#125;,
+                    &#123;label: 'Indigo', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('indigo')&#125;&#125;,
+                    &#123;label: 'Purple', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('purple')&#125;&#125;,
+                    &#123;label: 'Teal', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('teal')&#125;&#125;,
+                    &#123;label: 'Orange', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('orange')&#125;&#125;,
+                    &#123;label: 'Deep Purple', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('deeppurple')&#125;&#125;,
+                    &#123;label: 'Light Blue', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('lightblue')&#125;&#125;,
+                    &#123;label: 'Green', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('green')&#125;&#125;,
+                    &#123;label: 'Light Green', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('lightgreen')&#125;&#125;,
+                    &#123;label: 'Lime', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('lime')&#125;&#125;,
+                    &#123;label: 'Amber', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('amber')&#125;&#125;,
+                    &#123;label: 'Brown', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('brown')&#125;&#125;,
+                    &#123;label: 'Dark Grey', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('darkgrey')&#125;&#125;,
+                ]
+            &#125;,
+            &#123;
+                label: 'Components', icon: 'fa fa-fw fa-sitemap',
+                items: [
+                    &#123;label: 'Sample Page', icon: 'fa fa-fw fa-columns', routerLink: ['/sample']&#125;,
+                    &#123;label: 'Forms', icon: 'fa fa-fw fa-code', routerLink: ['/forms']&#125;,
+                    &#123;label: 'Data', icon: 'fa fa-fw fa-table', routerLink: ['/data']&#125;,
+                    &#123;label: 'Panels', icon: 'fa fa-fw fa-list-alt', routerLink: ['/panels']&#125;,
+                    &#123;label: 'Overlays', icon: 'fa fa-fw fa-square', routerLink: ['/overlays']&#125;,
+                    &#123;label: 'Menus', icon: 'fa fa-fw fa-minus-square-o', routerLink: ['/menus']&#125;,
+                    &#123;label: 'Messages', icon: 'fa fa-fw fa-circle-o-notch', routerLink: ['/messages']&#125;,
+                    &#123;label: 'Charts', icon: 'fa fa-fw fa-area-chart', routerLink: ['/charts']&#125;,
+                    &#123;label: 'File', icon: 'fa fa-fw fa-arrow-circle-o-up', routerLink: ['/file']&#125;,
+                    &#123;label: 'Misc', icon: 'fa fa-fw fa-user-secret', routerLink: ['/misc']&#125;
+                ]
+            &#125;,
+            &#123;
+                label: 'Template Pages', icon: 'fa fa-fw fa-life-saver',
+                items: [
+                    &#123;label: 'Empty Page', icon: 'fa fa-fw fa-square-o', routerLink: ['/empty']&#125;,
+                    &#123;label: 'Landing Page', icon: 'fa fa-fw fa-certificate', url: 'assets/pages/landing.html', target: '_blank'&#125;,
+                    &#123;label: 'Login Page', icon: 'fa fa-fw fa-sign-in', url: 'assets/pages/login.html', target: '_blank'&#125;,
+                    &#123;label: 'Error Page', icon: 'fa fa-fw fa-exclamation-circle', url: 'assets/pages/error.html', target: '_blank'&#125;,
+                    &#123;label: 'Not Found Page', icon: 'fa fa-fw fa-times', url: 'assets/pages/notfound.html', target: '_blank'&#125;,
+                    &#123;label: 'Access Denied Page', icon: 'fa fa-fw fa-exclamation-triangle', url: 'assets/pages/access.html', target: '_blank'&#125;
+                ]
+            &#125;,
+            &#123;
+                label: 'Menu Hierarchy', icon: 'fa fa-fw fa-gg',
+                items: [
+                    &#123;
+                        label: 'Submenu 1', icon: 'fa fa-fw fa-sign-in',
                         items: [
                             &#123;
-                                label: 'Submenu 1.1', icon: 'subject',
+                                label: 'Submenu 1.1', icon: 'fa fa-fw fa-sign-in',
                                 items: [
-                                    &#123;label: 'Submenu 1.1.1', icon: 'subject'&#125;,
-                                    &#123;label: 'Submenu 1.1.2', icon: 'subject'&#125;,
-                                    &#123;label: 'Submenu 1.1.3', icon: 'subject'&#125;,
+                                    &#123;label: 'Submenu 1.1.1', icon: 'fa fa-fw fa-sign-in'&#125;,
+                                    &#123;label: 'Submenu 1.1.2', icon: 'fa fa-fw fa-sign-in'&#125;,
+                                    &#123;label: 'Submenu 1.1.3', icon: 'fa fa-fw fa-sign-in'&#125;,
                                 ]
                             &#125;,
                             &#123;
-                                label: 'Submenu 1.2', icon: 'subject',
+                                label: 'Submenu 1.2', icon: 'fa fa-fw fa-sign-in',
                                 items: [
-                                    &#123;label: 'Submenu 1.2.1', icon: 'subject'&#125;,
-                                    &#123;label: 'Submenu 1.2.2', icon: 'subject'&#125;
+                                    &#123;label: 'Submenu 1.2.1', icon: 'fa fa-fw fa-sign-in'&#125;,
+                                    &#123;label: 'Submenu 1.2.2', icon: 'fa fa-fw fa-sign-in'&#125;
                                 ]
                             &#125;,
                         ]
                     &#125;,
                     &#123;
-                        label: 'Submenu 2', icon: 'subject',
+                        label: 'Submenu 2', icon: 'fa fa-fw fa-sign-in',
                         items: [
                             &#123;
-                                label: 'Submenu 2.1', icon: 'subject',
+                                label: 'Submenu 2.1', icon: 'fa fa-fw fa-sign-in',
                                 items: [
-                                    &#123;label: 'Submenu 2.1.1', icon: 'subject'&#125;,
-                                    &#123;label: 'Submenu 2.1.2', icon: 'subject'&#125;,
-                                    &#123;label: 'Submenu 2.1.3', icon: 'subject'&#125;,
+                                    &#123;label: 'Submenu 2.1.1', icon: 'fa fa-fw fa-sign-in'&#125;,
+                                    &#123;label: 'Submenu 2.1.2', icon: 'fa fa-fw fa-sign-in'&#125;,
+                                    &#123;label: 'Submenu 2.1.3', icon: 'fa fa-fw fa-sign-in'&#125;,
                                 ]
                             &#125;,
                             &#123;
-                                label: 'Submenu 2.2', icon: 'subject',
+                                label: 'Submenu 2.2', icon: 'fa fa-fw fa-sign-in',
                                 items: [
-                                    &#123;label: 'Submenu 2.2.1', icon: 'subject'&#125;,
-                                    &#123;label: 'Submenu 2.2.2', icon: 'subject'&#125;
+                                    &#123;label: 'Submenu 2.2.1', icon: 'fa fa-fw fa-sign-in'&#125;,
+                                    &#123;label: 'Submenu 2.2.2', icon: 'fa fa-fw fa-sign-in'&#125;
                                 ]
                             &#125;,
                         ]
                     &#125;
                 ]
             &#125;,
-            &#123;label: 'Utils', icon: 'build', routerLink: ['/utils']&#125;,
-            &#123;label: 'Documentation', icon: 'find_in_page', routerLink: ['/documentation']&#125;
+            &#123;label: 'Utils', icon: 'fa fa-fw fa-wrench', routerLink: ['/utils']&#125;,
+            &#123;label: 'Documentation', icon: 'fa fa-fw fa-book', routerLink: ['/documentation']&#125;
         ];
     &#125;
 &#125;
@@ -189,10 +255,10 @@ export class AppMenuComponent implements OnInit &#123;
 
             
             <h1>Integration with an Existing CLI Project</h1>
-            <p>To setup Ultima in an existing project, copy the <i>src/assets</i> folder to your projects folder with the same name 
-                and replace the contents of app.component.ts, app.component.html with their counterparts in Ultima under <i>src/app</i> folder.</p>
+            <p>To setup avalon in an existing project, copy the <i>src/assets</i> folder to your projects folder with the same name 
+                and replace the contents of app.component.ts, app.component.html with their counterparts in avalon under <i>src/app</i> folder.</p>
             
-            <p>Dependencies of Ultima are listed below and needs to be added to package.json</p>
+            <p>Dependencies of avalon are listed below and needs to be added to package.json</p>
 <pre>
 "primeng": "^4.1.0",             //required: PrimeNG components
 "jquery": "^3.1.1",              //optional: schedule and nanoscroller
@@ -219,7 +285,6 @@ export class AppMenuComponent implements OnInit &#123;
 "scripts": [
     "../node_modules/jquery/dist/jquery.js",                                //optional: schedule and nanoscroller
     "../node_modules/nanoscroller/bin/javascripts/jquery.nanoscroller.js",  //optional: nanoscroller
-    "assets/layout/js/ripple.js",                                           //optional: ripple effect
     "../node_modules/moment/moment.js",                                     //optional: schedule and charts
     "../node_modules/chart.js/dist/Chart.js",                               //optional: charts
     "../node_modules/fullcalendar/dist/fullcalendar.js",                    //optional: schedule
@@ -235,27 +300,25 @@ export class AppMenuComponent implements OnInit &#123;
             <p>Copy the <i>src/assets</i> folder to your application and include the resources listed above with a module bundler like webpack or using link-script tags.</p>
             <p>Finally copy the contents of app.component.html to your application's main component template such as <i>app/application.html</i> along
             with the sub components which are app.menu.component.ts, app.profile.components.ts, app.topbar.component.ts and app.footer.component.ts.</p>
-                        
-            <h1>Size</h1>
-            <p>Ultima uses EM units for scalability and comes in two built-in sizes, default is closer to the material design specification with bigger fonts and paddings whereas the alternative compact size
-            shrinks the dimensions of the UI elements. To activate the compact mode add "layout-compact" style class to the .layout-wrapper element in application.html
-            which is the enclosing div of whole content.</p>
-            
+        
             <h1>Theme</h1>    
-            <p>Ultima provides 12 PrimeNG themes out of the box, setup of a theme simple including the css of theme to your page that are located inside resources/theme folder.</p>
+            <p>Avalon provides 15 PrimeNG themes out of the box, setup of a theme simple including the css of theme to your page that are located inside resources/theme folder.</p>
             
             <ul>
+                <li>theme-amber</li>
                 <li>theme-blue</li>
-                <li>theme-blue-grey</li>
                 <li>theme-brown</li>
                 <li>theme-cyan</li>
-                <li>theme-dark-blue</li>
-                <li>theme-dark-green</li>
+                <li>theme-darkgrey</li>
+                <li>theme-deeppurple</li>
                 <li>theme-green</li>
-                <li>theme-grey</li>
                 <li>theme-indigo</li>
-                <li>theme-purple-amber</li>
-                <li>theme-purple-cyan</li>
+                <li>theme-lightblue</li>
+                <li>theme-lightgreen</li>
+                <li>theme-lime</li>
+                <li>theme-orange</li>
+                <li>theme-pink</li>
+                <li>theme-purple</li>
                 <li>theme-teal</li>
             </ul>
             
@@ -272,13 +335,20 @@ export class AppMenuComponent implements OnInit &#123;
                 relative path of the sass folder in your application.</p>
                 
 <pre>
-$primaryColor: #009688;
-$primaryDarkColor: #00695C;
-$primaryLightColor: #80CBC4;
-$accentColor: #CDDC39;
-$accentDarkColor: #9E9D24;
-$accentLightColor: #E6EE9C;
-$accentTextColor: #212121;
+$primaryColor:#337ab7;
+$primaryTextColor:#ffffff;
+$inputFocusBorderColor:#66afe9;
+$highlightBgColor:#337ab7;
+$highlightTextColor:#ffffff;
+$headerBgColor:#f5f5f5;
+$headerHoverBgColor:#dcdcdc;
+$headerHoverBorderColor:#c4c4c4;
+$headerTextColor:#292B2C;
+$headerBorderColor:#dddddd;
+$headerIconColor:#999999;
+$headerIconHoverColor:#777777;
+$datableEvenRowBgColor:#f9f9f9;
+$datatableHoverBgColor:#f5f5f5;
 
 @import '../sass/theme/_theme';
 </pre> 
@@ -286,13 +356,13 @@ $accentTextColor: #212121;
             <p> An example sass command to compile the css would be;</p>
                 
 <pre>
-sass src/assets/theme-myown/theme.scss src/assets/theme-myown/theme.css
+sass src/assets/theme/theme-myown.scss src/assets/theme/theme-myown.css 
 </pre> 
 
             <p>Watch mode is handy to avoid compiling everytime when a change is made, instead use the following command
             so that sass generates the file whenever you make a customization. This builds all css files whenever a change is made to any scss file.</p>
 <pre>
-sass -w resources/ --sourcemap=none
+sass -w src/assets/ --sourcemap=none
 </pre>
 
             <p>Same can also be applied to layout itself;</p>
@@ -308,60 +378,148 @@ sass -w resources/ --sourcemap=none
                 relative path of the sass folder in your application.</p>
             
 <pre>
-$primaryColor: #3F51B5;
-$primaryDarkColor: #283593;
-$primaryLightColor: #9fa8da;
-$accentColor: #E91E63;
-$accentDarkColor: #ad1457;
-$accentLightColor: #f48fb1;
-$accentTextColor: #ffffff;
-$darkMenuBgColor: #424242;
-$darkMenuHoverColor: #676767;
-$darkMenuRouterLinkActiveColor: #9fa8da;
-$lightMenuRouterLinkActiveColor: #3F51B5;
-$horizontalLightMenuRouterLinkActiveColor: #9fa8da;
+$topbarLeftGradientStartBgColor:#ff8f00;
+$topbarLeftGradientEndBgColor:#ffb300;
+$topbarRightGradientStartBgColor:#ff8f00;
+$topbarRightGradientEndBgColor:#ffb300;
+$topbarTextColor:#ffffff;
+$menuGradientStartBgColor:#ffffff;
+$menuGradientEndBgColor:#ffffff;
+$menuitemHoverBgColor:#e8e8e8;
+$menuitemActiveColor: #ff8f00;
+$menuitemActiveBgColor:#e8e8e8;
+$menuButtonBgColor:#ffffff;
+$menuButtonColor:#ff6f00;
+$badgeBgColor:#3eb839;
+$badgeColor:#ffffff;
+$darkMenuGradientStartBgColor:#363a41;
+$darkMenuGradientEndBgColor:#363a41;
+$darkMenuHoverBgColor:#4a4d54;
+$darkMenuMenuitemColor:#ffffff;
+$darkMenuMenuitemActiveColor:#ffe57f;
+$darkMenuMenuitemActiveBgColor:#282b30;
 
 @import '../../sass/layout/_layout';
+
 </pre> 
 
-            <p>Check out the video tutorial that follows the steps above to create the dark-blue theme and layout. It is based on PrimeFaces version but generation part
-                applies to PrimeNG as well.</p>
+            <h1>Common SASS Variables</h1>
+            <p>In case you'd like to customize the shared variables, the _variables.scss files are where the options are defined for layout and theme.</p>
             
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/XmU7QYFYuPk" frameborder="0"></iframe>
-            </div>
-            
-            <p>For both cases, several .scss files such as _layout.scss, _theme.scss or _variables.scss has to be present relative to your scss files, these are available inside the resources/sass folder in the distribution.</p>
-            <p>In case you'd like to customize the structure not just the colors, the _variables.scss is where the structural variables (e.g. font size, paddings) for the layout are defined.</p>
+<h3>sass/variables/_commons.scss</h3>
 <pre>
-$textColor: #212121;
-$textSecondaryColor: #757575;
-$fontSize: 16px;
-$lineHeight: 1.5em;
-$borderRadius: 3px;
-$headerFontSize: 1em;
-$headerPadding: .625em 1em;
-$contentFontSize: 1em;
-$contentPadding: .625em 1em;
-$inputHeaderFontSize: 1em;
-$inputHeaderPadding: .625em 1em;
-$inputFontSize: 1em;
-$buttonFontSize: 1em;
-$inputOptionFontSize: 1em;
-$inputOptionPadding: .625em .875em;
-$hoverBgColor: #e8e8e8;
-$hoverTextColor: #000000;
-$dividerColor: #bdbdbd;
-$dividerLightColor: #cacaca;
-$grayBgColor: #757575;
-$iconFontSize: 1.5em;
-$invalidInputLabelColor: #e62a10;
-$invalidInputBorderColor: #e62a10;
+$fontFamily:"Helvetica Neue",Helvetica,Arial,sans-serif;
+$fontSize:14px;
+$textColor:#292B2C;
+$textSecondaryColor:#777777;
+$borderRadius:4px;
+$dividerColor:#e5e5e5;
+$transitionDuration:.3s;
+$disabledBgColor:#eeeeee;
 
-/* Compact */
-$c-fontSize: 14px;
-$c-lineHeight: 18px;
-</pre>        
+/* Predefined Colors */
+$lightestGray:#f5f5f5;
+$lightGray:#cccccc;
+$gray:#999999;
+$darkGray:#777777;
+$white:#ffffff;
+
+$blue:#337ab7;
+$purple:#6F5499;
+$orange:#FF8800;
+$lightBlue:#039be5;
+$pink:#d81b60;
+$green:#7cb342;
+$teal:#2EA563;
+$black:#000000;
+$yellow:#ffb300;
+</pre> 
+
+<h3>sass/variables/_layout.scss</h3>
+<pre>
+@import './_common';
+
+$bodyBgColor: #EEF2F6;
+$menuHoverBgColor:#f4f4f4;
+</pre>   
+
+<h3>sass/variables/_theme.scss</h3>
+<pre>
+@import './_common';
+
+/* Icons */
+$iconFontSize:1em;
+$iconWidth:1.1em;
+
+/* Error */
+$errorColor:#a94442;
+$disabledColor:#eeeeee;
+
+/*  Invalid Input */
+$inputInvalidBorderColor:#b94a48;
+$inputInvalidBgColor:#ffffff;
+
+/* Headers */
+$headerPadding: 0.714em 1.071em;
+
+/* Contents */
+$contentPadding: 1.071em;
+$contentBorderColor:#dddddd;
+$contentBgColor:#ffffff;
+$contentLineHeight:1.43;
+
+/* Forms */
+$inputBgColor:#ffffff;
+$inputPadding: 0.429em 0.857em;
+$inputBorderColor:#cccccc;
+$inputHoverBorderColor:#cccccc;
+$inputGroupAddonBgColor:#e6e6e6;
+
+/* Buttons */
+$buttonTextColor:#ffffff;
+$toggleButtonBgColor:#ffffff;
+$toggleButtonBorderColor:#cccccc;
+$toggleButtonHoverBgColor:#e6e6e6;
+$toggleButtonHoverBorderColor:#adadad;
+
+/* List Items */
+$listItemPadding:0.429em 1.429em;
+$listItemHoverBgColor:#f5f5f5;
+$listItemHoverTextColor:#292B2C;
+
+/* Messages */
+$infoMessageBgColor:#d9edf7;
+$infoMessageBorderColor:#bce8f1;
+$infoMessageTextColor:#31708f;
+$successMessageBgColor:#dff0d8;
+$successMessageBorderColor:#d6e9c6;
+$successMessageTextColor:#3c763d;
+$warnMessageBgColor:#fcf8e3;
+$warnMessageBorderColor:#faebcc;
+$warnMessageTextColor:#8a6d3b;
+$errorMessageBgColor:#f2dede;
+$errorMessageBorderColor:#ebccd1;
+$errorMessageTextColor:#a94442;
+$fatalMessageBgColor:#999999;
+$fatalMessageBorderColor:#6b6b6b;
+$fatalMessageTextColor:#ffffff;
+
+/* Overlays */
+$overlayBorderColor:#cccccc;
+
+/* Data */
+$datatableHeaderBgColor:#ffffff;
+$datatableFooterBgColor:#ffffff;
+$datatableCellBorderColor:#dddddd;
+$datatableCellPadding:0.643em;
+$paginatorBgColor:#ffffff;
+
+/* TabView */
+$tabHeaderPadding:.6em 1em;
+
+/* Panel */
+$panelContentBorderColor:#DCE1E7;
+</pre>
 
             <h1>Menu Item Badges</h1>
             <p>Badges are numerical indicators associated with a link.
@@ -369,7 +527,7 @@ $c-lineHeight: 18px;
 <pre>
 label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'red-badge'
 </pre>  
-            <p>Default badge uses the accent color of ultima layout and there are three more alternative colors.</p>
+            <p>Default badge uses the accent color of avalon layout and there are three more alternative colors.</p>
             <ul>
                 <li>red-badge</li>
                 <li>purple-badge</li>
@@ -388,8 +546,7 @@ label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'red-badge'
             
             <p>For example to create a horizontal menu, the div element should be in following form;</p>
 <pre>
-&lt;div class="layout-wrapper layout-compact"&gt;
-    &lt;div class="layout-container menu-layout-static menu-layout-horizonal"&gt;
+&lt;div class="layout-wrapper menu-layout-static menu-layout-horizontal"&gt;
 </pre>            
 
             <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes. Sample
@@ -399,122 +556,22 @@ label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'red-badge'
             <p>Default color scheme of menu is light and alternative dark mode can be activated by adding layout-menu-dark style class to the menu container that 
                 is an element having .layout-menu as its class.</p>
 <pre>
-&lt;div class="layout-menu layout-menu-dark"&gt;
+&lt;div class="layout-menu-container layout-menu-dark"&gt;
 </pre>
             
             <h1>Profile Modes</h1>
             <p>There are two possible locations for the user profile menu, first version is inline located inside the main menu and second option is the topbar menu. For inline mode,
             profile content should be placed above the menu and for inline mode content goes in topbar-items list. The sample demo application provides examples for
             both cases.</p>
-            
-            <h1>Utilities</h1>
-            <p>Ultima provides various helper features such as material iconset compatible with PrimeNG components and helper classes. Visit <a [routerLink]="['/utils']">utils</a> page for details.</p>
                     
             <h1>Grid CSS</h1>
-            <p>Ultima uses PrimeNG Grid CSS (ui-g-*) throughout the samples, we strongly suggest using Grid CSS as your layout framework as it is well tested and supported by PrimeNG. Grid CSS is
+            <p>Avalon uses PrimeNG Grid CSS (ui-g-*) throughout the samples, although any Grid library can be used we suggest using Grid CSS as your layout framework as it is well tested and supported by PrimeNG. Grid CSS is
             available inside primeng.css.</p> 
             
             <h1>Customizing Styles</h1>
             <p>It is suggested to write your customizations in styles.scss file or another file instead of adding them to the
                 scss files under sass folders to avoid maintenance issues after an update.</p>
             
-            <h1>Migration Guide</h1>
-            <p>For seamless updates and easier maintenance, we suggest keeping your CSS customizations in a separate sass file so that your changes
-            are not overriden with an update.</p>
-
-            <p>4.1.1 to 4.2</p>
-            <ul>
-                <li>Update app.*.ts and app.*.html files under app folder.</li>
-                <li>Update theme css and layout css files.</li>
-            </ul>
-
-            <p>4.0.1 to 4.1.0</p>
-            <ul>
-                <li>Update layout css files.</li>
-                <li>Update theme css files.</li>
-                <li>Update AppSubmenu component in app.menu.component.ts.</li>
-            </ul>
-            
-            <p>4.0 to 4.0.1</p>
-            <ul>
-                <li>Update layout css files.</li>
-            </ul>
-            
-            <p>2.1 to 4.0</p>
-            <ul>
-                <li>Includes version updates to PrimeNG 4 and Angular 4.</li>
-                <li>Update theme css files.</li>
-            </ul>
-            
-            <p>2.0.5 to 2.1</p>
-            <ul>
-                <li>Project is updated to CLI RC2, Angular 4-RC3 and PrimeNG 4-RC1.</li>
-                <li>Add <i class="inline-code">import &#123;trigger,state,style,transition,animate&#125; from '@angular/animations';</i> to app.menu.components.ts and remove these imports from 'angular/core'.</li>
-                <li>Add <i class="inline-code">import &#123;BrowserAnimationsModule&#125; from '@angular/platform-browser/animations';</i> to app.module.ts and import the module to your application.</li>
-                <li>Update theme css files, there are no changes to the layout.</li>
-            </ul>
-            
-            <p>2.0.4 to 2.0.5</p>
-            <ul>
-                <li>No change required, missing .angular-cli.json file in 2.0.4 is added.</li>
-            </ul>
-            
-            <p>2.0.3 to 2.0.4</p>
-            <ul>
-                <li>No change required, only CLI version is updated to RC</li>
-            </ul>
-            
-            <p>2.0.2 to 2.0.3</p>
-            <ul>
-                <li>Update AppSubmenu component in app.menu.component.ts by replacing the itemClick method implementation.</li>
-                <li>Update layout css files, there are no changes on themes.</li>
-                <li>Update app.component.ts by changing onTopbarMenuButtonClick method implementation to add <i>event.preventDefault()</i> at the end.</li>
-                <li>Remove [ngClass]="&#123;'menu-button-rotate': app.rotateMenuButton&#125;" from menu-button in app.topbar.component.ts.</li>
-            </ul> 
-                       
-            <p>2.0.1 to 2.0.2</p>
-            <ul>
-                <li>Update AppSubmenu component in app.menu.component.ts</li>
-                <li>Update layout css files, there are no changes on themes.</li>
-                <li>Update app.component.ts.</li>
-                <li>Add pInputText to search input at app.topbar.component.ts</li>
-            </ul> 
-            
-            <p>2.0 to 2.0.11</p>
-            <ul>
-                <li>Update AppSubmenu component in app.menu.component.ts</li>
-                <li>Update layout css and theme css files.</li>
-                <li>Update app.component.ts.</li>
-            </ul> 
-            
-            <p>1.1 to 2.0</p>
-            <ul>
-                <li>Update PrimeNG to at least 2.0.</li>
-                <li>Replace app.component.ts and app.component.html</li>
-                <li>Remove layout.js</li>
-                <li>Update the scripts and styles section at angular-cli.json</li>
-                <li>Define menu using PrimeNG MenuModel</li>
-            </ul> 
-
-            <p>1.0.3 to 1.1</p>
-            <ul>
-                <li>Update css files of layout and theme.</li>
-            </ul> 
-            
-            <p>1.0.2 to 1.0.3</p>
-            <ul>
-                <li>Update css files of layout and theme.</li>
-            </ul> 
-            
-            <p>1.0.1 to 1.0.2</p>
-            <ul>
-                <li>Update layout.js</li>
-            </ul> 
-            
-            <p>1.0.0 to 1.0.1</p>
-            <ul>
-                <li>Update layout.js</li>
-            </ul>                 
         </div>
     </div>
 </div>

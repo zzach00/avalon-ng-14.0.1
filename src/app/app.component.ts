@@ -20,7 +20,7 @@ export class AppComponent implements AfterViewInit {
 
     layoutMode: MenuOrientation = MenuOrientation.STATIC;
     
-    darkMenu: boolean = true;
+    darkMenu: boolean = false;
     
     profileMode: string = 'inline';
 
