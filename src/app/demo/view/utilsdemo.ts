@@ -4,7 +4,6 @@ import {Component,ViewEncapsulation} from '@angular/core';
     templateUrl: './utilsdemo.html',
     styles: [`                
         .icon-grid div.ui-g-12 {
-            color: #757575;
             text-align: center;
             padding: 16px;
             font-size: 12px;
@@ -18,8 +17,7 @@ import {Component,ViewEncapsulation} from '@angular/core';
         
         pre {
             font-family: monospace;
-            background-color: #0C2238;
-            color: #dddddd;
+            background-color: #f7f7f9;
             padding: 1em;
             font-size: 14px;
             border-radius: 3px;

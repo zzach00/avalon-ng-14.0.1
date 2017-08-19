@@ -9,8 +9,7 @@ import {Component} from '@angular/core';
         
         .docs pre {
             font-family: monospace;
-            background-color: #0C2238;
-            color: #dddddd;
+            background-color: #f7f7f9;
             padding: 1em;
             font-size: 14px;
             border-radius: 3px;
@@ -18,8 +17,7 @@ import {Component} from '@angular/core';
         }
         
         .inline-code {
-            background-color: #0C2238;
-            color: #dddddd;
+            background-color: #f7f7f9;
             font-style: normal;
             font-size: 13px;
             padding: 0 .5em;
