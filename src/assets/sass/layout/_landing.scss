@@ -149,6 +149,7 @@
                     p {
                         font-size: 14px;
                         margin: 6px 0 0 0;
+                        line-height: 1.5;
                     }
                     
                     .ui-g-12 {
@@ -326,6 +327,10 @@
                 
                 .video-content {
                     text-align: right;
+                    
+                    p {
+                        line-height: 1.5;
+                    }
                 }
             }
         }
@@ -357,6 +362,7 @@
                 
                 span {
                     color: #cccccc;
+                    line-height: 1.5;
                 }
                 
                 .footer-newsletter {

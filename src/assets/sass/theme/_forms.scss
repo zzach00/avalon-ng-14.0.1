@@ -47,7 +47,6 @@ body {
         background-color: $primaryColor;
         border: 1px solid transparent;
         font-size: $fontSize;
-        @include transition(background-color $transitionDuration);
         
         &:enabled:hover {
             background-color: darken($primaryColor,5%);
@@ -128,86 +127,89 @@ body {
     
     .success-btn.ui-button,
     .success-btn > .ui-button {
-        background-color: #5cb85c;
-        border-color: #4cae4c;
+        background-color: $successButtonBgColor;
+        border-color: $successButtonBorderColor;
+        color: $successButtonTextColor;
         
         &:hover {
-            background-color: #449d44;
-            border-color: #398439;
+            background-color: $successButtonHoverBgColor;
+            border-color: $successButtonHoverBorderColor;
         }
                     
         &:focus {
-            background-color: #449d44;
-            border-color: #255625;
+            background-color: $successButtonFocusBgColor;
+            border-color: $successButtonFocusBorderColor;
         }
         
         &:active {
-            background-color: #449d44;
-            border-color: #398439;
+            background-color: $successButtonActiveBgColor;
+            border-color: $successButtonActiveBorderColor;
         }
     }
     
     .info-btn.ui-button,
     .info-btn > .ui-button {
-        background-color: #5bc0de;
-        border-color: #46b8da;
+        background-color: $infoButtonBgColor;
+        border-color: $infoButtonBorderColor;
+        color: $infoButtonTextColor;
         
         &:hover {
-            background-color: #31b0d5;
-            border-color: #269abc;
+            background-color: $infoButtonHoverBgColor;
+            border-color: $infoButtonHoverBorderColor;
         }
                     
         &:focus {
-            background-color: #31b0d5;
-            border-color: #269abc;
+            background-color: $infoButtonFocusBgColor;
+            border-color: $infoButtonFocusBorderColor;
         }
         
         &:active {
-            background-color: #269abc;
-            border-color: #1b6d85;
+            background-color: $infoButtonActiveBgColor;
+            border-color: $infoButtonActiveBorderColor;
         }
     }
     
     .warning-btn.ui-button,,
     .warning-btn > .ui-button {
-        background-color: #f0ad4e;
-        border-color: #eea236;
+        background-color: $warningButtonBgColor;
+        border-color: $warningButtonBorderColor;
+        color: $warningButtonTextColor;
         
         &:hover {
-            background-color: #ec971f;
-            border-color: #d58512;
+            background-color: $warningButtonHoverBgColor;
+            border-color: $warningButtonHoverBorderColor;
         }
                     
         &:focus {
-            background-color: #ec971f;
-            border-color: #d58512;
+            background-color: $warningButtonFocusBgColor;
+            border-color: $warningButtonFocusBorderColor;
         }
         
         &:active {
-            background-color: #d58512;
-            border-color: #985f0d;
+            background-color: $warningButtonActiveBgColor;
+            border-color: $warningButtonActiveBorderColor;
         }
     }
     
     .danger-btn.ui-button,,
     .danger-btn > .ui-button {
-        background-color: #d9534f;
-        border-color: #d43f3a;
+        background-color: $dangerButtonBgColor;
+        border-color: $dangerButtonBorderColor;
+        color: $dangerButtonTextColor;
         
         &:hover {
-            background-color: #c9302c;
-            border-color: #ac2925;
+            background-color: $dangerButtonHoverBgColor;
+            border-color: $dangerButtonHoverBorderColor;
         }
                     
         &:focus {
-            background-color: #c9302c;
-            border-color: #ac2925;
+            background-color: $dangerButtonFocusBgColor;
+            border-color: $dangerButtonFocusBorderColor;
         }
         
         &:active {
-            background-color: #ac2925;
-            border-color: #761c19;
-            @include shadow(inset 0 3px 5px rgba(0,0,0,.125));
+            background-color: $dangerButtonActiveBgColor;
+            border-color: $dangerButtonActiveBorderColor;
         }
     }
     
@@ -961,7 +963,7 @@ body {
         background-color: $toggleButtonBgColor;
         color: $textColor;
         border: 1px solid $toggleButtonBorderColor;
-        @include transition(border-color $transitionDuration, background-color $transitionDuration);
+        @include transition(border-color $transitionDuration);
         
         &:not(.ui-state-disabled):not(.ui-state-active) {
             &:hover, &.ui-state-focus {
@@ -997,7 +999,7 @@ body {
             border: 1px solid $toggleButtonBorderColor;
             border-right-width: 0;
             @include border-radius(0px);
-            @include transition(border-color $transitionDuration, background-color $transitionDuration);
+            @include transition(border-color $transitionDuration);
             
             &:not(.ui-state-disabled):not(.ui-state-active) {
                 &:hover, &.ui-state-focus {
