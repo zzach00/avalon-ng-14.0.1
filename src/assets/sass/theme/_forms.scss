@@ -126,7 +126,8 @@ body {
     }
     
     .success-btn.ui-button,
-    .success-btn > .ui-button {
+    .success-btn > .ui-button,
+    .ui-splitbutton.success-btn > .ui-button {
         background-color: $successButtonBgColor;
         border-color: $successButtonBorderColor;
         color: $successButtonTextColor;
@@ -148,7 +149,8 @@ body {
     }
     
     .info-btn.ui-button,
-    .info-btn > .ui-button {
+    .info-btn > .ui-button,
+    .ui-splitbutton.info-btn > .ui-button {
         background-color: $infoButtonBgColor;
         border-color: $infoButtonBorderColor;
         color: $infoButtonTextColor;
@@ -169,8 +171,9 @@ body {
         }
     }
     
-    .warning-btn.ui-button,,
-    .warning-btn > .ui-button {
+    .warning-btn.ui-button,
+    .warning-btn > .ui-button,
+    .ui-splitbutton.warning-btn > .ui-button {
         background-color: $warningButtonBgColor;
         border-color: $warningButtonBorderColor;
         color: $warningButtonTextColor;
@@ -191,8 +194,9 @@ body {
         }
     }
     
-    .danger-btn.ui-button,,
-    .danger-btn > .ui-button {
+    .danger-btn.ui-button,
+    .danger-btn > .ui-button,
+    .ui-splitbutton.danger-btn > .ui-button {
         background-color: $dangerButtonBgColor;
         border-color: $dangerButtonBorderColor;
         color: $dangerButtonTextColor;
