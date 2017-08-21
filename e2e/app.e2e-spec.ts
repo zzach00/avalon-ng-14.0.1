@@ -1,10 +1,10 @@
-import { UltimaPage } from './app.po';
+import { AvalonPage } from './app.po';
 
-describe('ultima App', function() {
-  let page: UltimaPage;
+describe('Avalon App', function() {
+  let page: AvalonPage;
 
   beforeEach(() => {
-    page = new UltimaPage();
+    page = new AvalonPage();
   });
 
 });
