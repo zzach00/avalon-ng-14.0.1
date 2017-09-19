@@ -1,5 +1,5 @@
-import {Component,Input,OnInit,EventEmitter,ViewChild} from '@angular/core';
-import {trigger,state,style,transition,animate} from '@angular/animations';
+import {Component, Input, OnInit, EventEmitter, ViewChild} from '@angular/core';
+import {trigger, state, style, transition, animate} from '@angular/animations';
 import {Location} from '@angular/common';
 import {Router} from '@angular/router';
 import {MenuItem} from 'primeng/primeng';
@@ -18,12 +18,12 @@ export class AppMenuComponent implements OnInit {
     model: any[];
 
     constructor(public app: AppComponent) {}
-    
+
     ngOnInit() {
         this.model = [
             {label: 'Dashboard', icon: 'fa fa-fw fa-home', routerLink: ['/']},
             {
-                label: 'Customization', icon: 'fa fa-fw fa-bars' ,badge: '8',
+                label: 'Customization', icon: 'fa fa-fw fa-bars' , badge: '8',
                 items: [
                     {label: 'Static Menu', icon: 'fa fa-fw fa-bars',  command: () => this.app.changeToStaticMenu()},
                     {label: 'Overlay Menu', icon: 'fa fa-fw fa-bars',  command: () => this.app.changeToOverlayMenu()},
@@ -39,35 +39,38 @@ export class AppMenuComponent implements OnInit {
                 label: 'Layout Colors', icon: 'fa fa-fw fa-magic',
                 items: [
                     {
-                        label: 'Flat', 
+                        label: 'Flat',
                         icon: 'fa fa-fw fa-circle',
                         items: [
-                            {label: 'Blue', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('blue')}},
-                            {label: 'Purple', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('purple')}},
-                            {label: 'Cyan', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('cyan')}},
-                            {label: 'Indigo', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('indigo')}},
-                            {label: 'Teal', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('teal')}},
-                            {label: 'Pink', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('pink')}},
-                            {label: 'Lime', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('lime')}},
-                            {label: 'Green', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('green')}},
-                            {label: 'Amber', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('amber')}},
-                            {label: 'Dark Grey', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('darkgrey')}},
+                            {label: 'Blue', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('blue'); }},
+                            {label: 'Purple', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('purple'); }},
+                            {label: 'Cyan', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('cyan'); }},
+                            {label: 'Indigo', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('indigo'); }},
+                            {label: 'Teal', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('teal'); }},
+                            {label: 'Pink', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('pink'); }},
+                            {label: 'Lime', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('lime'); }},
+                            {label: 'Green', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('green'); }},
+                            {label: 'Amber', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('amber'); }},
+                            {label: 'Dark Grey', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('darkgrey'); }},
                         ]
                     },
                     {
-                        label: 'Special', 
+                        label: 'Special',
                         icon: 'fa fa-fw fa-fire',
                         items: [
-                            {label: 'Influenza', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('influenza', true)}},
-                            {label: 'Suzy', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('suzy', true)}},
-                            {label: 'Calm', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('calm', true)}},
-                            {label: 'Crimson', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('crimson', true)}},
-                            {label: 'Night', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('night', true)}},
-                            {label: 'Skyling', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('skyline', true)}},
-                            {label: 'Sunkist', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('sunkist', true)}},
-                            {label: 'Little Leaf', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('littleleaf', true)}},
-                            {label: 'Joomla', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('joomla', true)}},
-                            {label: 'Firewatch', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('firewatch', true)}}
+                            {label: 'Influenza', icon: 'fa fa-fw fa-paint-brush',
+                                command: (event) => {this.changeLayout('influenza', true); }},
+                            {label: 'Suzy', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('suzy', true); }},
+                            {label: 'Calm', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('calm', true); }},
+                            {label: 'Crimson', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('crimson', true); }},
+                            {label: 'Night', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('night', true); }},
+                            {label: 'Skyling', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('skyline', true); }},
+                            {label: 'Sunkist', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('sunkist', true); }},
+                            {label: 'Little Leaf', icon: 'fa fa-fw fa-paint-brush',
+                                command: (event) => {this.changeLayout('littleleaf', true); }},
+                            {label: 'Joomla', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('joomla', true); }},
+                            {label: 'Firewatch', icon: 'fa fa-fw fa-paint-brush',
+                                command: (event) => {this.changeLayout('firewatch', true); }}
                         ]
                     }
                 ]
@@ -75,20 +78,20 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Themes', icon: 'fa fa-fw fa-paint-brush', badge: '5',
                 items: [
-                    {label: 'Blue', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('blue')}},
-                    {label: 'Cyan', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('cyan')}},
-                    {label: 'Indigo', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('indigo')}},
-                    {label: 'Purple', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('purple')}},
-                    {label: 'Teal', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('teal')}},
-                    {label: 'Orange', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('orange')}},
-                    {label: 'Deep Purple', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('deeppurple')}},
-                    {label: 'Light Blue', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('lightblue')}},
-                    {label: 'Green', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('green')}},
-                    {label: 'Light Green', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('lightgreen')}},
-                    {label: 'Lime', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('lime')}},
-                    {label: 'Amber', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('amber')}},
-                    {label: 'Brown', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('brown')}},
-                    {label: 'Dark Grey', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('darkgrey')}},
+                    {label: 'Blue', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('blue'); }},
+                    {label: 'Cyan', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('cyan'); }},
+                    {label: 'Indigo', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('indigo'); }},
+                    {label: 'Purple', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('purple'); }},
+                    {label: 'Teal', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('teal'); }},
+                    {label: 'Orange', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('orange'); }},
+                    {label: 'Deep Purple', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('deeppurple'); }},
+                    {label: 'Light Blue', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('lightblue'); }},
+                    {label: 'Green', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('green'); }},
+                    {label: 'Light Green', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('lightgreen'); }},
+                    {label: 'Lime', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('lime'); }},
+                    {label: 'Amber', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('amber'); }},
+                    {label: 'Brown', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('brown'); }},
+                    {label: 'Dark Grey', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('darkgrey'); }},
                 ]
             },
             {
@@ -114,7 +117,8 @@ export class AppMenuComponent implements OnInit {
                     {label: 'Login Page', icon: 'fa fa-fw fa-sign-in', url: 'assets/pages/login.html', target: '_blank'},
                     {label: 'Error Page', icon: 'fa fa-fw fa-exclamation-circle', url: 'assets/pages/error.html', target: '_blank'},
                     {label: 'Not Found Page', icon: 'fa fa-fw fa-times', url: 'assets/pages/notfound.html', target: '_blank'},
-                    {label: 'Access Denied Page', icon: 'fa fa-fw fa-exclamation-triangle', url: 'assets/pages/access.html', target: '_blank'}
+                    {label: 'Access Denied Page', icon: 'fa fa-fw fa-exclamation-triangle',
+                        url: 'assets/pages/access.html', target: '_blank'}
                 ]
             },
             {
@@ -168,27 +172,29 @@ export class AppMenuComponent implements OnInit {
     }
 
     changeTheme(theme: string) {
-        let themeLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('theme-css');
-        
-        themeLink.href = 'assets/theme/theme-' + theme +'.css';
+        const themeLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('theme-css');
+
+        themeLink.href = 'assets/theme/theme-' + theme + '.css';
     }
-    
+
     changeLayout(layout: string, special?: boolean) {
-        let layoutLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('layout-css');
-        layoutLink.href = 'assets/layout/css/layout-' + layout +'.css';
-        
-        if(special) {
+        const layoutLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('layout-css');
+        layoutLink.href = 'assets/layout/css/layout-' + layout + '.css';
+
+        if (special) {
             this.app.darkMenu = true;
         }
     }
 }
 
 @Component({
-    selector: '[app-submenu]',
+	/* tslint:disable:component-selector */selector: '[app-submenu]',
+	/* tslint:enable:component-selector */
     template: `
         <ng-template ngFor let-child let-i="index" [ngForOf]="(root ? item : item.items)">
             <li [ngClass]="{'active-menuitem': isActive(i)}" [class]="child.badgeStyleClass" *ngIf="child.visible === false ? false : true">
-                <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter(i)" class="ripplelink" *ngIf="!child.routerLink" 
+                <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter(i)"
+                   class="ripplelink" *ngIf="!child.routerLink"
                     [attr.tabindex]="!visible ? '-1' : null" [attr.target]="child.target">
                     <i [ngClass]="child.icon"></i><span>{{child.label}}</span>
                     <i class="fa fa-fw fa-angle-down menuitem-toggle-icon" *ngIf="child.items"></i>
@@ -196,7 +202,8 @@ export class AppMenuComponent implements OnInit {
                 </a>
 
                 <a (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter(i)" class="ripplelink" *ngIf="child.routerLink"
-                    [routerLink]="child.routerLink" routerLinkActive="active-menuitem-routerlink" [routerLinkActiveOptions]="{exact: true}" [attr.tabindex]="!visible ? '-1' : null" [attr.target]="child.target">
+                    [routerLink]="child.routerLink" routerLinkActive="active-menuitem-routerlink"
+                   [routerLinkActiveOptions]="{exact: true}" [attr.tabindex]="!visible ? '-1' : null" [attr.target]="child.target">
                     <i [ngClass]="child.icon"></i><span>{{child.label}}</span>
                     <i class="fa fa-fw fa-angle-down menuitem-toggle-icon" *ngIf="child.items"></i>
                     <span class="menuitem-badge" *ngIf="child.badge">{{child.badge}}</span>
@@ -207,7 +214,8 @@ export class AppMenuComponent implements OnInit {
                 </div>
                 <div class="submenu-arrow" *ngIf="child.items"></div>
                 <ul app-submenu [item]="child" *ngIf="child.items" [visible]="isActive(i)" [reset]="reset"
-                    [@children]="(app.isSlim()||app.isHorizontal())&&root ? isActive(i) ? 'visible' : 'hidden' : isActive(i) ? 'visibleAnimated' : 'hiddenAnimated'"></ul>
+                    [@children]="(app.isSlim()||app.isHorizontal())&&root ? isActive(i) ?
+                     'visible' : 'hidden' : isActive(i) ? 'visibleAnimated' : 'hiddenAnimated'"></ul>
             </li>
         </ng-template>
     `,
@@ -233,60 +241,59 @@ export class AppMenuComponent implements OnInit {
 export class AppSubMenuComponent {
 
     @Input() item: MenuItem;
-    
+
     @Input() root: boolean;
-    
+
     @Input() visible: boolean;
 
     _reset: boolean;
-        
+
     activeIndex: number;
 
     constructor(public app: AppComponent) {}
-        
-    itemClick(event: Event, item: MenuItem, index: number) {        
-        if(this.root) {
+
+    itemClick(event: Event, item: MenuItem, index: number) {
+        if (this.root) {
             this.app.menuHoverActive = !this.app.menuHoverActive;
         }
-        
-        //avoid processing disabled items
-        if(item.disabled) {
+
+        // avoid processing disabled items
+        if (item.disabled) {
             event.preventDefault();
             return true;
         }
-        
-        //activate current item and deactivate active sibling if any
+
+        // activate current item and deactivate active sibling if any
         this.activeIndex = (this.activeIndex === index) ? null : index;
-                
-        //execute command
-        if(item.command) {
+
+        // execute command
+        if (item.command) {
             item.command({originalEvent: event, item: item});
         }
 
-        //prevent hash change
-        if(item.items || (!item.url && !item.routerLink)) {
+        // prevent hash change
+        if (item.items || (!item.url && !item.routerLink)) {
             event.preventDefault();
         }
-        
-        //hide menu
-        if(!item.items) {
-            if(this.app.isHorizontal() || this.app.isSlim())
-                this.app.resetMenu = true;
-            else
-                this.app.resetMenu = false;
-                
+
+        // hide menu
+        if (!item.items) {
+            if (this.app.isHorizontal() || this.app.isSlim()) {
+                this.app.resetMenu = true; } else {
+                this.app.resetMenu = false; }
+
             this.app.overlayMenuActive = false;
             this.app.staticMenuMobileActive = false;
             this.app.menuHoverActive = !this.app.menuHoverActive;
         }
     }
-    
+
     onMouseEnter(index: number) {
-        if(this.root && this.app.menuHoverActive && (this.app.isHorizontal() || this.app.isSlim())) {
+        if (this.root && this.app.menuHoverActive && (this.app.isHorizontal() || this.app.isSlim())) {
             this.activeIndex = index;
         }
     }
-    
+
     isActive(index: number): boolean {
         return this.activeIndex === index;
     }
@@ -295,10 +302,10 @@ export class AppSubMenuComponent {
         return this._reset;
     }
 
-    set reset(val:boolean) {
+    set reset(val: boolean) {
         this._reset = val;
 
-        if(this._reset && (this.app.isHorizontal() || this.app.isSlim())) {
+        if (this._reset && (this.app.isHorizontal() || this.app.isSlim())) {
             this.activeIndex = null;
         }
     }

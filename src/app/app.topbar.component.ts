@@ -5,29 +5,30 @@ import {AppComponent} from './app.component';
     selector: 'app-topbar',
     template: `
         <div class="topbar clearfix">
-            <div class="topbar-left">      
+            <div class="topbar-left">
                 <img src="assets/layout/images/logo.png" class="topbar-logo" />
             </div>
 
             <div class="topbar-right">
-                <a id="menu-button" href="#" (click)="app.onMenuButtonClick($event)" [ngClass]="{'menu-button-rotate': app.rotateMenuButton}">
+                <a id="menu-button" href="#" (click)="app.onMenuButtonClick($event)"
+                   [ngClass]="{'menu-button-rotate': app.rotateMenuButton}">
                     <i class="fa fa-angle-left"></i>
-                </a>
-                                
+               </a>
+
                 <a id="topbar-menu-button" href="#" (click)="app.onTopbarMenuButtonClick($event)">
                     <i class="fa fa-bars"></i>
                 </a>
-                                
+
                 <ul class="topbar-items fadeInDown" [ngClass]="{'topbar-items-visible': app.topbarMenuActive}">
                     <li #profile class="profile-item" *ngIf="app.profileMode==='top'||app.isHorizontal()"
                         [ngClass]="{'active-top-menu':app.activeTopbarItem === profile}">
 
-                        <a href="#" (click)="app.onTopbarItemClick($event,profile)">                            
+                        <a href="#" (click)="app.onTopbarItemClick($event,profile)">
                             <img class="profile-image" src="assets/layout/images/avatar.png" />
                             <span class="topbar-item-name">Isabel Lopez</span>
                             <span class="topbar-item-role">Marketing</span>
                         </a>
-                        
+
                         <ul class="layout-menu fadeInDown">
                             <li role="menuitem">
                                 <a href="#">
@@ -56,7 +57,7 @@ import {AppComponent} from './app.component';
                         </ul>
                     </li>
                     <li #settings [ngClass]="{'active-top-menu':app.activeTopbarItem === settings}">
-                        <a href="#" (click)="app.onTopbarItemClick($event,settings)"> 
+                        <a href="#" (click)="app.onTopbarItemClick($event,settings)">
                             <i class="topbar-icon fa fa-fw fa-cog"></i>
                             <span class="topbar-item-name">Settings</span>
                         </a>
@@ -88,7 +89,7 @@ import {AppComponent} from './app.component';
                         </ul>
                     </li>
                     <li #messages [ngClass]="{'active-top-menu':app.activeTopbarItem === messages}">
-                        <a href="#" (click)="app.onTopbarItemClick($event,messages)"> 
+                        <a href="#" (click)="app.onTopbarItemClick($event,messages)">
                             <i class="topbar-icon animated swing fa fa-fw fa-envelope-o"></i>
                             <span class="topbar-badge animated rubberBand">5</span>
                             <span class="topbar-item-name">Messages</span>
@@ -127,7 +128,7 @@ import {AppComponent} from './app.component';
                         </ul>
                     </li>
                     <li #notifications [ngClass]="{'active-top-menu':app.activeTopbarItem === notifications}">
-                        <a href="#" (click)="app.onTopbarItemClick($event,notifications)"> 
+                        <a href="#" (click)="app.onTopbarItemClick($event,notifications)">
                             <i class="topbar-icon fa fa-fw fa-bell-o"></i>
                             <span class="topbar-badge animated rubberBand">4</span>
                             <span class="topbar-item-name">Notifications</span>
