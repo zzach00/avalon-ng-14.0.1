@@ -3,23 +3,21 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { AppTopBar } from './app.topbar.component';
-import { AppRightPanel} from './app.rightpanel.component';
-import { InlineProfileComponent } from './app.profile.component';
-import { AppFooter } from './app.footer.component';
-import { AppMenuComponent, AppSubMenu } from './app.menu.component';
+import { AppTopBarComponent } from './app.topbar.component';
+import { AppProfileComponent } from './app.profile.component';
+import { AppFooterComponent } from './app.footer.component';
+import { AppMenuComponent, AppSubMenuComponent } from './app.menu.component';
 
 describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
         imports: [ RouterTestingModule ],
         declarations: [ AppComponent,
-                AppTopBar,
+                AppTopBarComponent,
                 AppMenuComponent,
-                AppSubMenu,
-                AppFooter,
-                InlineProfileComponent,
-                AppRightPanel
+                AppSubMenuComponent,
+                AppFooterComponent,
+                AppProfileComponent
             ],
     });
     TestBed.compileComponents();
