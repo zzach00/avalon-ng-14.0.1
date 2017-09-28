@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
     .ui-inputtext {
         font-size: $fontSize;
@@ -1255,6 +1256,10 @@ body {
                 @include border-radius-right($borderRadius);
             }
         }
+    }
+
+    .ui-datepicker{
+        width: auto;
     }
     
     ::-webkit-input-placeholder {color:$textSecondaryColor}
