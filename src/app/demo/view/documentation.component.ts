@@ -6,6 +6,10 @@ import {Component} from '@angular/core';
         .docs h1 {
             margin-top: 30px;
         }
+        
+        .docs p {
+            line-height: 1.5;
+        }
 
         .docs pre {
             font-family: monospace;
