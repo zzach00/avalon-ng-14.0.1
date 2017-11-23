@@ -153,28 +153,3 @@
         }
     }
 }
-
-.ui-panelgrid {
-    &.form-group {
-        .ui-panelgrid-cell {
-            padding: 6px;
-        }
-    }
-    
-    &.ui-panelgrid-blank {
-        .ui-grid-responsive {
-            .ui-grid-row {
-                border: 0 none;
-            }
-        }
-    }
-}
-
-.ui-selectoneradio, .ui-selectmanycheckbox  {
-    &.form-group {
-        .ui-grid-row > div {
-            padding: 6px;
-        }
-    }
-}
-

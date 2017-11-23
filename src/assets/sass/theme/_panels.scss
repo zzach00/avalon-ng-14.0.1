@@ -109,21 +109,6 @@ body {
                 border-color: $headerHoverBorderColor;
                 background-color: $headerHoverBgColor;
             }
-            
-            > .fa {
-                color: $textColor;
-                
-                &.fa-caret-right {
-                    @include icon_override("\f054");
-                    font-size: $fontSize + 2;
-                    
-                }
-                
-                &.fa-caret-down {
-                    @include icon_override("\f078");
-                    font-size: $fontSize + 2;
-                }
-            }
                         
             &.ui-state-active {
                 @include border-radius-bottom(0);
@@ -131,7 +116,6 @@ body {
             
             > a {
                 padding: $headerPadding;
-                padding-left: 2em;
                 font-size: $fontSize + 2;
                 color: $textColor;
                 outline: 0 none;   
@@ -140,6 +124,26 @@ body {
                     border-color: $headerHoverBorderColor;
                     background-color: $headerHoverBgColor;
                 } 
+                
+                .ui-accordion-header-text {
+                    vertical-align: middle;
+                }
+                
+                .ui-accordion-toggle-icon {
+                    color: $textColor;
+                    vertical-align: middle;
+                    
+                    &.fa-caret-right {
+                        @include icon_override("\f054");
+                        font-size: $fontSize + 2;
+                        
+                    }
+                    
+                    &.fa-caret-down {
+                        @include icon_override("\f078");
+                        font-size: $fontSize + 2;
+                    }
+                }
             }
         }
         
