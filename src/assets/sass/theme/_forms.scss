@@ -109,17 +109,17 @@ body {
             background-color: #ffffff;
             border-color: #cccccc;
             
-            &:hover {
+            &:enabled:hover {
                 background-color: #e6e6e6;
                 border-color: #adadad;
             }
                         
-            &:focus {
+            &:enabled:focus {
                 background-color: #e6e6e6;
                 border-color: #adadad;
             }
             
-            &:active {
+            &:enabled:active {
                 background-color: #d4d4d4;
                 border-color: #8c8c8c;
             }
@@ -133,17 +133,17 @@ body {
         border-color: $successButtonBorderColor;
         color: $successButtonTextColor;
         
-        &:hover {
+        &:enabled:hover {
             background-color: $successButtonHoverBgColor;
             border-color: $successButtonHoverBorderColor;
         }
                     
-        &:focus {
+        &:enabled:focus {
             background-color: $successButtonFocusBgColor;
             border-color: $successButtonFocusBorderColor;
         }
         
-        &:active {
+        &:enabled:active {
             background-color: $successButtonActiveBgColor;
             border-color: $successButtonActiveBorderColor;
         }
@@ -156,17 +156,17 @@ body {
         border-color: $infoButtonBorderColor;
         color: $infoButtonTextColor;
         
-        &:hover {
+        &:enabled:hover {
             background-color: $infoButtonHoverBgColor;
             border-color: $infoButtonHoverBorderColor;
         }
                     
-        &:focus {
+        &:enabled:focus {
             background-color: $infoButtonFocusBgColor;
             border-color: $infoButtonFocusBorderColor;
         }
         
-        &:active {
+        &:enabled:active {
             background-color: $infoButtonActiveBgColor;
             border-color: $infoButtonActiveBorderColor;
         }
@@ -179,17 +179,17 @@ body {
         border-color: $warningButtonBorderColor;
         color: $warningButtonTextColor;
         
-        &:hover {
+        &:enabled:hover {
             background-color: $warningButtonHoverBgColor;
             border-color: $warningButtonHoverBorderColor;
         }
                     
-        &:focus {
+        &:enabled:focus {
             background-color: $warningButtonFocusBgColor;
             border-color: $warningButtonFocusBorderColor;
         }
         
-        &:active {
+        &:enabled:active {
             background-color: $warningButtonActiveBgColor;
             border-color: $warningButtonActiveBorderColor;
         }
@@ -202,17 +202,17 @@ body {
         border-color: $dangerButtonBorderColor;
         color: $dangerButtonTextColor;
         
-        &:hover {
+        &:enabled:hover {
             background-color: $dangerButtonHoverBgColor;
             border-color: $dangerButtonHoverBorderColor;
         }
                     
-        &:focus {
+        &:enabled:focus {
             background-color: $dangerButtonFocusBgColor;
             border-color: $dangerButtonFocusBorderColor;
         }
         
-        &:active {
+        &:enabled:active {
             background-color: $dangerButtonActiveBgColor;
             border-color: $dangerButtonActiveBorderColor;
         }
