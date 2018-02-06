@@ -131,7 +131,260 @@ body {
             position: absolute;
         }
     }
-    
+
+
+    .ui-menu .ui-menuitem-link,
+    .ui-menubar .ui-menuitem-link,
+    .ui-tieredmenu .ui-menuitem-link,
+    .ui-contextmenu .ui-menuitem-link,
+    .ui-megamenu .ui-menuitem-link,
+    .ui-slidemenu .ui-menuitem-link {
+        padding: $listItemPadding;
+        color: $textColor;
+        @include border-radius(0);
+
+        &:hover {
+            @include menu-item-hover();
+        }
+
+        &:focus {
+            @include menu-item-hover();
+        }
+        .ui-menuitem-text {
+            vertical-align: middle;
+        }
+        .ui-submenu-icon {
+            right: 1.429em;
+        }
+    }
+
+    .ui-menubar, .ui-contextmenu,
+    .ui-slidemenu, .ui-tieredmenu {
+        .ui-submenu-list {
+            padding: .357em 0;
+
+            &.ui-shadow, .ui-shadow {
+                @include overlay();
+            }
+
+            .ui-menuitem {
+                margin: 0;
+            }
+        }
+    }
+
+    .ui-menu {
+        width: 100%;
+        padding: .357em 0;
+
+        .ui-menuitem {
+            margin: 0;
+
+            .ui-menuitem-link {
+                .ui-menuitem-icon {
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        &.ui-shadow, .ui-shadow {
+            @include overlay();
+        }
+
+        .ui-submenu-header {
+            border: 0 none;
+            margin: 0;
+            padding: $listItemPadding;
+            border-radius: 0;
+            background-color: $dividerColor;
+        }
+    }
+
+    .ui-menubar {
+        padding: .357em 0;
+        background-color: $headerBgColor;
+
+        .ui-menubar-root-list {
+            &>.ui-menuitem {
+                > .ui-menuitem-link {
+                    padding: 15px;
+                    line-height: $fontSize + 1;
+                    color: $textSecondaryColor;
+
+                    &:hover {
+                        color: $textColor;
+                    }
+                }
+
+                &:first-child {
+                    .ui-menuitem-link {
+                        @include border-radius(0);
+                        @include border-radius-left($borderRadius);
+                    }
+                }
+
+                &:last-child {
+                    .ui-menuitem-link {
+                        @include border-radius(0);
+                    }
+                }
+            }
+        }
+
+        .ui-menuitem {
+            .ui-menuitem-link {
+                .ui-menuitem-icon {
+                    vertical-align: middle;
+                }
+
+                .ui-submenu-icon {
+                    vertical-align: middle;
+                    right: 1.429em;
+                }
+            }
+            &.ui-menuitem-active {
+                > .ui-menuitem-link {
+                    @include menu-item-hover();
+
+                    .ui-menuitem-icon {
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+
+    .ui-contextmenu {
+        padding: .357em 0;
+
+        .ui-menuitem {
+
+            .ui-menuitem-link {
+                .ui-menuitem-icon {
+                    vertical-align: middle;
+                }
+            }
+            &.ui-menuitem-active {
+                > .ui-menuitem-link {
+                    @include menu-item-hover();
+                }
+            }
+        }
+    }
+
+    .ui-tieredmenu {
+        padding: .357em 0;
+
+        .ui-menuitem {
+
+            .ui-menuitem-link {
+                .ui-menuitem-icon {
+                    vertical-align: middle;
+                }
+            }
+            &.ui-menuitem-active {
+                > .ui-menuitem-link {
+                    @include menu-item-hover();
+                }
+            }
+        }
+    }
+
+    .ui-slidemenu {
+        padding: .357em 0;
+
+        .ui-menuitem {
+            margin: 0;
+
+            .ui-menuitem-link {
+                .ui-menuitem-icon {
+                    vertical-align: middle;
+                }
+            }
+
+            &.ui-menuitem-active {
+                > .ui-menuitem-link {
+                    @include menu-item-hover();
+                }
+            }
+        }
+
+        .ui-slidemenu-backward {
+            padding: $headerPadding;
+            width: 100%;
+            color: $textColor;
+            background-color: $dividerColor;
+            box-sizing: border-box;
+            @include border-radius(0);
+            border: 0 none;
+
+            &:hover {
+                background-color: darken($dividerColor, 10%);
+            }
+        }
+    }
+    .ui-megamenu {
+        padding: .357em 0;
+        background-color: $headerBgColor;
+
+        .ui-megamenu-submenu-header {
+            border-radius: 0;
+            padding: .5em;
+            border: 0 none;
+            background-color: $dividerColor;;
+        }
+
+        .ui-submenu-list {
+            padding: 0;
+            border: 0 none;
+
+            .ui-menuitem {
+                margin: 0;
+            }
+        }
+        .ui-megamenu-submenu {
+            .ui-menuitem {
+                .ui-menuitem-link {
+                    padding: $listItemPadding;
+                }
+            }
+        }
+
+        .ui-menuitem {
+            margin: 0;
+
+            .ui-menuitem-link {
+                padding: 15px;
+                line-height: $fontSize + 1;
+                color: $textSecondaryColor;
+
+                &:hover {
+                    color: $textColor;
+                }
+                .ui-menuitem-icon {
+                    vertical-align: middle;
+                }
+
+                .ui-submenu-icon {
+                    vertical-align: middle;
+                }
+            }
+
+            &.ui-menuitem-active {
+                > .ui-menuitem-link {
+                    @include menu-item-hover();
+                }
+            }
+        }
+    }
+    .ui-megamenu-vertical .ui-megamenu-root-list>.ui-menuitem>.ui-menuitem-link {
+
+        .ui-submenu-icon {
+            right: 1.429em;
+        }
+    }
+
+    /*
     .ui-menu {
         padding: .357em 0;
         
@@ -282,7 +535,7 @@ body {
             }
         }
     }
-    
+    */
     .ui-tabmenu {
         padding: 0;
         background: $headerBgColor;
@@ -368,6 +621,7 @@ body {
         }
         
         .ui-panelmenu-content {
+            padding: .2em 0;
             .ui-menuitem-link {
                 padding: $listItemPadding;
                 color: $textColor;
