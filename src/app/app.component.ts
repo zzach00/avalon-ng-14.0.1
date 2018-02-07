@@ -1,4 +1,5 @@
 import {Component, AfterViewInit, ElementRef, Renderer, ViewChild, OnDestroy} from '@angular/core';
+import {ScrollPanel} from 'primeng/primeng';
 
 enum MenuOrientation {
     STATIC,
@@ -7,16 +8,12 @@ enum MenuOrientation {
     HORIZONTAL
 }
 
-declare var jQuery: any;
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit, OnDestroy {
-
-    layoutCompact = true;
+export class AppComponent implements AfterViewInit {
 
     layoutMode: MenuOrientation = MenuOrientation.STATIC;
 
@@ -34,10 +31,6 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
     staticMenuMobileActive: boolean;
 
-    rightPanelActive: boolean;
-
-    rightPanelClick: boolean;
-
     layoutMenuScroller: HTMLDivElement;
 
     menuClick: boolean;
@@ -50,16 +43,12 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
     menuHoverActive: boolean;
 
-    @ViewChild('layoutMenuScroller') layoutMenuScrollerViewChild: ElementRef;
+    @ViewChild('layoutMenuScroller') layoutMenuScrollerViewChild: ScrollPanel;
 
     constructor(public renderer: Renderer) {}
 
     ngAfterViewInit() {
-        this.layoutMenuScroller = <HTMLDivElement> this.layoutMenuScrollerViewChild.nativeElement;
-
-        setTimeout(() => {
-            jQuery(this.layoutMenuScroller).nanoScroller({flash: true});
-        }, 10);
+        setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 100);
     }
 
     onLayoutClick() {
@@ -80,13 +69,8 @@ export class AppComponent implements AfterViewInit, OnDestroy {
             this.menuHoverActive = false;
         }
 
-        if (!this.rightPanelClick) {
-            this.rightPanelActive = false;
-        }
-
         this.topbarItemClick = false;
         this.menuClick = false;
-        this.rightPanelClick = false;
     }
 
     onMenuButtonClick(event) {
@@ -110,9 +94,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         this.resetMenu = false;
 
         if (!this.isHorizontal()) {
-            setTimeout(() => {
-                jQuery(this.layoutMenuScroller).nanoScroller();
-            }, 500);
+            setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 450);
         }
     }
 
@@ -133,16 +115,6 @@ export class AppComponent implements AfterViewInit, OnDestroy {
             this.activeTopbarItem = item; }
 
         event.preventDefault();
-    }
-
-    onRightPanelButtonClick(event) {
-        this.rightPanelClick = true;
-        this.rightPanelActive = !this.rightPanelActive;
-        event.preventDefault();
-    }
-
-    onRightPanelClick() {
-        this.rightPanelClick = true;
     }
 
     hideOverlayMenu() {
@@ -190,10 +162,6 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
     changeToSlimMenu() {
         this.layoutMode = MenuOrientation.SLIM;
-    }
-
-    ngOnDestroy() {
-        jQuery(this.layoutMenuScroller).nanoScroller({flash: true});
     }
 
 }

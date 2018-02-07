@@ -155,28 +155,27 @@ body {
         @include background-gradient-left2right($menuGradientStartBgColor, $menuGradientEndBgColor);
         @include shadow(0 0 10px 0 rgba(0, 0, 0, 0.25));
         @include transition(margin-left .3s);
-                
-        > .nano {            
-            > .nano-content {
-                &.menu-scroll-content {
-                    display: block;
-                    height: 100%;
-                    position: relative;
-                    overflow: scroll;
-                    overflow-x: hidden;
-                }  
-                
-                .layout-main-menu {
-                    margin-top: 16px;
-                    padding-bottom: 120px;
-                }
+
+        .ui-scrollpanel {
+            background: transparent;
+            border-radius: 0;
+            border: none;
+            .ui-scrollpanel-bar {
+                background: #aaaaaa;
+                @include opacity(.3);
             }
-            
-            .nano-pane {
-                .nano-slider {
-                    background-color: #aaaaaa;
-                    @include opacity(.3);
-                }
+            .ui-scrollpanel-hidden {
+                display: block;
+                visibility: hidden;
+            }
+            .menu-scroll-content {
+                width: 253px;
+                padding-right: 18px;
+            }
+
+            .layout-main-menu {
+                margin-top: 16px;
+                padding-bottom: 120px;
             }
         }
                 
@@ -725,26 +724,23 @@ body {
                 height: auto;
                 background-color: $topbarLeftGradientEndBgColor;
                 @include shadow(0 2px 5px 0 rgba(0,0,0,0.26));
-                
-                > .nano {  
+
+                .ui-scrollpanel {
                     overflow: visible;
-                                                                             
-                    .nano-content {
-                        &.menu-scroll-content {
-                            display: inherit;
-                            height: auto;
-                            position: static;
+                    border: none;
+                    .ui-scrollpanel-wrapper {
+                        overflow: visible;
+                        .ui-scrollpanel-content {
                             overflow: visible;
-                            overflow-x: visible;
-                        }  
-                        
-                        .layout-main-menu {
-                            padding: 0;
                         }
                     }
-                    
-                    .nano-pane {
-                        display: none !important;
+
+                    .menu-scroll-content {
+                        width: 100%;
+                    }
+
+                    .layout-main-menu {
+                        padding-bottom: 0;
                     }
                 }
                 
@@ -948,17 +944,19 @@ body {
                 overflow: visible;
                 z-index: 100;
                 top: 0;
-                
-                .nano {
-                    overflow: visible;
-                    
-                    .nano-content {
+
+                .ui-scrollpanel {
+                    border: none;
+                    border-radius: 0;
+                    .ui-scrollpanel-wrapper {
                         overflow: visible;
-                        margin-right: 0px !important;
+                        .ui-scrollpanel-content {
+                            overflow: visible;
+                        }
                     }
-                    
-                    .nano-pane {
-                        display: none !important;
+
+                    .menu-scroll-content {
+                        width: 100%;
                     }
                 }
                 

@@ -1,7 +1,5 @@
 import {Component, Input, OnInit, EventEmitter, ViewChild} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
-import {Location} from '@angular/common';
-import {Router} from '@angular/router';
 import {MenuItem} from 'primeng/primeng';
 import {AppComponent} from './app.component';
 
@@ -274,6 +272,9 @@ export class AppSubMenuComponent {
 
         // prevent hash change
         if (item.items || (!item.url && !item.routerLink)) {
+            setTimeout(() => {
+                this.app.layoutMenuScrollerViewChild.moveBar();
+            }, 450);
             event.preventDefault();
         }
 
@@ -290,7 +291,8 @@ export class AppSubMenuComponent {
     }
 
     onMouseEnter(index: number) {
-        if (this.root && this.app.menuHoverActive && (this.app.isHorizontal() || this.app.isSlim())) {
+        if (this.root && this.app.menuHoverActive && (this.app.isHorizontal() || this.app.isSlim())
+            && !this.app.isMobile() && !this.app.isTablet()) {
             this.activeIndex = index;
         }
     }
