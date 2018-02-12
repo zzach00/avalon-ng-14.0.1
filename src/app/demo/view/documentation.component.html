@@ -1,9 +1,9 @@
 <div class="ui-g">
     <div class="ui-g-12">
-        <div class="card docs"> 
-            
+        <div class="card docs">
+
             <h1>Current Version</h1>
-            <p>Angular 5 and PrimeNG 5</p>
+            <p>Angular 5.2 and PrimeNG 5.2</p>
             
             <h1>Getting Started</h1>
             <p>Avalon is a true native application template for Angular and is distributed as a CLI project. If you don't have CLI installed already run the following commands to set it up. In case
@@ -61,12 +61,12 @@ Run 'ng help' for more options.
     &lt;app-topbar&gt;&lt;/app-topbar&gt;
 
     &lt;div class="layout-menu-container" [ngClass]="&#123;'layout-menu-dark':darkMenu&#125;" (click)="onMenuClick($event)"&gt;
-        &lt;div #layoutMenuScroller class="nano"&gt;
-            &lt;div class="nano-content menu-scroll-content"&gt;
+        &lt;p-scrollPanel #layoutMenuScroller [style]="&#123;height: '100%' &#125;"&gt;
+            &lt;div class="menu-scroll-content"&gt;
                 &lt;inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"&gt;&lt;/inline-profile&gt;
                 &lt;app-menu [reset]="resetMenu"&gt;&lt;/app-menu&gt;
             &lt;/div&gt;
-        &lt;/div&gt;
+        &lt;/p-scrollPanel&gt;
     &lt;/div&gt;
     
     &lt;div class="layout-main"&gt;
@@ -260,38 +260,18 @@ export class AppMenuComponent implements OnInit &#123;
             <h1>Integration with an Existing CLI Project</h1>
             <p>To setup avalon in an existing project, copy the <i>src/assets</i> folder to your projects folder with the same name 
                 and replace the contents of app.component.ts, app.component.html with their counterparts in avalon under <i>src/app</i> folder.</p>
-            
-            <p>Dependencies of avalon are listed below and needs to be added to package.json</p>
-<pre>
-"primeng": "^4.1.0",             //required: PrimeNG components
-"jquery": "^3.1.1",              //optional: schedule and nanoscroller
-"chart.js": "^2.4.0",            //optional: chart 
-"fullcalendar": "^3.1.0",        //optional: schedule
-"moment": "^2.17.1",             //optional: chart and schedule
-"quill": "^1.1.8",               //optional: editor
-</pre>
-                        
-            <p>Add PrimeNG CSS at styles section in angular-cli.json</p>
 
-<pre>
+            <p>Install PrimeNG</p>
+            <pre>
+npm install primeng@latest --save
+</pre>
+
+            <p>Add PrimeNG CSS at styles section in angular-cli.json.</p>
+
+            <pre>
 "styles": [
     "../node_modules/primeng/resources/primeng.min.css",        //required: PrimeNG components
-    "../node_modules/fullcalendar/dist/fullcalendar.min.css",   //optional: schedule
-    "../node_modules/quill/dist/quill.snow.css",                //optional: editor
-    "../node_modules/nanoscroller/bin/css/nanoscroller.css",    //optional: nanoscroller
     "styles.scss"                                               //your styles and overrides
-],
-</pre>
-
-            <p>Add the following scripts to your angular-cli.json</p>
-<pre>
-"scripts": [
-    "../node_modules/jquery/dist/jquery.js",                                //optional: schedule and nanoscroller
-    "../node_modules/nanoscroller/bin/javascripts/jquery.nanoscroller.js",  //optional: nanoscroller
-    "../node_modules/moment/moment.js",                                     //optional: schedule and charts
-    "../node_modules/chart.js/dist/Chart.js",                               //optional: charts
-    "../node_modules/fullcalendar/dist/fullcalendar.js",                    //optional: schedule
-    "../node_modules/quill/dist/quill.js"                                   //optional: editor
 ],
 </pre>
 
@@ -576,14 +556,24 @@ label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'red-badge'
                 scss files under sass folders to avoid maintenance issues after an update.</p>
             
             <h1>Migration Guide</h1>
+
+            <h4>5.0.0 to 5.2.0</h4>
+            <p>Adds support for PrimeNG 5.2.0 (e.g. TurboTable), replaces nanoscroller with PrimeNG ScrollPanel.</p>
+            <ul>
+                <li>Remove nanoscroller as it is replaced by ScrollPanel component of PrimeNG.</li>
+                <li>Update app.component.ts and app.component.html.</li>
+                <li>Update app.menu.component.ts.</li>
+                <li>Update layout css files.</li>
+                <li>Update theme css files.</li>
+            </ul>
             
-            <p>1.1.1 to 5.0.0</p>
+            <h4>1.1.1 to 5.0.0</h4>
             <ul>
                 <li>Update theme css files.</li>
                 <li>Update layout css files.</li>
             </ul>
             
-            <p>1.0.0 to 1.1.0</p>
+            <h4>1.0.0 to 1.1.0</h4>
             <ul>
                 <li>Update theme css files.</li>
             </ul>
