@@ -7,19 +7,18 @@ import { AppTopBarComponent } from './app.topbar.component';
 import { AppProfileComponent } from './app.profile.component';
 import { AppFooterComponent } from './app.footer.component';
 import { AppMenuComponent, AppSubMenuComponent } from './app.menu.component';
-import {ScrollPanel} from 'primeng/primeng';
+import { ScrollPanelModule } from 'primeng/primeng';
 
 describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-        imports: [ RouterTestingModule ],
+        imports: [ RouterTestingModule, ScrollPanelModule ],
         declarations: [ AppComponent,
                 AppTopBarComponent,
                 AppMenuComponent,
                 AppSubMenuComponent,
                 AppFooterComponent,
-                AppProfileComponent,
-            ScrollPanel
+                AppProfileComponent
             ],
     });
     TestBed.compileComponents();
