@@ -15,10 +15,23 @@ export class AppMenuComponent implements OnInit {
 
     model: any[];
 
+    theme = 'blue';
+
+    layout = 'blue';
+
+    version = 'v3';
+
     constructor(public app: AppComponent) {}
 
     ngOnInit() {
         this.model = [
+            {
+                label: 'Bootstrap Version', icon: 'fa fa-fw  fa-tags',
+                items: [
+                    {label: 'Bootstrap v3', icon: 'fa fa-fw fa-tag',  command: () => this.changeVersion('v3')},
+                    {label: 'Bootstrap v4', icon: 'fa fa-fw fa-tag',  command: () => this.changeVersion('v4')}
+                ]
+            },
             {label: 'Dashboard', icon: 'fa fa-fw fa-home', routerLink: ['/']},
             {
                 label: 'Customization', icon: 'fa fa-fw fa-bars' , badge: '8',
@@ -49,6 +62,13 @@ export class AppMenuComponent implements OnInit {
                             {label: 'Lime', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('lime'); }},
                             {label: 'Green', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('green'); }},
                             {label: 'Amber', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('amber'); }},
+                            {label: 'Brown', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('brown'); }},
+                            {label: 'Orange', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('orange'); }},
+                            {label: 'Deep Purple', icon: 'fa fa-fw fa-paint-brush',
+                                command: (event) => {this.changeLayout('deeppurple'); }},
+                            {label: 'Light Blue', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('lightblue'); }},
+                            {label: 'Light Green', icon: 'fa fa-fw fa-paint-brush',
+                                command: (event) => {this.changeLayout('lightgreen'); }},
                             {label: 'Dark Grey', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeLayout('darkgrey'); }},
                         ]
                     },
@@ -90,6 +110,7 @@ export class AppMenuComponent implements OnInit {
                     {label: 'Amber', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('amber'); }},
                     {label: 'Brown', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('brown'); }},
                     {label: 'Dark Grey', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('darkgrey'); }},
+                    {label: 'Pink', icon: 'fa fa-fw fa-paint-brush', command: (event) => {this.changeTheme('pink'); }},
                 ]
             },
             {
@@ -172,16 +193,46 @@ export class AppMenuComponent implements OnInit {
     changeTheme(theme: string) {
         const themeLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('theme-css');
 
-        themeLink.href = 'assets/theme/theme-' + theme + '.css';
+        if (this.version === 'v3') {
+            themeLink.href =  'assets/theme/theme-' + theme + '.css';
+        } else {
+            themeLink.href =  'assets/theme/theme-' + theme + '-v4' + '.css';
+        }
+
+        this.theme = theme;
+
     }
 
     changeLayout(layout: string, special?: boolean) {
         const layoutLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('layout-css');
-        layoutLink.href = 'assets/layout/css/layout-' + layout + '.css';
+
+        if (this.version === 'v3') {
+            layoutLink.href = 'assets/layout/css/layout-' + layout + '.css';
+        } else {
+            layoutLink.href = 'assets/layout/css/layout-' + layout + '-v4' + '.css';
+        }
+
+        this.layout = layout;
 
         if (special) {
             this.app.darkMenu = true;
         }
+    }
+
+    changeVersion(version: string) {
+        const themeLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('theme-css');
+        const layoutLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('layout-css');
+
+        if (version === 'v3') {
+            this.version = 'v3';
+            themeLink.href =  'assets/theme/theme-' + this.theme + '.css';
+            layoutLink.href = 'assets/layout/css/layout-' + this.layout + '.css';
+        } else {
+            themeLink.href =  'assets/theme/theme-' + this.theme + '-v4' + '.css';
+            layoutLink.href = 'assets/layout/css/layout-' + this.layout + '-v4' + '.css';
+            this.version = '-v4';
+        }
+
     }
 }
 
