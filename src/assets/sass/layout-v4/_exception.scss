@@ -4,19 +4,19 @@
 	position: relative;
 
     &.error {
-        background: url("\#{resource['avalon-layout:images/exception/bg-error.png']}") no-repeat;
+        background: url("../images/exception/bg-error.png") no-repeat;
         background-size: cover;
         background-position: center;
     }
     
     &.access {
-        background: url("\#{resource['avalon-layout:images/exception/bg-access.png']}") no-repeat;
+        background: url("../images/exception/bg-access.png") no-repeat;
         background-size: cover;
         background-position: center;
     }
     
     &.notfound {
-        background: url("\#{resource['avalon-layout:images/exception/bg-404.png']}") no-repeat;
+        background: url("../images/exception/bg-404.png") no-repeat;
         background-size: cover;
         background-position: center;
     }
@@ -82,6 +82,15 @@
 
             .information-text {
                 padding: 15px;
+
+                h3 {
+                    margin: 0;
+                    margin-bottom: 7px;
+                }
+
+                p {
+                    margin: 0;
+                }
             }
 
             p {
