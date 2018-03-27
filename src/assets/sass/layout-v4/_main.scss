@@ -153,7 +153,7 @@ body {
         top: 60px;
         height: 100%;
         @include background-gradient-left2right($menuGradientStartBgColor, $menuGradientEndBgColor);
-        border: 1px solid #cccccc;
+        border-right: 1px solid #cccccc;
         @include transition(margin-left .3s);
 
         .ui-scrollpanel {
@@ -872,7 +872,14 @@ body {
                 &.layout-menu-dark {
                     @include background-gradient-left2right($darkMenuGradientStartBgColor, $darkMenuGradientEndBgColor);
                                         
-                    ul.layout-menu {     
+                    ul.layout-menu {
+                        >li {
+                            >ul {
+                                border-left:none;
+                                border-right:none;
+                                border-bottom:none;
+                            }
+                        }
                         li {
                             a {
                                 color: $darkMenuMenuitemColor;
@@ -1004,7 +1011,7 @@ body {
                             background-color: #ffffff;
                             position: absolute;
                             top: 0;
-                            left: 74px;
+                            left: 73px;
                             min-width: 200px;
                             
                             li {
@@ -1065,9 +1072,11 @@ body {
                 }
                 
                 &.layout-menu-dark {
+                    border:none;
                     .layout-menu {
                         > li {
                             > ul {
+                                border:none;
                                 @include background-gradient-left2right($darkMenuGradientStartBgColor, $darkMenuGradientEndBgColor);
                             }
                         }
