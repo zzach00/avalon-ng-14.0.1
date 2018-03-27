@@ -283,40 +283,62 @@ npm install primeng@latest --save
             <p>Copy the <i>src/assets</i> folder to your application and include the resources listed above with a module bundler like webpack or using link-script tags.</p>
             <p>Finally copy the contents of app.component.html to your application's main component template such as <i>app/application.html</i> along
             with the sub components which are app.menu.component.ts, app.profile.components.ts, app.topbar.component.ts and app.footer.component.ts.</p>
-        
+
+
+            <h1>Bootstrap 3 and 4</h1>
+            <p>Avalon offers bootstrap 3 and 4 styling options for both the theme and layout. Default one is bootstrap 4 and add "-v4" suffix to the files you use to enable V4 support such as layout-blue-v4.css for the layout and theme-blue-v4.css for the theme.
+                Note that there is no dependency on Bootstrap since Avalon provides a theme on Bootstrap styling only without using Bootstrap directly. However it is
+                perfectly compatible with Bootstrap as they share the same look and feel.
+            </p>
+
             <h1>Theme</h1>    
-            <p>Avalon provides 15 PrimeNG themes out of the box, setup of a theme simple including the css of theme to your page that are located inside resources/theme folder.</p>
+            <p>Avalon provides 30 PrimeNG themes out of the box, setup of a theme simple including the css of theme to your application. All themes are located inside are located inside assets/theme folder.</p>
             
             <ul>
                 <li>theme-amber</li>
+                <li>theme-amber-v4</li>
                 <li>theme-blue</li>
+                <li>theme-blue-v4</li>
                 <li>theme-brown</li>
+                <li>theme-brown-v4</li>
                 <li>theme-cyan</li>
+                <li>theme-cyan-v4</li>
                 <li>theme-darkgrey</li>
+                <li>theme-darkgrey-4</li>
                 <li>theme-deeppurple</li>
                 <li>theme-green</li>
+                <li>theme-green-v4</li>
                 <li>theme-indigo</li>
+                <li>theme-indigo-v4</li>
                 <li>theme-lightblue</li>
+                <li>theme-lightblue-v4</li>
                 <li>theme-lightgreen</li>
+                <li>theme-lightgreen-v4</li>
                 <li>theme-lime</li>
+                <li>theme-lime-v4</li>
                 <li>theme-orange</li>
+                <li>theme-orange-v4</li>
                 <li>theme-pink</li>
+                <li>theme-pink-v4</li>
                 <li>theme-purple</li>
+                <li>theme-purple-v4</li>
                 <li>theme-teal</li>
+                <li>theme-teal-v4</li>
             </ul>
             
             <p>A custom theme can be developed by the following steps.</p>
             <ul>
                 <li>Choose a custom theme name such as theme-myown.</li>
                 <li>Create a file named theme-myown.scss under <i>assets/theme folder</i>.</li>
-                <li>Define the variables listed below and import the <i>/sass/theme/_theme.scss</i> file.</li>
+                <li>Define the variables listed below and import the <i>/sass/theme/_theme.scss</i> or <i>../sass/theme-v4/_theme.scss</i> file.</li>
                 <li>Build the scss to generate css</li>
                 <li>Include the generated theme.css to your page.</li>
             </ul>
             
             <p>Here are the variables required to create a theme, you may need to change the last line according to the 
                 relative path of the sass folder in your application.</p>
-                
+
+            <strong>Bootstrap 3</strong>
 <pre>
 $primaryColor:#337ab7;
 $primaryTextColor:#ffffff;
@@ -334,8 +356,38 @@ $datableEvenRowBgColor:#f9f9f9;
 $datatableHoverBgColor:#f5f5f5;
 
 @import '../sass/theme/_theme';
-</pre> 
-                
+</pre>
+            <strong>Bootstrap 4</strong>
+            <pre>
+$primaryColor:#007bff;
+$primaryTextColor:#ffffff;
+$inputFocusBorderColor:#80bdff;
+$inputFocusBorderShadowColor:rgba(0,123,255,.25);
+$highlightBgColor:#007bff;
+$highlightTextColor:#ffffff;
+$headerBgColor:#f5f5f5;
+$headerHoverBgColor:#dcdcdc;
+$headerHoverBorderColor:#c4c4c4;
+$headerTextColor:#292B2C;
+$headerBorderColor:#dddddd;
+$headerIconColor:#999999;
+$headerIconHoverColor:#bd9090;
+$datableEvenRowBgColor:#f9f9f9;
+$datatableHoverBgColor:#f5f5f5;
+$buttonTextColor:#ffffff;
+$buttonBgColor:#007bff;
+$buttonBorderColor:#007bff;
+$buttonHoverBgColor:#0069d9;
+$buttonHoverBorderColor:#0062cc;
+$buttonActiveBgColor:#0062cc;
+$buttonActiveBorderColor:#005cbf;
+$buttonFocusBorderShadow:rgba(0,123,255,.5);
+
+@import '../sass/theme-v4/_theme';
+</pre>
+
+
+
             <p> An example sass command to compile the css would be;</p>
                 
 <pre>
@@ -352,7 +404,7 @@ sass -w src/assets/ --sourcemap=none
             <ul>
                 <li>Choose a layout name such as layout-myown.</li>
                 <li>Create an empty file named layout-myown.scss inside <i>assets/layout/css</i> folder.</li>
-                <li>Define the variables listed below and import the <i>/sass/layout/_layout.scss</i> file.</li>
+                <li>Define the variables listed below and import the <i>/sass/layout/_layout.scss</i> or <i>../sass/layout-v4/_layout.scss</i> file.</li>
                 <li>Build the scss to generate css</li>
                 <li>Serve the css by importing it using a link tag or a bundler.</li>
             </ul>
@@ -382,7 +434,13 @@ $darkMenuMenuitemColor:#ffffff;
 $darkMenuMenuitemActiveColor:#ffe57f;
 $darkMenuMenuitemActiveBgColor:#282b30;
 
+//Bootstrap V3
 @import '../../sass/layout/_layout';
+
+//or
+
+//Bootstrap V4
+@import '../../sass/layout-v4/_layout';
 
 </pre> 
 
@@ -392,6 +450,41 @@ $darkMenuMenuitemActiveBgColor:#282b30;
 <h3>sass/variables/_commons.scss</h3>
 <pre>
 $fontFamily:"Helvetica Neue",Helvetica,Arial,sans-serif;
+$fontSize:14px;
+$textColor:#212529;
+$textSecondaryColor:#777777;
+$borderRadius:4px;
+$dividerColor:#e5e5e5;
+$transitionDuration:.3s;
+$disabledBgColor:#eeeeee;
+
+/* Predefined Colors */
+$lightestGray:#f5f5f5;
+$lightGray:#cccccc;
+$gray:#999999;
+$darkGray:#777777;
+$white:#ffffff;
+
+$blue:#337ab7;
+$purple:#9189fd;
+$orange:#ffbf79;
+$lightBlue:#8dc8ff;
+$pink:#f790c8;
+
+$green:#3e9018;
+$red:#da2f31;
+$orange:#ffb200;
+$teal:#599597;
+$black:#000000;
+$yellow:#ffd644;
+
+$inputInvalidBorderColor:#b94a48;
+$inputInvalidBgColor:#ffffff;
+</pre>
+
+            <h3>sass/variables/_commons-v4.scss</h3>
+            <pre>
+$fontFamily:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 $fontSize:14px;
 $textColor:#292B2C;
 $textSecondaryColor:#777777;
@@ -407,58 +500,73 @@ $gray:#999999;
 $darkGray:#777777;
 $white:#ffffff;
 
-$blue:#337ab7;
-$purple:#6F5499;
-$orange:#FF8800;
-$lightBlue:#039be5;
-$pink:#d81b60;
-$green:#7cb342;
-$teal:#2EA563;
+$blue:#007bff;
+$purple:#9189fd;
+$orange:#ffbf79;
+$lightBlue:#8dc8ff;
+$pink:#f790c8;
+$indigo:#6610f2;
+$green:#3e9018;
+$red:#da2f31;
+$orange:#ffb200;
+$teal:#599597;
 $black:#000000;
-$yellow:#ffb300;
-</pre> 
+$yellow:#ffd644;
 
-<h3>sass/variables/_layout.scss</h3>
-<pre>
-@import './_common';
 
-$bodyBgColor: #EEF2F6;
+$inputInvalidBorderColor:#b94a48;
+$inputInvalidBgColor:#ffffff;
+</pre>
+            <p>_variables.scss under layout and layout-v4 folder define the shared variables of the layout.</p>
+            <pre>
+@import '../variables/_common';
+
 $menuHoverBgColor:#f4f4f4;
-</pre>   
-
-<h3>sass/variables/_theme.scss</h3>
-<pre>
-@import './_common';
+$bodyBgColor:#EEF2F6;
+</pre>
+            <p>Similarly _variables.scss files inside theme and theme-v4 folders contain the shared variables of the PrimeNG theme.</p>
+            <pre>
+@import '../variables/common';
 
 /* Icons */
-$iconFontSize:1em;
-$iconWidth:1.1em;
+$iconFontSize:14px;
+$iconWidth:16px;
 
 /* Error */
 $errorColor:#a94442;
 $disabledColor:#eeeeee;
 
 /*  Invalid Input */
-$inputInvalidBorderColor:#b94a48;
-$inputInvalidBgColor:#ffffff;
+$errorBorderColor:#b94a48;
 
 /* Headers */
-$headerPadding: 0.714em 1.071em;
+$headerPadding:10px 15px;
 
 /* Contents */
-$contentPadding: 1.071em;
+$contentPadding:15px;
 $contentBorderColor:#dddddd;
 $contentBgColor:#ffffff;
 $contentLineHeight:1.43;
 
 /* Forms */
 $inputBgColor:#ffffff;
-$inputPadding: 0.429em 0.857em;
+$inputPadding:6px 12px;
 $inputBorderColor:#cccccc;
 $inputHoverBorderColor:#cccccc;
-$inputGroupAddonBgColor:#e6e6e6;
+$inputTextColor:#495057;
+
+//groups
+$inputGroupBorderColor:#cccccc;
+$inputGroupBgColor:#ffffff;
+$inputGroupTextColor:$textColor;
+$inputGroupIconColor:$textSecondaryColor;
+$inputGroupAddonMinWidth:2*$fontSize;
+$checkboxWidth:20px;
+$checkboxHeight:20px;
 
 /* Buttons */
+$buttonPadding: 0.429em 0.857em;
+$buttonIconOnlyPadding: 0.429em;
 $buttonTextColor:#ffffff;
 $toggleButtonBgColor:#ffffff;
 $toggleButtonBorderColor:#cccccc;
@@ -466,7 +574,8 @@ $toggleButtonHoverBgColor:#e6e6e6;
 $toggleButtonHoverBorderColor:#adadad;
 
 /* List Items */
-$listItemPadding:0.429em 1.429em;
+$listPadding:6px 0;
+$listItemPadding:6px 20px;
 $listItemHoverBgColor:#f5f5f5;
 $listItemHoverTextColor:#292B2C;
 
@@ -474,9 +583,6 @@ $listItemHoverTextColor:#292B2C;
 $infoMessageBgColor:#d9edf7;
 $infoMessageBorderColor:#bce8f1;
 $infoMessageTextColor:#31708f;
-$successMessageBgColor:#dff0d8;
-$successMessageBorderColor:#d6e9c6;
-$successMessageTextColor:#3c763d;
 $warnMessageBgColor:#fcf8e3;
 $warnMessageBorderColor:#faebcc;
 $warnMessageTextColor:#8a6d3b;
@@ -486,23 +592,23 @@ $errorMessageTextColor:#a94442;
 $fatalMessageBgColor:#999999;
 $fatalMessageBorderColor:#6b6b6b;
 $fatalMessageTextColor:#ffffff;
+$successMessageBgColor:#dff0d8;
+$successMessageBorderColor:#d6e9c6;
+$successMessageTextColor:#3c763d;
 
 /* Overlays */
 $overlayBorderColor:#cccccc;
 
 /* Data */
-$datatableHeaderBgColor:#ffffff;
-$datatableFooterBgColor:#ffffff;
 $datatableCellBorderColor:#dddddd;
-$datatableCellPadding:0.643em;
+$datatableCellPadding:8px;
 $paginatorBgColor:#ffffff;
-
-/* TabView */
-$tabHeaderPadding:.6em 1em;
 
 /* Panel */
 $panelContentBorderColor:#DCE1E7;
+
 </pre>
+
 
             <h1>Menu Item Badges</h1>
             <p>Badges are numerical indicators associated with a link.
@@ -556,6 +662,12 @@ label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'red-badge'
                 scss files under sass folders to avoid maintenance issues after an update.</p>
             
             <h1>Migration Guide</h1>
+            <h4>5.2.0 to 5.2.1</h4>
+            <ul>
+                <li>Update app.menu.component.ts.</li>
+                <li>Update layout css files.</li>
+                <li>Update theme css files.</li>
+            </ul>
 
             <h4>5.0.0 to 5.2.0</h4>
             <p>Adds support for PrimeNG 5.2.0 (e.g. TurboTable), replaces nanoscroller with PrimeNG ScrollPanel.</p>
