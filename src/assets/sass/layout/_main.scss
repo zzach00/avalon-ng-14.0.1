@@ -735,6 +735,10 @@ body {
                         }
                     }
 
+                    .ui-scrollpanel-bar {
+                        display: none;
+                    }
+
                     .menu-scroll-content {
                         width: 100%;
                     }
@@ -953,6 +957,10 @@ body {
                         .ui-scrollpanel-content {
                             overflow: visible;
                         }
+                    }
+
+                    .ui-scrollpanel-bar {
+                        display: none;
                     }
 
                     .menu-scroll-content {
