@@ -228,10 +228,13 @@ body {
         }
         
         #profile-menu {
-            margin-top: 16px;
             border-bottom: 1px solid #d6d5d5;
-            display: none;
-            
+            overflow: hidden;
+
+            li:first-child {
+                margin-top: 16px;
+            }
+
             li:last-child {
                 margin-bottom: 16px;
             }
