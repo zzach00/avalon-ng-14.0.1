@@ -395,6 +395,17 @@ body {
         }
     }
 
+    .ui-dataview {
+
+        .ui-dataview-content {
+            border-bottom: none;
+        }
+
+        .ui-paginator {
+            padding: $headerPadding;
+        }
+    }
+
     .ui-datagrid {
         .ui-datagrid-header {
             padding: $headerPadding;
