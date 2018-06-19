@@ -128,13 +128,13 @@ body {
                     color: $textColor;
                     vertical-align: middle;
 
-                    &.fa-caret-right {
+                    &.pi-caret-right {
                         @include icon_override("\f054");
                         font-size: $fontSize + 2;
 
                     }
 
-                    &.fa-caret-down {
+                    &.pi-caret-down {
                         @include icon_override("\f078");
                         font-size: $fontSize + 2;
                     }
@@ -189,7 +189,7 @@ body {
                     &:not(.ui-state-active):not(.ui-state-disabled):hover {
                         background-color: $headerBgColor;
 
-                        .fa-times {
+                        .pi-times {
                             color: $headerIconHoverColor;
                         }
                     }
@@ -304,10 +304,6 @@ body {
         background-color: $headerBgColor;
         border-color: $contentBorderColor;
         padding: $headerPadding;
-
-        .ui-splitbutton {
-            bottom: 7px;
-        }
     }
 }
 

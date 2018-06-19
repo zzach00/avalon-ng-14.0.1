@@ -38,7 +38,7 @@ body {
                 &:first-child {
                     font-size: $fontSize + 2;
 
-                    &.fa-home {
+                    &.pi-home {
                         color: $primaryColor;
                         margin: 0;
                         font-size: 15px;
@@ -317,7 +317,7 @@ body {
             @include border-radius(0);
             border: 0 none;
 
-            .ui-slidemenu-backward-icon, .ui-slidemenu-backward span {
+            span:last-child {
                 vertical-align: text-bottom;
             }
 

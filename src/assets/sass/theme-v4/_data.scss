@@ -4,6 +4,7 @@ body {
         border-color: $headerBorderColor;
 
         .ui-paginator-first,.ui-paginator-prev,.ui-paginator-next,.ui-paginator-last {
+            padding: .125em .375em;
             color: $primaryColor;
             min-width: 34px;
             min-height: 34px;
@@ -77,6 +78,7 @@ body {
             @include icon-override("\f051");
             background-color: #ffffff;
             border-right: 1px solid $datatableCellBorderColor;
+            border-left: 1px solid $datatableCellBorderColor;
             @include border-radius-right($borderRadius);
             margin-left: -4px;
 
@@ -153,13 +155,32 @@ body {
         }
 
         .ui-sortable-column {
+            color: $textColor;
+
+            a, a:hover {
+                color: $textSecondaryColor;
+            }
+
             &:not(.ui-state-highlight):hover {
                 @include list-item-hover();
+
+                a, a:hover {
+                    @include list-item-hover();
+                }
             }
 
             &.ui-state-highlight {
                 background-color: $primaryColor;
                 color: $primaryTextColor;
+                border-top-color: $primaryColor;
+
+                a, a:hover {
+                    color: $primaryTextColor;
+                }
+            }
+
+            .ui-sortable-column-icon {
+                vertical-align: middle;
             }
         }
 
@@ -276,7 +297,7 @@ body {
                 &.ui-rowgroup-header {
                     background-color: $headerBgColor;
 
-                    .fa {
+                    .pi {
                         color: $headerIconColor;
 
                         &:hover {
@@ -326,11 +347,11 @@ body {
                         color: $textSecondaryColor;
                         @include transition(color .3s);
 
-                        &.fa-chevron-circle-right {
+                        &.pi-chevron-circle-right {
                             @include icon_override("\f054");
                         }
 
-                        &.fa-chevron-circle-down {
+                        &.pi-chevron-circle-down {
                             @include icon_override("\f078");
                         }
 
@@ -416,7 +437,7 @@ body {
         }
 
         .ui-picklist-filter-container {
-            .fa {
+            .pi {
                 color: $textSecondaryColor;
                 margin-top: -.5em;
                 margin-left: 0.286em;
@@ -457,7 +478,7 @@ body {
         }
 
         .ui-orderlist-filter-container {
-            .fa {
+            .pi {
                 margin-top: -.5em;
                 margin-left: 0.286em;
                 color: $textSecondaryColor;
@@ -544,8 +565,14 @@ body {
                     color: darken($headerIconColor, 10%);
                 }
 
-                &.fa-dot-circle-o {
+                &.pi-circle-off {
                     color: $headerIconColor;
+                    @include icon-override("\F10C")
+                }
+
+                &.pi-circle-on {
+                    color: $headerIconColor;
+                    @include icon-override("\F192")
                 }
             }
         }
@@ -660,7 +687,7 @@ body {
                     .ui-treetable-checkbox .ui-chkbox-icon {
                         margin: 0;
 
-                        &.fa-check {
+                        &.pi-check {
                             color: $primaryColor;
                         }
                     }

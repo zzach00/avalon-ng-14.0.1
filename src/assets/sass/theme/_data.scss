@@ -78,6 +78,7 @@ body {
             @include icon-override("\f051");
             background-color: #ffffff;
             border-right: 1px solid $datatableCellBorderColor;
+            border-left: 1px solid $datatableCellBorderColor;
             @include border-radius-right($borderRadius);
             margin-left: -4px;
 
