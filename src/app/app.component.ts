@@ -116,6 +116,10 @@ export class AppComponent implements AfterViewInit {
 
         event.preventDefault();
     }
+    
+    onTopbarSubItemClick(event) {
+        event.preventDefault();
+    }
 
     hideOverlayMenu() {
         this.rotateMenuButton = false;
