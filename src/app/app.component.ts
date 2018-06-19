@@ -1,4 +1,4 @@
-import {Component, AfterViewInit, ElementRef, Renderer, ViewChild, OnDestroy} from '@angular/core';
+import {Component, AfterViewInit, ElementRef, Renderer2, ViewChild, OnDestroy} from '@angular/core';
 import {ScrollPanel} from 'primeng/primeng';
 
 enum MenuOrientation {
@@ -45,7 +45,7 @@ export class AppComponent implements AfterViewInit {
 
     @ViewChild('layoutMenuScroller') layoutMenuScrollerViewChild: ScrollPanel;
 
-    constructor(public renderer: Renderer) {}
+    constructor(public renderer: Renderer2) {}
 
     ngAfterViewInit() {
         setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 100);
@@ -116,7 +116,7 @@ export class AppComponent implements AfterViewInit {
 
         event.preventDefault();
     }
-    
+
     onTopbarSubItemClick(event) {
         event.preventDefault();
     }
