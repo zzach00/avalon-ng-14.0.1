@@ -712,6 +712,14 @@ body {
                     .ui-treetable-toggler {
                         color: $textSecondaryColor;
 
+                        .pi-chevron-down:before {
+                            content: "\e906";
+                        }
+
+                        .pi-chevron-right:before {
+                            content: "\e905";
+                        }
+
                         .pi.pi-chevron-down {
                             vertical-align: middle;
                         }
