@@ -92,7 +92,7 @@ body {
             }
         }
 
-        &.secondary-btn {
+        &.secondary-btn{
             color: $textColor;
             background-color: #ffffff;
             border-color: #cccccc;
@@ -114,9 +114,32 @@ body {
         }
     }
 
+    .ui-button.ui-state-default.ui-button-secondary, .ui-buttonset.ui-button-secondary > .ui-button.ui-state-default  {
+        color: $textColor;
+        background-color: #ffffff;
+        border-color: #cccccc;
+
+        &:enabled:hover {
+            background-color: #e6e6e6;
+            border-color: #adadad;
+        }
+
+        &:enabled:focus {
+            background-color: #e6e6e6;
+            border-color: #adadad;
+        }
+
+        &:enabled:active {
+            background-color: #d4d4d4;
+            border-color: #8c8c8c;
+        }
+    }
+
     .success-btn.ui-button,
     .success-btn > .ui-button,
-    .ui-splitbutton.success-btn > .ui-button {
+    .ui-splitbutton.success-btn > .ui-button,
+    .ui-button.ui-state-default.ui-button-success,
+    .ui-buttonset.ui-button-success > .ui-button.ui-state-default{
         background-color: #5cb85c;
         border-color: #4cae4c;
 
@@ -138,7 +161,9 @@ body {
 
     .info-btn.ui-button,
     .info-btn > .ui-button,
-    .ui-splitbutton.info-btn > .ui-button {
+    .ui-splitbutton.info-btn > .ui-button,
+    .ui-button.ui-state-default.ui-button-info,
+    .ui-buttonset.ui-button-info > .ui-button.ui-state-default {
         background-color: #5bc0de;
         border-color: #46b8da;
 
@@ -160,7 +185,9 @@ body {
 
     .warning-btn.ui-button,
     .warning-btn > .ui-button,
-    .ui-splitbutton.warning-btn > .ui-button {
+    .ui-splitbutton.warning-btn > .ui-button,
+    .ui-button.ui-state-default.ui-button-warning,
+    .ui-buttonset.ui-button-warning > .ui-button.ui-state-default{
         background-color: #f0ad4e;
         border-color: #eea236;
 
@@ -182,7 +209,9 @@ body {
 
     .danger-btn.ui-button,
     .danger-btn > .ui-button,
-    .ui-splitbutton.danger-btn > .ui-button {
+    .ui-splitbutton.danger-btn > .ui-button,
+    .ui-button.ui-state-default.ui-button-danger,
+    .ui-buttonset.ui-button-danger > .ui-button.ui-state-default{
         background-color: #d9534f;
         border-color: #d43f3a;
 
