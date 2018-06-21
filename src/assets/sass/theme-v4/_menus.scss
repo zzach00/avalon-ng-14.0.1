@@ -173,7 +173,7 @@ body {
     }
 
     .ui-menu {
-        width: 100%;
+        min-width: 12.5em;
         padding: .357em 0;
 
         .ui-menuitem {

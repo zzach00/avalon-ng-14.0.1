@@ -3,8 +3,8 @@
         <div class="card docs">
 
             <h1>Current Version</h1>
-            <p>Angular 5.2 and PrimeNG 5.2</p>
-            
+            <p>Angular 6 and PrimeNG 6</p>
+
             <h1>Getting Started</h1>
             <p>Avalon is a true native application template for Angular and is distributed as a CLI project. If you don't have CLI installed already run the following commands to set it up. In case
             you have an application that do not use CLI, skip the <a href="#noncli">Integration with an Existing Non CLI Application</a> part.</p>
@@ -12,7 +12,7 @@
 npm install -g @angular/cli
 </pre>
 
-            <p>Once CLI is ready in your system, extract the contents of the avalon zip file distribution, cd to the directory, 
+            <p>Once CLI is ready in your system, extract the contents of the avalon zip file distribution, cd to the directory,
             install the libraries from npm and then execute "ng serve" to run the application in your local environment at http://localhost:4200/.</p>
 <pre>
 cd avalon
@@ -36,11 +36,11 @@ Run 'ng test' to execute the unit tests via [Karma](https://karma-runner.github.
 Run 'ng e2e' to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 Run 'ng help' for more options.
-</pre>            
-                                    
+</pre>
+
             <h1>Structure</h1>
-            <p>avalon consists of 3 main parts; the application layout, layout resources and theme resources for PrimeNG components. <i>app.component.html</i> inside app folder is the html template for the base layout, 
-                required resources for the layout are placed inside the <i>src/assets/layout</i> folder and similarly theme resources are inside <i>src/assets/theme</i> folder. 
+            <p>avalon consists of 3 main parts; the application layout, layout resources and theme resources for PrimeNG components. <i>app.component.html</i> inside app folder is the html template for the base layout,
+                required resources for the layout are placed inside the <i>src/assets/layout</i> folder and similarly theme resources are inside <i>src/assets/theme</i> folder.
             </p>
 
             <h1>Template</h1>
@@ -67,20 +67,20 @@ Run 'ng help' for more options.
             &lt;/div&gt;
         &lt;/p-scrollPanel&gt;
     &lt;/div&gt;
-    
+
     &lt;div class="layout-main"&gt;
         &lt;router-outlet&gt;&lt;/router-outlet&gt;
     &lt;/div&gt;
-    
+
     &lt;div class="layout-mask"&gt;&lt;/div&gt;
-    
+
     &lt;app-footer&gt;&lt;/app-footer&gt;
 
 &lt;/div&gt;
 </pre>
 
             <h1>Menu</h1>
-            <p>Menu is a separate component defined in app.menu.component.ts file based on PrimeNG MenuModel API. In order to define the menuitems, 
+            <p>Menu is a separate component defined in app.menu.component.ts file based on PrimeNG MenuModel API. In order to define the menuitems,
             navigate to this file and define your own model as a nested structure. Here is the menu component from the sample application. The helper
             app-submenu component is also available in the same file.</p>
 <pre>
@@ -104,7 +104,7 @@ export class AppMenuComponent implements OnInit &#123;
     model: any[];
 
     constructor(public app: AppComponent) &#123;&#125;
-    
+
     ngOnInit() &#123;
         this.model = [
             &#123;label: 'Dashboard', icon: 'fa fa-fw fa-home', routerLink: ['/']&#125;,
@@ -125,7 +125,7 @@ export class AppMenuComponent implements OnInit &#123;
                 label: 'Layout Colors', icon: 'fa fa-fw fa-magic',
                 items: [
                     &#123;
-                        label: 'Flat', 
+                        label: 'Flat',
                         icon: 'fa fa-fw fa-circle',
                         items: [
                             &#123;label: 'Blue', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('blue')&#125;&#125;,
@@ -141,7 +141,7 @@ export class AppMenuComponent implements OnInit &#123;
                         ]
                     &#125;,
                     &#123;
-                        label: 'Special', 
+                        label: 'Special',
                         icon: 'fa fa-fw fa-fire',
                         items: [
                             &#123;label: 'Influenza', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('influenza', true)&#125;&#125;,
@@ -255,21 +255,23 @@ export class AppMenuComponent implements OnInit &#123;
 &#125;
 </pre>
 
-            
+
             <h1>Integration with an Existing CLI Project</h1>
-            <p>To setup avalon in an existing project, copy the <i>src/assets</i> folder to your projects folder with the same name 
+            <p>To setup avalon in an existing project, copy the <i>src/assets</i> folder to your projects folder with the same name
                 and replace the contents of app.component.ts, app.component.html with their counterparts in avalon under <i>src/app</i> folder.</p>
 
             <p>Install PrimeNG</p>
             <pre>
 npm install primeng@latest --save
+npm install primeicons@latest --save
 </pre>
 
-            <p>Add PrimeNG CSS at styles section in angular-cli.json.</p>
+            <p>Add PrimeNG CSS at styles section in angular.json.</p>
 
             <pre>
 "styles": [
     "../node_modules/primeng/resources/primeng.min.css",        //required: PrimeNG components
+    "node_modules/primeicons/primeicons.css",                   //required: PrimeIcons
     "styles.scss"                                               //your styles and overrides
 ],
 </pre>
@@ -290,9 +292,9 @@ npm install primeng@latest --save
                 perfectly compatible with Bootstrap as they share the same look and feel.
             </p>
 
-            <h1>Theme</h1>    
+            <h1>Theme</h1>
             <p>Avalon provides 30 PrimeNG themes out of the box, setup of a theme simple including the css of theme to your application. All themes are located inside are located inside assets/theme folder.</p>
-            
+
             <ul>
                 <li>theme-amber</li>
                 <li>theme-amber-v4</li>
@@ -324,7 +326,7 @@ npm install primeng@latest --save
                 <li>theme-teal</li>
                 <li>theme-teal-v4</li>
             </ul>
-            
+
             <p>A custom theme can be developed by the following steps.</p>
             <ul>
                 <li>Choose a custom theme name such as theme-myown.</li>
@@ -333,8 +335,8 @@ npm install primeng@latest --save
                 <li>Build the scss to generate css</li>
                 <li>Include the generated theme.css to your page.</li>
             </ul>
-            
-            <p>Here are the variables required to create a theme, you may need to change the last line according to the 
+
+            <p>Here are the variables required to create a theme, you may need to change the last line according to the
                 relative path of the sass folder in your application.</p>
 
             <strong>Bootstrap 3</strong>
@@ -388,10 +390,10 @@ $buttonFocusBorderShadow:rgba(0,123,255,.5);
 
 
             <p> An example sass command to compile the css would be;</p>
-                
+
 <pre>
-sass src/assets/theme/theme-myown.scss src/assets/theme/theme-myown.css 
-</pre> 
+sass src/assets/theme/theme-myown.scss src/assets/theme/theme-myown.css
+</pre>
 
             <p>Watch mode is handy to avoid compiling everytime when a change is made, instead use the following command
             so that sass generates the file whenever you make a customization. This builds all css files whenever a change is made to any scss file.</p>
@@ -407,10 +409,10 @@ sass -w src/assets/ --sourcemap=none
                 <li>Build the scss to generate css</li>
                 <li>Serve the css by importing it using a link tag or a bundler.</li>
             </ul>
-            
-            <p>Here are the variables required to create a layout, you may need to change the last line according to the 
+
+            <p>Here are the variables required to create a layout, you may need to change the last line according to the
                 relative path of the sass folder in your application.</p>
-            
+
 <pre>
 $topbarLeftGradientStartBgColor:#ff8f00;
 $topbarLeftGradientEndBgColor:#ffb300;
@@ -441,11 +443,11 @@ $darkMenuMenuitemActiveBgColor:#282b30;
 //Bootstrap V4
 @import '../../sass/layout-v4/_layout';
 
-</pre> 
+</pre>
 
             <h1>Common SASS Variables</h1>
             <p>In case you'd like to customize common variables, the _common.scss and _common-v4.scss under sass variables folder is where the core variables (e.g. font size, paddings) for the layout are defined.</p>
-            
+
 <h3>sass/variables/_commons.scss</h3>
 <pre>
 $fontFamily:"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -614,14 +616,14 @@ $panelContentBorderColor:#DCE1E7;
                The badge property is the value of the badge and badgeStyleClass is style class of the badge.</p>
 <pre>
 label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'red-badge'
-</pre>  
+</pre>
             <p>Default badge uses the accent color of avalon layout and there are three more alternative colors.</p>
             <ul>
                 <li>red-badge</li>
                 <li>purple-badge</li>
                 <li>teal-badge</li>
             </ul>
-                                    
+
             <h1>Menu Modes</h1>
             <p>Menu has 4 modes, static, overlay, slim and horizontal. Layout container element in application.html is used to define which mode to use by adding specific classes. List
             below indicates the style classes for each mode. In addition menu</p>
@@ -631,36 +633,50 @@ label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'red-badge'
                 <li>Slim: "layout-wrapper menu-layout-static menu-layout-slim"</li>
                 <li>Horizontal: "layout-wrapper menu-layout-static menu-layout-horizontal"</li>
             </ul>
-            
+
             <p>For example to create a horizontal menu, the div element should be in following form;</p>
 <pre>
 &lt;div class="layout-wrapper menu-layout-static menu-layout-horizontal"&gt;
-</pre>            
+</pre>
 
             <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes. Sample
-            application has an example implementation of such use case. Refer to app.component.ts for an example.</p>          
+            application has an example implementation of such use case. Refer to app.component.ts for an example.</p>
 
             <h1>Dark Menu</h1>
-            <p>Default color scheme of menu is light and alternative dark mode can be activated by adding layout-menu-dark style class to the menu container that 
+            <p>Default color scheme of menu is light and alternative dark mode can be activated by adding layout-menu-dark style class to the menu container that
                 is an element having .layout-menu as its class.</p>
 <pre>
 &lt;div class="layout-menu-container layout-menu-dark"&gt;
 </pre>
-            
+
             <h1>Profile Modes</h1>
             <p>There are two possible locations for the user profile menu, first version is inline located inside the main menu and second option is the topbar menu. For inline mode,
             profile content should be placed above the menu and for inline mode content goes in topbar-items list. The sample demo application provides examples for
             both cases.</p>
-                    
+
             <h1>Grid CSS</h1>
             <p>Avalon uses PrimeNG Grid CSS (ui-g-*) throughout the samples, although any Grid library can be used we suggest using Grid CSS as your layout framework as it is well tested and supported by PrimeNG. Grid CSS is
-            available inside primeng.css.</p> 
-            
+            available inside primeng.css.</p>
+
             <h1>Customizing Styles</h1>
             <p>It is suggested to write your customizations in styles.scss file or another file instead of adding them to the
                 scss files under sass folders to avoid maintenance issues after an update.</p>
-            
+
             <h1>Migration Guide</h1>
+
+            <h4>5.2.1 to 6.0.0</h4>
+            <p>Brings support for Angular 6 and RxJS 6, adds theming for new components in PrimeNG such as the new TreeTable
+                and improves behaviors of the layout menus.</p>
+            <ul>
+                <li>Add PrimeIcons package.</li>
+                <li>Update app.module.ts and app.component.ts.</li>
+                <li>Update app.topbar.component.ts.</li>
+                <li>Update app.profile.component.ts.</li>
+                <li>Update app.menu.component.ts.</li>
+                <li>Update layout css files.</li>
+                <li>Update theme css files.</li>
+            </ul>
+
             <h4>5.2.0 to 5.2.1</h4>
             <ul>
                 <li>Update app.menu.component.ts.</li>
@@ -677,18 +693,18 @@ label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'red-badge'
                 <li>Update layout css files.</li>
                 <li>Update theme css files.</li>
             </ul>
-            
+
             <h4>1.1.1 to 5.0.0</h4>
             <ul>
                 <li>Update theme css files.</li>
                 <li>Update layout css files.</li>
             </ul>
-            
+
             <h4>1.0.0 to 1.1.0</h4>
             <ul>
                 <li>Update theme css files.</li>
             </ul>
-            
+
         </div>
     </div>
 </div>
