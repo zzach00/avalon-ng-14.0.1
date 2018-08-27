@@ -622,7 +622,7 @@ body {
                 @include border-radius(0);
                 line-height: 1;
 
-                &:not(.ui-state-highlight):hover {
+                &:not(.ui-state-highlight):not(.ui-state-disabled):hover {
                     @include list-item-hover();
                 }
 
@@ -752,8 +752,6 @@ body {
 
             .ui-multiselect-item {
                 padding: $listItemPadding;
-                color: inherit;
-                background-color: inherit;
                 @include border-radius(0);
 
                 .ui-chkbox {
@@ -761,6 +759,11 @@ body {
                     margin-top: 0;
                     display: inline-block;
                     vertical-align: middle;
+                    .ui-chkbox-box {
+                        &.ui-state-active {
+                            border-color: $highlightTextColor;
+                        }
+                    }
                 }
 
                 label {
@@ -768,6 +771,11 @@ body {
                     margin: 0 0 0 0.615em;
                     display: inline-block;
                     vertical-align: middle;
+                }
+
+                &:not(.ui-state-highlight):not(.ui-state-disabled):hover {
+                    border-radius: 0;
+                    @include list-item-hover();
                 }
             }
         }
@@ -1097,11 +1105,31 @@ body {
         }
 
         &:not(.ui-state-disabled) {
+            .ui-datepicker-header {
+                .ui-datepicker-prev,
+                .ui-datepicker-next {
+                    &:hover {
+                        color: $headerIconHoverColor;
+                    }
+
+                    &:focus {
+                        outline: 0 none;
+                        color: $headerIconHoverColor;
+                    }
+                }
+            }
+
             table {
                 td:not(.ui-state-disabled) {
                     a:not(.ui-state-active):not(.ui-state-highlight):hover {
                         background-color: $listItemHoverBgColor;
                     }
+                }
+            }
+
+            .ui-monthpicker {
+                a.ui-monthpicker-month:not(.ui-state-active):hover {
+                    background-color: $listItemHoverBgColor;
                 }
             }
         }
@@ -1123,10 +1151,6 @@ body {
                 span {
                     display: none;
                 }
-
-                &:hover {
-                    color: $headerIconHoverColor;
-                }
             }
 
             .ui-datepicker-next {
@@ -1139,10 +1163,6 @@ body {
                 span {
                     display: none;
                 }
-
-                &:hover {
-                    color: $headerIconHoverColor;
-                }
             }
         }
 
@@ -1152,13 +1172,17 @@ body {
             td {
                 padding: 2px;
 
-                a,span {
+                > a, > span {
                     min-width: 2em;
                     min-height: 2em;
                     text-align: center;
                     color: $textColor;
                     padding: .35em;
                     @include border-radius($borderRadius);
+                }
+
+                > a {
+                    cursor: pointer;
 
                     &:hover {
                         background-color: $listItemHoverBgColor;
@@ -1193,6 +1217,42 @@ body {
 
                 &:hover {
                     color: $headerIconHoverColor;
+                }
+            }
+        }
+
+        .ui-monthpicker {
+            .ui-monthpicker-month {
+                color: $textColor;
+
+                &.ui-state-active {
+                    color: $primaryTextColor;
+                    background-color: $highlightBgColor;
+                }
+            }
+        }
+
+        &.ui-datepicker-multiple-month {
+            width: auto;
+            .ui-datepicker-group {
+                border-right: 1px solid $dividerColor;
+                padding-top: 0;
+                padding-bottom: 0;
+
+                .ui-datepicker-calendar-container {
+                    tbody {
+                        padding-right: .25em;
+                        padding-left: .25em;
+                    }
+                }
+
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                    border-right: 0 none;
                 }
             }
         }
@@ -1289,6 +1349,10 @@ body {
                 @include border-radius-right($borderRadius);
             }
         }
+    }
+
+    .ui-calendar .ui-datepicker {
+        min-width: auto;
     }
 
     .ui-datepicker{
