@@ -310,6 +310,11 @@ body {
         background-color: $headerBgColor;
         border-color: $contentBorderColor;
         padding: $headerPadding;
+
+        .ui-toolbar-seperator {
+            vertical-align: middle;
+            margin: 0 0.5em;
+        }
     }
 }
 

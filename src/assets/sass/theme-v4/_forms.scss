@@ -691,7 +691,6 @@ body {
             @include box-sizing(border-box);
 
             .pi {
-                line-height: inherit;
                 color: $textSecondaryColor;
             }
         }
@@ -1183,10 +1182,6 @@ body {
                 top: 1.2em;
                 color: $headerIconColor;
                 @include transition(color $transitionDuration);
-
-                span {
-                    display: none;
-                }
             }
 
             .ui-datepicker-next {
@@ -1194,10 +1189,6 @@ body {
                 top: 1.2em;
                 color: $headerIconColor;
                 @include transition(color $transitionDuration);
-
-                span {
-                    display: none;
-                }
             }
         }
 
