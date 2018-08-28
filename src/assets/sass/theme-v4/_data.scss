@@ -39,7 +39,6 @@ body {
         }
 
         .ui-paginator-first {
-            @include icon-override("\f048");
             background-color: #ffffff;
             border-left: 1px solid $datatableCellBorderColor;
             @include border-radius-left($borderRadius);
@@ -51,7 +50,6 @@ body {
         }
 
         .ui-paginator-prev {
-            @include icon-override("\f04b");
             @include rotate(180deg);
             background-color: #ffffff;
             border-right: 1px solid $datatableCellBorderColor;
@@ -63,7 +61,6 @@ body {
         }
 
         .ui-paginator-next {
-            @include icon-override("\f04b");
             background-color: #ffffff;
             border-right: 1px solid $datatableCellBorderColor;
             border-left: 1px solid $datatableCellBorderColor;
@@ -75,7 +72,6 @@ body {
         }
 
         .ui-paginator-last {
-            @include icon-override("\f051");
             background-color: #ffffff;
             border-right: 1px solid $datatableCellBorderColor;
             border-left: 1px solid $datatableCellBorderColor;
@@ -348,14 +344,6 @@ body {
                         color: $textSecondaryColor;
                         @include transition(color .3s);
 
-                        &.pi-chevron-circle-right {
-                            @include icon_override("\f054");
-                        }
-
-                        &.pi-chevron-circle-down {
-                            @include icon_override("\f078");
-                        }
-
                         &:hover {
                             color: $textColor;
                         }
@@ -553,14 +541,6 @@ body {
             @include transition(color .3s);
             color: $headerIconColor;
 
-            &.ui-carousel-next-button {
-                @include icon-override("\f054");
-            }
-
-            &.ui-carousel-prev-button {
-                @include icon-override("\f053");
-            }
-
             &:not(.ui-state-disabled):hover {
                 color: $headerIconHoverColor;
             }
@@ -579,12 +559,10 @@ body {
 
                 &.pi-circle-off {
                     color: $headerIconColor;
-                    @include icon-override("\F10C")
                 }
 
                 &.pi-circle-on {
                     color: $headerIconColor;
-                    @include icon-override("\F192")
                 }
             }
         }
@@ -853,12 +831,10 @@ body {
             }
 
             .ui-icon-circle-triangle-e {
-                @include icon_override("\f054");
                 margin-top: 3px;
             }
 
             .ui-icon-circle-triangle-w {
-                @include icon_override("\f053");
                 margin-top: 3px;
             }
         }

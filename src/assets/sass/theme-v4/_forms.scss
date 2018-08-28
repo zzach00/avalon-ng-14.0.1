@@ -286,7 +286,6 @@ body {
                 margin-left: 1px;
 
                 &.ui-icon-check {
-                    @include icon_override("\f00c");
                     font-size: $fontSize + 2;
                 }
             }
@@ -493,10 +492,6 @@ body {
             border-left: 0 none;
             @include input-shadow-vertical();
 
-            .pi {
-                @include icon_override("\f0d7");
-            }
-
             &:enabled:focus {
                 outline: 0 none;
             }
@@ -616,7 +611,6 @@ body {
 
             .pi-caret-down {
                 color: $textColor;
-                @include icon_override("\f0d7");
                 line-height: inherit;
                 margin-top: -1em;
             }
@@ -699,7 +693,6 @@ body {
             .pi {
                 line-height: inherit;
                 color: $textSecondaryColor;
-                @include icon_override("\f0d7");
             }
         }
 
@@ -1189,7 +1182,6 @@ body {
                 cursor: pointer;
                 top: 1.2em;
                 color: $headerIconColor;
-                @include icon_override("\f053");
                 @include transition(color $transitionDuration);
 
                 span {
@@ -1201,7 +1193,6 @@ body {
                 cursor: pointer;
                 top: 1.2em;
                 color: $headerIconColor;
-                @include icon_override("\f054");
                 @include transition(color $transitionDuration);
 
                 span {
