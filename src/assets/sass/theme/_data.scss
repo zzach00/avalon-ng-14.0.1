@@ -149,6 +149,10 @@ body {
             border: 1px solid $datatableCellBorderColor;
         }
 
+        p-sortIcon {
+            vertical-align: baseline;
+        }
+
         .ui-sortable-column {
             color: $textColor;
 
@@ -418,6 +422,14 @@ body {
         .ui-datascroller-header,
         .ui-datascroller-footer {
             padding: $headerPadding;
+        }
+    }
+
+    .ui-virtualscroller {
+        .ui-virtualscroller-list {
+            li {
+                border-bottom: 1px solid $contentBorderColor;
+            }
         }
     }
 
