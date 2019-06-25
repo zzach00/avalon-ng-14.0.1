@@ -835,62 +835,65 @@ body {
     }
 
     .fc {
-        .fc-toolbar {
-            .fc-button-group {
-                .ui-state-active {
-                    background-color: darken($primaryColor,10%);
-                    @include shadow(inset 0 3px 5px rgba(0,0,0,.125));
-                }
+        .fc-button {
+            background-color: $primaryColor;
+            color: $buttonTextColor;
+            font-size: $fontSize;
+            font-family: $fontFamily;
+            height: 2.25em;
+            padding: 0 1em;
+            border: 0 none;
+
+            &:enabled:not(:focus):not(.fc-button-active):hover {
+                background-color: darken($primaryColor,5%);
             }
 
-            .ui-icon-circle-triangle-e {
-                background: none !important;
-                font-family: 'primeicons';
-                speak: none;
-                font-style: normal;
-                font-weight: normal;
-                font-variant: normal;
-                text-transform: none;
-                line-height: 1;
-                display: inline-block;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                text-indent: 0px !important;
-                text-align: center;
-
-                &:before {
-                    content: "\e901";
-                }
-                margin-top: 3px;
+            &:enabled:not(.fc-button-active):focus {
+                outline: 0 none;
+                background-color: darken($primaryColor,5%);
             }
 
-            .ui-icon-circle-triangle-w {
-                background: none !important;
-                font-family: 'primeicons';
-                speak: none;
-                font-style: normal;
-                font-weight: normal;
-                font-variant: normal;
-                text-transform: none;
-                line-height: 1;
-                display: inline-block;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                text-indent: 0px !important;
-                text-align: center;
+            &.fc-button-active {
+                background-color: darken($primaryColor,10%);
+                @include shadow(inset 0 3px 5px rgba(0,0,0,.125));
 
-                &:before {
-                    content: "\e900";
+                &:focus {
+                    box-shadow: none;
                 }
-                margin-top: 3px;
             }
         }
 
-        .fc-event-container {
-            .fc-event {
-                border-color: $primaryColor;
-                background-color: darken($primaryColor,5%);
+        .fc-head {
+            .fc-row {
+                background-color: $headerBgColor;
+                color: $headerTextColor;
             }
+        }
+
+        td.fc-today {
+            background-color: $primaryColor;
+            color: $primaryTextColor;
+        }
+
+        .fc-toolbar {
+            .ui-state-active {
+                background-color: $primaryColor;
+                color: $primaryTextColor;
+            }
+        }
+
+        .fc-event {
+            background-color: darken($primaryColor,5%);
+            color: $primaryTextColor;
+        }
+
+        table {
+            box-sizing: border-box;
+        }
+
+        div.ui-widget-content {
+            padding-left: 0px;
+            padding-right: 0px;
         }
     }
 }
