@@ -1,6 +1,6 @@
 import {AvalonPage} from './app.po';
 
-describe('Avalon App', function () {
+describe('Avalon App', () => {
     let page: AvalonPage;
 
     beforeEach(() => {

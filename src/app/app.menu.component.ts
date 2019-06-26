@@ -192,7 +192,7 @@ export class AppMenuComponent implements OnInit {
     }
 
     changeTheme(theme: string) {
-        const themeLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('theme-css');
+        const themeLink: HTMLLinkElement = document.getElementById('theme-css') as  HTMLLinkElement;
 
         if (this.version === 'v3') {
             themeLink.href =  'assets/theme/theme-' + theme + '.css';
@@ -205,7 +205,7 @@ export class AppMenuComponent implements OnInit {
     }
 
     changeLayout(layout: string, special?: boolean) {
-        const layoutLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('layout-css');
+        const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as  HTMLLinkElement;
 
         if (this.version === 'v3') {
             layoutLink.href = 'assets/layout/css/layout-' + layout + '.css';
@@ -221,8 +221,8 @@ export class AppMenuComponent implements OnInit {
     }
 
     changeVersion(version: string) {
-        const themeLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('theme-css');
-        const layoutLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('layout-css');
+        const themeLink: HTMLLinkElement = document.getElementById('theme-css') as  HTMLLinkElement;
+        const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as  HTMLLinkElement;
 
         if (version === 'v3') {
             this.version = 'v3';
@@ -321,7 +321,7 @@ export class AppSubMenuComponent {
 
         // execute command
         if (item.command) {
-            item.command({originalEvent: event, item: item});
+            item.command({originalEvent: event, item});
         }
 
         // prevent hash change
