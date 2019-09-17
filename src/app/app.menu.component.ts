@@ -20,7 +20,7 @@ export class AppMenuComponent implements OnInit {
 
     layout = 'blue';
 
-    version = 'v3';
+    version = 'v4';
 
     constructor(public app: AppComponent) {}
 
@@ -231,7 +231,7 @@ export class AppMenuComponent implements OnInit {
         } else {
             themeLink.href =  'assets/theme/theme-' + this.theme + '-v4' + '.css';
             layoutLink.href = 'assets/layout/css/layout-' + this.layout + '-v4' + '.css';
-            this.version = '-v4';
+            this.version = 'v4';
         }
 
     }
