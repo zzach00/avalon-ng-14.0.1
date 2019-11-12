@@ -79,6 +79,7 @@ import {AppTopBarComponent} from './app.topbar.component';
 import {AppFooterComponent} from './app.footer.component';
 import {AppProfileComponent} from './app.profile.component';
 import {DashboardDemoComponent} from './demo/view/dashboarddemo.component';
+import {DashboardBankingComponent} from './demo/view/dashboardbanking.component';
 import {SampleDemoComponent} from './demo/view/sampledemo.component';
 import {FormsDemoComponent} from './demo/view/formsdemo.component';
 import {DataDemoComponent} from './demo/view/datademo.component';
@@ -180,6 +181,7 @@ import {NodeService} from './demo/service/nodeservice';
         AppFooterComponent,
         AppProfileComponent,
         DashboardDemoComponent,
+        DashboardBankingComponent,
         SampleDemoComponent,
         FormsDemoComponent,
         DataDemoComponent,

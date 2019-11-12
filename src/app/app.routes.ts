@@ -14,9 +14,11 @@ import {ChartsDemoComponent} from './demo/view/chartsdemo.component';
 import {FileDemoComponent} from './demo/view/filedemo.component';
 import {UtilsDemoComponent} from './demo/view/utilsdemo.component';
 import {DocumentationComponent} from './demo/view/documentation.component';
+import {DashboardBankingComponent} from './demo/view/dashboardbanking.component';
 
 export const routes: Routes = [
     {path: '', component: DashboardDemoComponent},
+    {path: 'dashboard_banking', component: DashboardBankingComponent},
     {path: 'sample', component: SampleDemoComponent},
     {path: 'forms', component: FormsDemoComponent},
     {path: 'data', component: DataDemoComponent},

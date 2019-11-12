@@ -33,7 +33,11 @@ export class AppMenuComponent implements OnInit {
                     {label: 'Bootstrap v4', icon: 'fa fa-fw fa-tag',  command: () => this.changeVersion('v4')}
                 ]
             },
-            {label: 'Dashboard', icon: 'fa fa-fw fa-home', routerLink: ['/']},
+            {label: 'Dashboard', icon: 'fa fa-fw fa-dashboard', items: [
+                    {label: 'Generic', icon: 'fa fa-fw fa-home', routerLink: ['/']},
+                    {label: 'Banking', icon: 'fa fa-fw fa-bank', routerLink: ['/dashboard_banking']},
+                ]
+            },
             {
                 label: 'Customization', icon: 'fa fa-fw fa-bars' , badge: '8',
                 items: [
