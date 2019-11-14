@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, EventEmitter, ViewChild} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 import {MenuItem} from 'primeng/primeng';
-import {AppComponent} from './app.component';
+import {AppMainComponent} from './app.main.component';
 
 @Component({
     selector: 'app-menu',
@@ -22,7 +22,7 @@ export class AppMenuComponent implements OnInit {
 
     version = 'v4';
 
-    constructor(public app: AppComponent) {}
+    constructor(public app: AppMainComponent) {}
 
     ngOnInit() {
         this.model = [
@@ -138,11 +138,11 @@ export class AppMenuComponent implements OnInit {
                 items: [
                     {label: 'Empty Page', icon: 'fa fa-fw fa-square-o', routerLink: ['/empty']},
                     {label: 'Landing Page', icon: 'fa fa-fw fa-certificate', url: 'assets/pages/landing.html', target: '_blank'},
-                    {label: 'Login Page', icon: 'fa fa-fw fa-sign-in', url: 'assets/pages/login.html', target: '_blank'},
-                    {label: 'Error Page', icon: 'fa fa-fw fa-exclamation-circle', url: 'assets/pages/error.html', target: '_blank'},
-                    {label: 'Not Found Page', icon: 'fa fa-fw fa-times', url: 'assets/pages/notfound.html', target: '_blank'},
+                    {label: 'Login Page', icon: 'fa fa-fw fa-sign-in', routerLink: ['/login'], target: '_blank'},
+                    {label: 'Error Page', icon: 'fa fa-fw fa-exclamation-circle', routerLink: ['/error'], target: '_blank'},
+                    {label: 'Not Found Page', icon: 'fa fa-fw fa-times', routerLink: ['/notfound'], target: '_blank'},
                     {label: 'Access Denied Page', icon: 'fa fa-fw fa-exclamation-triangle',
-                        url: 'assets/pages/access.html', target: '_blank'}
+                        routerLink: ['/accessdenied'], target: '_blank'}
                 ]
             },
             {
@@ -307,7 +307,7 @@ export class AppSubMenuComponent {
 
     activeIndex: number;
 
-    constructor(public app: AppComponent) {}
+    constructor(public app: AppMainComponent) {}
 
     itemClick(event: Event, item: MenuItem, index: number) {
         if (this.root) {
