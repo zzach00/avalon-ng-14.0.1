@@ -103,6 +103,7 @@ import {CarService} from './demo/service/carservice';
 import {CountryService} from './demo/service/countryservice';
 import {EventService} from './demo/service/eventservice';
 import {NodeService} from './demo/service/nodeservice';
+import {AppInvoiceComponent} from './pages/app.invoice.component';
 
 @NgModule({
     imports: [
@@ -205,7 +206,8 @@ import {NodeService} from './demo/service/nodeservice';
         AppNotfoundComponent,
         AppErrorComponent,
         AppAccessdeniedComponent,
-        AppLoginComponent
+        AppLoginComponent,
+        AppInvoiceComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

@@ -19,6 +19,7 @@ import { AppErrorComponent } from './pages/app.error.component';
 import { AppAccessdeniedComponent } from './pages/app.accessdenied.component';
 import { AppLoginComponent } from './pages/app.login.component';
 import {DashboardBankingComponent} from './demo/view/dashboardbanking.component';
+import {AppInvoiceComponent} from './pages/app.invoice.component';
 
 export const routes: Routes = [
     { path: '', component: AppMainComponent,
@@ -36,7 +37,8 @@ export const routes: Routes = [
             { path: 'empty', component: EmptyDemoComponent },
             { path: 'charts', component: ChartsDemoComponent },
             { path: 'file', component: FileDemoComponent },
-            { path: 'documentation', component: DocumentationComponent }
+            { path: 'documentation', component: DocumentationComponent },
+            { path: 'invoice', component: AppInvoiceComponent }
         ]
     },
     {path: 'error', component: AppErrorComponent},
