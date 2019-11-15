@@ -20,6 +20,7 @@ import { AppAccessdeniedComponent } from './pages/app.accessdenied.component';
 import { AppLoginComponent } from './pages/app.login.component';
 import {DashboardBankingComponent} from './demo/view/dashboardbanking.component';
 import {AppInvoiceComponent} from './pages/app.invoice.component';
+import {AppHelpComponent} from './pages/app.help.component';
 
 export const routes: Routes = [
     { path: '', component: AppMainComponent,
@@ -38,7 +39,8 @@ export const routes: Routes = [
             { path: 'charts', component: ChartsDemoComponent },
             { path: 'file', component: FileDemoComponent },
             { path: 'documentation', component: DocumentationComponent },
-            { path: 'invoice', component: AppInvoiceComponent }
+            { path: 'invoice', component: AppInvoiceComponent },
+            { path: 'help', component: AppHelpComponent }
         ]
     },
     {path: 'error', component: AppErrorComponent},

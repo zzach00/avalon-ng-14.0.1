@@ -83,6 +83,8 @@ import {AppMenuComponent, AppSubMenuComponent} from './app.menu.component';
 import {AppTopBarComponent} from './app.topbar.component';
 import {AppFooterComponent} from './app.footer.component';
 import {AppProfileComponent} from './app.profile.component';
+import {AppInvoiceComponent} from './pages/app.invoice.component';
+import {AppHelpComponent} from './pages/app.help.component';
 import {DashboardDemoComponent} from './demo/view/dashboarddemo.component';
 import {DashboardBankingComponent} from './demo/view/dashboardbanking.component';
 import {SampleDemoComponent} from './demo/view/sampledemo.component';
@@ -103,7 +105,6 @@ import {CarService} from './demo/service/carservice';
 import {CountryService} from './demo/service/countryservice';
 import {EventService} from './demo/service/eventservice';
 import {NodeService} from './demo/service/nodeservice';
-import {AppInvoiceComponent} from './pages/app.invoice.component';
 
 @NgModule({
     imports: [
@@ -207,7 +208,8 @@ import {AppInvoiceComponent} from './pages/app.invoice.component';
         AppErrorComponent,
         AppAccessdeniedComponent,
         AppLoginComponent,
-        AppInvoiceComponent
+        AppInvoiceComponent,
+        AppHelpComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
