@@ -139,6 +139,7 @@ export class AppMenuComponent implements OnInit {
                     {label: 'Empty Page', icon: 'fa fa-fw fa-square-o', routerLink: ['/empty']},
                     {label: 'Invoice', icon: 'fa fa-fw fa-list-alt', routerLink: ['/invoice']},
                     {label: 'Help Page', icon: 'fa fa-fw fa-question-circle', routerLink: ['/help']},
+                    {label: 'Wizard', icon: 'fa fa-fw fa-star', routerLink: ['/wizard']},
                     {label: 'Landing Page', icon: 'fa fa-fw fa-certificate', url: 'assets/pages/landing.html', target: '_blank'},
                     {label: 'Login Page', icon: 'fa fa-fw fa-sign-in', routerLink: ['/login'], target: '_blank'},
                     {label: 'Error Page', icon: 'fa fa-fw fa-exclamation-circle', routerLink: ['/error'], target: '_blank'},

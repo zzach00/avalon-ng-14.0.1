@@ -85,6 +85,7 @@ import {AppFooterComponent} from './app.footer.component';
 import {AppProfileComponent} from './app.profile.component';
 import {AppInvoiceComponent} from './pages/app.invoice.component';
 import {AppHelpComponent} from './pages/app.help.component';
+import {AppWizardComponent} from './pages/app.wizard.component';
 import {DashboardDemoComponent} from './demo/view/dashboarddemo.component';
 import {DashboardBankingComponent} from './demo/view/dashboardbanking.component';
 import {SampleDemoComponent} from './demo/view/sampledemo.component';
@@ -209,7 +210,8 @@ import {NodeService} from './demo/service/nodeservice';
         AppAccessdeniedComponent,
         AppLoginComponent,
         AppInvoiceComponent,
-        AppHelpComponent
+        AppHelpComponent,
+        AppWizardComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
