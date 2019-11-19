@@ -230,6 +230,55 @@ body {
         }
     }
 
+    .light-btn.ui-button,
+    .light-btn > .ui-button,
+    .ui-splitbutton.light-btn > .ui-button,
+    .ui-button.ui-state-default.ui-button-light,
+    .ui-buttonset.ui-button-light > .ui-button.ui-state-default  {
+        color: #212529;
+        background-color: #f8f9fa;
+        border-color: #f8f9fa;
+
+        &:enabled:hover {
+            background-color: #e2e6ea;
+            border-color: #dae0e5;
+        }
+
+        &:enabled:focus {
+            outline: 0 none;
+            @include shadow(0 0 0 0.2rem rgba(248,249,250,.5));
+        }
+
+        &:enabled:active  {
+            background-color: #dae0e5;
+            border-color: #d3d9df;
+        }
+    }
+
+    .dark-btn.ui-button,
+    .dark-btn > .ui-button,
+    .ui-splitbutton.dark-btn > .ui-button,
+    .ui-button.ui-state-default.ui-button-dark,
+    .ui-buttonset.ui-button-dark > .ui-button.ui-state-default {
+        background-color: #343a40;
+        border-color: #343a40;
+
+        &:enabled:hover {
+            background-color: #23272b;
+            border-color: #1d2124;
+        }
+
+        &:enabled:focus {
+            outline: 0 none;
+            @include shadow(0 0 0 0.2rem rgba(52,58,64,.5));
+        }
+
+        &:enabled:active  {
+            background-color: #1d2124;
+            border-color: #171a1d;
+        }
+    }
+
     .ui-fluid {
         .ui-button-icon-only {
             width: 2.143em;

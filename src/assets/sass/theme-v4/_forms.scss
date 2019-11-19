@@ -92,45 +92,45 @@ body {
         }
 
         &.secondary-btn {
-            color: $textColor;
-            background-color: #ffffff;
-            border-color: #cccccc;
+            color: #ffffff;
+            background-color: #6c757d;
+            border-color: #6c757d;
 
             &:enabled:hover {
-                background-color: #e6e6e6;
-                border-color: #adadad;
+                background-color: #5a6268;
+                border-color: #545b62;
             }
 
             &:enabled:focus {
                 outline: 0 none;
-                @include shadow(0 0 0 0.2rem rgba(204, 204, 204, .5));
+                @include shadow(0 0 0 0.2rem rgba(108,117,125,.5));
             }
 
             &:enabled:active {
-                background-color: #e6e6e6;
-                border-color: #adadad;
+                background-color: #545b62;
+                border-color: #545b62;
             }
         }
     }
 
     .ui-button.ui-state-default.ui-button-secondary, .ui-buttonset.ui-button-secondary > .ui-button.ui-state-default  {
-        color: $textColor;
-        background-color: #ffffff;
-        border-color: #cccccc;
+        color: #ffffff;
+        background-color: #6c757d;
+        border-color: #6c757d;
 
         &:enabled:hover {
-            background-color: #e6e6e6;
-            border-color: #adadad;
+            background-color: #5a6268;
+            border-color: #545b62;
         }
 
         &:enabled:focus {
-            background-color: #e6e6e6;
-            border-color: #adadad;
+            outline: 0 none;
+            @include shadow(0 0 0 0.2rem rgba(108,117,125,.5));
         }
 
         &:enabled:active {
-            background-color: #d4d4d4;
-            border-color: #8c8c8c;
+            background-color: #545b62;
+            border-color: #545b62;
         }
     }
 
@@ -139,23 +139,22 @@ body {
     .ui-splitbutton.success-btn > .ui-button,
     .ui-button.ui-state-default.ui-button-success,
     .ui-buttonset.ui-button-success > .ui-button.ui-state-default {
-        background-color: #5cb85c;
-        border-color: #5cb85c;
+        background-color: #28a745;
+        border-color: #28a745;
 
         &:enabled:hover {
-            background-color: #5cb85c;
-            border-color: #419641;
+            background-color: #218838;
+            border-color: #1e7e34;
         }
 
         &:enabled:focus {
             outline: 0 none;
-            @include shadow(0 0 0 0.2rem rgba(92,184,92,.5));
+            @include shadow(0 0 0 0.2rem rgba(40,167,69,.5));
         }
 
-        &:enabled:active {
-            background-color: #449d44;
-            border-color: #419641;
-
+        &:enabled:active  {
+            background-color: #1e7e34;
+            border-color: #1c7430;
         }
     }
 
@@ -164,22 +163,22 @@ body {
     .ui-splitbutton.info-btn > .ui-button,
     .ui-button.ui-state-default.ui-button-info,
     .ui-buttonset.ui-button-info > .ui-button.ui-state-default {
-        background-color: #5bc0de;
-        border-color: #5bc0de;
+        background-color: #17a2b8;
+        border-color: #17a2b8;
 
         &:enabled:hover {
-            background-color: #31b0d5;
-            border-color: #2aabd2;
+            background-color: #138496;
+            border-color: #117a8b;
         }
 
         &:enabled:focus {
             outline: 0 none;
-            @include shadow(0 0 0 0.2rem rgba(91,192,222,.5));
+            @include shadow(0 0 0 0.2rem rgba(23,162,184,.5));
         }
 
-        &:enabled:active {
-            background-color: #31b0d5;
-            border-color: #2aabd2;
+        &:enabled:active  {
+            background-color: #117a8b;
+            border-color: #10707f;
         }
     }
 
@@ -188,22 +187,23 @@ body {
     .ui-splitbutton.warning-btn > .ui-button,
     .ui-button.ui-state-default.ui-button-warning,
     .ui-buttonset.ui-button-warning > .ui-button.ui-state-default {
-        background-color: #f0ad4e;
-        border-color: #f0ad4e;
+        color: #212529;
+        background-color: #ffc107;
+        border-color: #ffc107;
 
         &:enabled:hover {
-            background-color: #ec971f;
-            border-color: #eb9316;
+            background-color: #e0a800;
+            border-color: #d39e00;
         }
 
         &:enabled:focus {
             outline: 0 none;
-            @include shadow(0 0 0 0.2rem rgba(240,173,78,.5));
+            @include shadow(0 0 0 0.2rem rgba(255,193,7,.5));
         }
 
-        &:enabled:active {
-            background-color: #ec971f;
-            border-color: #eb9316;
+        &:enabled:active  {
+            background-color: #d39e00;
+            border-color: #c69500;
         }
     }
 
@@ -212,24 +212,74 @@ body {
     .ui-splitbutton.danger-btn > .ui-button,
     .ui-button.ui-state-default.ui-button-danger,
     .ui-buttonset.ui-button-danger > .ui-button.ui-state-default {
-        background-color: #d9534f;
-        border-color: #d9534f;
+        background-color: #dc3545;
+        border-color: #dc3545;
 
         &:enabled:hover {
-            background-color: #c9302c;
-            border-color: #c12e2a;
+            background-color: #c82333;
+            border-color: #bd2130;
         }
 
         &:enabled:focus {
             outline: 0 none;
-            @include shadow(0 0 0 0.2rem rgba(217,83,79,.5));
+            @include shadow(0 0 0 0.2rem rgba(220,53,69,.5));
         }
 
-        &:enabled:active {
-            background-color: #c9302c;
-            border-color: #c12e2a;
+        &:enabled:active  {
+            background-color: #bd2130;
+            border-color: #b21f2d;
         }
     }
+
+    .light-btn.ui-button,
+    .light-btn > .ui-button,
+    .ui-splitbutton.light-btn > .ui-button,
+    .ui-button.ui-state-default.ui-button-light,
+    .ui-buttonset.ui-button-light > .ui-button.ui-state-default  {
+        color: #212529;
+        background-color: #f8f9fa;
+        border-color: #f8f9fa;
+
+        &:enabled:hover {
+            background-color: #e2e6ea;
+            border-color: #dae0e5;
+        }
+
+        &:enabled:focus {
+            outline: 0 none;
+            @include shadow(0 0 0 0.2rem rgba(248,249,250,.5));
+        }
+
+        &:enabled:active  {
+            background-color: #dae0e5;
+            border-color: #d3d9df;
+        }
+    }
+
+    .dark-btn.ui-button,
+    .dark-btn > .ui-button,
+    .ui-splitbutton.dark-btn > .ui-button,
+    .ui-button.ui-state-default.ui-button-dark,
+    .ui-buttonset.ui-button-dark > .ui-button.ui-state-default {
+        background-color: #343a40;
+        border-color: #343a40;
+
+        &:enabled:hover {
+            background-color: #23272b;
+            border-color: #1d2124;
+        }
+
+        &:enabled:focus {
+            outline: 0 none;
+            @include shadow(0 0 0 0.2rem rgba(52,58,64,.5));
+        }
+
+        &:enabled:active  {
+            background-color: #1d2124;
+            border-color: #171a1d;
+        }
+    }
+
 
     .ui-fluid {
         .ui-button-icon-only {
