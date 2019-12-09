@@ -75,6 +75,7 @@ import {VirtualScrollerModule} from 'primeng/virtualscroller';
 
 import {AppComponent} from './app.component';
 import {AppMainComponent} from './app.main.component';
+import { AppConfigComponent } from './app.config.component';
 import {AppNotfoundComponent} from './pages/app.notfound.component';
 import {AppErrorComponent} from './pages/app.error.component';
 import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
@@ -189,6 +190,7 @@ import {NodeService} from './demo/service/nodeservice';
         AppTopBarComponent,
         AppFooterComponent,
         AppProfileComponent,
+        AppConfigComponent,
         DashboardDemoComponent,
         DashboardBankingComponent,
         SampleDemoComponent,

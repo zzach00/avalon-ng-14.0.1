@@ -41,9 +41,13 @@ export class AppMainComponent implements AfterViewInit {
     resetMenu: boolean;
     
     menuHoverActive: boolean;
-    
+
+    configActive: boolean;
+
+    configClick: boolean;
+
     @ViewChild('layoutMenuScroller', { static: true }) layoutMenuScrollerViewChild: ScrollPanel;
-    
+
     constructor(public renderer: Renderer2) {}
     
     ngAfterViewInit() {
@@ -68,6 +72,11 @@ export class AppMainComponent implements AfterViewInit {
             this.menuHoverActive = false;
         }
         
+        if (this.configActive && !this.configClick) {
+            this.configActive = false;
+        }
+
+        this.configClick = false;
         this.topbarItemClick = false;
         this.menuClick = false;
     }
@@ -119,6 +128,10 @@ export class AppMainComponent implements AfterViewInit {
     onTopbarSubItemClick(event) {
         event.preventDefault();
     }
+
+    onConfigClick(event) {
+        this.configClick = true;
+    }
     
     hideOverlayMenu() {
         this.rotateMenuButton = false;
@@ -139,6 +152,10 @@ export class AppMainComponent implements AfterViewInit {
         return window.innerWidth <= 640;
     }
     
+    isStatic() {
+        return this.layoutMode === MenuOrientation.STATIC;
+    }
+
     isOverlay() {
         return this.layoutMode === MenuOrientation.OVERLAY;
     }
@@ -146,6 +163,7 @@ export class AppMainComponent implements AfterViewInit {
     isHorizontal() {
         return this.layoutMode === MenuOrientation.HORIZONTAL;
     }
+
 
     isSlim() {
         return this.layoutMode === MenuOrientation.SLIM;
