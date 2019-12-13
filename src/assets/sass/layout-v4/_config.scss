@@ -84,7 +84,7 @@
         height: 25px;
         line-height: 25px;
         text-align: center;
-        right: 32px;
+        right: 19px;
         top: 10px;
         z-index: 999;
         background-color: #e0284f;
@@ -106,7 +106,7 @@
         text-align: center;
     }
 
-    .ui-tabview {
+    .ui-tabview.ui-tabview-top  {
         border: 0 none;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -119,9 +119,10 @@
         @include shadow( 0 2px 10px 0 rgba(0, 0, 0, 0.24));
         background-color: #ffffff;
 
-        &.ui-tabview-top > .ui-tabview-nav {
-            display: flex;
+        > .ui-tabview-nav {
+            display: flex; 
             margin-right: 44px;
+            flex-wrap: wrap;
 
             li {
                 vertical-align: bottom;
@@ -131,11 +132,12 @@
                 border: 0 none;
                 border-radius: 0;
                 border-bottom: 3px solid transparent;
+                outline: none;
                 cursor: pointer;
 
-                &:not(.ui-state-active):not(.ui-state-disabled):hover  {
-                    border-color: lighten($color: $topbarLeftGradientStartBgColor, $amount: 25);
-                    background-color: lighten($color: $topbarLeftGradientStartBgColor, $amount: 45);
+                &:not(.ui-state-active):not(.ui-state-disabled):hover {
+                    border-color: lighten($topbarLeftGradientStartBgColor, 25%);
+                    background-color: lighten($topbarLeftGradientStartBgColor, 60%);
                     @include transition(background-color $transitionDuration);
 
                     > a {
@@ -146,14 +148,14 @@
                 &.ui-state-active {
                     border: none;
                     border-bottom: 3px solid $topbarLeftGradientStartBgColor;
-                    background-color: lighten($color: $topbarLeftGradientStartBgColor, $amount: 35);
                     @include transition(background-color $transitionDuration);
+
                     > a {
                         color: #1b1c1e;
                     }
 
                     &:hover {
-                        background-color: lighten($color: $topbarLeftGradientStartBgColor, $amount: 45);
+                        background-color: lighten($topbarLeftGradientStartBgColor, 60%);
                         @include transition(background-color $transitionDuration);
                     }
                 }
@@ -175,6 +177,7 @@
 
             .ui-tabview-panel {
                 padding: 2em ;
+                background-color: rgba(255,255,255,0);
             }
             
             img {
@@ -198,9 +201,15 @@
                 }
 
                 i {
-                    font-size: 48px;
+                    font-size: 32px;
                     color: $topbarLeftGradientStartBgColor;
                     position: absolute;
+                    @include border-radius(50%);
+                    background-color: #ffffff;
+                    width: 40px;
+                    line-height: 40px;
+                    height: 40px;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
                 }
 
                 &.layout-config-option {
@@ -211,11 +220,6 @@
                     height: auto;
                     overflow: hidden;
                     text-align: center;
-                    
-                    i {
-                        color: #ffffff;
-                        position: absolute;
-                    }
             
                     &:hover {
                         @include scale(1.1);
@@ -232,11 +236,6 @@
                     img {
                         height: 87px;
                         width: 109px;
-                    }
-
-                    i {
-                        color: #ffffff;
-                        position: absolute;
                     }
                 }
             }
@@ -286,18 +285,26 @@
     overflow: hidden;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1024px) {
     .layout-config {
         transform: translate3d(100%, 0px, 0px);
         
+        .layout-config-button {
+            left: auto;
+            right: -52px;
+        }
+
         &.layout-config-active {
             width: 100%;
             transform: translate3d(0px, 0px, 0px);
         }
-
-        .layout-config-button {
-            left: auto;
-            right: -52px;
+        
+        .layout-config-close {
+            right: 29px;
+        }
+        
+        .ui-tabs.ui-tabs-top > .ui-tabs-nav {
+            margin-right: 54px;
         }
     }
 }

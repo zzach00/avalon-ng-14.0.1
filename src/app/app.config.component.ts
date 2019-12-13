@@ -7,10 +7,10 @@ import { AppMainComponent } from './app.main.component';
         <div class="layout-config" [ngClass]="{'layout-config-active': app.configActive}" (click)="app.onConfigClick($event)">
             <div class="layout-config-content">
                 <a style="cursor: pointer" id="layout-config-button" class="layout-config-button" (click)="onConfigButtonClick($event)">
-                    <i class="pi pi-cog"></i>
+                    <i class="fa fa-fw fa-cog"></i>
                 </a>
                 <a style="cursor: pointer" class="layout-config-close" (click)="onConfigCloseClick($event)">
-                    <i class="pi pi-times"></i>
+                    <i class="fa fa-times"></i>
                 </a>
                 <p-tabView>
                     <p-tabPanel header="Menu">
@@ -19,28 +19,28 @@ import { AppMainComponent } from './app.main.component';
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="app.changeToStaticMenu()">
                                     <img src="assets/layout/images/configurator/menu/Avalon-Static.png" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="app.isStatic()"></i>
+                                    <i class="fa fa-check" *ngIf="app.isStatic()"></i>
                                 </a>
                                 <span>Static</span>
                             </div>
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="app.changeToOverlayMenu()">
                                     <img src="assets/layout/images/configurator/menu/Avalon-Overlay.png" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="app.isOverlay()"></i>
+                                    <i class="fa fa-check" *ngIf="app.isOverlay()"></i>
                                 </a>
                                 <span>Overlay</span>
                             </div>
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="app.changeToHorizontalMenu()">
                                     <img src="assets/layout/images/configurator/menu/Avalon-Horizontal.png" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="app.isHorizontal()"></i>
+                                    <i class="fa fa-check" *ngIf="app.isHorizontal()"></i>
                                 </a>
                                 <span>Horizontal</span>
                             </div>
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="app.changeToSlimMenu()">
                                     <img src="assets/layout/images/configurator/menu/Avalon-Slim.png" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="app.isSlim()"></i>
+                                    <i class="fa fa-check" *ngIf="app.isSlim()"></i>
                                 </a>
                                 <span>Slim</span>
                             </div>
@@ -50,14 +50,14 @@ import { AppMainComponent } from './app.main.component';
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="this.app.darkMenu = true">
                                     <img src="assets/layout/images/configurator/menu/Avalon-Dark.png" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="app.darkMenu"></i>
+                                    <i class="fa fa-check" *ngIf="app.darkMenu"></i>
                                 </a>
                                 <span>Dark</span>
                             </div>
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="this.app.darkMenu = false">
                                     <img src="assets/layout/images/configurator/menu/Avalon-Static.png" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="!app.darkMenu"></i>
+                                    <i class="fa fa-check" *ngIf="!app.darkMenu"></i>
                                 </a>
                                 <span>Light</span>
                             </div>
@@ -68,14 +68,14 @@ import { AppMainComponent } from './app.main.component';
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="this.app.profileMode = 'inline'">
                                     <img src="assets/layout/images/configurator/menu/Avalon-Inline.png" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="app.profileMode === 'inline'"></i>
+                                    <i class="fa fa-check" *ngIf="app.profileMode === 'inline'"></i>
                                 </a>
                                 <span>Inline</span>
                             </div>
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="this.app.profileMode = 'top'">
                                     <img src="assets/layout/images/configurator/menu/Avalon-Popup.png" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="app.profileMode === 'top'"></i>
+                                    <i class="fa fa-check" *ngIf="app.profileMode === 'top'"></i>
                                 </a>
                                 <span>Overlay</span>
                             </div>
@@ -85,15 +85,15 @@ import { AppMainComponent } from './app.main.component';
                         <div class="panel-items">
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="changeVersion('v3')">
-                                    <img src="assets/layout/images/configurator/version/avalon-bootstrap3.png" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="version === 'v3'"></i>
+                                    <img src="assets/layout/images/configurator/v3/avalon-bootstrap3.png" alt="avalon"/>
+                                    <i class="fa fa-check" *ngIf="version === 'v3'"></i>
                                 </a>
                                 <span>V3</span>
                             </div>
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="changeVersion('v4')">
-                                    <img src="assets/layout/images/configurator/version/avalon-bootstrap4.png" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="version === 'v4'"></i>
+                                    <img src="assets/layout/images/configurator/v4/avalon-bootstrap4.png" alt="avalon"/>
+                                    <i class="fa fa-check" *ngIf="version === 'v4'"></i>
                                 </a>
                                 <span>V4</span>
                             </div>
@@ -104,8 +104,8 @@ import { AppMainComponent } from './app.main.component';
                         <div class="panel-items">
                             <div class="panel-item colors" *ngFor="let flatLayoutColor of flatLayoutColors">
                                 <a style="cursor: pointer" class="layout-config-layout-option" (click)="changeLayout(flatLayoutColor.label)">
-                                    <img src="assets/layout/images/configurator/layout/{{flatLayoutColor.label}}.png" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="layout === flatLayoutColor.label"></i>
+                                    <img src="assets/layout/images/configurator/{{version}}/layouts/flat/{{flatLayoutColor.label}}.png" alt="avalon"/>
+                                    <i class="fa fa-check" *ngIf="layout === flatLayoutColor.label"></i>
                                 </a>
                             </div>
                         </div>
@@ -113,8 +113,8 @@ import { AppMainComponent } from './app.main.component';
                         <div class="panel-items">
                             <div class="panel-item colors" *ngFor="let specialLayoutColor of specialLayoutColors">
                                 <a style="cursor: pointer" class="layout-config-layout-option" (click)="changeLayout(specialLayoutColor.label, true)">
-                                    <img src="assets/layout/images/configurator/layout/{{specialLayoutColor.label}}.png" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="layout === specialLayoutColor.label"></i>
+                                    <img src="assets/layout/images/configurator/{{version}}/layouts/special/{{specialLayoutColor.label}}.png" alt="avalon"/>
+                                    <i class="fa fa-check" *ngIf="layout === specialLayoutColor.label"></i>
                                 </a>
                             </div>
                         </div>
@@ -123,8 +123,8 @@ import { AppMainComponent } from './app.main.component';
                         <div class="panel-items">
                             <div class="panel-item" *ngFor="let theme of themes">
                                 <a style="cursor: pointer" class="layout-config-option" (click)="changeTheme(theme.label)">
-                                    <img src="assets/layout/images/configurator/theme/{{theme.label}}.svg" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="themeColor === theme.label"></i>
+                                    <img src="assets/layout/images/configurator/{{version}}/themes/{{theme.image}}" alt="avalon"/>
+                                    <i class="fa fa-check" *ngIf="themeColor === theme.label"></i>
                                 </a>
                             </div>
                         </div>
@@ -181,21 +181,21 @@ export class AppConfigComponent implements OnInit {
             {label: 'firewatch'}
         ];
         this.themes = [
-            {label: 'blue'},
-            {label: 'cyan'},
-            {label: 'indigo'},
-            {label: 'purple'},
-            {label: 'teal'},
-            {label: 'orange'},
-            {label: 'deeppurple'},
-            {label: 'lightblue'},
-            {label: 'green'},
-            {label: 'lightgreen'},
-            {label: 'lime'},
-            {label: 'amber'},
-            {label: 'brown'},
-            {label: 'darkgrey'},
-            {label: 'pink'},
+            {label: 'blue', image:'blue.svg'},
+            {label: 'cyan', image:'cyan.svg'},
+            {label: 'indigo', image:'indigo.svg'},
+            {label: 'purple', image:'purple.svg'},
+            {label: 'teal', image:'teal.svg'},
+            {label: 'orange', image:'orange.svg'},
+            {label: 'deeppurple', image:'deeppurple.svg'},
+            {label: 'lightblue', image:'lightblue.svg'},
+            {label: 'green', image:'green.png'},
+            {label: 'lightgreen', image:'lightgreen.png'},
+            {label: 'lime', image:'lime.svg'},
+            {label: 'amber', image:'amber.png'},
+            {label: 'brown', image:'brown.png'},
+            {label: 'darkgrey', image:'darkgrey.svg'},
+            {label: 'pink', image:'pink.svg'},
         ];
     }
 
