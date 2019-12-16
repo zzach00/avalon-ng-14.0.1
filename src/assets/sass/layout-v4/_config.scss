@@ -264,9 +264,16 @@
                 overflow: hidden;
                 justify-content: center;
                 align-items: center;
+                opacity: 0.35;
+
+                &:hover {
+                    @include scale(1.0);
+                }
 
                 i {
                     font-size: 48px;
+                    background-color: transparent;
+                    box-shadow: none;
                     color: $topbarLeftGradientStartBgColor;
                     position: absolute;
                 }

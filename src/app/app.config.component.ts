@@ -66,16 +66,16 @@ import { AppMainComponent } from './app.main.component';
                     <p-tabPanel header="User Profile">
                         <div class="panel-items">
                             <div class="panel-item">
-                                <a style="cursor: pointer" (click)="this.app.profileMode = 'inline'">
+                                <a style="cursor: pointer" [class]="app.isHorizontal() ? 'ui-state-disabled':''" (click)="onProfileModeClick('inline')">
                                     <img src="assets/layout/images/configurator/menu/Avalon-Inline.png" alt="avalon"/>
-                                    <i class="fa fa-check" *ngIf="app.profileMode === 'inline'"></i>
+                                    <i class="fa fa-check" *ngIf="app.profileMode === 'inline' && !app.isHorizontal()"></i>
                                 </a>
                                 <span>Inline</span>
                             </div>
                             <div class="panel-item">
-                                <a style="cursor: pointer" (click)="this.app.profileMode = 'top'">
+                                <a style="cursor: pointer" [class]="app.isHorizontal() ? 'ui-state-disabled':''" (click)="onProfileModeClick('top')">
                                     <img src="assets/layout/images/configurator/menu/Avalon-Popup.png" alt="avalon"/>
-                                    <i class="fa fa-check" *ngIf="app.profileMode === 'top'"></i>
+                                    <i class="fa fa-check" *ngIf="app.profileMode === 'top' || app.isHorizontal()"></i>
                                 </a>
                                 <span>Overlay</span>
                             </div>
@@ -241,6 +241,14 @@ export class AppConfigComponent implements OnInit {
             layoutLink.href = 'assets/layout/css/layout-' + this.layout + '-v4' + '.css';
             this.version = 'v4';
         }
+    }
+
+    onProfileModeClick(mode: string) {
+        if (this.app.isHorizontal()) {
+            return;
+        }
+
+        this.app.profileMode = mode;
     }
 
     onConfigButtonClick(event) {
