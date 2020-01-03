@@ -200,12 +200,11 @@ export class AppConfigComponent implements OnInit {
     }
 
     changeLayout(layout: string, special?: boolean) {
-        const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as  HTMLLinkElement;
-
         if (this.version === 'v3') {
-            layoutLink.href = 'assets/layout/css/layout-' + layout + '.css';
-        } else {
-            layoutLink.href = 'assets/layout/css/layout-' + layout + '-v4' + '.css';
+            this.changeStyleSheetsColor('layout-css', 'layout-' + layout + '.css');
+        } 
+        else {
+            this.changeStyleSheetsColor('layout-css', 'layout-' + layout + '-v4' + '.css');
         }
 
         this.layout = layout;
@@ -216,31 +215,52 @@ export class AppConfigComponent implements OnInit {
     }
 
     changeTheme(theme: string) {
-        const themeLink: HTMLLinkElement = document.getElementById('theme-css') as  HTMLLinkElement;
-
         if (this.version === 'v3') {
-            themeLink.href =  'assets/theme/theme-' + theme + '.css';
-        } else {
-            themeLink.href =  'assets/theme/theme-' + theme + '-v4' + '.css';
+            this.changeStyleSheetsColor('theme-css', 'theme-' + theme + '.css');
+        } 
+        else {
+            this.changeStyleSheetsColor('theme-css', 'theme-' + theme + '-v4' + '.css');
         }
 
         this.themeColor = theme;
     }
 
     changeVersion(version: string) {
-        const themeLink: HTMLLinkElement = document.getElementById('theme-css') as  HTMLLinkElement;
-        const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as  HTMLLinkElement;
-
         if (version === 'v3' && this.version != version) {
             this.version = 'v3';
-            themeLink.href =  'assets/theme/theme-' + this.themeColor + '.css';
-            layoutLink.href = 'assets/layout/css/layout-' + this.layout + '.css';
+            this.changeStyleSheetsColor('theme-css', 'theme-' + this.themeColor + '.css');
+            this.changeStyleSheetsColor('layout-css', 'layout-' + this.layout + '.css');
         } 
         else if (version === 'v4' && this.version != version) {
-            themeLink.href =  'assets/theme/theme-' + this.themeColor + '-v4' + '.css';
-            layoutLink.href = 'assets/layout/css/layout-' + this.layout + '-v4' + '.css';
+            this.changeStyleSheetsColor('theme-css', 'theme-' + this.themeColor + '-v4' + '.css');
+            this.changeStyleSheetsColor('layout-css', 'layout-' + this.layout  + '-v4' + '.css');
             this.version = 'v4';
         }
+    }
+
+    changeStyleSheetsColor(id, value) {
+        const element = document.getElementById(id);
+        const urlTokens = element.getAttribute('href').split('/');
+        urlTokens[urlTokens.length - 1] = value;
+
+        const newURL = urlTokens.join('/');
+
+        this.replaceLink(element, newURL);
+    }
+
+    replaceLink(linkElement, href) {
+        const id = linkElement.getAttribute('id');
+        const cloneLinkElement = linkElement.cloneNode(true);
+
+        cloneLinkElement.setAttribute('href', href);
+        cloneLinkElement.setAttribute('id', id + '-clone');
+
+        linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
+
+        cloneLinkElement.addEventListener('load', () => {
+            linkElement.remove();
+            cloneLinkElement.setAttribute('id', id);
+        });
     }
 
     onProfileModeClick(mode: string) {

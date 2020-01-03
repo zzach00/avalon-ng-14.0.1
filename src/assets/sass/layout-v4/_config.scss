@@ -269,14 +269,6 @@
                 &:hover {
                     @include scale(1.0);
                 }
-
-                i {
-                    font-size: 48px;
-                    background-color: transparent;
-                    box-shadow: none;
-                    color: $topbarLeftGradientStartBgColor;
-                    position: absolute;
-                }
             }
         }
     }
