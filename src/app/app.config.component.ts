@@ -66,14 +66,16 @@ import { AppMainComponent } from './app.main.component';
                     <p-tabPanel header="User Profile">
                         <div class="panel-items">
                             <div class="panel-item">
-                                <a style="cursor: pointer" [class]="app.isHorizontal() ? 'ui-state-disabled':''" (click)="onProfileModeClick('inline')">
+                                <a style="cursor: pointer" [class]="app.isHorizontal() ? 'ui-state-disabled':''"
+                                   (click)="onProfileModeClick('inline')">
                                     <img src="assets/layout/images/configurator/menu/Avalon-Inline.png" alt="avalon"/>
                                     <i class="fa fa-check" *ngIf="app.profileMode === 'inline' && !app.isHorizontal()"></i>
                                 </a>
                                 <span>Inline</span>
                             </div>
                             <div class="panel-item">
-                                <a style="cursor: pointer" [class]="app.isHorizontal() ? 'ui-state-disabled':''" (click)="onProfileModeClick('top')">
+                                <a style="cursor: pointer" [class]="app.isHorizontal() ? 'ui-state-disabled':''"
+                                   (click)="onProfileModeClick('top')">
                                     <img src="assets/layout/images/configurator/menu/Avalon-Popup.png" alt="avalon"/>
                                     <i class="fa fa-check" *ngIf="app.profileMode === 'top' || app.isHorizontal()"></i>
                                 </a>
@@ -103,8 +105,10 @@ import { AppMainComponent } from './app.main.component';
                         <h1>Flat</h1>
                         <div class="panel-items">
                             <div class="panel-item colors" *ngFor="let flatLayoutColor of flatLayoutColors">
-                                <a style="cursor: pointer" class="layout-config-layout-option" (click)="changeLayout(flatLayoutColor.label)">
-                                    <img src="assets/layout/images/configurator/{{version}}/layouts/flat/{{flatLayoutColor.label}}.png" alt="avalon"/>
+                                <a style="cursor: pointer" class="layout-config-layout-option"
+                                   (click)="changeLayout(flatLayoutColor.label)">
+                                    <img src="assets/layout/images/configurator/{{version}}/layouts/flat/{{flatLayoutColor.label}}.png"
+                                         alt="avalon"/>
                                     <i class="fa fa-check" *ngIf="layout === flatLayoutColor.label"></i>
                                 </a>
                             </div>
@@ -112,7 +116,8 @@ import { AppMainComponent } from './app.main.component';
                         <h1>Special</h1>
                         <div class="panel-items">
                             <div class="panel-item colors" *ngFor="let specialLayoutColor of specialLayoutColors">
-                                <a style="cursor: pointer" class="layout-config-layout-option" (click)="changeLayout(specialLayoutColor.label, true)">
+                                <a style="cursor: pointer" class="layout-config-layout-option"
+                                   (click)="changeLayout(specialLayoutColor.label, true)">
                                     <img src="assets/layout/images/configurator/{{version}}/layouts/special/{{specialLayoutColor.label}}.png" alt="avalon"/>
                                     <i class="fa fa-check" *ngIf="layout === specialLayoutColor.label"></i>
                                 </a>
@@ -181,29 +186,28 @@ export class AppConfigComponent implements OnInit {
             {label: 'firewatch'}
         ];
         this.themes = [
-            {label: 'blue', image:'blue.svg'},
-            {label: 'cyan', image:'cyan.svg'},
-            {label: 'indigo', image:'indigo.svg'},
-            {label: 'purple', image:'purple.svg'},
-            {label: 'teal', image:'teal.svg'},
-            {label: 'orange', image:'orange.svg'},
-            {label: 'deeppurple', image:'deeppurple.svg'},
-            {label: 'lightblue', image:'lightblue.svg'},
-            {label: 'green', image:'green.png'},
-            {label: 'lightgreen', image:'lightgreen.png'},
-            {label: 'lime', image:'lime.svg'},
-            {label: 'amber', image:'amber.png'},
-            {label: 'brown', image:'brown.png'},
-            {label: 'darkgrey', image:'darkgrey.svg'},
-            {label: 'pink', image:'pink.svg'},
+            {label: 'blue', image: 'blue.svg'},
+            {label: 'cyan', image: 'cyan.svg'},
+            {label: 'indigo', image: 'indigo.svg'},
+            {label: 'purple', image: 'purple.svg'},
+            {label: 'teal', image: 'teal.svg'},
+            {label: 'orange', image: 'orange.svg'},
+            {label: 'deeppurple', image: 'deeppurple.svg'},
+            {label: 'lightblue', image: 'lightblue.svg'},
+            {label: 'green', image: 'green.png'},
+            {label: 'lightgreen', image: 'lightgreen.png'},
+            {label: 'lime', image: 'lime.svg'},
+            {label: 'amber', image: 'amber.png'},
+            {label: 'brown', image: 'brown.png'},
+            {label: 'darkgrey', image: 'darkgrey.svg'},
+            {label: 'pink', image: 'pink.svg'},
         ];
     }
 
     changeLayout(layout: string, special?: boolean) {
         if (this.version === 'v3') {
             this.changeStyleSheetsColor('layout-css', 'layout-' + layout + '.css');
-        } 
-        else {
+        } else {
             this.changeStyleSheetsColor('layout-css', 'layout-' + layout + '-v4' + '.css');
         }
 
@@ -217,8 +221,7 @@ export class AppConfigComponent implements OnInit {
     changeTheme(theme: string) {
         if (this.version === 'v3') {
             this.changeStyleSheetsColor('theme-css', 'theme-' + theme + '.css');
-        } 
-        else {
+        } else {
             this.changeStyleSheetsColor('theme-css', 'theme-' + theme + '-v4' + '.css');
         }
 
@@ -226,12 +229,11 @@ export class AppConfigComponent implements OnInit {
     }
 
     changeVersion(version: string) {
-        if (version === 'v3' && this.version != version) {
+        if (version === 'v3' && this.version !== version) {
             this.version = 'v3';
             this.changeStyleSheetsColor('theme-css', 'theme-' + this.themeColor + '.css');
             this.changeStyleSheetsColor('layout-css', 'layout-' + this.layout + '.css');
-        } 
-        else if (version === 'v4' && this.version != version) {
+        } else if (version === 'v4' && this.version !== version) {
             this.changeStyleSheetsColor('theme-css', 'theme-' + this.themeColor + '-v4' + '.css');
             this.changeStyleSheetsColor('layout-css', 'layout-' + this.layout  + '-v4' + '.css');
             this.version = 'v4';
