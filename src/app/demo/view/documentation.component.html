@@ -74,6 +74,8 @@ Run 'ng help' for more options.
 
     &lt;div class="layout-mask"&gt;&lt;/div&gt;
 
+    &lt;app-config&gt;&lt;/app-config&gt;
+
     &lt;app-footer&gt;&lt;/app-footer&gt;
 
 &lt;/div&gt;
@@ -122,62 +124,6 @@ export class AppMenuComponent implements OnInit &#123;
                 ]
             &#125;,
             &#123;
-                label: 'Layout Colors', icon: 'fa fa-fw fa-magic',
-                items: [
-                    &#123;
-                        label: 'Flat',
-                        icon: 'fa fa-fw fa-circle',
-                        items: [
-                            &#123;label: 'Blue', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('blue')&#125;&#125;,
-                            &#123;label: 'Purple', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('purple')&#125;&#125;,
-                            &#123;label: 'Cyan', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('cyan')&#125;&#125;,
-                            &#123;label: 'Indigo', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('indigo')&#125;&#125;,
-                            &#123;label: 'Teal', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('teal')&#125;&#125;,
-                            &#123;label: 'Pink', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('pink')&#125;&#125;,
-                            &#123;label: 'Lime', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('lime')&#125;&#125;,
-                            &#123;label: 'Green', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('green')&#125;&#125;,
-                            &#123;label: 'Amber', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('amber')&#125;&#125;,
-                            &#123;label: 'Dark Grey', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('darkgrey')&#125;&#125;,
-                        ]
-                    &#125;,
-                    &#123;
-                        label: 'Special',
-                        icon: 'fa fa-fw fa-fire',
-                        items: [
-                            &#123;label: 'Influenza', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('influenza', true)&#125;&#125;,
-                            &#123;label: 'Suzy', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('suzy', true)&#125;&#125;,
-                            &#123;label: 'Calm', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('calm', true)&#125;&#125;,
-                            &#123;label: 'Crimson', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('crimson', true)&#125;&#125;,
-                            &#123;label: 'Night', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('night', true)&#125;&#125;,
-                            &#123;label: 'Skyling', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('skyline', true)&#125;&#125;,
-                            &#123;label: 'Sunkist', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('sunkist', true)&#125;&#125;,
-                            &#123;label: 'Little Leaf', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('littleleaf', true)&#125;&#125;,
-                            &#123;label: 'Joomla', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('joomla', true)&#125;&#125;,
-                            &#123;label: 'Firewatch', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeLayout('firewatch', true)&#125;&#125;
-                        ]
-                    &#125;
-                ]
-            &#125;,
-            &#123;
-                label: 'Themes', icon: 'fa fa-fw fa-paint-brush', badge: '5',
-                items: [
-                    &#123;label: 'Blue', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('blue')&#125;&#125;,
-                    &#123;label: 'Cyan', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('cyan')&#125;&#125;,
-                    &#123;label: 'Indigo', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('indigo')&#125;&#125;,
-                    &#123;label: 'Purple', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('purple')&#125;&#125;,
-                    &#123;label: 'Teal', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('teal')&#125;&#125;,
-                    &#123;label: 'Orange', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('orange')&#125;&#125;,
-                    &#123;label: 'Deep Purple', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('deeppurple')&#125;&#125;,
-                    &#123;label: 'Light Blue', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('lightblue')&#125;&#125;,
-                    &#123;label: 'Green', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('green')&#125;&#125;,
-                    &#123;label: 'Light Green', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('lightgreen')&#125;&#125;,
-                    &#123;label: 'Lime', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('lime')&#125;&#125;,
-                    &#123;label: 'Amber', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('amber')&#125;&#125;,
-                    &#123;label: 'Brown', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('brown')&#125;&#125;,
-                    &#123;label: 'Dark Grey', icon: 'fa fa-fw fa-paint-brush', command: (event) => &#123;this.changeTheme('darkgrey')&#125;&#125;,
-                ]
-            &#125;,
-            &#123;
                 label: 'Components', icon: 'fa fa-fw fa-sitemap',
                 items: [
                     &#123;label: 'Sample Page', icon: 'fa fa-fw fa-columns', routerLink: ['/sample']&#125;,
@@ -196,6 +142,9 @@ export class AppMenuComponent implements OnInit &#123;
                 label: 'Template Pages', icon: 'fa fa-fw fa-life-saver',
                 items: [
                     &#123;label: 'Empty Page', icon: 'fa fa-fw fa-square-o', routerLink: ['/empty']&#125;,
+                    &#123;label: 'Invoice', icon: 'fa fa-fw fa-list-alt', routerLink: ['/invoice']&#125;,
+                    &#123;label: 'Help Page', icon: 'fa fa-fw fa-question-circle', routerLink: ['/help']&#125;,
+                    &#123;label: 'Wizard', icon: 'fa fa-fw fa-star', routerLink: ['/wizard']&#125;,
                     &#123;label: 'Landing Page', icon: 'fa fa-fw fa-certificate', url: 'assets/pages/landing.html', target: '_blank'&#125;,
                     &#123;label: 'Login Page', icon: 'fa fa-fw fa-sign-in', url: 'assets/pages/login.html', target: '_blank'&#125;,
                     &#123;label: 'Error Page', icon: 'fa fa-fw fa-exclamation-circle', url: 'assets/pages/error.html', target: '_blank'&#125;,
@@ -670,6 +619,12 @@ label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'red-badge'
             </ul>
 
             <h1>Migration Guide</h1>
+            <h4>8.0.0 to 8.0.1</h4>
+            <ul>
+                <li>Update layout css files.</li>
+                <li>Update theme css files.</li>
+            </ul>
+
             <h4>7.0.0 to 8.0.0</h4>
             <ul>
                 <li>Update your project to Angular 8 with ng update. View the official update guide -<a href="https://update.angular.io/">https://update.angular.io/</a>- for more information.</li>
