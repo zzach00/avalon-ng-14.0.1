@@ -212,10 +212,6 @@ export class AppConfigComponent implements OnInit {
         }
 
         this.layout = layout;
-
-        if (special) {
-            this.app.darkMenu = true;
-        }
     }
 
     changeTheme(theme: string) {
