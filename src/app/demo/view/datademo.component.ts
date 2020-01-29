@@ -148,7 +148,7 @@ export class DataDemoComponent implements OnInit {
     orderListCars: Car[];
 
     carouselCars: Car[];
-    
+
     responsiveOptions;
 
     files1: TreeNode[];
