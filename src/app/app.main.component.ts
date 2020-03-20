@@ -1,5 +1,5 @@
-import {Component, AfterViewInit, ElementRef, Renderer2, ViewChild, OnDestroy} from '@angular/core';
-import {ScrollPanel} from 'primeng/scrollpanel';
+import {Component, Renderer2} from '@angular/core';
+import { MenuService } from './app.menu.service';
 
 enum MenuOrientation {
     STATIC,
@@ -12,7 +12,7 @@ enum MenuOrientation {
     selector: 'app-main',
     templateUrl: './app.main.component.html',
 })
-export class AppMainComponent implements AfterViewInit {
+export class AppMainComponent {
 
     layoutMode: MenuOrientation = MenuOrientation.STATIC;
 
@@ -38,21 +38,14 @@ export class AppMainComponent implements AfterViewInit {
 
     activeTopbarItem: any;
 
-    resetMenu: boolean;
-
     menuHoverActive: boolean;
 
     configActive: boolean;
 
     configClick: boolean;
 
-    @ViewChild('layoutMenuScroller', { static: true }) layoutMenuScrollerViewChild: ScrollPanel;
 
-    constructor(public renderer: Renderer2) {}
-
-    ngAfterViewInit() {
-        setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 100);
-    }
+    constructor(public renderer: Renderer2, private menuService: MenuService) {}
 
     onLayoutClick() {
         if (!this.topbarItemClick) {
@@ -62,7 +55,7 @@ export class AppMainComponent implements AfterViewInit {
 
         if (!this.menuClick) {
             if (this.isHorizontal() || this.isSlim()) {
-                this.resetMenu = true;
+                this.menuService.reset();
             }
 
             if (this.overlayMenuActive || this.staticMenuMobileActive) {
@@ -99,11 +92,6 @@ export class AppMainComponent implements AfterViewInit {
 
     onMenuClick($event) {
         this.menuClick = true;
-        this.resetMenu = false;
-
-        if (!this.isHorizontal()) {
-            setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 450);
-        }
     }
 
     onTopbarMenuButtonClick(event) {

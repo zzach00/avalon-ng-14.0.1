@@ -156,32 +156,14 @@ body {
         border-right: 1px solid #cccccc;
         @include transition(margin-left .3s);
 
-        .ui-scrollpanel {
-            background: transparent;
-            border-radius: 0;
-            border: none;
-            .ui-scrollpanel-bar {
-                background: #aaaaaa;
-                @include opacity(.3);
-            }
-            .ui-scrollpanel-hidden {
-                display: block;
-                visibility: hidden;
-            }
+        .menu-scroll-content {
+            width: 253px;
+            padding-right: 18px;
+        }
 
-            .ui-scrollpanel-content {
-                overflow-x: hidden;
-            }
-
-            .menu-scroll-content {
-                width: 253px;
-                padding-right: 18px;
-            }
-
-            .layout-main-menu {
-                margin-top: 16px;
-                padding-bottom: 120px;
-            }
+        .layout-main-menu {
+            margin-top: 16px;
+            padding-bottom: 120px;
         }
 
         .profile {
@@ -370,6 +352,13 @@ body {
                 @include transition(background-color .3s, border-left-color .3s);
                 overflow: hidden;
                 border-left: 4px solid transparent;
+                outline: none;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -o-user-select: none;
+                user-select: none;
 
                 i {
                     color: $textSecondaryColor;
@@ -728,28 +717,12 @@ body {
                 height: auto;
                 background-color: $topbarLeftGradientEndBgColor;
 
-                .ui-scrollpanel {
-                    overflow: visible;
-                    border: none;
-                    .ui-scrollpanel-wrapper {
-                        overflow: visible;
-                        .ui-scrollpanel-content {
-                            overflow: visible;
-                            padding: 0;
-                        }
-                    }
+                .menu-scroll-content {
+                    width: 100%;
+                }
 
-                    .ui-scrollpanel-bar {
-                        display: none;
-                    }
-
-                    .menu-scroll-content {
-                        width: 100%;
-                    }
-
-                    .layout-main-menu {
-                        padding-bottom: 0;
-                    }
+                .layout-main-menu {
+                    padding-bottom: 0;
                 }
 
                 ul.layout-menu {
@@ -958,24 +931,9 @@ body {
                 z-index: 100;
                 top: 0;
 
-                .ui-scrollpanel {
-                    border: none;
-                    border-radius: 0;
-                    .ui-scrollpanel-wrapper {
-                        overflow: visible;
-                        .ui-scrollpanel-content {
-                            overflow: visible;
-                        }
-                    }
-
-                    .ui-scrollpanel-bar {
-                        display: none;
-                    }
-
-                    .menu-scroll-content {
-                        width: 100%;
-                        padding-right: 0;
-                    }
+                .menu-scroll-content {
+                    width: 100%;
+                    padding-right: 0;
                 }
 
                 .profile {
