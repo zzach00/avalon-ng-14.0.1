@@ -11,17 +11,89 @@ import {TreeNode, SelectItem, LazyLoadEvent} from 'primeng/primeng';
 @Component({
     templateUrl: './datademo.component.html',
     styles: [`
-        .ui-dataview .filter-container {
+        /* Table */
+        .ui-table.ui-table-cars .ui-table-caption.ui-widget-header {
+            border: 0 none;
+            padding: 12px;
+            text-align: left;
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        .ui-table .ui-table-globalfilter-container {
+            position: relative;
+            top: -4px;
+        }
+
+        .ui-column-filter {
+            margin-top: 1em;
+        }
+
+        .ui-column-filter .ui-multiselect-label {
+            font-weight: 500;
+        }
+
+        .ui-table.ui-table-cars .ui-table-thead > tr > th {
+            border: 0 none;
+            text-align: left;
+        }
+
+        .ui-table-globalfilter-container {
+            float: right;
+            display: inline;
+        }
+
+        .ui-table.ui-table-cars .ui-table-tbody > tr > td {
+            border: 0 none;
+        }
+
+        .ui-table.ui-table-cars .ui-table-tbody .ui-column-title {
+            font-size: 16px;
+        }
+
+        .ui-table.ui-table-cars .ui-paginator {
+            border: 0 none;
+            padding: 1em;
+        }
+
+        /* DataView */
+        .filter-container {
             text-align: center;
         }
 
-        @media (max-width: 40em) {
-            .ui-dataview .car-details, .ui-dataview .search-icon{
-                text-align: center;
-                margin-top: 0;
+        .car-details-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2em;
+            border-bottom: 1px solid #d9dad9;
+        }
+
+        .car-details-list > div {
+            display: flex;
+            align-items: center;
+        }
+
+        .car-details-list > div img {
+            margin-right: 14px;
+        }
+
+        .car-detail {
+            padding: 0 1em 1em 1em;
+            border-bottom: 1px solid #d9dad9;
+            margin: 1em;
+        }
+
+        .ui-panel-content {
+            padding: 1em;
+        }
+
+        @media (max-width: 1024px) {
+            .car-details-list img {
+                width: 75px;
             }
 
-            .ui-dataview .filter-container {
+            .filter-container {
                 text-align: left;
             }
         }
@@ -38,6 +110,7 @@ import {TreeNode, SelectItem, LazyLoadEvent} from 'primeng/primeng';
             font-weight: bold;
         }
 
+        /* Carousel */
         .empty-car-item-index {
             background-color: #f1f1f1;
             width: 60px;
@@ -137,6 +210,10 @@ export class DataDemoComponent implements OnInit {
 
     cols2: any[];
 
+    brands: SelectItem[];
+
+    colors: SelectItem[];
+
     data: TreeNode[];
 
     selectedCar: Car;
@@ -184,7 +261,7 @@ export class DataDemoComponent implements OnInit {
     constructor(private carService: CarService, private eventService: EventService, private nodeService: NodeService) {}
 
     ngOnInit() {
-        this.carService.getCarsMedium().then(cars => this.cars1 = cars);
+        this.carService.getCarsLarge().then(cars => this.cars1 = cars);
         this.cols = [
             { field: 'vin', header: 'Vin' },
             { field: 'year', header: 'Year' },
@@ -206,6 +283,29 @@ export class DataDemoComponent implements OnInit {
         this.nodeService.getFiles().then(files => this.files3 = files);
         this.nodeService.getFilesystem().then(files => this.files4 = files);
         this.eventService.getEvents().then(events => {this.events = events; });
+
+        this.colors = [
+            { label: 'White', value: 'White' },
+            { label: 'Green', value: 'Green' },
+            { label: 'Silver', value: 'Silver' },
+            { label: 'Black', value: 'Black' },
+            { label: 'Red', value: 'Red' },
+            { label: 'Maroon', value: 'Maroon' },
+            { label: 'Brown', value: 'Brown' },
+            { label: 'Orange', value: 'Orange' },
+            { label: 'Blue', value: 'Blue' }
+        ];
+        this.brands = [
+            { label: 'Audi', value: 'Audi' },
+            { label: 'BMW', value: 'BMW' },
+            { label: 'Fiat', value: 'Fiat' },
+            { label: 'Honda', value: 'Honda' },
+            { label: 'Jaguar', value: 'Jaguar' },
+            { label: 'Mercedes', value: 'Mercedes' },
+            { label: 'Renault', value: 'Renault' },
+            { label: 'VW', value: 'Volkswagen' },
+            { label: 'Volvo', value: 'Volvo' }
+        ];
 
         this.carouselCars = [
             {vin: 'r3278r2', year: 2010, brand: 'Audi', color: 'Black'},
