@@ -1259,6 +1259,11 @@ body {
                     a {
                         background-color: $dividerColor;
                         color: $textColor;
+
+                        &.ui-state-active {
+                            color: $highlightTextColor;
+                            background-color: $highlightBgColor;
+                        }
                     }
                 }
             }

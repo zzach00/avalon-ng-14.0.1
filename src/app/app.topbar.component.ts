@@ -6,7 +6,9 @@ import {AppMainComponent} from './app.main.component';
     template: `
         <div class="topbar clearfix">
             <div class="topbar-left">
-                <img src="assets/layout/images/logo.png" class="topbar-logo" />
+                <a routerLink="/">
+                    <img src="assets/layout/images/logo.png" class="topbar-logo" routerLink="/" />
+                </a>
             </div>
 
             <div class="topbar-right">
