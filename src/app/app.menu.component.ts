@@ -21,30 +21,31 @@ export class AppMenuComponent implements OnInit {
 
     ngOnInit() {
         this.model = [
-            {label: 'Dashboard', icon: 'fa fa-fw fa-dashboard', items: [
-                    {label: 'Generic', icon: 'fa fa-fw fa-home', routerLink: ['/']},
-                    {label: 'Banking', icon: 'fa fa-fw fa-bank', routerLink: ['/dashboard_banking']},
+            {label: 'Dashboards', icon: 'fa fa-fw fa-dashboard',routerLink: ['/dashboards'],
+                items: [
+                    {label: 'Generic', icon: 'fa fa-fw fa-home', routerLink: ['/dashboards/generic']},
+                    {label: 'Banking', icon: 'fa fa-fw fa-bank', routerLink: ['/dashboards/dashboard_banking']},
                 ]
             },
             {
-                label: 'Components', icon: 'fa fa-fw fa-sitemap',
+                label: 'Components', icon: 'fa fa-fw fa-sitemap', routerLink: ['/components'],
                 items: [
-                    {label: 'Sample Page', icon: 'fa fa-fw fa-columns', routerLink: ['/sample']},
-                    {label: 'Forms', icon: 'fa fa-fw fa-code', routerLink: ['/forms']},
-                    {label: 'Data', icon: 'fa fa-fw fa-table', routerLink: ['/data']},
-                    {label: 'Panels', icon: 'fa fa-fw fa-list-alt', routerLink: ['/panels']},
-                    {label: 'Overlays', icon: 'fa fa-fw fa-square', routerLink: ['/overlays']},
-                    {label: 'Menus', icon: 'fa fa-fw fa-minus-square-o', routerLink: ['/menus']},
-                    {label: 'Messages', icon: 'fa fa-fw fa-circle-o-notch', routerLink: ['/messages']},
-                    {label: 'Charts', icon: 'fa fa-fw fa-area-chart', routerLink: ['/charts']},
-                    {label: 'File', icon: 'fa fa-fw fa-arrow-circle-o-up', routerLink: ['/file']},
-                    {label: 'Misc', icon: 'fa fa-fw fa-user-secret', routerLink: ['/misc']}
+                    {label: 'Sample Page', icon: 'fa fa-fw fa-columns', routerLink: ['/components/sample']},
+                    {label: 'Forms', icon: 'fa fa-fw fa-code', routerLink: ['/components/forms']},
+                    {label: 'Data', icon: 'fa fa-fw fa-table', routerLink: ['/components/data']},
+                    {label: 'Panels', icon: 'fa fa-fw fa-list-alt', routerLink: ['/components/panels']},
+                    {label: 'Overlays', icon: 'fa fa-fw fa-square', routerLink: ['/components/overlays']},
+                    {label: 'Menus', icon: 'fa fa-fw fa-minus-square-o', routerLink: ['/components/menus']},
+                    {label: 'Messages', icon: 'fa fa-fw fa-circle-o-notch', routerLink: ['/components/messages']},
+                    {label: 'Charts', icon: 'fa fa-fw fa-area-chart', routerLink: ['/components/charts']},
+                    {label: 'File', icon: 'fa fa-fw fa-arrow-circle-o-up', routerLink: ['/components/file']},
+                    {label: 'Misc', icon: 'fa fa-fw fa-user-secret', routerLink: ['/components/misc']}
                 ]
             },
             {
-                label: 'Template Pages', icon: 'fa fa-fw fa-life-saver',
+                label: 'Template Pages', icon: 'fa fa-fw fa-life-saver', routerLink: ['/pages'],
                 items: [
-                    {label: 'Empty Page', icon: 'fa fa-fw fa-square-o', routerLink: ['/empty']},
+                    {label: 'Empty Page', icon: 'fa fa-fw fa-square-o', routerLink: ['/pages/empty']},
                     {label: 'Invoice', icon: 'fa fa-fw fa-list-alt', routerLink: ['/invoice']},
                     {label: 'Help Page', icon: 'fa fa-fw fa-question-circle', routerLink: ['/help']},
                     {label: 'Wizard', icon: 'fa fa-fw fa-star', routerLink: ['/wizard']},
