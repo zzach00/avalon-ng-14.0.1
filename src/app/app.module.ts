@@ -108,6 +108,7 @@ import {CountryService} from './demo/service/countryservice';
 import {EventService} from './demo/service/eventservice';
 import {NodeService} from './demo/service/nodeservice';
 import {MenuService} from './app.menu.service';
+import { MessageService } from 'primeng';
 
 @NgModule({
     imports: [
@@ -217,7 +218,7 @@ import {MenuService} from './app.menu.service';
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
-        CarService, CountryService, EventService, NodeService, MenuService
+        CarService, CountryService, EventService, NodeService, MenuService, MessageService
     ],
     bootstrap: [AppComponent]
 })
