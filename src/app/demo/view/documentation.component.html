@@ -112,47 +112,40 @@ export class AppMenuComponent implements OnInit &#123;
 
     ngOnInit() &#123;
         this.model = [
-            &#123;label: 'Dashboard', icon: 'fa fa-fw fa-home', routerLink: ['/']&#125;,
+            &#123;label: 'Dashboards', icon: 'fa fa-fw fa-dashboard',routerLink: ['/dashboards'],
+            items: [
+                &#123;label: 'Generic', icon: 'fa fa-fw fa-home', routerLink: ['/dashboards/generic']&#125;,
+                &#123;label: 'Banking', icon: 'fa fa-fw fa-bank', routerLink: ['/dashboards/dashboard_banking']&#125;,
+            ]
+            &#125;,
             &#123;
-                label: 'Customization', icon: 'fa fa-fw fa-bars' ,badge: '8',
+                label: 'Components', icon: 'fa fa-fw fa-sitemap', routerLink: ['/components'],
                 items: [
-                    &#123;label: 'Static Menu', icon: 'fa fa-fw fa-bars',  command: () => this.app.changeToStaticMenu()&#125;,
-                    &#123;label: 'Overlay Menu', icon: 'fa fa-fw fa-bars',  command: () => this.app.changeToOverlayMenu()&#125;,
-                    &#123;label: 'Slim Menu', icon: 'fa fa-fw fa-bars',  command: () => this.app.changeToSlimMenu()&#125;,
-                    &#123;label: 'Horizontal Menu', icon: 'fa fa-fw fa-bars',  command: () => this.app.changeToHorizontalMenu()&#125;,
-                    &#123;label: 'Inline Profile', icon: 'fa fa-sun-o fa-fw',  command: () => this.app.profileMode = 'inline'&#125;,
-                    &#123;label: 'Top Profile', icon: 'fa fa-moon-o fa-fw',  command: () => this.app.profileMode = 'top'&#125;,
-                    &#123;label: 'Light Menu', icon: 'fa fa-sun-o fa-fw',  command: () => this.app.darkMenu = false&#125;,
-                    &#123;label: 'Dark Menu', icon: 'fa fa-moon-o fa-fw',  command: () => this.app.darkMenu = true&#125;
+                    &#123;label: 'Sample Page', icon: 'fa fa-fw fa-columns', routerLink: ['/components/sample']&#125;,
+                    &#123;label: 'Forms', icon: 'fa fa-fw fa-code', routerLink: ['/components/forms']&#125;,
+                    &#123;label: 'Data', icon: 'fa fa-fw fa-table', routerLink: ['/components/data']&#125;,
+                    &#123;label: 'Panels', icon: 'fa fa-fw fa-list-alt', routerLink: ['/components/panels']&#125;,
+                    &#123;label: 'Overlays', icon: 'fa fa-fw fa-square', routerLink: ['/components/overlays']&#125;,
+                    &#123;label: 'Menus', icon: 'fa fa-fw fa-minus-square-o', routerLink: ['/components/menus']&#125;,
+                    &#123;label: 'Messages', icon: 'fa fa-fw fa-circle-o-notch', routerLink: ['/components/messages']&#125;,
+                    &#123;label: 'Charts', icon: 'fa fa-fw fa-area-chart', routerLink: ['/components/charts']&#125;,
+                    &#123;label: 'File', icon: 'fa fa-fw fa-arrow-circle-o-up', routerLink: ['/components/file']&#125;,
+                    &#123;label: 'Misc', icon: 'fa fa-fw fa-user-secret', routerLink: ['/components/misc']&#125;
                 ]
             &#125;,
             &#123;
-                label: 'Components', icon: 'fa fa-fw fa-sitemap',
+                label: 'Template Pages', icon: 'fa fa-fw fa-life-saver', routerLink: ['/pages'],
                 items: [
-                    &#123;label: 'Sample Page', icon: 'fa fa-fw fa-columns', routerLink: ['/sample']&#125;,
-                    &#123;label: 'Forms', icon: 'fa fa-fw fa-code', routerLink: ['/forms']&#125;,
-                    &#123;label: 'Data', icon: 'fa fa-fw fa-table', routerLink: ['/data']&#125;,
-                    &#123;label: 'Panels', icon: 'fa fa-fw fa-list-alt', routerLink: ['/panels']&#125;,
-                    &#123;label: 'Overlays', icon: 'fa fa-fw fa-square', routerLink: ['/overlays']&#125;,
-                    &#123;label: 'Menus', icon: 'fa fa-fw fa-minus-square-o', routerLink: ['/menus']&#125;,
-                    &#123;label: 'Messages', icon: 'fa fa-fw fa-circle-o-notch', routerLink: ['/messages']&#125;,
-                    &#123;label: 'Charts', icon: 'fa fa-fw fa-area-chart', routerLink: ['/charts']&#125;,
-                    &#123;label: 'File', icon: 'fa fa-fw fa-arrow-circle-o-up', routerLink: ['/file']&#125;,
-                    &#123;label: 'Misc', icon: 'fa fa-fw fa-user-secret', routerLink: ['/misc']&#125;
-                ]
-            &#125;,
-            &#123;
-                label: 'Template Pages', icon: 'fa fa-fw fa-life-saver',
-                items: [
-                    &#123;label: 'Empty Page', icon: 'fa fa-fw fa-square-o', routerLink: ['/empty']&#125;,
+                    &#123;label: 'Empty Page', icon: 'fa fa-fw fa-square-o', routerLink: ['/pages/empty']&#125;,
                     &#123;label: 'Invoice', icon: 'fa fa-fw fa-list-alt', routerLink: ['/invoice']&#125;,
                     &#123;label: 'Help Page', icon: 'fa fa-fw fa-question-circle', routerLink: ['/help']&#125;,
                     &#123;label: 'Wizard', icon: 'fa fa-fw fa-star', routerLink: ['/wizard']&#125;,
                     &#123;label: 'Landing Page', icon: 'fa fa-fw fa-certificate', url: 'assets/pages/landing.html', target: '_blank'&#125;,
-                    &#123;label: 'Login Page', icon: 'fa fa-fw fa-sign-in', url: 'assets/pages/login.html', target: '_blank'&#125;,
-                    &#123;label: 'Error Page', icon: 'fa fa-fw fa-exclamation-circle', url: 'assets/pages/error.html', target: '_blank'&#125;,
-                    &#123;label: 'Not Found Page', icon: 'fa fa-fw fa-times', url: 'assets/pages/notfound.html', target: '_blank'&#125;,
-                    &#123;label: 'Access Denied Page', icon: 'fa fa-fw fa-exclamation-triangle', url: 'assets/pages/access.html', target: '_blank'&#125;
+                    &#123;label: 'Login Page', icon: 'fa fa-fw fa-sign-in', routerLink: ['/login'], target: '_blank'&#125;,
+                    &#123;label: 'Error Page', icon: 'fa fa-fw fa-exclamation-circle', routerLink: ['/error'], target: '_blank'&#125;,
+                    &#123;label: 'Not Found Page', icon: 'fa fa-fw fa-times', routerLink: ['/notfound'], target: '_blank'&#125;,
+                    &#123;label: 'Access Denied Page', icon: 'fa fa-fw fa-exclamation-triangle',
+                        routerLink: ['/accessdenied'], target: '_blank'&#125;
                 ]
             &#125;,
             &#123;
