@@ -25,6 +25,7 @@ import { AppMainComponent } from './app.main.component';
                     <i class="fa fa-fw fa-angle-down menuitem-toggle-icon" *ngIf="item.items"></i>
                     <span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
               </a>
+              <div class="submenu-arrow" *ngIf="item.items"></div>
               <ul *ngIf="item.items && active" [@children]="((app.isHorizontal() || app.isSlim()) && root) ? (active ? 'visible' : 'hidden') : (active ? 'visibleAnimated' : 'hiddenAnimated')">
                   <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
                       <li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
