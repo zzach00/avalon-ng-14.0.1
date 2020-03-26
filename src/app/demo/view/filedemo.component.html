@@ -5,14 +5,13 @@
                 <h1>Upload</h1>
                 <p-toast></p-toast>
 
-                <button (click)="onUpload($event)"></button>
-                <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" 
-                        multiple="multiple" accept="image/*" maxFileSize="1000000"> 
+                <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
+                        multiple="multiple" accept="image/*" maxFileSize="1000000">
                         <ng-template pTemplate="content">
                             <ul *ngIf="uploadedFiles.length">
                                 <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
                             </ul>
-                        </ng-template>    
+                        </ng-template>
                 </p-fileUpload>
             </div>
         </div>
