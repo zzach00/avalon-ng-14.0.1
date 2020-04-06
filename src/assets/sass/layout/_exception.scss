@@ -2,6 +2,7 @@
     overflow: hidden;
 	margin: 0 auto;
 	position: relative;
+    min-height: 100%;
 
     &.error {
         background: url("../../layout/images/exception/bg-error.png") no-repeat;

@@ -41,8 +41,8 @@ export const routes: Routes = [
             { path: 'components/charts', component: ChartsDemoComponent },
             { path: 'components/file', component: FileDemoComponent },
             { path: 'documentation', component: DocumentationComponent },
-            { path: 'invoice', component: AppInvoiceComponent },
-            { path: 'help', component: AppHelpComponent }
+            { path: 'pages/invoice', component: AppInvoiceComponent },
+            { path: 'pages/help', component: AppHelpComponent }
         ]
     },
     {path: 'error', component: AppErrorComponent},
