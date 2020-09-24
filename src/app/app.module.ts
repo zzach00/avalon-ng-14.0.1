@@ -4,7 +4,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
-import {AppRoutes} from './app.routes';
+import {AppRoutingModule} from './app-routing.module';
 
 import {AccordionModule} from 'primeng/accordion';
 import {AutoCompleteModule} from 'primeng/autocomplete';
@@ -23,12 +23,12 @@ import {ContextMenuModule} from 'primeng/contextmenu';
 import {DataViewModule} from 'primeng/dataview';
 import {DialogModule} from 'primeng/dialog';
 import {DropdownModule} from 'primeng/dropdown';
-import {EditorModule} from 'primeng/editor';
 import {FieldsetModule} from 'primeng/fieldset';
 import {FileUploadModule} from 'primeng/fileupload';
 import {FullCalendarModule} from 'primeng/fullcalendar';
 import {GalleriaModule} from 'primeng/galleria';
 import {InplaceModule} from 'primeng/inplace';
+import {InputNumberModule} from 'primeng/inputnumber';
 import {InputMaskModule} from 'primeng/inputmask';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import {InputTextModule} from 'primeng/inputtext';
@@ -55,6 +55,7 @@ import {RatingModule} from 'primeng/rating';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {SlideMenuModule} from 'primeng/slidemenu';
+import {SidebarModule} from 'primeng/sidebar';
 import {SliderModule} from 'primeng/slider';
 import {SpinnerModule} from 'primeng/spinner';
 import {SplitButtonModule} from 'primeng/splitbutton';
@@ -72,9 +73,10 @@ import {TreeModule} from 'primeng/tree';
 import {TreeTableModule} from 'primeng/treetable';
 import {VirtualScrollerModule} from 'primeng/virtualscroller';
 
+import {AppCodeModule} from './app.code.component';
 import {AppComponent} from './app.component';
 import {AppMainComponent} from './app.main.component';
-import { AppConfigComponent } from './app.config.component';
+import {AppConfigComponent} from './app.config.component';
 import {AppNotfoundComponent} from './pages/app.notfound.component';
 import {AppErrorComponent} from './pages/app.error.component';
 import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
@@ -89,9 +91,12 @@ import {AppHelpComponent} from './pages/app.help.component';
 import {AppWizardComponent} from './pages/app.wizard.component';
 import {DashboardDemoComponent} from './demo/view/dashboarddemo.component';
 import {DashboardBankingComponent} from './demo/view/dashboardbanking.component';
-import {SampleDemoComponent} from './demo/view/sampledemo.component';
-import {FormsDemoComponent} from './demo/view/formsdemo.component';
-import {DataDemoComponent} from './demo/view/datademo.component';
+import {FormLayoutDemoComponent} from './demo/view/formlayoutdemo.component';
+import {InputDemoComponent} from './demo/view/inputdemo.component';
+import {ButtonDemoComponent} from './demo/view/buttondemo.component';
+import {TableDemoComponent} from './demo/view/tabledemo.component';
+import {ListDemoComponent} from './demo/view/listdemo.component';
+import {TreeDemoComponent} from './demo/view/treedemo.component';
 import {PanelsDemoComponent} from './demo/view/panelsdemo.component';
 import {OverlaysDemoComponent} from './demo/view/overlaysdemo.component';
 import {MenusDemoComponent} from './demo/view/menusdemo.component';
@@ -100,21 +105,31 @@ import {MiscDemoComponent} from './demo/view/miscdemo.component';
 import {EmptyDemoComponent} from './demo/view/emptydemo.component';
 import {ChartsDemoComponent} from './demo/view/chartsdemo.component';
 import {FileDemoComponent} from './demo/view/filedemo.component';
-import {UtilsDemoComponent} from './demo/view/utilsdemo.component';
 import {DocumentationComponent} from './demo/view/documentation.component';
+import {DisplayComponent} from './utilities/display.component';
+import {ElevationComponent} from './utilities/elevation.component';
+import {FlexboxComponent} from './utilities/flexbox.component';
+import {GridComponent} from './utilities/grid.component';
+import {IconsComponent} from './utilities/icons.component';
+import {WidgetsComponent} from './utilities/widgets.component';
+import {SpacingComponent} from './utilities/spacing.component';
+import {TypographyComponent} from './utilities/typography.component';
+import {TextComponent} from './utilities/text.component';
 
-import {CarService} from './demo/service/carservice';
 import {CountryService} from './demo/service/countryservice';
 import {EventService} from './demo/service/eventservice';
 import {NodeService} from './demo/service/nodeservice';
 import {MenuService} from './app.menu.service';
-import { MessageService } from 'primeng';
+import {CustomerService} from './demo/service/customerservice';
+import {PhotoService} from './demo/service/photoservice';
+import {ProductService} from './demo/service/productservice';
+import {IconService} from './demo/service/iconservice';
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
-        AppRoutes,
+        AppRoutingModule,
         HttpClientModule,
         BrowserAnimationsModule,
         AccordionModule,
@@ -134,12 +149,12 @@ import { MessageService } from 'primeng';
         DataViewModule,
         DialogModule,
         DropdownModule,
-        EditorModule,
         FieldsetModule,
         FileUploadModule,
         FullCalendarModule,
         GalleriaModule,
         InplaceModule,
+        InputNumberModule,
         InputMaskModule,
         InputSwitchModule,
         InputTextModule,
@@ -166,6 +181,7 @@ import { MessageService } from 'primeng';
         ScrollPanelModule,
         SelectButtonModule,
         SlideMenuModule,
+        SidebarModule,
         SliderModule,
         SpinnerModule,
         SplitButtonModule,
@@ -181,7 +197,8 @@ import { MessageService } from 'primeng';
         TooltipModule,
         TreeModule,
         TreeTableModule,
-        VirtualScrollerModule
+        VirtualScrollerModule,
+        AppCodeModule
     ],
     declarations: [
         AppComponent,
@@ -194,9 +211,12 @@ import { MessageService } from 'primeng';
         AppConfigComponent,
         DashboardDemoComponent,
         DashboardBankingComponent,
-        SampleDemoComponent,
-        FormsDemoComponent,
-        DataDemoComponent,
+        FormLayoutDemoComponent,
+        InputDemoComponent,
+        ButtonDemoComponent,
+        TableDemoComponent,
+        ListDemoComponent,
+        TreeDemoComponent,
         PanelsDemoComponent,
         OverlaysDemoComponent,
         MenusDemoComponent,
@@ -206,8 +226,16 @@ import { MessageService } from 'primeng';
         ChartsDemoComponent,
         EmptyDemoComponent,
         FileDemoComponent,
-        UtilsDemoComponent,
         DocumentationComponent,
+        DisplayComponent,
+        ElevationComponent,
+        FlexboxComponent,
+        GridComponent,
+        IconsComponent,
+        WidgetsComponent,
+        SpacingComponent,
+        TypographyComponent,
+        TextComponent,
         AppNotfoundComponent,
         AppErrorComponent,
         AppAccessdeniedComponent,
@@ -218,7 +246,8 @@ import { MessageService } from 'primeng';
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
-        CarService, CountryService, EventService, NodeService, MenuService, MessageService
+        CountryService, CustomerService, EventService, IconService, NodeService,
+        PhotoService, ProductService, MenuService
     ],
     bootstrap: [AppComponent]
 })
