@@ -41,7 +41,6 @@ export class AppMenuComponent implements OnInit {
                     {label: 'Misc', icon: 'pi pi-fw pi-circle-off', routerLink: ['/uikit/misc']}
                 ]
             },
-            {separator: true},
             {
                 label: 'Utilities', icon: 'pi pi-fw pi-compass', routerLink: ['utilities'],
                 items: [
