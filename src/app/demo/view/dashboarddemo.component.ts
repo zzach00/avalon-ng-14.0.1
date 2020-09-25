@@ -68,13 +68,13 @@ export class DashboardDemoComponent implements OnInit {
     //         ]
     //     };
 
-    //     this.fullcalendarOptions = {
-    //         plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin ],
-    //         defaultDate: '2016-01-12',
-    //         header: {
-    //             right: 'prev,next, today',
-    //             left: 'title'
-    //         }
-    //     };
+        this.fullcalendarOptions = {
+            plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin ],
+            defaultDate: '2016-01-12',
+            header: {
+                right: 'prev,next, today',
+                left: 'title'
+            }
+        };
     }
 }

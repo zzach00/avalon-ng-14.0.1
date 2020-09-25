@@ -8,7 +8,7 @@ import {trigger, state, transition, style, animate} from '@angular/animations';
             <a href="#" (click)="onClick($event)">
                 <img class="profile-image" src="assets/layout/images/avatar.png" />
                 <span class="profile-name">Isabel Oliviera</span>
-                <i class="fa fa-fw fa-caret-down"></i>
+                <i class="pi pi-fw pi-caret-down"></i>
                 <span class="profile-role">Marketing</span>
             </a>
         </div>
@@ -16,7 +16,7 @@ import {trigger, state, transition, style, animate} from '@angular/animations';
         <ul id="profile-menu" class="layout-menu" [@menu]="active ? 'visible' : 'hidden'">
             <li role="menuitem">
                 <a href="#" [attr.tabindex]="!active ? '-1' : null">
-                    <i class="fa fa-fw fa-user"></i>
+                    <i class="pi pi-user"></i>
                     <span>Profile</span>
                 </a>
                 <div class="layout-menu-tooltip">
@@ -26,7 +26,7 @@ import {trigger, state, transition, style, animate} from '@angular/animations';
             </li>
             <li role="menuitem">
                 <a href="#" [attr.tabindex]="!active ? '-1' : null">
-                    <i class="fa fa-fw fa-user-secret"></i>
+                    <i class="pi pi-fw pi-lock"></i>
                     <span>Privacy</span>
                 </a>
                 <div class="layout-menu-tooltip">
@@ -36,7 +36,7 @@ import {trigger, state, transition, style, animate} from '@angular/animations';
             </li>
             <li role="menuitem">
                 <a href="#" [attr.tabindex]="!active ? '-1' : null">
-                    <i class="fa fa-fw fa-cog"></i>
+                    <i class="pi pi-cog"></i>
                     <span>Settings</span>
                 </a>
                 <div class="layout-menu-tooltip">
@@ -46,7 +46,7 @@ import {trigger, state, transition, style, animate} from '@angular/animations';
             </li>
             <li role="menuitem">
                 <a href="#" [attr.tabindex]="!active ? '-1' : null">
-                    <i class="fa fa-fw fa-sign-out"></i>
+                    <i class="pi pi-sign-out"></i>
                     <span>Logout</span>
                 </a>
                 <div class="layout-menu-tooltip">

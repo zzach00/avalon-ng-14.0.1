@@ -15,14 +15,14 @@ import { AppMainComponent } from './app.main.component';
               <a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="!item.routerLink || item.items" (mouseenter)="onMouseEnter()" (keydown.enter)="itemClick($event)"
                 [attr.target]="item.target" [attr.tabindex]="0" class="ripplelink">
                     <i [ngClass]="item.icon"></i><span>{{item.label}}</span>
-                    <i class="fa fa-fw fa-angle-down menuitem-toggle-icon" *ngIf="item.items"></i>
+                    <i class="pi pi-fw pi-angle-down menuitem-toggle-icon" *ngIf="item.items"></i>
                     <span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
               </a>
               <a (click)="itemClick($event)" (mouseenter)="onMouseEnter()" *ngIf="item.routerLink && !item.items"
                   [routerLink]="item.routerLink" routerLinkActive="active-menuitem-routerlink" class="ripplelink"
                   [routerLinkActiveOptions]="{exact: true}" [attr.target]="item.target" [attr.tabindex]="0">
                     <i [ngClass]="item.icon"></i><span>{{item.label}}</span>
-                    <i class="fa fa-fw fa-angle-down menuitem-toggle-icon" *ngIf="item.items"></i>
+                    <i class="pi pi-fw pi-angle-down menuitem-toggle-icon" *ngIf="item.items"></i>
                     <span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
               </a>
               <div class="submenu-arrow" *ngIf="item.items"></div>

@@ -8,9 +8,9 @@ import {Component, Inject, forwardRef} from '@angular/core';
                 <img src="assets/layout/images/logo-dark.png" />
             </span>
             <span class="footer-text-right">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-github"></i></a>
+                <a href="#"><i class="pi pi-facebook"></i></a>
+                <a href="#"><i class="pi pi-twitter"></i></a>
+                <a href="#"><i class="pi pi-github"></i></a>
             </span>
         </div>
     `
