@@ -267,8 +267,8 @@
                 position: relative;
                 overflow: hidden;
                 justify-content: center;
-                opacity: 0.35;
                 align-items: center;
+                opacity: 0.35;
 
                 &:hover {
                     @include scale(1.0);

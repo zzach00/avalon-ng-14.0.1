@@ -4,6 +4,7 @@
 
 html {
     height: 100%;
+    font-size: $fontSize;
 }
 
 body {
@@ -19,6 +20,29 @@ body {
 
     a {
         text-decoration: none;
+    }
+
+
+    .p-grid {
+        margin-right: -.5rem;
+        margin-left: -.5rem;
+        margin-top: -.5rem;
+    }
+
+    .p-col {
+        padding: .5rem;
+    }
+
+    .p-col-fixed {
+        padding: .5rem;
+    }
+
+    .p-col-1, .p-col-2, .p-col-3, .p-col-4, .p-col-5, .p-col-6, .p-col-7, .p-col-8, .p-col-9, .p-col-10, .p-col-11, .p-col-12 {
+        padding: .5rem;
+    }
+
+    .p-sm-1, .p-sm-2, .p-sm-3, .p-sm-4, .p-sm-5, .p-sm-6, .p-sm-7, .p-sm-8, .p-sm-9, .p-sm-10, .p-sm-11, .p-sm-12, .p-md-1, .p-md-2, .p-md-3, .p-md-4, .p-md-5, .p-md-6, .p-md-7, .p-md-8, .p-md-9, .p-md-10, .p-md-11, .p-md-12, .p-lg-1, .p-lg-2, .p-lg-3, .p-lg-4, .p-lg-5, .p-lg-6, .p-lg-7, .p-lg-8, .p-lg-9, .p-lg-10, .p-lg-11, .p-lg-12, .p-xl-1, .p-xl-2, .p-xl-3, .p-xl-4, .p-xl-5, .p-xl-6, .p-xl-7, .p-xl-8, .p-xl-9, .p-xl-10, .p-xl-11, .p-xl-12 {
+        padding: .5rem;
     }
 }
 
@@ -154,7 +178,7 @@ body {
         top: 60px;
         height: 100%;
         @include background-gradient-left2right($menuGradientStartBgColor, $menuGradientEndBgColor);
-        @include shadow(0 0 10px 0 rgba(0, 0, 0, 0.25));
+        border-right: 1px solid #cccccc;
         @include transition(margin-left .3s);
 
         .menu-scroll-content {
@@ -351,6 +375,8 @@ body {
                 color: $textColor;
                 width: 100%;
                 @include transition(background-color .3s, border-left-color .3s);
+                overflow: hidden;
+                border-left: 4px solid transparent;
                 outline: none;
                 cursor: pointer;
                 -webkit-user-select: none;
@@ -358,7 +384,6 @@ body {
                 -moz-user-select: none;
                 -o-user-select: none;
                 user-select: none;
-                border-left: 4px solid transparent;
 
                 i {
                     color: $textSecondaryColor;
@@ -446,7 +471,6 @@ body {
                             display: inline-block;
                             vertical-align: middle;
                             margin-right: 10px;
-                            font-size: 20px;
                         }
                     }
 
@@ -717,7 +741,7 @@ body {
                 top: 60px;
                 height: auto;
                 background-color: $topbarLeftGradientEndBgColor;
-                @include shadow(0 2px 5px 0 rgba(0,0,0,0.26));
+
                 .menu-scroll-content {
                     width: 100%;
                 }
@@ -754,9 +778,8 @@ body {
                             left: 0px;
                             width: 250px;
                             background-color: #ffffff;
+                            border: 1px solid #cccccc;
                             border-top: 4px solid $menuitemActiveColor;
-                            @include box-sizing(border-box);
-                            @include multi-shadow(0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2));
 
                             li {
                                 a {
@@ -844,7 +867,6 @@ body {
                             .menuitem-badge {
                                 margin-right: 0;
                                 margin-left: 4px;
-                                margin-top: 0;
                             }
 
                             .menuitem-toggle-icon {
@@ -858,6 +880,13 @@ body {
                     @include background-gradient-left2right($darkMenuGradientStartBgColor, $darkMenuGradientEndBgColor);
 
                     ul.layout-menu {
+                        >li {
+                            >ul {
+                                border-left:none;
+                                border-right:none;
+                                border-bottom:none;
+                            }
+                        }
                         li {
                             a {
                                 color: $darkMenuMenuitemColor;
@@ -927,10 +956,6 @@ body {
                 z-index: 100;
                 top: 0;
 
-                .ui-scrollpanel-bar {
-                    display: none;
-                }
-
                 .menu-scroll-content {
                     width: 100%;
                     padding-right: 0;
@@ -975,10 +1000,11 @@ body {
 
                         > ul {
                             @include overlay-shadow();
+                            border: 1px solid #cccccc;
                             background-color: #ffffff;
                             position: absolute;
                             top: 0;
-                            left: 75px;
+                            left: 73px;
                             min-width: 200px;
 
                             li {
@@ -1039,9 +1065,11 @@ body {
                 }
 
                 &.layout-menu-dark {
+                    border:none;
                     .layout-menu {
                         > li {
                             > ul {
+                                border:none;
                                 @include background-gradient-left2right($darkMenuGradientStartBgColor, $darkMenuGradientEndBgColor);
                             }
                         }

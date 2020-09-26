@@ -1,6 +1,6 @@
 .landing-body {
     background: #f4f4f4;
-    
+
     .section-button {
         padding: 0.429em 0.857em;
         background-color: #337ab7;
@@ -10,12 +10,12 @@
         font-size: $fontSize;
         font-family: $fontFamily;
         @include border-radius($borderRadius);
-        
+
         &:hover {
             background-color: darken(#337ab7, 5%);
             cursor: pointer;
         }
-        
+
         &:focus {
             background-color: darken(#337ab7, 5%);
             outline: 0 none;
@@ -299,9 +299,6 @@
                                 padding: 10px 30px 10px 10px;
                                 border-bottom: 1px solid #dddddd;
                                 
-                                .fa {
-                                    margin-left: 20px;
-                                }
                                 
                                 span {
                                     margin-left: 12px;
@@ -327,7 +324,7 @@
                 
                 .video-content {
                     text-align: right;
-                    
+
                     p {
                         line-height: 1.5;
                     }
