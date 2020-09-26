@@ -58,16 +58,17 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Pages', icon: 'pi pi-fw pi-clone', routerLink: ['/pages'],
                 items: [
-                    {label: 'Empty Page', icon: 'pi pi-fw pi-circle-off', routerLink: ['/pages/empty']},
-                    {label: 'Invoice', icon: 'pi pi-fw pi-dollar', routerLink: ['/pages/invoice']},
-                    {label: 'Help Page', icon: 'pi pi-fw pi-question-circle', routerLink: ['/pages/help']},
-                    {label: 'Wizard', icon: 'pi pi-fw pi-star', routerLink: ['/wizard']},
+                    {label: 'Crud', icon: 'pi pi-fw pi-pencil', routerLink: ['/pages/crud']},
+                    {label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', routerLink: ['/pages/calendar']},
                     {label: 'Landing Page', icon: 'pi pi-fw pi-user-plus', url: 'assets/pages/landing.html', target: '_blank'},
                     {label: 'Login Page', icon: 'pi pi-fw pi-question-circle', routerLink: ['/login'], target: '_blank'},
+                    {label: 'Invoice', icon: 'pi pi-fw pi-dollar', routerLink: ['/pages/invoice']},
+                    {label: 'Wizard', icon: 'pi pi-fw pi-star', routerLink: ['/wizard']},
+                    {label: 'Help Page', icon: 'pi pi-fw pi-question-circle', routerLink: ['/pages/help']},
                     {label: 'Error Page', icon: 'pi pi-fw pi-times-circle', routerLink: ['/error'], target: '_blank'},
                     {label: 'Not Found Page', icon: 'pi pi-fw pi-exclamation-circle', routerLink: ['/notfound'], target: '_blank'},
-                    {label: 'Access Denied Page', icon: 'pi pi-fw pi-lock',
-                        routerLink: ['/accessdenied'], target: '_blank'}
+                    {label: 'Access Denied Page', icon: 'pi pi-fw pi-lock', outerLink: ['/accessdenied'], target: '_blank'},
+                    {label: 'Empty Page', icon: 'pi pi-fw pi-circle-off', routerLink: ['/pages/empty']}
                 ]
             },
             {

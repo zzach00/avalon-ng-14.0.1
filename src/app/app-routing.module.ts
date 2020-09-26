@@ -36,6 +36,8 @@ import { AppNotfoundComponent } from './pages/app.notfound.component';
 import { AppErrorComponent } from './pages/app.error.component';
 import { AppAccessdeniedComponent } from './pages/app.accessdenied.component';
 import { AppLoginComponent } from './pages/app.login.component';
+import { AppCrudComponent } from './pages/app.crud.component';
+import { AppCalendarComponent } from './pages/app.calendar.component';
 
 
 
@@ -74,6 +76,8 @@ import { AppLoginComponent } from './pages/app.login.component';
                     { path: 'pages/empty', component: EmptyDemoComponent },
                     { path: 'documentation', component: DocumentationComponent },
                     { path: 'pages/invoice', component: AppInvoiceComponent },
+                    { path: 'pages/crud', component: AppCrudComponent },
+                    { path: 'pages/calendar', component: AppCalendarComponent },
                     { path: 'pages/help', component: AppHelpComponent }
                 ]
             },

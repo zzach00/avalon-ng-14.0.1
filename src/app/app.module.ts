@@ -87,6 +87,8 @@ import {AppTopBarComponent} from './app.topbar.component';
 import {AppFooterComponent} from './app.footer.component';
 import {AppProfileComponent} from './app.profile.component';
 import {AppInvoiceComponent} from './pages/app.invoice.component';
+import {AppCrudComponent} from './pages/app.crud.component';
+import {AppCalendarComponent} from './pages/app.calendar.component';
 import {AppHelpComponent} from './pages/app.help.component';
 import {AppWizardComponent} from './pages/app.wizard.component';
 import {DashboardDemoComponent} from './demo/view/dashboarddemo.component';
@@ -240,6 +242,8 @@ import {IconService} from './demo/service/iconservice';
         AppErrorComponent,
         AppAccessdeniedComponent,
         AppLoginComponent,
+        AppCrudComponent,
+        AppCalendarComponent,
         AppInvoiceComponent,
         AppHelpComponent,
         AppWizardComponent

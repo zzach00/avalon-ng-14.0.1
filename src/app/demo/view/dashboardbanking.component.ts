@@ -1,8 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-// import {CarService} from '../service/carservice';
-// import {Car} from '../domain/car';
 import {SelectItem} from 'primeng/api';
-import { AnyARecord } from 'dns';
 
 @Component({
     templateUrl: './dashboardbanking.component.html'
