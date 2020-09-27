@@ -1,5 +1,6 @@
 import {Component, Renderer2} from '@angular/core';
 import { MenuService } from './app.menu.service';
+import { PrimeNGConfig } from 'primeng/api';
 
 enum MenuOrientation {
     STATIC,
@@ -14,7 +15,7 @@ enum MenuOrientation {
 })
 export class AppMainComponent {
 
-    layoutMode: MenuOrientation = MenuOrientation.STATIC;
+    layoutMode: string = "static";
 
     darkMenu = false;
 
@@ -44,9 +45,16 @@ export class AppMainComponent {
 
     configClick: boolean;
 
+    ripple: boolean = true;
 
-    constructor(public renderer: Renderer2, private menuService: MenuService) {}
+    inputStyle = 'outlined';
 
+    constructor(public renderer: Renderer2, private menuService: MenuService, private primengConfig: PrimeNGConfig) {}
+
+    ngOnInit() {
+        this.primengConfig.ripple = true;
+    }
+    
     onLayoutClick() {
         if (!this.topbarItemClick) {
             this.activeTopbarItem = null;
@@ -79,7 +87,7 @@ export class AppMainComponent {
         this.rotateMenuButton = !this.rotateMenuButton;
         this.topbarMenuActive = false;
 
-        if (this.layoutMode === MenuOrientation.OVERLAY) {
+        if (this.layoutMode === 'overlay') {
             this.overlayMenuActive = !this.overlayMenuActive;
         } else {
             if (this.isDesktop()) {
@@ -121,6 +129,10 @@ export class AppMainComponent {
         this.configClick = true;
     }
 
+    onRippleChange(event) {
+        this.ripple = event.checked;
+    }
+
     hideOverlayMenu() {
         this.rotateMenuButton = false;
         this.overlayMenuActive = false;
@@ -141,36 +153,19 @@ export class AppMainComponent {
     }
 
     isStatic() {
-        return this.layoutMode === MenuOrientation.STATIC;
+        return this.layoutMode === "static";
     }
 
     isOverlay() {
-        return this.layoutMode === MenuOrientation.OVERLAY;
+        return this.layoutMode === "overlay";
     }
 
     isHorizontal() {
-        return this.layoutMode === MenuOrientation.HORIZONTAL;
+        return this.layoutMode === "horizontal";
     }
 
 
     isSlim() {
-        return this.layoutMode === MenuOrientation.SLIM;
+        return this.layoutMode === "slim";
     }
-
-    changeToStaticMenu() {
-        this.layoutMode = MenuOrientation.STATIC;
-    }
-
-    changeToOverlayMenu() {
-        this.layoutMode = MenuOrientation.OVERLAY;
-    }
-
-    changeToHorizontalMenu() {
-        this.layoutMode = MenuOrientation.HORIZONTAL;
-    }
-
-    changeToSlimMenu() {
-        this.layoutMode = MenuOrientation.SLIM;
-    }
-
 }

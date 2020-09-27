@@ -13,6 +13,114 @@ import { AppMainComponent } from './app.main.component';
                     <i class="fa fa-times"></i>
                 </a>
                 <p-tabView>
+                    <p-tabPanel header="Real">
+                        <div class="layout-config-content">
+
+                        <h5 style="margin-top: 0">Input Style</h5>
+                        <div class="p-formgroup-inline">
+                            <div class="p-field-radiobutton">
+                                <p-radioButton id="input_outlined" name="inputstyle" [(ngModel)]="app.inputStyle"  value="outlined"></p-radioButton>
+                                <label for="input_outlined">Outlined</label>
+                            </div>
+                            <div class="p-field-radiobutton">
+                                <p-radioButton id="input_filled" name="inputstyle" [(ngModel)]="app.inputStyle" value="filled"></p-radioButton>
+                                <label for="input_filled">Filled</label>
+                            </div>
+                        </div>
+            
+                        <h5 style="margin-top: 0;">Ripple Effect</h5>
+                        <p-inputSwitch [ngModel]="app.ripple" (onChange)="app.onRippleChange($event)"></p-inputSwitch>
+            
+                        <h5>Menu Type</h5>
+                        <div class="p-grid">
+                            <div class="p-col-6">
+                                <div class="p-field-radiobutton">
+                                    <p-radioButton id="static" name="layoutMode" value="static" [(ngModel)]="app.layoutMode"></p-radioButton>
+                                    <label for="static">Static</label>
+                                </div>
+                            </div>
+                            <div class="p-col-6">
+                                <div class="p-field-radiobutton">
+                                    <p-radioButton id="overlay" name="layoutMode" value="overlay" [(ngModel)]="app.layoutMode"></p-radioButton>
+                                    <label for="overlay">Overlay</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-grid">
+                            <div class="p-col-6">
+                                <div class="p-field-radiobutton">
+                                    <p-radioButton id="horizontal" name="layoutMode" value="horizontal" [(ngModel)]="app.layoutMode" (onClick)="app.profileMode = 'top'"></p-radioButton>
+                                    <label for="horizontal">Horizontal</label>
+                                </div>
+                            </div>
+                            <div class="p-col-6">
+                                <div class="p-field-radiobutton">
+                                    <p-radioButton id="slim" name="layoutMode" value="slim" [(ngModel)]="app.layoutMode"></p-radioButton>
+                                    <label for="slim">Slim</label>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <h5 style="margin-top: 0;">Menu Colors</h5>
+                        <div class="p-grid">
+                            <div class="p-col-6">
+                                <div class="p-field-radiobutton">
+                                    <p-radioButton id="dark" name="menuColor" [value]="true" [(ngModel)]="app.darkMenu"></p-radioButton>
+                                    <label for="dark">Dark</label>
+                                </div>
+                            </div>
+                            <div class="p-col-6">
+                                <div class="p-field-radiobutton">
+                                    <p-radioButton id="light" name="menuColor" [value]="false" [(ngModel)]="app.darkMenu"></p-radioButton>
+                                    <label for="light">Light</label>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <h5 style="margin-top: 0;">User Profile</h5>
+                        <div class="p-grid">
+                            <div class="p-col-6">
+                                <div class="p-field-radiobutton">
+                                    <p-radioButton id="inline" name="profileMode" value="inline" [(ngModel)]="app.profileMode"[disabled]="app.isHorizontal()"></p-radioButton>
+                                    <label for="inline">Inline</label>
+                                </div>
+                            </div>
+                            <div class="p-col-6">
+                                <div class="p-field-radiobutton">
+                                    <p-radioButton id="top" name="profileMode" value="top" [(ngModel)]="app.profileMode" [disabled]="app.isHorizontal()"></p-radioButton>
+                                    <label for="top">Overlay</label>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <h5 style="margin-top: 0;">Flat Layout Colors</h5>
+                        <div class="layout-themes">
+                            <div *ngFor="let flatLayoutColor of flatLayoutColors">
+                                <a href="#" (click)="changeLayout(flatLayoutColor.file, false)"  [ngStyle]="{'background-color': flatLayoutColor.color}">
+                                    <i class="pi pi-check" *ngIf="layout === flatLayoutColor.file"></i>
+                                </a>
+                            </div>
+                        </div>
+            
+                        <h5>Special Layout Colors</h5>
+                        <div class="layout-themes">
+                            <div *ngFor="let specialLayoutColor of specialLayoutColors">
+                                <a href="#" (click)="changeLayout(specialLayoutColor.file, true)" [ngStyle]="{'background-image': 'linear-gradient(to right,' + specialLayoutColor.color1 + ',' + specialLayoutColor.color2 + ')'}">
+                                    <i class="pi pi-check" *ngIf="layout === specialLayoutColor.file"></i>
+                                </a>
+                            </div>
+                        </div>
+            
+                        <h5>Themes</h5>
+                        <div class="layout-themes">
+                            <div *ngFor="let t of themes">
+                                <a href="#" (click)="changeTheme($event, t.file)" [ngStyle]="{'background-color': t.color}">
+                                    <i class="pi pi-check" *ngIf="theme === t.file"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    </p-tabPanel>
                     <p-tabPanel header="Menu">
                         <h1>Menu Modes</h1>
                         <div class="panel-items">
@@ -33,7 +141,6 @@ import { AppMainComponent } from './app.main.component';
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="app.changeToHorizontalMenu()">
                                     <img src="assets/layout/images/configurator/menu/Avalon-Horizontal.png" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="app.isHorizontal()"></i>
                                 </a>
                                 <span>Horizontal</span>
                             </div>
@@ -66,19 +173,9 @@ import { AppMainComponent } from './app.main.component';
                     <p-tabPanel header="User Profile">
                         <div class="panel-items">
                             <div class="panel-item">
-                                <a style="cursor: pointer" [class]="app.isHorizontal() ? 'ui-state-disabled':''"
-                                   (click)="onProfileModeClick('inline')">
-                                    <img src="assets/layout/images/configurator/menu/Avalon-Inline.png" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="app.profileMode === 'inline' && !app.isHorizontal()"></i>
-                                </a>
                                 <span>Inline</span>
                             </div>
                             <div class="panel-item">
-                                <a style="cursor: pointer" [class]="app.isHorizontal() ? 'ui-state-disabled':''"
-                                   (click)="onProfileModeClick('top')">
-                                    <img src="assets/layout/images/configurator/menu/Avalon-Popup.png" alt="avalon"/>
-                                    <i class="pi pi-check" *ngIf="app.profileMode === 'top' || app.isHorizontal()"></i>
-                                </a>
                                 <span>Overlay</span>
                             </div>
                         </div>
@@ -107,8 +204,6 @@ import { AppMainComponent } from './app.main.component';
                             <div class="panel-item colors" *ngFor="let flatLayoutColor of flatLayoutColors">
                                 <a style="cursor: pointer" class="layout-config-layout-option"
                                    (click)="changeLayout(flatLayoutColor.label)">
-                                    <img src="assets/layout/images/configurator/{{version}}/layouts/flat/{{flatLayoutColor.label}}.png"
-                                         alt="avalon"/>
                                     <i class="pi pi-check" *ngIf="layout === flatLayoutColor.label"></i>
                                 </a>
                             </div>
@@ -157,83 +252,71 @@ export class AppConfigComponent implements OnInit {
 
     ngOnInit() {
         this.flatLayoutColors = [
-            {label: 'blue'},
-            {label: 'purple'},
-            {label: 'cyan'},
-            {label: 'indigo'},
-            {label: 'teal'},
-            {label: 'pink'},
-            {label: 'lime'},
-            {label: 'green'},
-            {label: 'amber'},
-            {label: 'brown'},
-            {label: 'orange'},
-            {label: 'deeppurple'},
-            {label: 'lightblue'},
-            {label: 'lightgreen'},
-            {label: 'darkgrey'},
+            {name: "Blue", file: "blue", color: "#146fd7"},
+            {name: "Cyan", file: "cyan", color: "#0A616F"},
+            {name: "Indigo", file: "indigo", color: "#470EA2"},
+            {name: "Purple", file: "purple", color: "#391F68"},
+            {name: "Teal", file: "teal", color: "#136E52"},
+            {name: "Pink", file: "pink", color: "#771340"},
+            {name: "Lime", file: "lime", color: "#407916"},
+            {name: "Green", file: "green", color: "#1F8E38"},
+            {name: "Amber", file: "amber", color: "#7A5E06"},
+            {name: "Brown", file: "brown", color: "#593E22"},
+            {name: "Orange", file: "orange", color: "#904100"},
+            {name: "Deep Purple", file: "deeppurple", color: "#341A64"},
+            {name: "Light Blue", file: "lightblue", color: "#14569D"},
+            {name: "Light Green", file: "lightgreen", color: "#2E8942"},
+            {name: "Dark Grey", file: "darkgrey", color: "#343A40"},
         ];
         this.specialLayoutColors = [
-            {label: 'influenza'},
-            {label: 'suzy'},
-            {label: 'calm'},
-            {label: 'crimson'},
-            {label: 'night'},
-            {label: 'skyline'},
-            {label: 'sunkist'},
-            {label: 'littleleaf'},
-            {label: 'joomla'},
-            {label: 'firewatch'}
+            {name: "Influenza", file: "influenza", color1: "#a83279", color2:"#f38e00"},
+            {name: "Calm", file: "calm", color1: "#5f2c82", color2:"#0DA9A4"},
+            {name: "Crimson", file: "crimson", color1: "#521c52", color2:"#c6426e"},
+            {name: "Night", file: "night", color1: "#2c0747", color2:"#6441a5"},
+            {name: "Skyline", file: "skyline", color1: "#2b32b2", color2:"#1488cc"},
+            {name: "Sunkist", file: "sunkist", color1: "#ee8a21", color2:"#f2c94c"},
+            {name: "Little Leaf", file: "littleleaf", color1: "#4DB865", color2:"#80D293"},
+            {name: "Joomla", file: "joomla", color1: "#1e3c72", color2:"#2a5298"},
+            {name: "Firewatch", file: "firewatch", color1: "#cb2d3e", color2:"#ef473a"},
+            {name: "Suzy", file: "suzy", color1: "#834d9b", color2:"#d04ed6"},
         ];
         this.themes = [
-            {label: 'blue', image: 'blue.svg'},
-            {label: 'cyan', image: 'cyan.svg'},
-            {label: 'indigo', image: 'indigo.svg'},
-            {label: 'purple', image: 'purple.svg'},
-            {label: 'teal', image: 'teal.svg'},
-            {label: 'orange', image: 'orange.svg'},
-            {label: 'deeppurple', image: 'deeppurple.svg'},
-            {label: 'lightblue', image: 'lightblue.svg'},
-            {label: 'green', image: 'green.png'},
-            {label: 'lightgreen', image: 'lightgreen.png'},
-            {label: 'lime', image: 'lime.svg'},
-            {label: 'amber', image: 'amber.png'},
-            {label: 'brown', image: 'brown.png'},
-            {label: 'darkgrey', image: 'darkgrey.svg'},
-            {label: 'pink', image: 'pink.svg'},
+                {name: "Amber", file: "amber", color: "#F8BD0C"},
+				{name: "Blue", file: "blue", color: "#007bff"},
+				{name: "Cyan", file: "cyan", color: "#17A2B8"},
+				{name: "Indigo", file: "indigo", color: "#6610F2"},
+				{name: "Purple", file: "purple", color: "#883cae"},
+				{name: "Teal", file: "teal", color: "#20C997"},
+				{name: "Orange", file: "orange", color: "#FD7E14"},
+				{name: "Deep Purple", file: "deeppurple", color: "#612FBE"},
+				{name: "Light Blue", file: "lightblue", color: "#4DA3FF"},
+				{name: "Green", file: "green", color: "#28A745"},
+				{name: "Light Green", file: "lightgreen", color: "#61CC79"},
+				{name: "Brown", file: "brown", color: "#986839"},
+				{name: "Dark Grey", file: "darkgrey", color: "#6C757D"},
+				{name: "Pink", file: "pink", color: "#E83E8C"},
+				{name: "Lime", file: "lime", color: "#74CD32"},
         ];
     }
 
     changeLayout(layout: string, special?: boolean) {
-        if (this.version === 'v3') {
-            this.changeStyleSheetsColor('layout-css', 'layout-' + layout + '.css');
-        } else {
-            this.changeStyleSheetsColor('layout-css', 'layout-' + layout + '-v4' + '.css');
+        if (special) {
+            this.app.darkMenu = special;
         }
-
+        
+        this.changeStyleSheetsColor('layout-css', 'layout-' + layout + '.css');
         this.layout = layout;
     }
 
     changeTheme(theme: string) {
-        if (this.version === 'v3') {
-            this.changeStyleSheetsColor('theme-css', 'theme-' + theme + '.css');
-        } else {
-            this.changeStyleSheetsColor('theme-css', 'theme-' + theme + '-v4' + '.css');
-        }
+        this.changeStyleSheetsColor('theme-css', 'theme-' + theme + '.css');
 
         this.themeColor = theme;
     }
 
     changeVersion(version: string) {
-        if (version === 'v3' && this.version !== version) {
-            this.version = 'v3';
             this.changeStyleSheetsColor('theme-css', 'theme-' + this.themeColor + '.css');
             this.changeStyleSheetsColor('layout-css', 'layout-' + this.layout + '.css');
-        } else if (version === 'v4' && this.version !== version) {
-            this.changeStyleSheetsColor('theme-css', 'theme-' + this.themeColor + '-v4' + '.css');
-            this.changeStyleSheetsColor('layout-css', 'layout-' + this.layout  + '-v4' + '.css');
-            this.version = 'v4';
-        }
     }
 
     changeStyleSheetsColor(id, value) {
@@ -271,7 +354,7 @@ export class AppConfigComponent implements OnInit {
     }
 
     onProfileModeClick(mode: string) {
-        if (this.app.isHorizontal()) {
+        if (this.app.layoutMode === "horizontal") {
             return;
         }
 
