@@ -92,7 +92,7 @@ import { AppMainComponent } from './app.main.component';
                 <h5 style="margin-top: 0;">Flat Layout Colors</h5>
                 <div class="layout-themes">
                     <div *ngFor="let flatLayoutColor of flatLayoutColors">
-                        <a href="#" (click)="changeLayout(flatLayoutColor.file, false)"  [ngStyle]="{'background-color': flatLayoutColor.color}">
+                        <a style="cursor: pointer" (click)="changeLayout(flatLayoutColor.file, false)"  [ngStyle]="{'background-color': flatLayoutColor.color}">
                             <i class="pi pi-check" *ngIf="layout === flatLayoutColor.file"></i>
                         </a>
                     </div>
@@ -101,7 +101,7 @@ import { AppMainComponent } from './app.main.component';
                 <h5>Special Layout Colors</h5>
                 <div class="layout-themes">
                     <div *ngFor="let specialLayoutColor of specialLayoutColors">
-                        <a href="#" (click)="changeLayout(specialLayoutColor.file, true)" [ngStyle]="{'background-image': 'linear-gradient(to right,' + specialLayoutColor.color1 + ',' + specialLayoutColor.color2 + ')'}">
+                        <a style="cursor: pointer" (click)="changeLayout(specialLayoutColor.file, true)" [ngStyle]="{'background-image': 'linear-gradient(to right,' + specialLayoutColor.color1 + ',' + specialLayoutColor.color2 + ')'}">
                             <i class="pi pi-check" *ngIf="layout === specialLayoutColor.file"></i>
                         </a>
                     </div>
@@ -110,7 +110,7 @@ import { AppMainComponent } from './app.main.component';
                 <h5>Themes</h5>
                 <div class="layout-themes">
                     <div *ngFor="let t of themes">
-                        <a href="#" (click)="changeComponentTheme(t.file)" [ngStyle]="{'background-color': t.color}">
+                        <a style="cursor: pointer" (click)="changeComponentTheme(t.file)" [ngStyle]="{'background-color': t.color}">
                             <i class="pi pi-check" *ngIf="themeColor === t.file"></i>
                         </a>
                     </div>
