@@ -21,29 +21,6 @@ body {
     a {
         text-decoration: none;
     }
-
-
-    .p-grid {
-        margin-right: -.5rem;
-        margin-left: -.5rem;
-        margin-top: -.5rem;
-    }
-
-    .p-col {
-        padding: .5rem;
-    }
-
-    .p-col-fixed {
-        padding: .5rem;
-    }
-
-    .p-col-1, .p-col-2, .p-col-3, .p-col-4, .p-col-5, .p-col-6, .p-col-7, .p-col-8, .p-col-9, .p-col-10, .p-col-11, .p-col-12 {
-        padding: .5rem;
-    }
-
-    .p-sm-1, .p-sm-2, .p-sm-3, .p-sm-4, .p-sm-5, .p-sm-6, .p-sm-7, .p-sm-8, .p-sm-9, .p-sm-10, .p-sm-11, .p-sm-12, .p-md-1, .p-md-2, .p-md-3, .p-md-4, .p-md-5, .p-md-6, .p-md-7, .p-md-8, .p-md-9, .p-md-10, .p-md-11, .p-md-12, .p-lg-1, .p-lg-2, .p-lg-3, .p-lg-4, .p-lg-5, .p-lg-6, .p-lg-7, .p-lg-8, .p-lg-9, .p-lg-10, .p-lg-11, .p-lg-12, .p-xl-1, .p-xl-2, .p-xl-3, .p-xl-4, .p-xl-5, .p-xl-6, .p-xl-7, .p-xl-8, .p-xl-9, .p-xl-10, .p-xl-11, .p-xl-12 {
-        padding: .5rem;
-    }
 }
 
 .layout-mask {
@@ -353,6 +330,13 @@ body {
     .layout-main {
         padding: 80px 15px 15px 15px;
         @include transition(margin-left .3s);
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: calc(100vh - 60px);
+        -moz-transition: margin-left 0.2s;
+        -o-transition: margin-left 0.2s;
+        -webkit-transition: margin-left 0.2s;
+        transition: margin-left 0.2s;
     }
 
     .layout-mask {
@@ -549,6 +533,10 @@ body {
         padding: 15px 20px;
         @include shadow(0 0 10px 0 rgba(0, 0, 0, 0.25));
 
+        i {
+            font-size: 1em !important;
+        }
+        
         .footer-text-left {
             img {
                 height: 25px;
