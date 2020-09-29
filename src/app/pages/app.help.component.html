@@ -1,198 +1,132 @@
-<div class="ui-g">
-    <div class="ui-g-12">
-        <div class="help-wrapper">
-            <div class=" card help-header">
-                <div class="ui-g header-title">
-                    <div class="ui-g-2 icon">
-                        <i class="fa fa-life-ring"></i>
-                    </div>
-                    <div class="ui-g-9">
-                        <h1>Frequently Asked Questions</h1>
-                        <span>Advice and answers from Avalon Team</span>
-                    </div>
+<div class="p-grid help-page">
+    <div class="p-col-12">
+        <div class="card help-search">
+            <div class="help-search-content">
+                <h1>We are here to help</h1>
+                <div class="search-container">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" placeholder="Search" />
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="p-col-12 p-lg-6">
+        <div class="card">
+				<h4>General</h4>
+                <p-accordion>
+                    <p-accordionTab header="Header I" [selected]="true">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+							ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </p-accordionTab>
+                    <p-accordionTab header="Header II">
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+							architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+							voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.</p>
+                    </p-accordionTab>
+                    <p-accordionTab header="Header III">
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+							cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+							Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+                    </p-accordionTab>
+                </p-accordion>
 
+                <h4>FAQ</h4>
+                <p-accordion>
+                    <p-accordionTab header="FAQ I" [selected]="true">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+							ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </p-accordionTab>
+                    <p-accordionTab header="FAQ II">
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+							architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+							voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.</p>
+                    </p-accordionTab>
+                    <p-accordionTab header="FAQ III">
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+							cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+							Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+                    </p-accordionTab>
+                </p-accordion>
+        </div>
+    </div>
+    <div class="p-col-12 p-lg-6">
+        <div class="card">
+            <h4>System Status</h4>
+            <p>All services are operational.</p>
+            <div class="status-bars">
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar status-bar-failure"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+                <div class="status-bar"></div>
+            </div>
+            <div class="status-bar-footer">
+                <span>30 Days Ago</span>
+                <span>Today</span>
+            </div>
+        </div>
 
-            <div class="ui-g help-content">
-                <div class="ui-g-12 ui-lg-6">
-                    <div class="ui-g-12 card accordion-card">
-                        <div class="ui-g card-header">
-                            <div class="ui-g-7 title">
-                                <div class="ui-g-2 icon">
-                                    <i class="fa fa-bookmark"></i>
-                                </div>
-                                <div class="ui-g-9">
-                                    <h1>The Basics</h1>
-                                    <span>3 articles in tihis collection</span>
-                                </div>
-
-                            </div>
-                            <div class="ui-g-5 feedback-buttons">
-                                <button class="not-helpful">👎 Not Helpful</button>
-                                <button class="helpful">👍 Helpful</button>
-                            </div>
-                        </div>
-
-                        <div class="card-content">
-                            <div class="questions">
-                                <p-accordion styleClass="sub-accordion">
-                                    <p-accordionTab header="Which do I need to develop a SaaS application?" [selected]="true">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pellentesque ligula dolor, pretium tincidunt libero sodales in. Integer at eros posuere, elementum felis a, laoreet libero. In sed nunc accumsan, dapibus nibh sit amet, aliquet ipsum.
-                                    </p-accordionTab>
-                                    <p-accordionTab header="I’m a freelancer/agency. Can I use the item for an end product I’m doing for a client?">
-                                        Aliquam erat volutpat. Nulla hendrerit, arcu non lobortis fringilla, ipsum orci condimentum risus, ac hendrerit mauris justo eget lectus.
-                                    </p-accordionTab>
-                                    <p-accordionTab header="We’re a reseller, are we able to purchase a license on behalf of our client? ">
-                                        Ut leo tellus, imperdiet tristique turpis eu, eleifend rhoncus dolor. Fusce eu feugiat urna. Nullam venenatis nisi varius justo ultrices, non aliquam nisi dapibus. Duis viverra nulla ipsum, ac laoreet mauris dapibus eu.
-                                    </p-accordionTab>
-                                </p-accordion>
-                            </div>
-                        </div>
+        <div class="card">
+            <h4>Articles</h4>
+            <p>Recent articles from our team.</p>
+            <div class="blog-posts">
+                <div class="blog-post">
+                    <div class="blog-text">
+                        <h1>Building Revenue With Confidence</h1>
+                        <span>And avoiding failures</span>
                     </div>
-
-                    <div class="ui-g-12 card accordion-card ">
-                        <div class="ui-g card-header">
-                            <div class="ui-g-7 title">
-                                <div class="ui-g-2 icon">
-                                    <i class="fa fa-bookmark"></i>
-                                </div>
-                                <div class="ui-g-9">
-                                    <h1>Frequently Asked Questions</h1>
-                                    <span>6 articles in tihis collection</span>
-                                </div>
-                            </div>
-                            <div class="ui-g-5 feedback-buttons">
-                                <button class="not-helpful">👎 Not Helpful</button>
-                                <button class="helpful">👍 Helpful</button>
-                            </div>
-                        </div>
-
-                        <div class="card-content">
-                            <div class="questions">
-                                <p-accordion styleClass="sub-accordion">
-                                    <p-accordionTab header="Lorem ipsum dolor sit amet, consectetur adipiscing elit ?" [selected]="true">
-                                        Vivamus in tortor arcu. Morbi ornare ex mi, sit amet pretium nibh sollicitudin eu.
-                                    </p-accordionTab>
-                                    <p-accordionTab header="Sed ut massa accumsan, consequat ligula sit amet, dignissim diam ?">
-                                        Curabitur elit enim, scelerisque at eros ac, sagittis volutpat ante. Mauris ac accumsan lorem, in viverra turpis.
-                                    </p-accordionTab>
-                                    <p-accordionTab header=" Vivamus lobortis lacinia eros vel viverra. Vestibulum molestie tortor metus, ac dapibus massa sodales eget ?">
-                                        Donec ut justo sit amet erat eleifend vulputate ut at mi.
-                                    </p-accordionTab>
-                                    <p-accordionTab header="Donec finibus tristique leo, consectetur tincidunt velit ?">
-                                        Maecenas mattis malesuada lobortis. Praesent hendrerit eros quam. Praesent volutpat mauris ut dignissim maximus.
-                                    </p-accordionTab>
-                                    <p-accordionTab header="Praesent suscipit, magna at lacinia tempor ?">
-                                        Velit leo commodo magna, at pharetra risus libero vitae urna.
-                                    </p-accordionTab>
-                                    <p-accordionTab header="Nulla auctor urna eget purus placerat maximus ?">
-                                        Et malesuada fames ac ante ipsum primis in faucibus.
-                                    </p-accordionTab>
-                                </p-accordion>
-                            </div>
-                        </div>
+                    <div class="blog-profile">
+                        <img src="assets/demo/images/avatar/amyelsner.png" alt="apollo" />
                     </div>
                 </div>
 
-                <div class="ui-g-12 ui-lg-6">
-                    <div class="ui-g-12 card api-card">
-                        <div class="ui-g card-header">
-                            <div class="ui-g-6 title">
-                                <h2>Avalon Web Application / API</h2>
-                            </div>
-                            <div class="ui-g-6  status">
-                                <p>Operational</p>
-                            </div>
-                        </div>
-
-                        <div class="card-content">
-                            <div class="progress-bars">
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar fail"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                                <div class="progress-bar"></div>
-                            </div>
-                            <div class="days ui-g-6">
-                                30 Days Ago
-                            </div>
-                            <div class="today ui-g-6">
-                                Today
-                            </div>
-                        </div>
+                <div class="blog-post">
+                    <div class="blog-text">
+                        <h1>Latest Marketing Trends</h1>
+                        <span>Don't miss out our tips</span>
                     </div>
+                    <div class="blog-profile">
+                        <img src="assets/demo/images/avatar/annafali.png" alt="apollo" />
+                    </div>
+                </div>
 
-                    <div class="ui-g-12 card blog-card ">
-                        <div class="ui-g card-header">
-                            <div class="ui-g-12 title">
-                                <div class="ui-g-2 icon">
-                                    <i class="fa fa-th-large"></i>
-                                </div>
-                                <div class="ui-g-10">
-                                    <h1>Blog posts</h1>
-                                    <span>4 posts in tihis collection</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="blog-post">
-                                <div class="blog-text">
-                                    <h1>Lorem ipsum dolor sit amet?</h1>
-                                    <span>Subtitle of lorem ipsum</span>
-                                </div>
-                                <div class="blog-profile">
-                                    <img src="assets/layout/images/extensions/avatar-rachel.jpg" alt="avalon-layout" />
-                                </div>
-                            </div>
-
-                            <div class="blog-post">
-                                <div class="blog-text">
-                                    <h1>Lorem ipsum dolor sit amet?</h1>
-                                    <span>Subtitle of lorem ipsum</span>
-                                </div>
-                                <div class="blog-profile">
-                                    <img src="assets/layout/images/extensions/avatar-melissa.jpg" alt="avalon-layout" />
-                                </div>
-                            </div>
-                            <div class="blog-post">
-                                <div class="blog-text">
-                                    <h1>Lorem ipsum dolor sit amet?</h1>
-                                    <span>Subtitle of lorem ipsum</span>
-                                </div>
-                                <div class="blog-profile">
-                                    <img src="assets/layout/images/extensions/avatar-mike.jpg" alt="avalon-layout" />
-                                </div>
-                            </div>
-                        </div>
+                <div class="blog-post">
+                    <div class="blog-text">
+                        <h1>How To Reach Your Audience</h1>
+                        <span>10 ways to increase your efficiency</span>
+                    </div>
+                    <div class="blog-profile">
+                        <img src="assets/demo/images/avatar/stephenshaw.png" alt="apollo" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+ </div>
