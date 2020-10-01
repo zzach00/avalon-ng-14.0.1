@@ -61,7 +61,7 @@ export class DashboardDemoComponent implements OnInit {
 
         this.fullcalendarOptions = {
 				plugins:[dayGridPlugin, timeGridPlugin, interactionPlugin],
-				defaultDate: '2016-01-12',
+				defaultDate: '2017-02-12',
 				header: {
 					left: 'prev,next',
 					center: 'title',
