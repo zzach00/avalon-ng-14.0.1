@@ -114,10 +114,10 @@ import {ElevationComponent} from './utilities/elevation.component';
 import {FlexboxComponent} from './utilities/flexbox.component';
 import {GridComponent} from './utilities/grid.component';
 import {IconsComponent} from './utilities/icons.component';
-import {WidgetsComponent} from './utilities/widgets.component';
 import {SpacingComponent} from './utilities/spacing.component';
 import {TypographyComponent} from './utilities/typography.component';
 import {TextComponent} from './utilities/text.component';
+import {WidgetsComponent} from './utilities/widgets.component';
 
 import {CountryService} from './demo/service/countryservice';
 import {EventService} from './demo/service/eventservice';
@@ -236,10 +236,10 @@ import {IconService} from './demo/service/iconservice';
         FlexboxComponent,
         GridComponent,
         IconsComponent,
-        WidgetsComponent,
         SpacingComponent,
         TypographyComponent,
         TextComponent,
+        WidgetsComponent,
         AppNotfoundComponent,
         AppErrorComponent,
         AppAccessdeniedComponent,
