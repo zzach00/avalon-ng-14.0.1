@@ -95,6 +95,7 @@ import {AppWizardComponent} from './pages/app.wizard.component';
 import {DashboardDemoComponent} from './demo/view/dashboarddemo.component';
 import {DashboardBankingComponent} from './demo/view/dashboardbanking.component';
 import {FormLayoutDemoComponent} from './demo/view/formlayoutdemo.component';
+import {FloatLabelDemoComponent} from './demo/view/floatlabeldemo.component';
 import {InputDemoComponent} from './demo/view/inputdemo.component';
 import {ButtonDemoComponent} from './demo/view/buttondemo.component';
 import {TableDemoComponent} from './demo/view/tabledemo.component';
@@ -217,6 +218,7 @@ import {IconService} from './demo/service/iconservice';
         DashboardDemoComponent,
         DashboardBankingComponent,
         FormLayoutDemoComponent,
+        FloatLabelDemoComponent,
         InputDemoComponent,
         ButtonDemoComponent,
         TableDemoComponent,

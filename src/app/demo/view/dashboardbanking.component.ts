@@ -4,15 +4,12 @@ import { Product } from '../domain/product';
 import { ProductService } from '../service/productservice';
 
 @Component({
-    templateUrl: './dashboardbanking.component.html'
+    templateUrl: './dashboardbanking.component.html',
+    styleUrls: ['./tabledemo.scss']
 })
 export class DashboardBankingComponent implements OnInit {
 
     products: Product[];
-
-    cols: any[];
-
-    selectedCar: any;
 
     dropdownItem: SelectItem[];
 
@@ -22,14 +19,6 @@ export class DashboardBankingComponent implements OnInit {
 
     ngOnInit() {
         this.productService.getProducts().then(data => this.products = data);
-
-
-        this.cols = [
-            {field: 'vin', header: 'Vin'},
-            {field: 'year', header: 'Year'},
-            {field: 'brand', header: 'Brand'},
-            {field: 'color', header: 'Color'}
-        ];
 
         this.dropdownItem = [];
         this.dropdownItem.push({label: 'Select One', value: null});

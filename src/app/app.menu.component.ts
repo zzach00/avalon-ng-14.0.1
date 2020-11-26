@@ -17,10 +17,15 @@ export class AppMenuComponent implements OnInit {
 
     ngOnInit() {
         this.model = [
-            {label: 'Dashboards', icon: 'pi pi-fw pi-home', routerLink: ['/dashboards'],
+            {
+                label: 'Favorites', icon: 'pi pi-home',
                 items: [
-                    {label: 'Generic', icon: 'pi pi-fw pi-home', routerLink: ['/dashboards/generic']},
-                    {label: 'Banking', icon: 'pi pi-fw pi-money-bill', routerLink: ['/dashboards/dashboard_banking']},
+                    {label: 'Dashboards', icon: 'pi pi-fw pi-home', routerLink: ['/dashboards'],
+                        items: [
+                            {label: 'Generic', icon: 'pi pi-fw pi-home', routerLink: ['/dashboards/generic']},
+                            {label: 'Banking', icon: 'pi pi-fw pi-money-bill', routerLink: ['/dashboards/dashboard_banking']},
+                        ]
+                    }
                 ]
             },
             {
@@ -28,6 +33,7 @@ export class AppMenuComponent implements OnInit {
                 items: [
                     {label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout']},
                     {label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input']},
+                    {label: 'Float Label', icon: 'pi pi-fw pi-bookmark', routerLink: ['/uikit/floatlabel']},
                     {label: 'Button', icon: 'pi pi-fw pi-mobile', routerLink: ['/uikit/button'], class: 'rotated-icon'},
                     {label: 'Table', icon: 'pi pi-fw pi-table', routerLink: ['/uikit/table']},
                     {label: 'List', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/list']},
@@ -57,67 +63,74 @@ export class AppMenuComponent implements OnInit {
                 ]
             },
             {
-                label: 'Pages', icon: 'pi pi-fw pi-clone', routerLink: ['/pages'],
+                label: 'Pages', icon: 'pi pi-fw pi-briefcase', routerLink: ['/pages'],
                 items: [
                     {label: 'Crud', icon: 'pi pi-fw pi-pencil', routerLink: ['/pages/crud']},
                     {label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', routerLink: ['/pages/calendar']},
-                    {label: 'Landing Page', icon: 'pi pi-fw pi-user-plus', url: 'assets/pages/landing.html', target: '_blank'},
-                    {label: 'Login Page', icon: 'pi pi-fw pi-question-circle', routerLink: ['/login'], target: '_blank'},
+                    {label: 'Landing', icon: 'pi pi-fw pi-globe', url: 'assets/pages/landing.html', target: '_blank'},
+                    {label: 'Login', icon: 'pi pi-fw pi-sign-in', routerLink: ['/login']},
                     {label: 'Invoice', icon: 'pi pi-fw pi-dollar', routerLink: ['/pages/invoice']},
                     {label: 'Wizard', icon: 'pi pi-fw pi-star', routerLink: ['/wizard']},
-                    {label: 'Help Page', icon: 'pi pi-fw pi-question-circle', routerLink: ['/pages/help']},
-                    {label: 'Error Page', icon: 'pi pi-fw pi-times-circle', routerLink: ['/error'], target: '_blank'},
-                    {label: 'Not Found Page', icon: 'pi pi-fw pi-exclamation-circle', routerLink: ['/notfound'], target: '_blank'},
-                    {label: 'Access Denied Page', icon: 'pi pi-fw pi-lock', routerLink: ['/accessdenied'], target: '_blank'},
-                    {label: 'Empty Page', icon: 'pi pi-fw pi-circle-off', routerLink: ['/pages/empty']}
+                    {label: 'Help', icon: 'pi pi-fw pi-question-circle', routerLink: ['/pages/help']},
+                    {label: 'Error', icon: 'pi pi-fw pi-times-circle', routerLink: ['/error']},
+                    {label: 'Not Found', icon: 'pi pi-fw pi-exclamation-circle', routerLink: ['/notfound']},
+                    {label: 'Access Denied', icon: 'pi pi-fw pi-lock', routerLink: ['/access']},
+                    {label: 'Empty', icon: 'pi pi-fw pi-circle-off', routerLink: ['/pages/empty']}
                 ]
             },
             {
-                label: 'Menu Hierarchy', icon: 'pi pi-fw pi-sort-amount-down-alt',
+                label: 'Hierarchy', icon: 'pi pi-fw pi-align-left',
                 items: [
                     {
-                        label: 'Submenu 1', icon: 'pi pi-fw pi-circle-off',
+                        label: 'Submenu 1', icon: 'pi pi-fw pi-align-left',
                         items: [
                             {
-                                label: 'Submenu 1.1', icon: 'pi pi-fw pi-circle-off',
+                                label: 'Submenu 1.1', icon: 'pi pi-fw pi-align-left',
                                 items: [
-                                    {label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-circle-off'},
-                                    {label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-circle-off'},
-                                    {label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-circle-off'},
+                                    {label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-align-left'},
+                                    {label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-align-left'},
+                                    {label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-align-left'},
                                 ]
                             },
                             {
-                                label: 'Submenu 1.2', icon: 'pi pi-fw pi-circle-off',
+                                label: 'Submenu 1.2', icon: 'pi pi-fw pi-align-left',
                                 items: [
-                                    {label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-circle-off'},
-                                    {label: 'Submenu 1.2.2', icon: 'pi pi-fw pi-circle-off'}
+                                    {label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-align-left'}
                                 ]
                             },
                         ]
                     },
                     {
-                        label: 'Submenu 2', icon: 'pi pi-fw pi-circle-off',
+                        label: 'Submenu 2', icon: 'pi pi-fw pi-align-left',
                         items: [
                             {
-                                label: 'Submenu 2.1', icon: 'pi pi-fw pi-circle-off',
+                                label: 'Submenu 2.1', icon: 'pi pi-fw pi-align-left',
                                 items: [
-                                    {label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-circle-off'},
-                                    {label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-circle-off'},
-                                    {label: 'Submenu 2.1.3', icon: 'pi pi-fw pi-circle-off'},
+                                    {label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-align-left'},
+                                    {label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-align-left'},
                                 ]
                             },
                             {
-                                label: 'Submenu 2.2', icon: 'pi pi-fw pi-circle-off',
+                                label: 'Submenu 2.2', icon: 'pi pi-fw pi-align-left',
                                 items: [
-                                    {label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-circle-off'},
-                                    {label: 'Submenu 2.2.2', icon: 'pi pi-fw pi-circle-off'}
+                                    {label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-align-left'},
                                 ]
                             },
                         ]
                     }
                 ]
             },
-            {label: 'Docs', icon: 'pi pi-fw pi-question', routerLink: ['/documentation']}
+            {
+                label: 'Start', icon: 'pi pi-download',
+                items: [
+                    {
+                        label: 'Buy Now', icon: 'pi pi-fw pi-shopping-cart', url: ['https://www.primefaces.org/store']
+                    },
+                    {
+                        label: 'Documentation', icon: 'pi pi-fw pi-info-circle', routerLink: ['/documentation']
+                    }
+                ]
+            }
         ];
     }
 }

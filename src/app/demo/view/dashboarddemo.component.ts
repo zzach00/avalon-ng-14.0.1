@@ -8,7 +8,16 @@ import { ProductService } from '../service/productservice';
 import { Product } from '../domain/product';
 
 @Component({
-    templateUrl: './dashboard.component.html'
+    templateUrl: './dashboard.component.html',
+    styleUrls: ['./tabledemo.scss'],
+    styles: [`
+        @media screen and (max-width: 960px) {
+            :host ::ng-deep .fc-header-toolbar {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+    `]
 })
 export class DashboardDemoComponent implements OnInit {
 
@@ -21,8 +30,6 @@ export class DashboardDemoComponent implements OnInit {
     events: any[];
 
     selectedCity: any;
-
-    selectedCar: any;
 
     fullcalendarOptions: any;
 
