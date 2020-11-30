@@ -162,6 +162,9 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             if (this.app.isHorizontal() || this.app.isSlim()) {
                 this.menuService.reset();
             }
+
+            this.app.overlayMenuActive = false;
+            this.app.menuHoverActive = false;
         }
     }
 
