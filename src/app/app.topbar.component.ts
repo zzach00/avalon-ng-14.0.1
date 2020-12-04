@@ -31,7 +31,7 @@ import {AppMainComponent} from './app.main.component';
                             <span class="topbar-item-role">Marketing</span>
                         </a>
 
-                        <ul class="layout-menu fadeInDown">
+                        <ul class="layout-menu" [ngClass]="{'fadeInDown':!app.isMobile()}">
                             <li role="menuitem">
                                 <a href="#" (click)="app.onTopbarSubItemClick($event)">
                                     <i class="pi pi-fw pi-user"></i>
@@ -63,7 +63,7 @@ import {AppMainComponent} from './app.main.component';
                             <i class="topbar-icon pi pi-cog"></i>
                             <span class="topbar-item-name">Settings</span>
                         </a>
-                        <ul class="layout-menu fadeInDown">
+                        <ul class="layout-menu" [ngClass]="{'fadeInDown':!app.isMobile()}">
                             <li role="menuitem">
                                 <a href="#" (click)="app.onTopbarSubItemClick($event)">
                                     <i class="pi pi-fw pi-palette"></i>
@@ -96,7 +96,7 @@ import {AppMainComponent} from './app.main.component';
                             <span class="topbar-badge animated rubberBand">5</span>
                             <span class="topbar-item-name">Messages</span>
                         </a>
-                        <ul class="layout-menu fadeInDown">
+                        <ul class="layout-menu" [ngClass]="{'fadeInDown':!app.isMobile()}">
                             <li role="menuitem">
                                 <a href="#" class="topbar-message" (click)="app.onTopbarSubItemClick($event)">
                                     <img src="assets/layout/images/avatar1.png" width="35"/>
@@ -135,7 +135,7 @@ import {AppMainComponent} from './app.main.component';
                             <span class="topbar-badge animated rubberBand">4</span>
                             <span class="topbar-item-name">Notifications</span>
                         </a>
-                        <ul class="layout-menu fadeInDown">
+                        <ul class="layout-menu" [ngClass]="{'fadeInDown':!app.isMobile()}">
                             <li role="menuitem">
                                 <a href="#" (click)="app.onTopbarSubItemClick($event)">
                                     <i class="pi pi-fw pi-sliders-h"></i>
