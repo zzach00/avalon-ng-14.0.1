@@ -243,7 +243,7 @@
             <h5>Contact Us</h5>
             <div class="p-grid">
                 <div class="p-col-12">
-                    <p-dropdown [options]="cities" [(ngModel)]="selectedCity"></p-dropdown>
+                    <p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Select City" [autoDisplayFirst]="false"></p-dropdown>
                 </div>
                 <div class="p-col-12">
                     <input type="text" pInputText placeholder="Name" >
