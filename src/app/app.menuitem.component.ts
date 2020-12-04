@@ -14,8 +14,7 @@ import {AppMainComponent} from './app.main.component';
         <ng-container>
             <div *ngIf="root" class="layout-menuitem-root-text">{{item.label}}</div>
             <a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="!item.routerLink || item.items" (mouseenter)="onMouseEnter()"
-               (keydown.enter)="itemClick($event)"
-               [attr.target]="item.target" [attr.tabindex]="0" [ngClass]="item.class" pRipple>
+               (keydown.enter)="itemClick($event)" [attr.target]="item.target" [attr.tabindex]="0" [ngClass]="item.class" pRipple>
                 <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
                 <span>{{item.label}}</span>
                 <i class="pi pi-fw pi-angle-down menuitem-toggle-icon" *ngIf="item.items"></i>
@@ -165,6 +164,30 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
             this.app.overlayMenuActive = false;
             this.app.menuHoverActive = false;
+
+            const ink = this.getInk(event.currentTarget);
+            if (ink) {
+                this.removeClass(ink, 'p-ink-active');
+            }
+        }
+    }
+
+    getInk(el) {
+        // tslint:disable-next-line:prefer-for-of
+        for (let i = 0; i < el.children.length; i++) {
+            if (typeof el.children[i].className === 'string' && el.children[i].className.indexOf('p-ink') !== -1) {
+                return el.children[i];
+            }
+        }
+        return null;
+    }
+
+    removeClass(element, className) {
+        if (element.classList) {
+            element.classList.remove(className);
+        }
+        else {
+            element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
         }
     }
 

@@ -1027,7 +1027,7 @@ body {
                                 font-size: 19px;
                             }
 
-                            span, i.menuitem-toggle-icon {
+                            span:not(.p-ink), i.menuitem-toggle-icon {
                                 display: none;
                             }
 
