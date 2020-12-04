@@ -162,7 +162,6 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
                 this.menuService.reset();
             }
 
-            this.app.overlayMenuActive = false;
             this.app.menuHoverActive = false;
 
             const ink = this.getInk(event.currentTarget);

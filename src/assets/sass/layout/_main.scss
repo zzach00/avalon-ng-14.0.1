@@ -315,10 +315,6 @@ body {
                 margin-left: 0px;
             }
 
-            .layout-mask {
-                display: block;
-            }
-
             .topbar {
                 .topbar-right {
                     #menu-button {
@@ -1191,6 +1187,14 @@ body {
                             }
                         }
                     }
+                }
+            }
+        }
+
+        &.menu-layout-overlay {
+            &.layout-menu-overlay-active {
+                .layout-mask {
+                    display: block;
                 }
             }
         }
