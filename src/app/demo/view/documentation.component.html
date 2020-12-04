@@ -108,10 +108,16 @@ export class AppMenuComponent implements OnInit &#123;
 
     ngOnInit() &#123;
         this.model = [
-            &#123;label: 'Dashboards', icon: 'pi pi-fw pi-home', routerLink: ['/dashboards'],
+            &#123;
+                label: 'Favorites', icon: 'pi pi-home',
                 items: [
-                    &#123;label: 'Generic', icon: 'pi pi-fw pi-home', routerLink: ['/dashboards/generic']&#125;,
-                    &#123;label: 'Banking', icon: 'pi pi-fw pi-money-bill', routerLink: ['/dashboards/dashboard_banking']&#125;,
+                    &#123;
+                        label: 'Dashboards', icon: 'pi pi-fw pi-home', routerLink: ['/dashboards'],
+                        items: [
+                            &#123;label: 'Generic', icon: 'pi pi-fw pi-home', routerLink: ['/dashboards/generic']&#125;,
+                            &#123;label: 'Banking', icon: 'pi pi-fw pi-money-bill', routerLink: ['/dashboards/dashboard_banking']&#125;,
+                        ]
+                    &#125;
                 ]
             &#125;,
             &#123;
@@ -207,7 +213,17 @@ export class AppMenuComponent implements OnInit &#123;
                     &#125;
                 ]
             &#125;,
-            &#123;label: 'Docs', icon: 'pi pi-fw pi-question', routerLink: ['/documentation']&#125;
+            &#123;
+                label: 'Start', icon: 'pi pi-download',
+                items: [
+                    &#123;
+                        label: 'Buy Now', icon: 'pi pi-fw pi-shopping-cart', url: ['https://www.primefaces.org/store']
+                    &#125;,
+                    &#123;
+                        label: 'Documentation', icon: 'pi pi-fw pi-info-circle', routerLink: ['/documentation']
+                    &#125;
+                ]
+            &#125;
         ];
     &#125;
 &#125;
@@ -229,8 +245,6 @@ npm install primeicons@latest --save
 
 <app-code ngPreserveWhitespaces ngNonBindable lang="markup">
 "styles": [
-    "../node_modules/primeng/resources/primeng.min.css",        //required: PrimeNG components
-    "node_modules/primeicons/primeicons.css",                   //required: PrimeIcons
     "styles.scss"                                               //your styles and overrides
 ],
 </app-code>
@@ -245,7 +259,7 @@ npm install primeicons@latest --save
             with the sub components which are app.menu.component.ts, app.profile.components.ts, app.topbar.component.ts and app.footer.component.ts.</p>
 
             <h4>Theme</h4>
-            <p>Avalon provides 30 PrimeNG themes out of the box, setup of a theme simple including the css of theme to your application. All themes are located inside are located inside assets/theme folder.</p>
+            <p>Avalon provides 15 PrimeNG themes out of the box, setup of a theme simple including the css of theme to your application. All themes are located inside are located inside assets/theme folder.</p>
 
             <ul>
                 <li>theme-amber</li>
@@ -1113,20 +1127,6 @@ $galleriaThumbnailNavigatorHeight:2rem;
 &#125;
 </app-code>
 </div>
-
-
-            <h4>Menu Item Badges</h4>
-            <p>Badges are numerical indicators associated with a link.
-               The badge property is the value of the badge and badgeStyleClass is style class of the badge.</p>
-<app-code ngPreserveWhitespaces ngNonBindable lang="javascript">
-label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'red-badge'
-</app-code>
-            <p>Default badge uses the accent color of avalon layout and there are three more alternative colors.</p>
-            <ul>
-                <li>red-badge</li>
-                <li>purple-badge</li>
-                <li>teal-badge</li>
-            </ul>
 
             <h4>Menu Modes</h4>
             <p>Menu has 4 modes, static, overlay, slim and horizontal. Layout container element in application.html is used to define which mode to use by adding specific classes. List
