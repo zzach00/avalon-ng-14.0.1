@@ -800,6 +800,7 @@ body {
                             padding: 5px 0;
                             z-index: 100;
                             position: absolute;
+                            display: none;
                             top: 50px;
                             left: 0px;
                             width: 250px;
@@ -884,6 +885,10 @@ body {
                                 i {
                                     color: $menuitemActiveColor;
                                 }
+                            }
+
+                            > ul {
+                                display: block;
                             }
                         }
                     }
@@ -1039,6 +1044,7 @@ body {
                             position: absolute;
                             top: 0;
                             left: 73px;
+                            display: none;
                             min-width: 200px;
 
                             li {
@@ -1093,6 +1099,10 @@ body {
                                 &:hover + .layout-menu-tooltip {
                                     display: none;
                                 }
+                            }
+
+                            > ul {
+                                display: block;
                             }
                         }
                     }

@@ -29,9 +29,8 @@ import {AppMainComponent} from './app.main.component';
                 <span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
             </a>
             <div class="submenu-arrow" *ngIf="item.items"></div>
-            <ul *ngIf="(item.items && !((app.isHorizontal() || app.isSlim()) && !app.isMobile())) || active "
-                [@children]="(((app.isHorizontal() || app.isSlim()) && !app.isMobile()) && root) ? (active ? 'visible' : 'hidden') :
-                (root ? 'visible' :active ? 'visibleAnimated' : 'hiddenAnimated')">
+            <ul *ngIf="(item.items && root) || (item.items && active) "
+                [@children]="(root ? 'visible' :active ? 'visibleAnimated' : 'hiddenAnimated')">
                 <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
                     <li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
                 </ng-template>
