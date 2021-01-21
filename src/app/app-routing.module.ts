@@ -9,6 +9,7 @@ import {AppHelpComponent} from './pages/app.help.component';
 import {AppWizardComponent} from './pages/app.wizard.component';
 import {InputDemoComponent} from './demo/view/inputdemo.component';
 import {FloatLabelDemoComponent} from './demo/view/floatlabeldemo.component';
+import {InvalidStateDemoComponent} from './demo/view/invalidstatedemo.component';
 import {TableDemoComponent} from './demo/view/tabledemo.component';
 import {ListDemoComponent} from './demo/view/listdemo.component';
 import {TreeDemoComponent} from './demo/view/treedemo.component';
@@ -40,6 +41,7 @@ import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
 import {AppLoginComponent} from './pages/app.login.component';
 import {AppCrudComponent} from './pages/app.crud.component';
 import {AppCalendarComponent} from './pages/app.calendar.component';
+import {AppTimelineDemoComponent} from './pages/app.timelinedemo.component';
 
 @NgModule({
     imports: [
@@ -52,6 +54,7 @@ import {AppCalendarComponent} from './pages/app.calendar.component';
                     {path: 'dashboards/dashboard_banking', component: DashboardBankingComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},
+                    {path: 'uikit/invalidstate', component: InvalidStateDemoComponent},
                     {path: 'uikit/input', component: InputDemoComponent},
                     {path: 'uikit/button', component: ButtonDemoComponent},
                     {path: 'uikit/table', component: TableDemoComponent},
@@ -75,11 +78,12 @@ import {AppCalendarComponent} from './pages/app.calendar.component';
                     {path: 'utilities/typography', component: TypographyComponent},
                     {path: 'utilities/text', component: TextComponent},
                     {path: 'pages/empty', component: EmptyDemoComponent},
-                    {path: 'documentation', component: DocumentationComponent},
                     {path: 'pages/invoice', component: AppInvoiceComponent},
                     {path: 'pages/crud', component: AppCrudComponent},
                     {path: 'pages/calendar', component: AppCalendarComponent},
-                    {path: 'pages/help', component: AppHelpComponent}
+                    {path: 'pages/timeline', component: AppTimelineDemoComponent},
+                    {path: 'pages/help', component: AppHelpComponent},
+                    {path: 'documentation', component: DocumentationComponent}
                 ]
             },
             {path: 'error', component: AppErrorComponent},
