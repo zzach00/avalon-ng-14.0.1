@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
+import { AppComponent } from './app.component';
 import { AppMainComponent } from './app.main.component';
 
 @Component({
     selector: 'app-config',
     template: `
-        <div class="layout-config" [ngClass]="{'layout-config-active': app.configActive}" (click)="app.onConfigClick($event)">
+        <div class="layout-config" [ngClass]="{'layout-config-active': appMain.configActive}" (click)="appMain.onConfigClick($event)">
             <a style="cursor: pointer" id="layout-config-button" class="layout-config-button" (click)="onConfigButtonClick($event)">
                 <i class="pi pi-cog"></i>
             </a>
@@ -62,13 +63,13 @@ import { AppMainComponent } from './app.main.component';
                 <div class="p-grid">
                     <div class="p-col-6">
                         <div class="p-field-radiobutton">
-                            <p-radioButton inputId="inline" name="profileMode" value="inline" [(ngModel)]="app.profileMode"[disabled]="app.isHorizontal()"></p-radioButton>
+                            <p-radioButton inputId="inline" name="profileMode" value="inline" [(ngModel)]="app.profileMode"[disabled]="appMain.isHorizontal()"></p-radioButton>
                             <label for="inline">Inline</label>
                         </div>
                     </div>
                     <div class="p-col-6">
                         <div class="p-field-radiobutton">
-                            <p-radioButton inputId="top" name="profileMode" value="top" [(ngModel)]="app.profileMode" [disabled]="app.isHorizontal()"></p-radioButton>
+                            <p-radioButton inputId="top" name="profileMode" value="top" [(ngModel)]="app.profileMode" [disabled]="appMain.isHorizontal()"></p-radioButton>
                             <label for="top">Overlay</label>
                         </div>
                     </div>
@@ -87,7 +88,7 @@ import { AppMainComponent } from './app.main.component';
                 </div>
 
                 <h5 style="margin-top: 0;">Ripple Effect</h5>
-                <p-inputSwitch [ngModel]="app.ripple" (onChange)="app.onRippleChange($event)"></p-inputSwitch>
+                <p-inputSwitch [ngModel]="app.ripple" (onChange)="appMain.onRippleChange($event)"></p-inputSwitch>
 
                 <h5>Flat Layout Colors</h5>
                 <div class="layout-themes">
@@ -133,7 +134,7 @@ export class AppConfigComponent implements OnInit {
 
     layout = 'blue';
 
-    constructor(public app: AppMainComponent) {}
+    constructor(public app: AppComponent, public appMain: AppMainComponent) {}
 
     ngOnInit() {
         this.flatLayoutColors = [
@@ -154,33 +155,33 @@ export class AppConfigComponent implements OnInit {
             {name: 'Dark Grey', file: 'darkgrey', color: '#343A40'},
         ];
         this.specialLayoutColors = [
-            {name: 'Influenza', file: 'influenza', color1: '#a83279', color2:'#f38e00'},
-            {name: 'Calm', file: 'calm', color1: '#5f2c82', color2:'#0DA9A4'},
-            {name: 'Crimson', file: 'crimson', color1: '#521c52', color2:'#c6426e'},
-            {name: 'Night', file: 'night', color1: '#2c0747', color2:'#6441a5'},
-            {name: 'Skyline', file: 'skyline', color1: '#2b32b2', color2:'#1488cc'},
-            {name: 'Sunkist', file: 'sunkist', color1: '#ee8a21', color2:'#f2c94c'},
-            {name: 'Little Leaf', file: 'littleleaf', color1: '#4DB865', color2:'#80D293'},
-            {name: 'Joomla', file: 'joomla', color1: '#1e3c72', color2:'#2a5298'},
-            {name: 'Firewatch', file: 'firewatch', color1: '#cb2d3e', color2:'#ef473a'},
-            {name: 'Suzy', file: 'suzy', color1: '#834d9b', color2:'#d04ed6'},
+            {name: 'Influenza', file: 'influenza', color1: '#a83279', color2: '#f38e00'},
+            {name: 'Calm', file: 'calm', color1: '#5f2c82', color2: '#0DA9A4'},
+            {name: 'Crimson', file: 'crimson', color1: '#521c52', color2: '#c6426e'},
+            {name: 'Night', file: 'night', color1: '#2c0747', color2: '#6441a5'},
+            {name: 'Skyline', file: 'skyline', color1: '#2b32b2', color2: '#1488cc'},
+            {name: 'Sunkist', file: 'sunkist', color1: '#ee8a21', color2: '#f2c94c'},
+            {name: 'Little Leaf', file: 'littleleaf', color1: '#4DB865', color2: '#80D293'},
+            {name: 'Joomla', file: 'joomla', color1: '#1e3c72', color2: '#2a5298'},
+            {name: 'Firewatch', file: 'firewatch', color1: '#cb2d3e', color2: '#ef473a'},
+            {name: 'Suzy', file: 'suzy', color1: '#834d9b', color2: '#d04ed6'},
         ];
         this.themes = [
-                {name: 'Amber', file: 'amber', color: '#F8BD0C'},
-				{name: 'Blue', file: 'blue', color: '#007bff'},
-				{name: 'Cyan', file: 'cyan', color: '#17A2B8'},
-				{name: 'Indigo', file: 'indigo', color: '#6610F2'},
-				{name: 'Purple', file: 'purple', color: '#883cae'},
-				{name: 'Teal', file: 'teal', color: '#20C997'},
-				{name: 'Orange', file: 'orange', color: '#FD7E14'},
-				{name: 'Deep Purple', file: 'deeppurple', color: '#612FBE'},
-				{name: 'Light Blue', file: 'lightblue', color: '#4DA3FF'},
-				{name: 'Green', file: 'green', color: '#28A745'},
-				{name: 'Light Green', file: 'lightgreen', color: '#61CC79'},
-				{name: 'Brown', file: 'brown', color: '#986839'},
-				{name: 'Dark Grey', file: 'darkgrey', color: '#6C757D'},
-				{name: 'Pink', file: 'pink', color: '#E83E8C'},
-				{name: 'Lime', file: 'lime', color: '#74CD32'},
+            {name: 'Amber', file: 'amber', color: '#F8BD0C'},
+            {name: 'Blue', file: 'blue', color: '#007bff'},
+            {name: 'Cyan', file: 'cyan', color: '#17A2B8'},
+            {name: 'Indigo', file: 'indigo', color: '#6610F2'},
+            {name: 'Purple', file: 'purple', color: '#883cae'},
+            {name: 'Teal', file: 'teal', color: '#20C997'},
+            {name: 'Orange', file: 'orange', color: '#FD7E14'},
+            {name: 'Deep Purple', file: 'deeppurple', color: '#612FBE'},
+            {name: 'Light Blue', file: 'lightblue', color: '#4DA3FF'},
+            {name: 'Green', file: 'green', color: '#28A745'},
+            {name: 'Light Green', file: 'lightgreen', color: '#61CC79'},
+            {name: 'Brown', file: 'brown', color: '#986839'},
+            {name: 'Dark Grey', file: 'darkgrey', color: '#6C757D'},
+            {name: 'Pink', file: 'pink', color: '#E83E8C'},
+            {name: 'Lime', file: 'lime', color: '#74CD32'},
         ];
     }
 
@@ -247,12 +248,12 @@ export class AppConfigComponent implements OnInit {
     }
 
     onConfigButtonClick(event) {
-        this.app.configActive = !this.app.configActive;
+        this.appMain.configActive = !this.appMain.configActive;
         event.preventDefault();
     }
 
     onConfigCloseClick(event) {
-        this.app.configActive = false;
+        this.appMain.configActive = false;
         event.preventDefault();
     }
 }

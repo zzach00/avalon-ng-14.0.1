@@ -1,26 +1,13 @@
 import {Component, Renderer2} from '@angular/core';
 import { MenuService } from './app.menu.service';
 import { PrimeNGConfig } from 'primeng/api';
-
-enum MenuOrientation {
-    STATIC,
-    OVERLAY,
-    SLIM,
-    HORIZONTAL
-}
+import {AppComponent} from './app.component';
 
 @Component({
     selector: 'app-main',
     templateUrl: './app.main.component.html',
 })
 export class AppMainComponent {
-
-    layoutMode: string = "static";
-
-    darkMenu = false;
-
-    profileMode = 'inline';
-
     rotateMenuButton: boolean;
 
     topbarMenuActive: boolean;
@@ -45,16 +32,9 @@ export class AppMainComponent {
 
     configClick: boolean;
 
-    ripple: boolean = true;
+    constructor(public renderer: Renderer2, private menuService: MenuService,
+                private primengConfig: PrimeNGConfig, public app: AppComponent) {}
 
-    inputStyle = 'outlined';
-
-    constructor(public renderer: Renderer2, private menuService: MenuService, private primengConfig: PrimeNGConfig) {}
-
-    ngOnInit() {
-        this.primengConfig.ripple = true;
-    }
-    
     onLayoutClick() {
         if (!this.topbarItemClick) {
             this.activeTopbarItem = null;
@@ -87,7 +67,7 @@ export class AppMainComponent {
         this.rotateMenuButton = !this.rotateMenuButton;
         this.topbarMenuActive = false;
 
-        if (this.layoutMode === 'overlay') {
+        if (this.app.layoutMode === 'overlay') {
             this.overlayMenuActive = !this.overlayMenuActive;
         } else {
             if (this.isDesktop()) {
@@ -130,7 +110,8 @@ export class AppMainComponent {
     }
 
     onRippleChange(event) {
-        this.ripple = event.checked;
+        this.app.ripple = event.checked;
+        this.primengConfig = event.checked;
     }
 
     hideOverlayMenu() {
@@ -153,19 +134,19 @@ export class AppMainComponent {
     }
 
     isStatic() {
-        return this.layoutMode === "static";
+        return this.app.layoutMode === 'static';
     }
 
     isOverlay() {
-        return this.layoutMode === "overlay";
+        return this.app.layoutMode === 'overlay';
     }
 
     isHorizontal() {
-        return this.layoutMode === "horizontal";
+        return this.app.layoutMode === 'horizontal';
     }
 
 
     isSlim() {
-        return this.layoutMode === "slim";
+        return this.app.layoutMode === 'slim';
     }
 }

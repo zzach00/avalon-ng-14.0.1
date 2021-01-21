@@ -1,19 +1,19 @@
 <div class="layout-wrapper" (click)="onLayoutClick()"
-     [ngClass]="{'menu-layout-static': layoutMode !== 'overlay',
-				'menu-layout-overlay': layoutMode === 'overlay',
+     [ngClass]="{'menu-layout-static': app.layoutMode !== 'overlay',
+				'menu-layout-overlay': app.layoutMode === 'overlay',
 				'layout-menu-overlay-active': overlayMenuActive,
-				'menu-layout-slim': layoutMode === 'slim',
-				'menu-layout-horizontal': layoutMode === 'horizontal',
+				'menu-layout-slim': app.layoutMode === 'slim',
+				'menu-layout-horizontal': app.layoutMode === 'horizontal',
 				'layout-menu-static-inactive': this.staticMenuDesktopInactive,
 				'layout-menu-static-active': staticMenuMobileActive,
-                'p-input-filled': inputStyle === 'filled',
-                'p-ripple-disabled': !ripple}">
+                'p-input-filled': app.inputStyle === 'filled',
+                'p-ripple-disabled': !app.ripple}">
 
     <app-topbar></app-topbar>
 
-    <div class="layout-menu-container" [ngClass]="{'layout-menu-dark':darkMenu}" (click)="onMenuClick($event)">
+    <div class="layout-menu-container" [ngClass]="{'layout-menu-dark': app.darkMenu}" (click)="onMenuClick($event)">
         <div class="menu-scroll-content">
-            <app-inline-profile *ngIf="profileMode=='inline' && !isHorizontal()"></app-inline-profile>
+            <app-inline-profile *ngIf="app.profileMode=='inline' && !isHorizontal()"></app-inline-profile>
             <app-menu></app-menu>
         </div>
     </div>
