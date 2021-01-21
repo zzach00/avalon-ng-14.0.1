@@ -636,6 +636,7 @@ $overlayMenuBg:$menuBg;
 $overlayMenuBorder:1px solid rgba(0,0,0,.15);
 $overlayMenuShadow:none;
 $verticalMenuPadding:.5rem 0;
+$verticalMenuitemMargin:0;
 $menuSeparatorMargin:.5rem 0;
 
 $breadcrumbPadding:1rem;
@@ -725,6 +726,40 @@ $galleriaThumbnailNavigatorHoverColor:$shade100;
 $galleriaThumbnailNavigatorBorderRadius:$borderRadius;
 $galleriaThumbnailNavigatorWidth:2rem;
 $galleriaThumbnailNavigatorHeight:2rem;
+
+//divider
+$dividerHorizontalMargin:1rem 0;
+$dividerHorizontalPadding:0 1rem;
+$dividerVerticalMargin:0 1rem;
+$dividerVerticalPadding:1rem 0;
+$dividerSize:1px;
+$dividerColor:$shade300;
+
+//avatar
+$avatarBg:$shade300;
+$avatarTextColor:$textColor;
+
+//chip
+$chipBg:$shade300;
+$chipTextColor:$textColor;
+$chipBorderRadius: 16px;
+
+//scrollTop
+$scrollTopBg:rgba(0,0,0,0.7);
+$scrollTopHoverBg:rgba(0,0,0,0.8);
+$scrollTopWidth:3rem;
+$scrollTopHeight:3rem;
+$scrollTopBorderRadius:$borderRadius;
+$scrollTopFontSize:1.5rem;
+$scrollTopTextColor:$shade100;
+
+//skeleton
+$skeletonBg:$shade200;
+$skeletonAnimationBg:rgba(255,255,255,0.4);
+
+//splitter
+$splitterGutterBg:$shade100;
+$splitterGutterHandleBg:$shade300;
 
 :root {
     --surface-a:#{$shade000};
