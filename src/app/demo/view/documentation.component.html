@@ -3,7 +3,7 @@
         <div class="card docs">
 
             <h4>Current Version</h4>
-            <p>Angular 10 and PrimeNG 10</p>
+            <p>Angular 11 and PrimeNG 11</p>
 
             <h4>Dependencies</h4>
             <p>Avalon has no direct dependency. More information about dependencies is available at <a href="https://www.primefaces.org/why-primeng-templates/">Why PrimeNG Templates</a> article.</p>
@@ -52,21 +52,21 @@ Run 'ng help' for more options.
             </p>
 <app-code ngPreserveWhitespaces ngNonBindable lang="markup">
 &lt;div class="layout-wrapper" (click)="onLayoutClick()"
-    [ngClass]="&#123;'menu-layout-static': layoutMode !== 'overlay',
-				'menu-layout-overlay': layoutMode === 'overlay',
+    [ngClass]="&#123;'menu-layout-static': app.layoutMode !== 'overlay',
+				'menu-layout-overlay': app.layoutMode === 'overlay',
 				'layout-menu-overlay-active': overlayMenuActive,
-				'menu-layout-slim': layoutMode === 'slim',
-				'menu-layout-horizontal': layoutMode === 'horizontal',
+				'menu-layout-slim': app.layoutMode === 'slim',
+				'menu-layout-horizontal': app.layoutMode === 'horizontal',
 				'layout-menu-static-inactive': this.staticMenuDesktopInactive,
 				'layout-menu-static-active': staticMenuMobileActive,
-                'p-input-filled': inputStyle === 'filled',
-                'p-ripple-disabled': !ripple&#125;"&gt;
+                'p-input-filled': app.inputStyle === 'filled',
+                'p-ripple-disabled': !app.ripple&#125;"&gt;
 
     &lt;app-topbar&gt;&lt;/app-topbar&gt;
 
-    &lt;div class="layout-menu-container" [ngClass]="&#123;'layout-menu-dark':darkMenu&#125;" (click)="onMenuClick($event)"&gt;
+    &lt;div class="layout-menu-container" [ngClass]="&#123;'layout-menu-dark':app.darkMenu&#125;" (click)="onMenuClick($event)"&gt;
         &lt;div class="menu-scroll-content"&gt;
-            &lt;inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"&gt;&lt;/inline-profile&gt;
+            &lt;inline-profile *ngIf="app.profileMode=='inline'&&!isHorizontal()"&gt;&lt;/inline-profile&gt;
             &lt;app-menu&gt;&lt;/app-menu&gt;
         &lt;/div&gt;
     &lt;/div&gt;
@@ -90,7 +90,6 @@ Run 'ng help' for more options.
 <div style="height:400px;overflow: auto;">
 <app-code ngPreserveWhitespaces ngNonBindable lang="javascript">
 import &#123;Component, OnInit&#125; from '@angular/core';
-import &#123;AppMainComponent&#125; from './app.main.component';
 
 @Component(&#123;
     selector: 'app-menu',
@@ -103,8 +102,6 @@ import &#123;AppMainComponent&#125; from './app.main.component';
 export class AppMenuComponent implements OnInit &#123;
 
     model: any[];
-
-    constructor(public app: AppMainComponent) &#123;&#125;
 
     ngOnInit() &#123;
         this.model = [
@@ -125,6 +122,8 @@ export class AppMenuComponent implements OnInit &#123;
                 items: [
                     &#123;label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout']&#125;,
                     &#123;label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input']&#125;,
+                    &#123;label: 'Float Label', icon: 'pi pi-bookmark', routerLink: ['/uikit/floatlabel']&#125;,
+                    &#123;label: 'Invalid State', icon: 'pi pi-exclamation-circle', routerLink: ['/uikit/invalidstate']&#125;,
                     &#123;label: 'Button', icon: 'pi pi-fw pi-mobile', routerLink: ['/uikit/button'], class: 'rotated-icon'&#125;,
                     &#123;label: 'Table', icon: 'pi pi-fw pi-table', routerLink: ['/uikit/table']&#125;,
                     &#123;label: 'List', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/list']&#125;,
@@ -157,6 +156,7 @@ export class AppMenuComponent implements OnInit &#123;
                 items: [
                     &#123;label: 'Crud', icon: 'pi pi-fw pi-pencil', routerLink: ['/pages/crud']&#125;,
                     &#123;label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', routerLink: ['/pages/calendar']&#125;,
+                    &#123;label: 'Timeline', icon: 'pi pi-fw pi-calendar', routerLink: ['/pages/timeline']&#125;,
                     &#123;label: 'Landing Page', icon: 'pi pi-fw pi-user-plus', url: 'assets/pages/landing.html', target: '_blank'&#125;,
                     &#123;label: 'Login Page', icon: 'pi pi-fw pi-question-circle', routerLink: ['/login'], target: '_blank'&#125;,
                     &#123;label: 'Invoice', icon: 'pi pi-fw pi-dollar', routerLink: ['/pages/invoice']&#125;,
@@ -1111,6 +1111,40 @@ $galleriaThumbnailNavigatorHoverColor:$shade100;
 $galleriaThumbnailNavigatorBorderRadius:$borderRadius;
 $galleriaThumbnailNavigatorWidth:2rem;
 $galleriaThumbnailNavigatorHeight:2rem;
+
+//divider
+$dividerHorizontalMargin:1rem 0;
+$dividerHorizontalPadding:0 1rem;
+$dividerVerticalMargin:0 1rem;
+$dividerVerticalPadding:1rem 0;
+$dividerSize:1px;
+$dividerColor:$shade300;
+
+//avatar
+$avatarBg:$shade300;
+$avatarTextColor:$textColor;
+
+//chip
+$chipBg:$shade300;
+$chipTextColor:$textColor;
+$chipBorderRadius: 16px;
+
+//scrollTop
+$scrollTopBg:rgba(0,0,0,0.7);
+$scrollTopHoverBg:rgba(0,0,0,0.8);
+$scrollTopWidth:3rem;
+$scrollTopHeight:3rem;
+$scrollTopBorderRadius:$borderRadius;
+$scrollTopFontSize:1.5rem;
+$scrollTopTextColor:$shade100;
+
+//skeleton
+$skeletonBg:$shade200;
+$skeletonAnimationBg:rgba(255,255,255,0.4);
+
+//splitter
+$splitterGutterBg:$shade100;
+$splitterGutterHandleBg:$shade300;
 
 :root &#123;
     --surface-a:#&#123;$shade000&#125;;
