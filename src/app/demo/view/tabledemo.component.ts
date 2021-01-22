@@ -44,7 +44,11 @@ export class TableDemoComponent implements OnInit {
     constructor(private customerService: CustomerService, private productService: ProductService) {}
 
     ngOnInit() {
-        this.customerService.getCustomersLarge().then(customers => this.customers1 = customers);
+        this.customerService.getCustomersLarge().then(customers => {
+            this.customers1 = customers;
+            // @ts-ignore
+            this.customers1.forEach(customer => customer.date = new Date(customer.date));
+        });
         this.customerService.getCustomersMedium().then(customers => this.customers2 = customers);
         this.customerService.getCustomersMedium().then(customers => this.customers3 = customers);
         this.productService.getProductsWithOrdersSmall().then(data => this.products = data);
