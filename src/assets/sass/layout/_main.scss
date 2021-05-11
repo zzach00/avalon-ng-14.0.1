@@ -446,6 +446,7 @@ body {
 
                 &.active-menuitem-routerlink {
                     color: $menuitemActiveColor;
+                    border-left-color: $menuitemActiveColor;
 
                     i:first-child {
                         color: $menuitemActiveColor;
