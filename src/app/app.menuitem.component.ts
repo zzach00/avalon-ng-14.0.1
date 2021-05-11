@@ -156,6 +156,11 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
                 this.appMain.staticMenuMobileActive = false;
             }
 
+            // hide overlay menus
+            if (this.appMain.isOverlay()) {
+                this.appMain.overlayMenuActive = false;
+            }
+
             // reset horizontal menu
             if (this.appMain.isHorizontal() || this.appMain.isSlim()) {
                 this.menuService.reset();

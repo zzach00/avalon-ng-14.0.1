@@ -324,6 +324,10 @@ body {
                     }
                 }
             }
+
+            .layout-mask {
+                display: block;
+            }
         }
 
         .topbar {
@@ -1198,14 +1202,6 @@ body {
                             }
                         }
                     }
-                }
-            }
-        }
-
-        &.menu-layout-overlay {
-            &.layout-menu-overlay-active {
-                .layout-mask {
-                    display: block;
                 }
             }
         }
