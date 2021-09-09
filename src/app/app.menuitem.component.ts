@@ -12,15 +12,15 @@ import {AppMainComponent} from './app.main.component';
     /* tslint:enable:component-selector */
     template: `
         <ng-container>
-            <div *ngIf="root" class="layout-menuitem-root-text">{{item.label}}</div>
-            <a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="!item.routerLink || item.items" (mouseenter)="onMouseEnter()"
+            <div *ngIf="root && item.visible !== false" class="layout-menuitem-root-text">{{item.label}}</div>
+            <a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="(!item.routerLink || item.items) && item.visible !== false" (mouseenter)="onMouseEnter()"
                (keydown.enter)="itemClick($event)" [attr.target]="item.target" [attr.tabindex]="0" [ngClass]="item.class" pRipple>
                 <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
                 <span>{{item.label}}</span>
                 <i class="pi pi-fw pi-angle-down menuitem-toggle-icon" *ngIf="item.items"></i>
                 <span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
             </a>
-            <a (click)="itemClick($event)" (mouseenter)="onMouseEnter()" *ngIf="item.routerLink && !item.items"
+            <a (click)="itemClick($event)" (mouseenter)="onMouseEnter()" *ngIf="(item.routerLink && !item.items) && item.visible !== false"
                [routerLink]="item.routerLink" routerLinkActive="active-menuitem-routerlink" [ngClass]="item.class" pRipple
                [routerLinkActiveOptions]="{exact: true}" [attr.target]="item.target" [attr.tabindex]="0">
                 <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
@@ -28,8 +28,8 @@ import {AppMainComponent} from './app.main.component';
                 <i class="pi pi-fw pi-angle-down menuitem-toggle-icon" *ngIf="item.items"></i>
                 <span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
             </a>
-            <div class="submenu-arrow" *ngIf="item.items"></div>
-            <ul *ngIf="(item.items && root) || (item.items && active) "
+            <div class="submenu-arrow" *ngIf="item.items && item.visible !== false"></div>
+            <ul *ngIf="((item.items && root) || (item.items && active)) && item.visible !== false"
                 [@children]="(root ? 'visible' :active ? 'visibleAnimated' : 'hiddenAnimated')">
                 <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
                     <li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
