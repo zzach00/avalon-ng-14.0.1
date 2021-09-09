@@ -37,8 +37,10 @@ export class DashboardDemoComponent implements OnInit {
 
     ngOnInit() {
         this.productService.getProducts().then(data => this.products = data);
-
-        this.eventService.getEvents().then(events => {this.events = events; });
+        this.eventService.getEvents().then(events => {
+            this.events = events;
+            this.fullcalendarOptions = {...this.fullcalendarOptions, ...{events: events}};
+        });
 
         this.cities = [];
         this.cities.push({label: 'New York', value: {id: 1, name: 'New York', code: 'NY'}});
@@ -66,14 +68,16 @@ export class DashboardDemoComponent implements OnInit {
         };
 
         this.fullcalendarOptions = {
-				plugins:[dayGridPlugin, timeGridPlugin, interactionPlugin],
-				defaultDate: '2017-02-12',
-				header: {
-					left: 'prev,next',
-					center: 'title',
-					right: 'dayGridMonth,timeGridWeek,timeGridDay'
-				},
-				editable: true
+            initialDate: '2021-02-01',
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            editable: true,
+            selectable: true,
+            selectMirror: true,
+            dayMaxEvents: true,
         };
     }
 }
