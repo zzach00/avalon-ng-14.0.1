@@ -48,7 +48,7 @@
             padding: 23px 10px;
             border: 1px solid rgba(67, 69, 96, .1);
             border-radius: 4px;
-            background-color: #ffffff;
+            background-color: var(--surface-card);
 
             img {
                 width: 30px;
@@ -80,7 +80,7 @@
             font-size: 12px;
             line-height: 20px;
             display: block;
-            color: $textSecondaryColor;
+            color: var(--text-color-secondary);
         }
 
         .currency-rate-value {
@@ -105,7 +105,7 @@
         .dashboard-currency-subtitle {
             font-size: 13.5px;
             font-weight: 500;
-            color: $textSecondaryColor;
+            color: var(--text-color-secondary);
         }
 
         .currency-gold {
@@ -119,14 +119,14 @@
         .financial-overview-total {
             line-height: 36px;
             padding: 17px 14px 15px 14px;
-            border-bottom: 1px solid #ddd;
-            background-color: #fbfbfb;
+            border-bottom: 1px solid var(--surface-border);
+            background-color: var(--surface-section);
         }
 
         .financial-overview-total-label {
             @include pull-to(left);
             font-weight: 600;
-            color: #777;
+            color: var(--text-color-secondary);
             font-size: 16px;
         }
 
@@ -152,7 +152,7 @@
 
             .line-left {
                 @include pull-to(left);
-                color: #777;
+                color: var(--text-color-secondary);
             }
 
             .line-right {
@@ -183,7 +183,7 @@
                 font-size: 16px;
                 display: inline-block;
                 margin-left: 10px;
-                color: $textSecondaryColor;
+                color: var(--text-color-secondary);
             }
         }
 
@@ -195,13 +195,12 @@
         .progress {
             margin-top: 6px;
             margin-bottom: 6px;
-            background-color: yellow;
         }
 
         .progress-explaination {
             font-size: 14px;
             line-height: 20px;
-            color: $textSecondaryColor;
+            color: var(--text-color-secondary);
         }
 
         .button-link {
@@ -237,7 +236,7 @@
             line-height: 16px;
             margin-bottom: 3px;
             text-align: right;
-            color: $textSecondaryColor;
+            color: var(--text-color-secondary);
         }
         .chart-details {
             float: right;
@@ -302,7 +301,7 @@
 
         .transaction-subtitle {
             display: block;
-            color: $textSecondaryColor;
+            color: var(--text-color-secondary);
         }
 
         .transaction-button {

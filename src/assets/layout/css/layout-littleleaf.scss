@@ -12,12 +12,12 @@ $menuButtonBgColor:#ffffff;
 $menuButtonColor:#61CC79;
 $badgeBgColor:#d9534f;
 $badgeColor:#ffffff;
-$darkMenuGradientStartBgColor:#363a41;
-$darkMenuGradientEndBgColor:#363a41;
-$darkMenuHoverBgColor:#4a4d54;
+$darkMenuGradientStartBgColor:#2a323d;
+$darkMenuGradientEndBgColor:#2a323d;
+$darkMenuHoverBgColor:rgba(255,255,255,0.06);
 $darkMenuRootMenuitemColor: rgba(255, 255, 255, 0.65);
 $darkMenuMenuitemColor:#ffffff;
 $darkMenuMenuitemActiveColor:#80D293;
-$darkMenuMenuitemActiveBgColor:#282b30;
+$darkMenuMenuitemActiveBgColor:#20262e;
 
 @import '../../sass/layout/_layout';

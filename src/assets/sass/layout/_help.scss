@@ -26,7 +26,7 @@
 			}
 
 			i {
-				color: $textColor;
+				color: var(--text-color);
 				position: absolute;
 				margin-left: 1rem;
 				top: 50%;

@@ -9,6 +9,8 @@ export class AppComponent implements OnInit{
 
     layoutMode = 'static';
 
+    layoutColor = 'light';
+
     darkMenu = false;
 
     profileMode = 'inline';

@@ -1,7 +1,7 @@
 .invoice-wrapper {
     padding: 0;
     padding-bottom: 10px;
-    background-color: #ffffff;
+    background-color: var(--surface-card);
     min-width: 768px;
 
     .invoice-header{
@@ -13,7 +13,7 @@
 
             .title{
                 font-size: 24px;
-                color:$textColor;
+                color: var(--text-color);
             }
         }
 
@@ -42,8 +42,8 @@
                 h2 {
                     font-size: 12px;
                     font-weight: 700;
-                    color: #292b2c;
-                    background-color: #ffffff;
+                    color: var(--text-color);
+                    background-color: var(--surface-card);
                     padding: 10px;
                     display: inline;
                     border-radius: 4px;
@@ -54,16 +54,16 @@
             .table-content-row {
                 padding: 10px 45px;
                 font-weight: 500;
-                color:#212121;
+                color: var(--text-color);
 
                 h2 {
                     font-size: 14px;
                     font-weight: 500;
-                    color: rgba(0, 0, 0, 0.6);
+                    color: var(--text-color-secondary);
                 }
 
                 &.even {
-                    background-color: #f9f9f9;
+                    background-color: var(--surface-section);
                 }
             }
 
@@ -78,7 +78,7 @@
             &.products-table {
                 .table-header {
                     h2 {
-                        background-color: #f9f9f9;
+                        background-color: var(--surface-section);
                     }
                 }
             }
@@ -106,8 +106,8 @@
     hr {
         border:none;
         border-top: 1px dashed rgba(0, 0, 0, 0.22);
-        color:#fff;
-        background-color:#fff;
+        color: var(--surface-card);
+        background-color: var(--surface-card);
         height:50px;
         margin: 50px 50px;
 

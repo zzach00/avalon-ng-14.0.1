@@ -1,9 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {EventService} from '../service/eventservice';
 import {SelectItem} from 'primeng/api';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
 import { ProductService } from '../service/productservice';
 import { Product } from '../domain/product';
 
@@ -27,20 +23,12 @@ export class DashboardDemoComponent implements OnInit {
 
     chartData: any;
 
-    events: any[];
-
     selectedCity: any;
 
-    fullcalendarOptions: any;
-
-    constructor(private productService: ProductService, private eventService: EventService) { }
+    constructor(private productService: ProductService) { }
 
     ngOnInit() {
         this.productService.getProducts().then(data => this.products = data);
-        this.eventService.getEvents().then(events => {
-            this.events = events;
-            this.fullcalendarOptions = {...this.fullcalendarOptions, ...{events: events}};
-        });
 
         this.cities = [];
         this.cities.push({label: 'New York', value: {id: 1, name: 'New York', code: 'NY'}});
@@ -65,19 +53,6 @@ export class DashboardDemoComponent implements OnInit {
                     borderColor: '#03A9F4'
                 }
             ]
-        };
-
-        this.fullcalendarOptions = {
-            initialDate: '2021-02-01',
-            headerToolbar: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,timeGridWeek,timeGridDay'
-            },
-            editable: true,
-            selectable: true,
-            selectMirror: true,
-            dayMaxEvents: true,
         };
     }
 }

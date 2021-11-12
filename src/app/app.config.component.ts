@@ -47,13 +47,31 @@ import { AppMainComponent } from './app.main.component';
                 <div class="p-grid">
                     <div class="p-col-6">
                         <div class="p-field-radiobutton">
-                            <p-radioButton inputId="dark" name="menuColor" [value]="true" [(ngModel)]="app.darkMenu"></p-radioButton>
+                            <p-radioButton inputId="dark" name="menuColor" [value]="true" [(ngModel)]="app.darkMenu"
+                                           [disabled]="app.layoutColor === 'dark'" [style]="{'cursor': app.layoutColor === 'dark' ? 'default' : 'pointer'}"></p-radioButton>
                             <label for="dark">Dark</label>
                         </div>
                     </div>
                     <div class="p-col-6">
                         <div class="p-field-radiobutton">
-                            <p-radioButton inputId="light" name="menuColor" [value]="false" [(ngModel)]="app.darkMenu"></p-radioButton>
+                            <p-radioButton inputId="light" name="menuColor" [value]="false" [(ngModel)]="app.darkMenu"
+                                           [disabled]="app.layoutColor === 'dark'" [style]="{'cursor': app.layoutColor === 'dark' ? 'default' : 'pointer'}"></p-radioButton>
+                            <label for="light">Light</label>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 style="margin-top: 0;">Layout Color</h5>
+                <div class="p-grid">
+                    <div class="p-col-6">
+                        <div class="p-field-radiobutton">
+                            <p-radioButton inputId="dark" name="layoutColor" value="dark" [(ngModel)]="app.layoutColor" (onClick)="onLayoutColorChange($event, 'dark')"></p-radioButton>
+                            <label for="dark">Dark</label>
+                        </div>
+                    </div>
+                    <div class="p-col-6">
+                        <div class="p-field-radiobutton">
+                            <p-radioButton inputId="light" name="layoutColor" value="light" [(ngModel)]="app.layoutColor" (onClick)="onLayoutColorChange($event, 'light')"></p-radioButton>
                             <label for="light">Light</label>
                         </div>
                     </div>
@@ -134,6 +152,8 @@ export class AppConfigComponent implements OnInit {
 
     layout = 'blue';
 
+    specialLayout = false;
+
     constructor(public app: AppComponent, public appMain: AppMainComponent) {}
 
     ngOnInit() {
@@ -185,34 +205,37 @@ export class AppConfigComponent implements OnInit {
         ];
     }
 
+    onLayoutColorChange(event, color) {
+        this.app.layoutColor = color;
+        this.app.darkMenu = color === 'dark' || this.specialLayout;
+
+        const themeLink = document.getElementById('theme-css');
+        const urlTokens = themeLink.getAttribute('href').split('/');
+        urlTokens[urlTokens.length - 1] = 'theme-' + this.app.layoutColor + '.css';
+        const newURL = urlTokens.join('/');
+
+        this.replaceLink(themeLink, newURL);
+    }
+
     changeLayout(layout: string, special?: boolean) {
         if (special) {
             this.app.darkMenu = special;
         }
 
-        this.changeStyleSheetsColor('layout-css', 'layout-' + layout + '.css');
         this.layout = layout;
+        this.specialLayout = special;
+
+        const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
+        const layoutHref = 'assets/layout/css/layout-' + layout + '.css';
+        this.replaceLink(layoutLink, layoutHref);
     }
 
     changeComponentTheme(theme: string) {
-        this.changeStyleSheetsColor('theme-css', 'theme-' + theme + '.css');
-
         this.themeColor = theme;
-    }
 
-    changeVersion(version: string) {
-            this.changeStyleSheetsColor('theme-css', 'theme-' + this.themeColor + '.css');
-            this.changeStyleSheetsColor('layout-css', 'layout-' + this.layout + '.css');
-    }
-
-    changeStyleSheetsColor(id, value) {
-        const element = document.getElementById(id);
-        const urlTokens = element.getAttribute('href').split('/');
-        urlTokens[urlTokens.length - 1] = value;
-
-        const newURL = urlTokens.join('/');
-
-        this.replaceLink(element, newURL);
+        const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement;
+        const themeHref = 'assets/theme/' + theme + '/theme-' + this.app.layoutColor + '.css';
+        this.replaceLink(themeLink, themeHref);
     }
 
     replaceLink(linkElement, href) {
@@ -237,14 +260,6 @@ export class AppConfigComponent implements OnInit {
 
     isIE() {
         return /(MSIE|Trident\/|Edge\/)/i.test(window.navigator.userAgent);
-    }
-
-    onProfileModeClick(mode: string) {
-        if (this.app.layoutMode === 'horizontal') {
-            return;
-        }
-
-        this.app.profileMode = mode;
     }
 
     onConfigButtonClick(event) {

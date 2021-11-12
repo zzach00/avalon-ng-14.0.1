@@ -9,7 +9,8 @@
 	height: calc(100% - 60px);
 	transform: translate3d(20em, 0px, 0px);
 	transition: transform $transitionDuration;
-	background-color: #ffffff;
+	background-color: var(--surface-card);
+    color: var(--text-color);
 	backface-visibility: hidden;
 	box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2),
 	0 5px 22px 4px rgba(0, 0, 0, 0.12),
@@ -30,7 +31,7 @@
 		width: 52px;
 		height: 52px;
 		line-height: 52px;
-		background-color: #fafafa;
+		background-color: var(--surface-overlay);
 		text-align: center;
 		top: 230px;
 		left: -51px;
@@ -134,7 +135,7 @@
 	p {
 		line-height: 1.5;
 		margin-top: 0;
-		color: $textSecondaryColor;
+		color: var(--text-color-secondary);
 	}
 }
 

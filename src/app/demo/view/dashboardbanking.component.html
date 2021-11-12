@@ -329,14 +329,14 @@
                 <div class="panel-inner no-padding-top">
                     <h3><strong>Journey to Japan</strong></h3>
                     <div class="progress">
-                        <p-progressBar [value]="30" styleClass="pro"></p-progressBar>
+                        <p-progressBar [value]="30" styleClass="pro" [style]="{'height': '.5rem'}" [showValue]="false"></p-progressBar>
                     </div>
 
-                    <div class="progress-explaination">
-                        <p><span style="color:#292b2c"><b>$3,000.00</b></span> from $10,000.00</p>
+                    <div class="progress-explaination p-my-3">
+                        <p><span><b>$3,000.00</b></span> from $10,000.00</p>
                     </div>
 
-                    <div class="progress-buttons">
+                    <div class="progress-buttons p-my-3">
                         <p-button label="Deposit"></p-button>
                         <a href="#" class="pull-right button-link">Withdraw</a>
                     </div>
@@ -351,7 +351,7 @@
         <div class="p-col-12 p-md-12 p-lg-4">
             <div class="card expenses">
                 <h5>Expenses</h5>
-                <img src="assets/layout/images/dashboard-banking/chart-expenses.png" alt="avalon-layout" class="chart-expenses" />
+                <img src="assets/layout/images/dashboard-banking/chart-expenses.svg" alt="avalon-layout" class="chart-expenses" height="200"/>
 
                 <div class="chart-details">
                     <div class="chart-label">
