@@ -13,7 +13,46 @@ import { AppMainComponent } from './app.main.component';
                 <i class="pi pi-times"></i>
             </a>
             <div class="layout-config-content">
-                <h5>Menu Mode</h5>
+                <div>
+                    <h5>Theme Customization</h5>
+                    <span>Avalon offers different themes for layout, topbar, menu etc.</span>
+                </div>
+
+                <h6>Layout Color Mode</h6>
+                <div class="p-grid">
+                    <div class="p-col-6">
+                        <div class="p-field-radiobutton">
+                            <p-radioButton inputId="dark" name="layoutColor" value="dark" [(ngModel)]="app.layoutColor" (onClick)="onLayoutColorChange($event, 'dark')"></p-radioButton>
+                            <label for="dark">Dark</label>
+                        </div>
+                    </div>
+                    <div class="p-col-6">
+                        <div class="p-field-radiobutton">
+                            <p-radioButton inputId="light" name="layoutColor" value="light" [(ngModel)]="app.layoutColor" (onClick)="onLayoutColorChange($event, 'light')"></p-radioButton>
+                            <label for="light">Light</label>
+                        </div>
+                    </div>
+                </div>
+
+                <h6 style="margin-top: 0;">Menu Color Mode</h6>
+                <div class="p-grid">
+                    <div class="p-col-6">
+                        <div class="p-field-radiobutton">
+                            <p-radioButton inputId="dark" name="menuColor" [value]="true" [(ngModel)]="app.darkMenu"
+                                           [disabled]="app.layoutColor === 'dark'" [style]="{'cursor': app.layoutColor === 'dark' ? 'default' : 'pointer'}"></p-radioButton>
+                            <label for="dark">Dark</label>
+                        </div>
+                    </div>
+                    <div class="p-col-6">
+                        <div class="p-field-radiobutton">
+                            <p-radioButton inputId="light" name="menuColor" [value]="false" [(ngModel)]="app.darkMenu"
+                                           [disabled]="app.layoutColor === 'dark'" [style]="{'cursor': app.layoutColor === 'dark' ? 'default' : 'pointer'}"></p-radioButton>
+                            <label for="light">Light</label>
+                        </div>
+                    </div>
+                </div>
+
+                <h6 style="margin-top: 0;">Menu Mode</h6>
                 <div class="p-grid">
                     <div class="p-col-6">
                         <div class="p-field-radiobutton">
@@ -43,41 +82,7 @@ import { AppMainComponent } from './app.main.component';
                     </div>
                 </div>
 
-                <h5 style="margin-top: 0;">Menu Theme</h5>
-                <div class="p-grid">
-                    <div class="p-col-6">
-                        <div class="p-field-radiobutton">
-                            <p-radioButton inputId="dark" name="menuColor" [value]="true" [(ngModel)]="app.darkMenu"
-                                           [disabled]="app.layoutColor === 'dark'" [style]="{'cursor': app.layoutColor === 'dark' ? 'default' : 'pointer'}"></p-radioButton>
-                            <label for="dark">Dark</label>
-                        </div>
-                    </div>
-                    <div class="p-col-6">
-                        <div class="p-field-radiobutton">
-                            <p-radioButton inputId="light" name="menuColor" [value]="false" [(ngModel)]="app.darkMenu"
-                                           [disabled]="app.layoutColor === 'dark'" [style]="{'cursor': app.layoutColor === 'dark' ? 'default' : 'pointer'}"></p-radioButton>
-                            <label for="light">Light</label>
-                        </div>
-                    </div>
-                </div>
-
-                <h5 style="margin-top: 0;">Layout Color</h5>
-                <div class="p-grid">
-                    <div class="p-col-6">
-                        <div class="p-field-radiobutton">
-                            <p-radioButton inputId="dark" name="layoutColor" value="dark" [(ngModel)]="app.layoutColor" (onClick)="onLayoutColorChange($event, 'dark')"></p-radioButton>
-                            <label for="dark">Dark</label>
-                        </div>
-                    </div>
-                    <div class="p-col-6">
-                        <div class="p-field-radiobutton">
-                            <p-radioButton inputId="light" name="layoutColor" value="light" [(ngModel)]="app.layoutColor" (onClick)="onLayoutColorChange($event, 'light')"></p-radioButton>
-                            <label for="light">Light</label>
-                        </div>
-                    </div>
-                </div>
-
-                <h5 style="margin-top: 0;">User Profile Mode</h5>
+                <h6 style="margin-top: 0;">User Profile Mode</h6>
                 <div class="p-grid">
                     <div class="p-col-6">
                         <div class="p-field-radiobutton">
@@ -93,7 +98,7 @@ import { AppMainComponent } from './app.main.component';
                     </div>
                 </div>
 
-                <h5 style="margin-top: 0">Input Background</h5>
+                <h6 style="margin-top: 0">Input Background</h6>
                 <div class="p-formgroup-inline">
                     <div class="p-field-radiobutton">
                         <p-radioButton inputId="input_outlined" name="inputstyle" [(ngModel)]="app.inputStyle"  value="outlined"></p-radioButton>
@@ -105,10 +110,10 @@ import { AppMainComponent } from './app.main.component';
                     </div>
                 </div>
 
-                <h5 style="margin-top: 0;">Ripple Effect</h5>
+                <h6 style="margin-top: 0;">Ripple Effect</h6>
                 <p-inputSwitch [ngModel]="app.ripple" (onChange)="appMain.onRippleChange($event)"></p-inputSwitch>
 
-                <h5>Flat Layout Colors</h5>
+                <h6>Flat Layout Colors</h6>
                 <div class="layout-themes">
                     <div *ngFor="let flatLayoutColor of flatLayoutColors">
                         <a style="cursor: pointer" (click)="changeLayout(flatLayoutColor.file, false)"  [ngStyle]="{'background-color': flatLayoutColor.color}">
@@ -117,7 +122,7 @@ import { AppMainComponent } from './app.main.component';
                     </div>
                 </div>
 
-                <h5>Special Layout Colors</h5>
+                <h6>Special Layout Colors</h6>
                 <div class="layout-themes">
                     <div *ngFor="let specialLayoutColor of specialLayoutColors">
                         <a style="cursor: pointer" (click)="changeLayout(specialLayoutColor.file, true)" [ngStyle]="{'background-image': 'linear-gradient(to right,' + specialLayoutColor.color1 + ',' + specialLayoutColor.color2 + ')'}">
@@ -126,7 +131,7 @@ import { AppMainComponent } from './app.main.component';
                     </div>
                 </div>
 
-                <h5>Component Themes</h5>
+                <h6>Component Themes</h6>
                 <div class="layout-themes">
                     <div *ngFor="let t of themes">
                         <a style="cursor: pointer" (click)="changeComponentTheme(t.file)" [ngStyle]="{'background-color': t.color}">

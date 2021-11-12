@@ -1,12 +1,12 @@
 .layout-config {
 	position: fixed;
 	padding: 0;
-	top: 60px;
+	top: 0;
 	display: block;
 	right: 0;
 	width: 20em;
 	z-index: 996;
-	height: calc(100% - 60px);
+	height: 100%;
 	transform: translate3d(20em, 0px, 0px);
 	transition: transform $transitionDuration;
 	background-color: var(--surface-card);
