@@ -12,10 +12,8 @@
     <app-topbar></app-topbar>
 
     <div class="layout-menu-container" [ngClass]="{'layout-menu-dark': app.darkMenu}" (click)="onMenuClick($event)">
-        <div class="menu-scroll-content">
-            <app-inline-profile *ngIf="app.profileMode=='inline' && !isHorizontal()"></app-inline-profile>
-            <app-menu></app-menu>
-        </div>
+        <app-inline-profile *ngIf="app.profileMode=='inline' && !isHorizontal()"></app-inline-profile>
+        <app-menu></app-menu>
     </div>
 
     <div class="layout-main">

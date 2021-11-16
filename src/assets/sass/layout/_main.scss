@@ -154,11 +154,6 @@ body {
         border-right: 1px solid #cccccc;
         @include transition(margin-left .3s);
 
-        .menu-scroll-content {
-            width: 253px;
-            padding-right: 18px;
-        }
-
         .layout-main-menu {
             padding-bottom: 120px;
         }
@@ -755,10 +750,6 @@ body {
                 height: auto;
                 background-color: $topbarLeftGradientEndBgColor;
 
-                .menu-scroll-content {
-                    width: 100%;
-                }
-
                 .layout-main-menu {
                     padding-bottom: 0;
                 }
@@ -983,11 +974,6 @@ body {
                 overflow: visible;
                 z-index: 100;
                 top: 0;
-
-                .menu-scroll-content {
-                    width: 100%;
-                    padding-right: 0;
-                }
 
                 .profile {
                     height: 60px;
