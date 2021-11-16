@@ -26,7 +26,7 @@ import {trigger, state, transition, style, animate} from '@angular/animations';
             </li>
             <li role="menuitem">
                 <a href="#" [attr.tabindex]="!active ? '-1' : null">
-                    <i class="pi pi-fw pi-lock"></i>
+                    <i class="pi pi-lock"></i>
                     <span>Privacy</span>
                 </a>
                 <div class="layout-menu-tooltip">
