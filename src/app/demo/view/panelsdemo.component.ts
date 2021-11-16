@@ -9,6 +9,10 @@ import {MenuItem} from 'primeng/api';
             margin-left: .25em;
         }
 
+        :host ::ng-deep div {
+            line-height: 1.5;
+        }
+
         :host ::ng-deep .p-splitbutton button {
             margin-right: 0;
             margin-left: 0;
