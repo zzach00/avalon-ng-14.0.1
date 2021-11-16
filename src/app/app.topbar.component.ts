@@ -28,8 +28,10 @@ import {AppMainComponent} from './app.main.component';
 
                         <a href="#" (click)="appMain.onTopbarItemClick($event,profile)">
                             <img class="profile-image" src="assets/layout/images/avatar.png" />
-                            <span class="topbar-item-name">Isabel Lopez</span>
-                            <span class="topbar-item-role">Marketing</span>
+                            <div>
+                                <span class="topbar-item-name">Isabel Lopez</span>
+                                <span class="topbar-item-role">Marketing</span>
+                            </div>
                         </a>
 
                         <ul class="layout-menu" [ngClass]="{'fadeInDown':!appMain.isMobile()}">

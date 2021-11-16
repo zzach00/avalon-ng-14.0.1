@@ -623,7 +623,6 @@ body {
                         line-height: 12px;
                     }
                 }
-
                 .topbar-icon {
                     font-size: 24px;
                     color: $topbarTextColor;
@@ -631,6 +630,11 @@ body {
                 }
 
                 &.profile-item {
+                    > a {
+                        display: flex;
+                        flex-direction: row-reverse;
+                    }
+
                     a {
                         @include transition(color .3s);
                         @include clearfix();
@@ -1246,7 +1250,7 @@ body {
                             .topbar-badge {
                                 position: absolute;
                                 left: 30px;
-                                top: 10px;
+                                top: 2px;
                                 background-color: $badgeBgColor;
                                 color: $badgeColor;
                                 @include border-radius(50%);
@@ -1322,6 +1326,14 @@ body {
                         }
 
                         &.profile-item {
+                            > a {
+                                display: flex;
+
+                                span {
+                                    display: block;
+                                }
+                            }
+
                             .profile-image {
                                 display: inline-block;
                                 vertical-align: middle;
@@ -1334,6 +1346,12 @@ body {
                             span {
                                 vertical-align: middle;
                                 display: inline-block;
+                            }
+                        }
+
+                        .topbar-message {
+                            img {
+                                margin-right: 12px;
                             }
                         }
                     }
