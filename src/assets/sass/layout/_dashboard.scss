@@ -1,11 +1,11 @@
 .dashboard-banking {
-
     .overview-boxes {
         .overview {
             height: 100%;
             box-sizing: border-box;
             min-height: 50px;
             border-radius: 4px;
+            cursor: pointer;
             @include background-gradient-left2right(#457fca, #5691c8);
         }
 
