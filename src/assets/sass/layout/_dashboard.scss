@@ -116,6 +116,10 @@
     .financial-overview {
         overflow: hidden;
 
+        .card {
+            height: 100%;
+        }
+
         .financial-overview-total {
             line-height: 36px;
             padding: 17px 14px 15px 14px;
@@ -217,6 +221,9 @@
     }
 
     .expenses {
+        &.card {
+            height: 100%;
+        }
 
         .chart-expenses {
             padding-top: 10px;
@@ -239,7 +246,7 @@
             color: var(--text-color-secondary);
         }
         .chart-details {
-            float: right;
+            padding-top: 1rem
         }
 
         .chart-status {
