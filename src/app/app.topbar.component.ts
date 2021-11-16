@@ -49,7 +49,7 @@ import {AppMainComponent} from './app.main.component';
                             </li>
                             <li role="menuitem">
                                 <a href="#" (click)="appMain.onTopbarSubItemClick($event)">
-                                    <i class="pi pi-cog"></i>
+                                    <i class="pi pi-fw pi-cog"></i>
                                     <span>Settings</span>
                                 </a>
                             </li>
