@@ -15,9 +15,9 @@ export class AppComponent implements OnInit{
 
     profileMode = 'inline';
 
-    ripple = true;
+    ripple = false;
 
-    inputStyle = 'outlined';
+    inputStyle = 'filled';
 
     constructor(private primengConfig: PrimeNGConfig) {}
 
