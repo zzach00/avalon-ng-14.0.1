@@ -116,6 +116,7 @@ body {
                             position: relative;
                             font-size: $fontSize;
                             background-color: var(--surface-card);
+                            color: var(--text-color);
                             padding: 5px 12px;
                             border: 1px solid var(--surface-border);
                             @include border-radius($borderRadius);
