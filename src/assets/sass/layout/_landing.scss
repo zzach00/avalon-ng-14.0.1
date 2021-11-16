@@ -83,7 +83,8 @@
 						color: #ffffff;
 						border-radius: 4px;
 						font-size: 16px;
-						margin-right: 20px;
+						margin-right: 10px;
+						margin-left: 10px;
 
 						&:hover {
 							background-color: #ffffff;
@@ -410,11 +411,12 @@
 		background: #f4f4f4;
 
 		.landing-menu {
-			float: none;
 			position: absolute;
-			left: 50%;
-			margin-left: -150px;
 			top: 150px;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
 
 			li {
 				font-size: 16px;
@@ -429,10 +431,11 @@
 
 					.sign-up-buttonpane {
 						position: absolute;
-						float: none;
-						left: 50%;
-						margin-left: -76px;
 						top: 200px;
+                        display: flex;
+                        width: 100%;
+                        align-items: center;
+                        justify-content: center;
 					}
 				}
 
