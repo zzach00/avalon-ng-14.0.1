@@ -384,3 +384,108 @@
         }
     }
 }
+
+.widget-graph {
+    &.card {
+        height: 100%;
+    }
+}
+
+.widget-goals {
+    &.card {
+        height: 100%;
+    }
+
+    .goals-progress {
+        border: 1px solid var(--surface-border);
+        border-radius: $borderRadius;
+
+        .goals-progress-title {
+            font-weight: 500;
+            font-size: 1.75rem;
+            color: var(--text-color);
+
+            .goals-progress-subtitle {
+                color: var(--text-color-secondary);
+            }
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li {
+                flex: 1 1 0%;
+
+                &:first-child {
+                    border-top-left-radius: $borderRadius;
+                    border-bottom-left-radius: $borderRadius;
+                }
+
+                &:last-child {
+                    border-top-right-radius: $borderRadius;
+                    border-bottom-right-radius: $borderRadius;
+                }
+
+                &.goals-progress-blue {
+                    background-color: #0d6efd;
+                }
+
+                &.goals-progress-purple {
+                    background-color: #6f42c1;
+                }
+
+                &.goals-progress-orange {
+                    background-color: #fd7e14;
+                }
+
+                &.goals-progress-cyan {
+                    background-color: #0dcaf0;
+                }
+
+                &.goals-progress-gray {
+                    background-color: #adb5bd;
+                }
+            }
+        }
+    }
+
+    > ul {
+        list-style: none;
+
+        li {
+            .goals-list-blue {
+                border-radius: $borderRadius;
+                background-color: #0d6efd;
+            }
+
+            .goals-list-purple {
+                border-radius: $borderRadius;
+                background-color: #6f42c1;
+            }
+
+            .goals-list-orange {
+                border-radius: $borderRadius;
+                background-color: #fd7e14;
+            }
+
+            .goals-list-cyan {
+                border-radius: $borderRadius;
+                background-color: #0dcaf0;
+            }
+
+            .goals-list-title {
+                font-size: 1.25rem;
+                font-weight: 500;
+                color: var(--text-color);
+            }
+
+            .goals-list-value {
+                font-size: 1.25rem;
+                font-weight: 500;
+                color: var(--text-color-secondary);
+            }
+        }
+    }
+}

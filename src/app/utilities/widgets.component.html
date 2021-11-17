@@ -56,7 +56,48 @@
         </div>
 	</div>
 	<div class="p-col-12 p-lg-6">
-        
+        <div class="card widget-goals">
+            <div class="p-d-flex p-ai-center p-jc-between p-mb-4">
+                <h5>Quarter Goals</h5>
+                <div class="p-ml-auto">
+                    <button pButton pRipple icon="pi pi-ellipsis-v" class="p-button-text p-button-plain p-button-rounded" (click)="menu.toggle($event)"></button>
+                    <p-menu #menu [popup]="true" [model]="items"></p-menu>
+                </div>
+            </div>
+            <div class="goals-progress p-p-3 p-mb-4">
+                <span class="goals-progress-title">85% <span class="goals-progress-subtitle">(2125/2500)</span></span>
+                <ul class="p-mt-3 p-p-0 p-mx-0 p-d-flex">
+                    <li style="height:1rem" class="goals-progress-cyan"></li>
+                    <li style="height:1rem" class="goals-progress-orange"></li>
+                    <li style="height:1rem" class="goals-progress-purple"></li>
+                    <li style="height:1rem" class="goals-progress-blue"></li>
+                    <li style="height:1rem" class="goals-progress-gray"></li>
+                </ul>
+            </div>
+
+            <ul class="p-mt-4 p-p-0 p-mx-0">
+                <li class="p-d-flex p-ai-center p-py-3 goals-list-item">
+                    <span style="width:1rem;height:1rem" class="goals-list-cyan p-mr-3"></span>
+                    <span class="goals-list-title">T-Shirt</span>
+                    <span class="goals-list-value p-ml-auto">89</span>
+                </li>
+                <li class="p-d-flex p-ai-center p-py-3 goals-list-item">
+                    <span style="width:1rem;height:1rem" class="goals-list-orange p-mr-3"></span>
+                    <span class="goals-list-title">Controller</span>
+                    <span class="goals-list-value p-ml-auto">23</span>
+                </li>
+                <li class="p-d-flex p-ai-center p-py-3 goals-list-item">
+                    <span style="width:1rem;height:1rem" class="goals-list-purple p-mr-3"></span>
+                    <span class="goals-list-title">Lime Band</span>
+                    <span class="goals-list-value p-ml-auto">42</span>
+                </li>
+                <li class="p-d-flex p-ai-center p-py-3 goals-list-item">
+                    <span style="width:1rem;height:1rem" class="goals-list-blue p-mr-3"></span>
+                    <span class="goals-list-title">Blue Band</span>
+                    <span class="goals-list-value p-ml-auto">63</span>
+                </li>
+            </ul>
+        </div>
 	</div>
 
     <div class="p-col-12 p-lg-4 p-p-3">

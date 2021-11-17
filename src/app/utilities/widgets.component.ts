@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { SelectItem } from 'primeng/api';
+import {MenuItem} from 'primeng/api';
 
 @Component({
     templateUrl: './widgets.component.html'
@@ -12,7 +12,18 @@ export class WidgetsComponent implements OnInit {
 
     chart: any;
 
+    items: MenuItem[];
+
     ngOnInit() {
+        this.items = [
+            {
+                label: 'Options',
+                items: [
+                    {label: 'Add New', icon: 'pi pi-fw pi-plus'},
+                    {label: 'Search', icon: 'pi pi-fw pi-search'}
+                ]
+            }
+        ];
 
         this.chartData = {
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],

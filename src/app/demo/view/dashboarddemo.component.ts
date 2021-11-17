@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {SelectItem} from 'primeng/api';
 import { ProductService } from '../service/productservice';
 import { Product } from '../domain/product';
+import { MenuItem } from 'primeng/api';
 
 @Component({
     templateUrl: './dashboard.component.html',
@@ -17,11 +18,21 @@ export class DashboardDemoComponent implements OnInit {
 
     chart: any;
 
+    items: MenuItem[];
+
     constructor(private productService: ProductService) { }
 
     ngOnInit() {
         this.productService.getProducts().then(data => this.products = data);
 
+        this.items = [
+            {
+                label: 'Options',
+                items: [
+                    {label: 'Add New', icon: 'pi pi-fw pi-plus'},
+                    {label: 'Search', icon: 'pi pi-fw pi-search'}
+                ]
+            }];
 
         this.chartData = {
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
