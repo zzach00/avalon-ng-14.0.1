@@ -155,127 +155,170 @@
             </table>
         </div>
 	</div>
-	<div class="p-col-12">
-		<div class="card">
-			<h4>Graph</h4>
-			<div class="p-grid">
-				<div class="p-col-12 p-lg-4">
-					<div class="widget-graph">
-						<div class="p-grid">
-							<div class="p-col-4">
-								<span class="graph-title">Logins</span>
-								<span class="graph-value">52003</span>
-								<span class="graph-change">+32</span>
-							</div>
-							<div class="p-col-8">
-								<img alt="Chart 1" src="assets/layout/images/dashboard/graph-1.svg" />
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="p-col-12 p-lg-4">
-					<div class="widget-graph">
-						<div class="p-grid">
-							<div class="p-col-4">
-								<span class="graph-title">Views</span>
-								<span class="graph-value">532</span>
-								<span class="graph-change">+24792</span>
-							</div>
-							<div class="p-col-8">
-								<img alt="Chart 2" src="assets/layout/images/dashboard/graph-2.svg" />
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="p-col-12 p-lg-4">
-					<div class="widget-graph">
-						<div class="p-grid">
-							<div class="p-col-4">
-								<span class="graph-title">Sales</span>
-								<span class="graph-value">$5521</span>
-								<span class="graph-change">+243</span>
-							</div>
-							<div class="p-col-8">
-								<img alt="Chart 3" src="assets/layout/images/dashboard/graph-3.svg" />
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="p-col-12 p-md-6 p-lg-4">
-        <div class="card widget-task-list">
-            <h5>Task List</h5>
-            <ul>
-                <li>
-                    <p-checkbox binary="true"></p-checkbox>
-                    <span class="task-name">Sales Reports</span>
-                    <i class="pi pi-briefcase"></i>
-                </li>
-                <li>
-                    <p-checkbox binary="true"></p-checkbox>
-                    <span class="task-name">Pay Invoices</span>
-                    <i class="pi pi-money-bill"></i>
-                </li>
-                <li>
-                    <p-checkbox binary="true"></p-checkbox>
-                    <span class="task-name">Dinner with Tony</span>
-                    <i class="pi pi-comments"></i>
-                </li>
-                <li>
-                    <p-checkbox binary="true"></p-checkbox>
-                    <span class="task-name">Client Meeting</span>
-                    <i class="pi pi-user"></i>
-                </li>
-                <li>
-                    <p-checkbox binary="true"></p-checkbox>
-                    <span class="task-name">New Theme</span>
-                    <i class="pi pi-palette"></i>
-                </li>
-                <li>
-                    <p-checkbox binary="true"></p-checkbox>
-                    <span class="task-name">Flight Ticket</span>
-                    <i class="pi pi-ticket"></i>
-                </li>
-                <li>
-                    <p-checkbox binary="true"></p-checkbox>
-                    <span class="task-name">Generate Charts</span>
-                    <i class="pi pi-chart-bar"></i>
-                </li>
-                <li>
-                    <p-checkbox binary="true"></p-checkbox>
-                    <span class="task-name">Call Client</span>
-                    <i class="pi pi-mobile"></i>
-                </li>
-            </ul>
-        </div>
-	</div>
-	<div class="p-col-12 p-md-6 p-lg-4">
-        <div class="card p-fluid widget-contact-form">
-            <h4>Contact Form</h4>
+
+    <div class="p-col-12 p-md-4">
+        <div class="widget-graph">
             <div class="p-grid">
-                <div class="p-col-12">
-                    <p-dropdown [options]="cities" [(ngModel)]="selectedCity"></p-dropdown>
+                <div class="p-col-4">
+                    <span class="graph-title">Logins</span>
+                    <span class="graph-value">52003</span>
+                    <span class="graph-change">+32</span>
                 </div>
-                <div class="p-col-12">
-                    <input type="text" pInputText placeholder="Name" >
-                </div>
-                <div class="p-col-12">
-                    <input type="text" pInputText placeholder="Age" >
-                </div>
-                <div class="p-col-12">
-                    <input type="text" pInputText placeholder="Email">
-                </div>
-                <div class="p-col-12">
-                    <textarea type="text" pInputTextarea placeholder="Message"></textarea>
-                </div>
-                <div class="p-col-12">
-                    <button type="button" label="Send" icon="pi pi-check" pButton></button>
+                <div class="p-col-8">
+                    <img alt="Chart 1" src="assets/layout/images/dashboard/graph-1.svg" />
                 </div>
             </div>
         </div>
-	</div>
+    </div>
+    <div class="p-col-12 p-md-4">
+        <div class="widget-graph">
+            <div class="p-grid">
+                <div class="p-col-4">
+                    <span class="graph-title">Views</span>
+                    <span class="graph-value">532</span>
+                    <span class="graph-change">+24792</span>
+                </div>
+                <div class="p-col-8">
+                    <img alt="Chart 2" src="assets/layout/images/dashboard/graph-2.svg" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-col-12 p-md-4">
+        <div class="widget-graph">
+            <div class="p-grid">
+                <div class="p-col-4">
+                    <span class="graph-title">Sales</span>
+                    <span class="graph-value">$5521</span>
+                    <span class="graph-change">+243</span>
+                </div>
+                <div class="p-col-8">
+                    <img alt="Chart 3" src="assets/layout/images/dashboard/graph-3.svg" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-col-12 p-lg-8">
+        <div class="card widget-incard p-p-4">
+            <div class="p-d-flex p-ai-center p-jc-between p-mb-4">
+                <h5>Files</h5>
+                <button pButton pRipple icon="pi pi-refresh" class="p-button-rounded p-button-outlined"></button>
+            </div>
+
+            <div class="p-grid p-mr-0">
+                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
+                    <div class="p-text-center incard-item">
+                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                            <img src="assets/layout/images/dashboard/word.svg" style="width: 48px;height: 48px" />
+                        </div>
+                        <span class="incard-title">resume.docx</span>
+                        <div class="incard-size p-mt-2">520KB</div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
+                    <div class="p-text-center incard-item">
+                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                            <img src="assets/layout/images/dashboard/excel.svg" style="width: 48px;height: 48px" />
+                        </div>
+                        <span class="incard-title">customers.xlsx</span>
+                        <div class="incard-size p-mt-2">120KB</div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
+                    <div class="p-text-center incard-item">
+                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                            <img src="assets/layout/images/dashboard/excel.svg" style="width: 48px;height: 48px" />
+                        </div>
+                        <span class="incard-title">stats.xlsx</span>
+                        <div class="incard-size p-mt-2">500KB</div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
+                    <div class="p-text-center incard-item">
+                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                            <img src="assets/layout/images/dashboard/ps.svg" style="width: 48px;height: 48px" />
+                        </div>
+                        <span class="incard-title">mock.ps</span>
+                        <div class="incard-size p-mt-2">220KB</div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
+                    <div class="p-text-center incard-item">
+                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                            <img src="assets/layout/images/dashboard/atom.svg" style="width: 48px;height: 48px" />
+                        </div>
+                        <span class="incard-title">template.js</span>
+                        <div class="incard-size p-mt-2">10KB</div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
+                    <div class="p-text-center incard-item">
+                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                            <img src="assets/layout/images/dashboard/code.svg" style="width: 48px;height: 48px" />
+                        </div>
+                        <span class="incard-title">main.css</span>
+                        <div class="incard-size p-mt-2">10KB</div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
+                    <div class="p-text-center incard-item">
+                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                            <img src="assets/layout/images/dashboard/ai.svg" style="width: 48px;height: 48px" />
+                        </div>
+                        <span class="incard-title">poc.ai</span>
+                        <div class="incard-size p-mt-2">4.2MB</div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
+                    <div class="p-text-center incard-item">
+                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                            <img src="assets/layout/images/dashboard/word.svg" style="width: 48px;height: 48px" />
+                        </div>
+                        <span class="incard-title">sales.docx</span>
+                        <div class="incard-size p-mt-2">420KB</div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
+                    <div class="p-text-center incard-item">
+                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                            <img src="assets/layout/images/dashboard/word.svg" style="width: 48px;height: 48px" />
+                        </div>
+                        <span class="incard-title">mynotes.one</span>
+                        <div class="incard-size p-mt-2">60KB</div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
+                    <div class="p-text-center incard-item">
+                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                            <img src="assets/layout/images/dashboard/code.svg" style="width: 48px;height: 48px" />
+                        </div>
+                        <span class="incard-title">layout.css</span>
+                        <div class="incard-size p-mt-2">25KB</div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
+                    <div class="p-text-center incard-item">
+                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                            <img src="assets/layout/images/dashboard/word.svg" style="width: 48px;height: 48px" />
+                        </div>
+                        <span class="incard-title">reports.docx</span>
+                        <div class="incard-size p-mt-2">120KB</div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
+                    <div class="p-text-center incard-item">
+                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                            <img src="assets/layout/images/dashboard/ps.svg" style="width: 48px;height: 48px" />
+                        </div>
+                        <span class="incard-title">design.psd</span>
+                        <div class="incard-size p-mt-2">1.2MB</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 	<div class="p-col-12 p-lg-4">
         <div class="card widget-contacts">
             <h4>Contacts</h4>

@@ -202,52 +202,6 @@
     }
 }
 
-.widget-task-list {
-    overflow: hidden;
-
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-
-        li {
-            padding: 10px 15px;
-            border-bottom: 1px solid var(--surface-border);
-
-            &:last-child {
-                border-bottom: 0 none;
-            }
-        }
-
-        .p-checkbox {
-            vertical-align: middle;
-            margin-right: 5px;
-        }
-
-        .task-name {
-            vertical-align: middle;
-        }
-
-        i {
-            color: var(--text-color-secondary);
-            float: right;
-            font-size: 16px;
-        }
-    }
-}
-
-.widget-contact-form {
-    overflow: hidden;
-
-    .p-col-12 {
-        padding: 10px 15px;
-
-        &:last-child {
-            padding-bottom: 0;
-        }
-    }
-}
-
 .widget-contacts {
     overflow: hidden;
 
@@ -540,5 +494,25 @@
     .date {
         font-weight: 500;
         color: #ccc;
+    }
+}
+
+.widget-incard {
+    .incard-item {
+        .incard-image {
+            background-color: var(--surface-section);
+            border: 1px solid var(--surface-border);
+            border-radius: $borderRadius;
+        }
+
+        .incard-title {
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .incard-size {
+            font-size: .875rem;
+            color: var(--text-color-secondary);
+        }
     }
 }
