@@ -1,8 +1,8 @@
-$primaryLightColor: rgba(38,143,255,.5);
-$primaryColor: #007bff;
-$primaryDarkColor: #0069d9;
-$primaryDarkerColor: #0062cc;
-$primaryTextColor: #ffffff;
+$primaryColor: #0d6efd !default;
+$primaryLightColor: scale-color($primaryColor, $lightness: 60%) !default;
+$primaryDarkColor: scale-color($primaryColor, $lightness: -10%) !default;
+$primaryDarkerColor: scale-color($primaryColor, $lightness: -20%) !default;
+$primaryTextColor: #ffffff !default;
 
 $highlightBg: $primaryColor;
 $highlightTextColor: $primaryTextColor;
