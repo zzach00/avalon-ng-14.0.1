@@ -26,9 +26,9 @@ export class DashboardBankingComponent implements OnInit {
 
         this.dropdownItem = [];
         this.dropdownItem.push({label: 'Select One', value: null});
-        this.dropdownItem.push({label: 'Xbox One', value: {id: 1, name: 'Xbox One', code: 'XO'}});
-        this.dropdownItem.push({label: 'PS4', value: {id: 2, name: 'PS4', code: 'PS4'}});
-        this.dropdownItem.push({label: 'Wii U', value: {id: 3, name: 'Wii U', code: 'WU'}});
+        this.dropdownItem.push({label: 'Xbox Series X', value: {id: 1, name: 'Xbox One', code: 'XO'}});
+        this.dropdownItem.push({label: 'PlayStation 5', value: {id: 2, name: 'PS4', code: 'PS4'}});
+        this.dropdownItem.push({label: 'Nintendo Switch', value: {id: 3, name: 'Wii U', code: 'WU'}});
 
         this.visitorChart = {
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
