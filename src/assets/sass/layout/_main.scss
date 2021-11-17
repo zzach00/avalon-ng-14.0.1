@@ -255,10 +255,10 @@ body {
                         }
 
                         &.active-menuitem-routerlink {
-                            color: darken($darkMenuMenuitemActiveColor, 10%);
+                            color: $darkMenuMenuitemActiveColor;
 
                             i:first-child {
-                                color:  darken($darkMenuMenuitemActiveColor, 10%);
+                                color: $darkMenuMenuitemActiveColor;
                             }
                         }
                     }
@@ -761,7 +761,6 @@ body {
                 width: 100%;
                 top: 60px;
                 height: auto;
-                background-color: $topbarLeftBg;
 
                 .layout-main-menu {
                     padding-bottom: 0;
