@@ -151,7 +151,7 @@ body {
         z-index: 99;
         top: 60px;
         height: 100%;
-        @include background-gradient-left2right($menuGradientStartBgColor, $menuGradientEndBgColor);
+        background-color: $menuBg;
         border-right: 1px solid var(--surface-border);
         @include transition(margin-left .3s);
 
