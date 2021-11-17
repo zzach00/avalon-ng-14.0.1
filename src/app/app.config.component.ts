@@ -116,17 +116,8 @@ import { AppMainComponent } from './app.main.component';
                 <h6>Flat Layout Colors</h6>
                 <div class="layout-themes">
                     <div *ngFor="let flatLayoutColor of flatLayoutColors">
-                        <a style="cursor: pointer" (click)="changeLayout(flatLayoutColor.file, false)"  [ngStyle]="{'background-color': flatLayoutColor.color}">
+                        <a style="cursor: pointer" (click)="changeLayout(flatLayoutColor.file)"  [ngStyle]="{'background-color': flatLayoutColor.color}">
                             <i class="pi pi-check" *ngIf="layout === flatLayoutColor.file"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <h6>Special Layout Colors</h6>
-                <div class="layout-themes">
-                    <div *ngFor="let specialLayoutColor of specialLayoutColors">
-                        <a style="cursor: pointer" (click)="changeLayout(specialLayoutColor.file, true)" [ngStyle]="{'background-image': 'linear-gradient(to right,' + specialLayoutColor.color1 + ',' + specialLayoutColor.color2 + ')'}">
-                            <i class="pi pi-check" *ngIf="layout === specialLayoutColor.file"></i>
                         </a>
                     </div>
                 </div>
@@ -149,70 +140,42 @@ export class AppConfigComponent implements OnInit {
 
     flatLayoutColors: any[];
 
-    specialLayoutColors: any[];
-
     version = 'v4';
 
     themeColor = 'blue';
 
     layout = 'blue';
 
-    specialLayout = false;
-
     constructor(public app: AppComponent, public appMain: AppMainComponent) {}
 
     ngOnInit() {
         this.flatLayoutColors = [
-            {name: 'Blue', file: 'blue', color: '#146fd7'},
-            {name: 'Cyan', file: 'cyan', color: '#0A616F'},
-            {name: 'Indigo', file: 'indigo', color: '#470EA2'},
-            {name: 'Purple', file: 'purple', color: '#391F68'},
-            {name: 'Teal', file: 'teal', color: '#136E52'},
-            {name: 'Pink', file: 'pink', color: '#771340'},
-            {name: 'Lime', file: 'lime', color: '#407916'},
-            {name: 'Green', file: 'green', color: '#1F8E38'},
-            {name: 'Amber', file: 'amber', color: '#7A5E06'},
-            {name: 'Brown', file: 'brown', color: '#593E22'},
-            {name: 'Orange', file: 'orange', color: '#904100'},
-            {name: 'Deep Purple', file: 'deeppurple', color: '#341A64'},
-            {name: 'Light Blue', file: 'lightblue', color: '#14569D'},
-            {name: 'Light Green', file: 'lightgreen', color: '#2E8942'},
-            {name: 'Dark Grey', file: 'darkgrey', color: '#343A40'},
-        ];
-        this.specialLayoutColors = [
-            {name: 'Influenza', file: 'influenza', color1: '#a83279', color2: '#f38e00'},
-            {name: 'Calm', file: 'calm', color1: '#5f2c82', color2: '#0DA9A4'},
-            {name: 'Crimson', file: 'crimson', color1: '#521c52', color2: '#c6426e'},
-            {name: 'Night', file: 'night', color1: '#2c0747', color2: '#6441a5'},
-            {name: 'Skyline', file: 'skyline', color1: '#2b32b2', color2: '#1488cc'},
-            {name: 'Sunkist', file: 'sunkist', color1: '#ee8a21', color2: '#f2c94c'},
-            {name: 'Little Leaf', file: 'littleleaf', color1: '#4DB865', color2: '#80D293'},
-            {name: 'Joomla', file: 'joomla', color1: '#1e3c72', color2: '#2a5298'},
-            {name: 'Firewatch', file: 'firewatch', color1: '#cb2d3e', color2: '#ef473a'},
-            {name: 'Suzy', file: 'suzy', color1: '#834d9b', color2: '#d04ed6'},
+            {name: 'Blue', file: 'blue', color: '#0d6efd'},
+            {name: 'Indigo', file: 'indigo', color: '#6610f2'},
+            {name: 'Purple', file: 'purple', color: '#6f42c1'},
+            {name: 'Pink', file: 'pink', color: '#d63384'},
+            {name: 'Orange', file: 'orange', color: '#fd7e14'},
+            {name: 'Yellow', file: 'yellow', color: '#ffc107'},
+            {name: 'Green', file: 'green', color: '#198754'},
+            {name: 'Teal', file: 'teal', color: '#20c997'},
+            {name: 'Cyan', file: 'cyan', color: '#0dcaf0'},
         ];
         this.themes = [
-            {name: 'Amber', file: 'amber', color: '#F8BD0C'},
-            {name: 'Blue', file: 'blue', color: '#007bff'},
-            {name: 'Cyan', file: 'cyan', color: '#17A2B8'},
-            {name: 'Indigo', file: 'indigo', color: '#6610F2'},
-            {name: 'Purple', file: 'purple', color: '#883cae'},
-            {name: 'Teal', file: 'teal', color: '#20C997'},
-            {name: 'Orange', file: 'orange', color: '#FD7E14'},
-            {name: 'Deep Purple', file: 'deeppurple', color: '#612FBE'},
-            {name: 'Light Blue', file: 'lightblue', color: '#4DA3FF'},
-            {name: 'Green', file: 'green', color: '#28A745'},
-            {name: 'Light Green', file: 'lightgreen', color: '#61CC79'},
-            {name: 'Brown', file: 'brown', color: '#986839'},
-            {name: 'Dark Grey', file: 'darkgrey', color: '#6C757D'},
-            {name: 'Pink', file: 'pink', color: '#E83E8C'},
-            {name: 'Lime', file: 'lime', color: '#74CD32'},
+            {name: 'Blue', file: 'blue', color: '#0d6efd'},
+            {name: 'Indigo', file: 'indigo', color: '#6610f2'},
+            {name: 'Purple', file: 'purple', color: '#6f42c1'},
+            {name: 'Pink', file: 'pink', color: '#d63384'},
+            {name: 'Orange', file: 'orange', color: '#fd7e14'},
+            {name: 'Yellow', file: 'yellow', color: '#ffc107'},
+            {name: 'Green', file: 'green', color: '#198754'},
+            {name: 'Teal', file: 'teal', color: '#20c997'},
+            {name: 'Cyan', file: 'cyan', color: '#0dcaf0'},
         ];
     }
 
     onLayoutColorChange(event, color) {
         this.app.layoutColor = color;
-        this.app.darkMenu = color === 'dark' || this.specialLayout;
+        this.app.darkMenu = color === 'dark';
 
         const themeLink = document.getElementById('theme-css');
         const urlTokens = themeLink.getAttribute('href').split('/');
@@ -222,13 +185,8 @@ export class AppConfigComponent implements OnInit {
         this.replaceLink(themeLink, newURL);
     }
 
-    changeLayout(layout: string, special?: boolean) {
-        if (special) {
-            this.app.darkMenu = special;
-        }
-
+    changeLayout(layout: string) {
         this.layout = layout;
-        this.specialLayout = special;
 
         const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
         const layoutHref = 'assets/layout/css/layout-' + layout + '.css';
