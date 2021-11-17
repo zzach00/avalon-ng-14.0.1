@@ -49,111 +49,14 @@
 		</div>
 	</div>
 	<div class="p-col-12 p-lg-6">
-		<div class="card widget-sale-table">
-            <h4>Sale Table</h4>
-            <table>
-                <thead>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th>Total Sales</th>
-                    <th>Change</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><img alt="Brazil Flag" src="assets/layout/images/dashboard/flag-brazil.png" width="45" /></td>
-                    <td>BRAZIL</td>
-                    <td>4234</td>
-                    <td>+35%</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td><img alt="China Flag" src="assets/layout/images/dashboard/flag-china.png" width="45" /></td>
-                    <td>CHINA</td>
-                    <td>3214</td>
-                    <td>-25%</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><img alt="Belgium Flag" src="assets/layout/images/dashboard/flag-belgium.png" width="45" /></td>
-                    <td>BELGIUM</td>
-                    <td>2842</td>
-                    <td>+28%</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td><img alt="France Flag" src="assets/layout/images/dashboard/flag-france.png" width="45" /></td>
-                    <td>FRANCE</td>
-                    <td>1942</td>
-                    <td>+15%</td>
-                </tr>
-                </tbody>
-            </table>
+        <div class="card widget-graph">
+            <h5>Weekly Overview</h5>
+
+            <p-chart type="line" [data]="chartData" [options]="chartOptions" id="nasdaq-chart"></p-chart>
         </div>
 	</div>
 	<div class="p-col-12 p-lg-6">
-        <div class="card widget-statistics">
-            <h5>Product Statistics</h5>
-            <table>
-                <tbody>
-                <tr>
-                    <td class="col-overview col-wait">
-                        <div>W</div>
-                    </td>
-                    <td class="col-status">
-                        <span class="status-time">Last Update: 12m ago</span>
-                        <span class="status-text">Currently Waiting</span>
-                    </td>
-                    <td class="col-numbers">
-                        <div>253 <span>Shipments</span></div>
-                        <div>584 <span>Orders</span></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-overview col-success">
-                        <div>S</div>
-                    </td>
-                    <td class="col-status">
-                        <span class="status-time">Last Update: 12m ago</span>
-                        <span class="status-text">Successfully Completed</span>
-                    </td>
-                    <td class="col-numbers">
-                        <div>312 <span>Shipments</span></div>
-                        <div>409 <span>Orders</span></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-overview col-delay">
-                        <div>D</div>
-                    </td>
-                    <td class="col-status">
-                        <span class="status-time">Last Update: 6m ago</span>
-                        <span class="status-text">Delayed</span>
-                    </td>
-                    <td class="col-numbers">
-                        <div>122 <span>Shipments</span></div>
-                        <div>341 <span>Orders</span></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-overview col-preorder">
-                        <div>P</div>
-                    </td>
-                    <td class="col-status">
-                        <span class="status-time">Last Update: 15m ago</span>
-                        <span class="status-text">Preordered</span>
-                    </td>
-                    <td class="col-numbers">
-                        <div>221 <span>Shipments</span></div>
-                        <div>332 <span>Orders</span></div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+        
 	</div>
 
     <div class="p-col-12 p-lg-4 p-p-3">

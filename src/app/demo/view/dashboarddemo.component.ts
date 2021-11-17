@@ -5,54 +5,112 @@ import { Product } from '../domain/product';
 
 @Component({
     templateUrl: './dashboard.component.html',
-    styleUrls: ['./tabledemo.scss'],
-    styles: [`
-        @media screen and (max-width: 960px) {
-            :host ::ng-deep .fc-header-toolbar {
-                display: flex;
-                flex-wrap: wrap;
-            }
-        }
-    `]
+    styleUrls: ['./tabledemo.scss']
 })
 export class DashboardDemoComponent implements OnInit {
-
-    cities: SelectItem[];
 
     products: Product[];
 
     chartData: any;
 
-    selectedCity: any;
+    chartOptions: any;
+
+    chart: any;
 
     constructor(private productService: ProductService) { }
 
     ngOnInit() {
         this.productService.getProducts().then(data => this.products = data);
 
-        this.cities = [];
-        this.cities.push({label: 'New York', value: {id: 1, name: 'New York', code: 'NY'}});
-        this.cities.push({label: 'Rome', value: {id: 2, name: 'Rome', code: 'RM'}});
-        this.cities.push({label: 'London', value: {id: 3, name: 'London', code: 'LDN'}});
-        this.cities.push({label: 'Istanbul', value: {id: 4, name: 'Istanbul', code: 'IST'}});
-        this.cities.push({label: 'Paris', value: {id: 5, name: 'Paris', code: 'PRS'}});
 
         this.chartData = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
             datasets: [
                 {
-                    label: 'First Dataset',
-                    data: [65, 59, 80, 81, 56, 55, 40],
+                    label: 'New',
+                    data: [11, 17, 30, 60, 88, 92],
+                    backgroundColor: 'rgba(13, 202, 240, .2)',
+                    borderColor: '#0dcaf0',
+                    pointBorderColor: 'transparent',
+                    pointBackgroundColor: 'transparent',
                     fill: false,
-                    borderColor: '#FFC107'
+                    tension: .4
                 },
                 {
-                    label: 'Second Dataset',
-                    data: [28, 48, 40, 19, 86, 27, 90],
+                    label: 'Completed',
+                    data: [11, 19, 39, 59, 69, 71],
+                    backgroundColor: 'rgba(253, 126, 20, .2)',
+                    borderColor: '#fd7e14',
+                    pointBorderColor: 'transparent',
+                    pointBackgroundColor: 'transparent',
                     fill: false,
-                    borderColor: '#03A9F4'
+                    tension: .4
+                },
+                {
+                    label: 'Canceled',
+                    data: [11, 17, 21, 30, 47, 83],
+                    backgroundColor: 'rgba(111, 66, 193, .2)',
+                    borderColor: '#6f42c1',
+                    pointBorderColor: 'transparent',
+                    pointBackgroundColor: 'transparent',
+                    fill: true,
+                    tension: .4
                 }
             ]
         };
+
+        this.chartOptions = {
+            plugins: {
+                legend: {
+                    fill: true
+                }
+            },
+            scales: {
+                y: {
+                    max: 100,
+                    min: 0,
+                    ticks: {
+                        color: '#A0A7B5'
+                    }
+                },
+                x: {
+                    grid: {
+                        display: true,
+                    },
+                    ticks: {
+                        color: '#A0A7B5',
+                        beginAtZero: true,
+                    }
+                }
+            }
+        };
+
+        this.getGradient();
+    }
+
+    getGradient() {
+        this.chart = document.getElementsByTagName('canvas')[0].getContext('2d');
+        const gradientStroke1 = this.chart.createLinearGradient(100, 0, 500, 100);
+        gradientStroke1.addColorStop(0, 'rgba(63, 213, 250, 0)');
+        gradientStroke1.addColorStop(0.5, 'rgba(63, 213, 250, 1)');
+        gradientStroke1.addColorStop(1, 'rgba(10, 162, 192, 1)');
+        this.chartData.datasets[0].borderColor = gradientStroke1;
+
+        const gradientStroke2 = this.chart.createLinearGradient(100, 0, 500, 100);
+        gradientStroke2.addColorStop(0, 'rgba(253, 152, 67, 0)');
+        gradientStroke2.addColorStop(0.5, 'rgba(253, 152, 67, 1)');
+        gradientStroke2.addColorStop(1, 'rgba(202, 101, 16, 1)');
+        this.chartData.datasets[1].borderColor = gradientStroke2;
+
+        const gradientStroke3 = this.chart.createLinearGradient(100, 0, 500, 100);
+        gradientStroke3.addColorStop(0, 'rgba(140, 104, 205, 0)');
+        gradientStroke3.addColorStop(0.5, 'rgba(140, 104, 205, 1)');
+        gradientStroke3.addColorStop(1, 'rgba(89, 53, 154, 1)');
+        this.chartData.datasets[2].borderColor = gradientStroke3;
+
+        const gradientFill = this.chart.createLinearGradient(0, 0, 500, 0);
+        gradientFill.addColorStop(1, 'rgba(89, 53, 154, 0.34)');
+        gradientFill.addColorStop(0, 'rgba(140, 104, 205, 0.2)');
+        this.chartData.datasets[2].backgroundColor = gradientFill;
     }
 }
