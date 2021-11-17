@@ -29,14 +29,14 @@
     }
 
     &.overview-box-1 {
-        background-color: #007bff;
-        border: solid 1px #007bff;
+        background-color: #0d6efd;
+        border: solid 1px #0d6efd;
         color: #ffffff;
     }
 
     &.overview-box-2 {
-        background-color: #28a745;
-        border: solid 1px #28a745;
+        background-color: #198754;
+        border: solid 1px #198754;
         color: #ffffff;
     }
 
@@ -126,25 +126,25 @@
 
                 &.col-wait {
                     div {
-                        background-color: #d9534f;
+                        background-color: #dc3545;
                     }
                 }
 
                 &.col-success {
                     div {
-                        background-color: #5cb85c;
+                        background-color: #198754;
                     }
                 }
 
                 &.col-delay {
                     div {
-                        background-color: #f0ad4e;
+                        background-color: #fd7e14;
                     }
                 }
 
                 &.col-preorder {
                     div {
-                        background-color: #2ea59f;
+                        background-color: #20c997;
                     }
                 }
             }
@@ -237,11 +237,11 @@
                     border-radius: $borderRadius;
 
                     &.online {
-                        background-color: #5cb85c;
+                        background-color: #198754;
                     }
 
                     &.offline {
-                        background-color: #d9534f;
+                        background-color: #dc3545;
                     }
                 }
 
@@ -273,7 +273,7 @@
                 background-color: transparent;
                 font-size: 24px;
                 position: absolute;
-                top: 6px;
+                top: 12px;
                 right: -12px;
             }
         }
@@ -348,8 +348,8 @@
                 }
 
                 span {
-                    background-color: #dff0d8;
-                    border: solid 1px #d6e9c6;
+                    background-color: #d1e7dd;
+                    border: solid 1px #a3cfbb;
                 }
             }
 
@@ -363,8 +363,8 @@
                 }
 
                 span {
-                    background-color: #d9edf7;
-                    border: solid 1px #bce8f1;
+                    background-color: #cfe2ff;
+                    border: solid 1px #9ec5fe;
                 }
             }
         }
@@ -409,6 +409,9 @@
 }
 
 .widget-messages {
+    .pull-right {
+        float: right;
+    }
 
     .message {
         width: 100%;
@@ -461,18 +464,18 @@
         .messager-img  {
             margin-left: -15px;
             padding-left:15px;
-            border-left: 3px solid #337ab7;
+            border-left: 3px solid #0d6efd;
         }
     }
 
     .online {
         margin-left: 5px;
-        color: #8ad88a;
+        color: #198754;
     }
 
     .offline {
         margin-left: 5px;
-        color: #de7470;
+        color: #dc3545;
     }
 
     .date {

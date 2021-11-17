@@ -35,7 +35,7 @@ export class DashboardBankingComponent implements OnInit {
             datasets: [
                 {
                     data: [600, 671, 660, 665, 700, 610, 810, 790, 710, 860, 810, 780],
-                    backgroundColor: '#984082',
+                    backgroundColor: '#6f42c1',
                     fill: true,
                     barPercentage: 0.75,
                     stepped: true
