@@ -28,6 +28,10 @@ import {AppMainComponent} from './app.main.component';
                 <i class="pi pi-fw pi-angle-down menuitem-toggle-icon" *ngIf="item.items"></i>
                 <span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
             </a>
+            <div class="layout-menu-tooltip">
+                <div class="layout-menu-tooltip-arrow"></div>
+                <div class="layout-menu-tooltip-text">{{item.label}}</div>
+            </div>
             <div class="submenu-arrow" *ngIf="item.items && item.visible !== false"></div>
             <ul *ngIf="((item.items && root) || (item.items && active)) && item.visible !== false"
                 [@children]="(root ? 'visible' :active ? 'visibleAnimated' : 'hiddenAnimated')">

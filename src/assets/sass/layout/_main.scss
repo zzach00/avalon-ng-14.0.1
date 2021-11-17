@@ -110,18 +110,22 @@ body {
                 .search-item {
                     .topbar-search {
                         position: relative;
-                        top: -2px;
+                        top: -7px;
 
                         input {
                             position: relative;
                             font-size: $fontSize;
-                            background-color: var(--surface-card);
-                            color: var(--text-color);
-                            padding: 5px 12px;
-                            border: 1px solid var(--surface-border);
-                            @include border-radius($borderRadius);
+                            background-color: rgba(255,255,255,.2);
+                            color: #ffffff;
+                            padding: 9px 12px;
+                            border: 1px solid rgba(255,255,255,.5);
+                            @include border-radius(20px);
                             @include transition(box-shadow $transitionDuration, border-color $transitionDuration);
                             width: 200px;
+
+                            &::placeholder {
+                                color: #ffffff;
+                            }
 
                             &:focus {
                                 outline: 0 none;
@@ -132,8 +136,8 @@ body {
 
                         i {
                             position: absolute;
-                            color: var(--text-color-secondary);
-                            top: 5px;
+                            color: #ffffff;
+                            top: 7px;
                             right: 10px;
                             font-size: 18px;
                         }
@@ -530,7 +534,7 @@ body {
             padding: 0 5px;
             position: absolute;
             left: 76px;
-            top: 5px;
+            top: 14px;
             z-index: 101;
             line-height: 1;
 
@@ -1313,6 +1317,10 @@ body {
                                     border-color: var(--surface-border);
                                     color: var(--text-color);
 
+                                    &::placeholder {
+                                        color: var(--text-color);
+                                    }
+
                                     &:focus {
                                         border-color: var(--surface-border);
                                     }
@@ -1326,7 +1334,7 @@ body {
                                 i {
                                     position: absolute;;
                                     right: 10px;
-                                    top: 5px;
+                                    color: var(--text-color);
                                 }
                             }
 
