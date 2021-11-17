@@ -31,15 +31,15 @@
 		width: 52px;
 		height: 52px;
 		line-height: 52px;
-		background-color: var(--surface-overlay);
+		background-color: var(--primary-color);
 		text-align: center;
-		top: 230px;
+		top: 300px;
 		left: -51px;
 		z-index: -1;
 		overflow: hidden;
 		cursor: pointer;
 		opacity: 1;
-		color: $topbarLeftGradientStartBgColor;
+		color: var(--primary-color-text);
 		border-top-left-radius: $borderRadius;
 		border-bottom-left-radius: $borderRadius;
 		transition: background-color $transitionDuration, opacity $transitionDuration;
@@ -57,7 +57,7 @@
 		}
 
 		&:hover {
-			color: lighten($topbarLeftGradientStartBgColor, 15%);
+            opacity: .9;
 		}
 	}
 
