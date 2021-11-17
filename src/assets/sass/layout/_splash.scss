@@ -50,11 +50,11 @@
 }
 
 .splash-screen {
-  background-color: #6F5499;
+  background-color: var(--primary-color);
   height: 100%;
   width: 100%;
   position: fixed;
-  
+
   .splash-loader {
     -webkit-animation-duration: 0.75s;
     -moz-animation-duration: 0.75s;

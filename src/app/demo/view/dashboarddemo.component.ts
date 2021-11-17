@@ -42,8 +42,8 @@ export class DashboardDemoComponent implements OnInit {
                     data: [11, 17, 30, 60, 88, 92],
                     backgroundColor: 'rgba(13, 202, 240, .2)',
                     borderColor: '#0dcaf0',
-                    pointBorderColor: 'transparent',
-                    pointBackgroundColor: 'transparent',
+                    pointBorderColor: '#0dcaf0',
+                    pointBorderWidth: 0,
                     fill: false,
                     tension: .4
                 },
@@ -52,8 +52,8 @@ export class DashboardDemoComponent implements OnInit {
                     data: [11, 19, 39, 59, 69, 71],
                     backgroundColor: 'rgba(253, 126, 20, .2)',
                     borderColor: '#fd7e14',
-                    pointBorderColor: 'transparent',
-                    pointBackgroundColor: 'transparent',
+                    pointBorderColor: '#fd7e14',
+                    pointBorderWidth: 0,
                     fill: false,
                     tension: .4
                 },
@@ -62,8 +62,8 @@ export class DashboardDemoComponent implements OnInit {
                     data: [11, 17, 21, 30, 47, 83],
                     backgroundColor: 'rgba(111, 66, 193, .2)',
                     borderColor: '#6f42c1',
-                    pointBorderColor: 'transparent',
-                    pointBackgroundColor: 'transparent',
+                    pointBorderColor: '#6f42c1',
+                    pointBorderWidth: 0,
                     fill: true,
                     tension: .4
                 }
