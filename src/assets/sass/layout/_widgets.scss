@@ -173,32 +173,16 @@
     }
 }
 
-.widget-graph {
-    background-color: var(--surface-card);
-    padding: 15px;
-    width: 100%;
-    height: 100%;
-    border-radius: $borderRadius;
-
-    .graph-title {
-        display: block;
-        font-size: 16px;
+.widget-colored-stats {
+    .stats-title {
+        font-size: 1.5rem;
         color: var(--text-color-secondary);
     }
 
-    .graph-value {
-        display: block;
-        margin: 10px 0;
-        font-size: 24px;
-        font-weight: bold;
-    }
-
-    .graph-change {
-        color: var(--text-color-secondary);
-    }
-
-    img {
-        width: 100%;
+    .stats-value {
+        font-weight: 700;
+        font-size: 1.75rem;
+        color: var(--text-color);
     }
 }
 
