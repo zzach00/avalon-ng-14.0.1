@@ -436,6 +436,10 @@
                     background-color: #6f42c1;
                 }
 
+                &.goals-progress-pink {
+                    background-color: #d63384;
+                }
+
                 &.goals-progress-orange {
                     background-color: #fd7e14;
                 }
@@ -463,6 +467,11 @@
             .goals-list-purple {
                 border-radius: $borderRadius;
                 background-color: #6f42c1;
+            }
+
+            .goals-list-pink {
+                border-radius: $borderRadius;
+                background-color: #d63384;
             }
 
             .goals-list-orange {
