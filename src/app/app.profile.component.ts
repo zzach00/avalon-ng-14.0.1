@@ -7,9 +7,11 @@ import {trigger, state, transition, style, animate} from '@angular/animations';
         <div class="profile" [ngClass]="{'profile-expanded':active}">
             <a href="#" (click)="onClick($event)">
                 <img class="profile-image" src="assets/layout/images/avatar.png" />
-                <span class="profile-name">Isabel Oliviera</span>
-                <i class="pi pi-fw pi-chevron-down"></i>
-                <span class="profile-role">Marketing</span>
+                <div>
+                    <span class="profile-name">Isabel Oliviera</span>
+                    <i class="pi pi-fw pi-chevron-down"></i>
+                    <span class="profile-role">Marketing</span>
+                </div>
             </a>
         </div>
 

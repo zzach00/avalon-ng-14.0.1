@@ -160,15 +160,21 @@ body {
         }
 
         .profile {
-            padding: 15px;
+            padding: 1rem;
             @include shadow(0 2px 5px 0 rgba(0,0,0,0.15));
             @include clearfix();
 
             > a {
+                display: flex;
+
+                > div {
+                    flex-grow: 1;
+                    margin-left: .5rem;
+                }
+
                 .profile-image {
                     width: 45px;
                     height: 45px;
-                    float: right;
                     margin-left: 4px;
                 }
 
@@ -178,16 +184,13 @@ body {
                     vertical-align: middle;
                     font-size: 16px;
                     font-weight: bold;
-                    text-align: right;
                     margin-top: 4px;
                 }
 
                 .profile-role {
                     display: block;
                     min-width: 100px;
-                    text-align: right;
                     font-size: 12px;
-                    float: right;
                     color: var(--text-color-secondary);
                 }
 
