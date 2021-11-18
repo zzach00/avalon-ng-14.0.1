@@ -117,7 +117,9 @@ import { AppMainComponent } from './app.main.component';
                 <div class="layout-themes">
                     <div *ngFor="let flatLayoutColor of flatLayoutColors">
                         <a style="cursor: pointer" (click)="changeLayout(flatLayoutColor.file)"  [ngStyle]="{'background-color': flatLayoutColor.color}">
-                            <i class="pi pi-check" *ngIf="layout === flatLayoutColor.file"></i>
+                            <i class="pi pi-check" *ngIf="layout === flatLayoutColor.file"
+                               [style]="{'color': flatLayoutColor.file==='orange' || flatLayoutColor.file==='yellow'
+                               || flatLayoutColor.file==='cyan' || flatLayoutColor.file==='teal' ? '#1b1b1c' : 'var(--primary-color-text)' }"></i>
                         </a>
                     </div>
                 </div>
@@ -140,11 +142,9 @@ export class AppConfigComponent implements OnInit {
 
     flatLayoutColors: any[];
 
-    version = 'v4';
+    themeColor = 'purple';
 
-    themeColor = 'blue';
-
-    layout = 'blue';
+    layout = 'purple';
 
     constructor(public app: AppComponent, public appMain: AppMainComponent) {}
 
