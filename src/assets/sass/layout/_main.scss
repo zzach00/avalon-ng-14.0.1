@@ -255,7 +255,12 @@ body {
                         }
 
                         &:hover {
+                            color: $darkMenuHoverTextColor;
                             background-color: $darkMenuHoverBgColor;
+
+                            i {
+                                color: $darkMenuHoverTextColor;
+                            }
                         }
 
                         &.active-menuitem-routerlink {
@@ -428,7 +433,12 @@ body {
                 }
 
                 &:hover {
-                    background-color: var(--surface-hover);
+                    background-color: $menuitemHoverBgColor;
+                    color: $menuitemHoverTextColor;
+
+                    i {
+                        color: $menuitemHoverTextColor;
+                    }
                 }
 
                 span {
@@ -792,10 +802,10 @@ body {
                         > a {
                             &:hover {
                                 background-color: $menuitemHoverBgColor;
-                                color: var(--text-color);
+                                color: $menuitemHoverTextColor;
 
                                 i {
-                                    color: var(--text-color);
+                                    color: $menuitemHoverTextColor;
                                 }
                             }
                         }
@@ -932,6 +942,11 @@ body {
 
                                 &:hover {
                                     background-color: $darkMenuHoverBgColor;
+                                    color: $darkMenuHoverTextColor;
+
+                                    i {
+                                        color: $darkMenuHoverTextColor;
+                                    }
                                 }
                             }
 
