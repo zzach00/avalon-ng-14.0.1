@@ -296,6 +296,16 @@ body {
                         > a {
                             background-color: $darkMenuMenuitemActiveBgColor;
                         }
+
+                        &.active-menuitem-notrouter {
+                            > a {
+                                color: $darkMenuMenuitemActiveColor;
+
+                                i:first-child {
+                                    color: $darkMenuMenuitemActiveColor;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -479,6 +489,16 @@ body {
 
                     i.menuitem-toggle-icon {
                         @include rotate(-180deg);
+                    }
+                }
+
+                &.active-menuitem-notrouter {
+                    > a {
+                        color: $menuitemActiveColor;
+
+                        i:first-child {
+                            color: $menuitemActiveColor;
+                        }
                     }
                 }
             }
@@ -864,13 +884,6 @@ body {
                                         }
                                     }
                                 }
-
-                                &.active-menuitem {
-                                    > a {
-                                        color: $menuitemActiveColor;
-                                        background-color: $menuitemHoverBgColor;
-                                    }
-                                }
                             }
                         }
 
@@ -952,12 +965,7 @@ body {
 
                             &.active-menuitem {
                                 > a {
-                                    color: $darkMenuMenuitemActiveColor;
                                     background-color: $darkMenuMenuitemActiveBgColor;
-
-                                    i {
-                                        color: $darkMenuMenuitemActiveColor;
-                                    }
                                 }
                             }
 
@@ -1060,6 +1068,7 @@ body {
                             left: 73px;
                             display: none;
                             min-width: 200px;
+                            border-radius: $borderRadius;
 
                             li {
                                 a {
@@ -1109,7 +1118,10 @@ body {
                         }
 
                         &.active-menuitem {
+
                             > a {
+                                border-left-color: $menuitemActiveColor;
+
                                 &:hover + .layout-menu-tooltip {
                                     display: none;
                                 }

@@ -43,7 +43,8 @@ import {AppMainComponent} from './app.main.component';
     `,
     host: {
         '[class.layout-root-menuitem]': 'root',
-        '[class.active-menuitem]': 'active'
+        '[class.active-menuitem]': 'active',
+        '[class.active-menuitem-notrouter]': 'active && !item.items'
     },
     animations: [
         trigger('children', [
