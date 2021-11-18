@@ -146,6 +146,20 @@ body {
                 }
             }
         }
+
+        .layout-menu {
+            li {
+                a {
+                    &:hover {
+                        color: lighten($menuitemHoverTextColor, 10%);
+
+                        i {
+                            color: lighten($menuitemHoverTextColor, 10%);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .layout-menu-container {
