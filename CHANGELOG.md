@@ -1,4 +1,13 @@
 # Changelog
+## 12.3.0
+
+**Migration Guide**
+- Update app.* files.
+- Update theme files and layout files.
+
+**Implemented New Features and Enhancements:**
+
+- Added dark mode
 
 ## 12.2.0
 **Migration Guide**

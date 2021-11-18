@@ -1,6 +1,6 @@
 {
     "name": "avalon",
-    "version": "12.2.1-SNAPSHOT",
+    "version": "12.3.0",
     "license": "COMMERCIAL",
     "angular-cli": {},
     "scripts": {
