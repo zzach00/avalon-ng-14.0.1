@@ -75,7 +75,7 @@ import {AppMainComponent} from './app.main.component';
                             </li>
                             <li role="menuitem">
                                 <a href="#" (click)="appMain.onTopbarSubItemClick($event)">
-                                    <i class="pi pi-fw pi-star-o"></i>
+                                    <i class="pi pi-fw pi-star"></i>
                                     <span>Favorites</span>
                                 </a>
                             </li>
