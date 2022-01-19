@@ -387,23 +387,23 @@
                 </ng-template>
                 <ng-template pTemplate="body" let-product>
                     <tr>
-                        <td>
+                        <td style="width:100px;">
                             <span class="p-column-title">Image</span>
                             <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.image" width="50px" />
                         </td>
-                        <td>
+                        <td style="width:200px;">
                             <span class="p-column-title">Name</span>
                             {{product.name}}
                         </td>
-                        <td>
+                        <td style="width:200px;">
                             <span class="p-column-title">Category</span>
                             {{product.category}}
                         </td>
-                        <td>
+                        <td style="width:200px;">
                             <span class="p-column-title">Price</span>
                             {{product.price | currency:'USD'}}
                         </td>
-                        <td>
+                        <td style="width:100px;">
                             <button pButton type="button" icon="pi pi-search" class="p-button-success p-button-rounded p-button-outlined mr-2 mb-1"></button>
                             <button pButton type="button" icon="pi pi-times" class="p-button-danger p-button-rounded p-button-outlined mb-1"></button>
                         </td>
