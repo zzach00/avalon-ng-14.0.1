@@ -19,15 +19,15 @@ import { AppMainComponent } from './app.main.component';
                 </div>
 
                 <h6>Layout Color Mode</h6>
-                <div class="p-grid">
-                    <div class="p-col-6">
-                        <div class="p-field-radiobutton">
+                <div class="grid">
+                    <div class="col-6">
+                        <div class="field-radiobutton">
                             <p-radioButton inputId="dark" name="layoutColor" value="dark" [(ngModel)]="app.layoutColor" (onClick)="onLayoutColorChange($event, 'dark')"></p-radioButton>
                             <label for="dark">Dark</label>
                         </div>
                     </div>
-                    <div class="p-col-6">
-                        <div class="p-field-radiobutton">
+                    <div class="col-6">
+                        <div class="field-radiobutton">
                             <p-radioButton inputId="light" name="layoutColor" value="light" [(ngModel)]="app.layoutColor" (onClick)="onLayoutColorChange($event, 'light')"></p-radioButton>
                             <label for="light">Light</label>
                         </div>
@@ -35,16 +35,16 @@ import { AppMainComponent } from './app.main.component';
                 </div>
 
                 <h6 style="margin-top: 0;">Menu Color Mode</h6>
-                <div class="p-grid">
-                    <div class="p-col-6">
-                        <div class="p-field-radiobutton">
+                <div class="grid">
+                    <div class="col-6">
+                        <div class="field-radiobutton">
                             <p-radioButton inputId="dark" name="menuColor" [value]="true" [(ngModel)]="app.darkMenu"
                                            [disabled]="app.layoutColor === 'dark'" [style]="{'cursor': app.layoutColor === 'dark' ? 'default' : 'pointer'}"></p-radioButton>
                             <label for="dark">Dark</label>
                         </div>
                     </div>
-                    <div class="p-col-6">
-                        <div class="p-field-radiobutton">
+                    <div class="col-6">
+                        <div class="field-radiobutton">
                             <p-radioButton inputId="light" name="menuColor" [value]="false" [(ngModel)]="app.darkMenu"
                                            [disabled]="app.layoutColor === 'dark'" [style]="{'cursor': app.layoutColor === 'dark' ? 'default' : 'pointer'}"></p-radioButton>
                             <label for="light">Light</label>
@@ -53,29 +53,29 @@ import { AppMainComponent } from './app.main.component';
                 </div>
 
                 <h6 style="margin-top: 0;">Menu Mode</h6>
-                <div class="p-grid">
-                    <div class="p-col-6">
-                        <div class="p-field-radiobutton">
+                <div class="grid">
+                    <div class="col-6">
+                        <div class="field-radiobutton">
                             <p-radioButton inputId="static" name="layoutMode" value="static" [(ngModel)]="app.layoutMode"></p-radioButton>
                             <label for="static">Static</label>
                         </div>
                     </div>
-                    <div class="p-col-6">
-                        <div class="p-field-radiobutton">
+                    <div class="col-6">
+                        <div class="field-radiobutton">
                             <p-radioButton inputId="overlay" name="layoutMode" value="overlay" [(ngModel)]="app.layoutMode"></p-radioButton>
                             <label for="overlay">Overlay</label>
                         </div>
                     </div>
                 </div>
-                <div class="p-grid">
-                    <div class="p-col-6">
-                        <div class="p-field-radiobutton">
+                <div class="grid">
+                    <div class="col-6">
+                        <div class="field-radiobutton">
                             <p-radioButton inputId="horizontal" name="layoutMode" value="horizontal" [(ngModel)]="app.layoutMode" (onClick)="app.profileMode = 'top'"></p-radioButton>
                             <label for="horizontal">Horizontal</label>
                         </div>
                     </div>
-                    <div class="p-col-6">
-                        <div class="p-field-radiobutton">
+                    <div class="col-6">
+                        <div class="field-radiobutton">
                             <p-radioButton inputId="slim" name="layoutMode" value="slim" [(ngModel)]="app.layoutMode"></p-radioButton>
                             <label for="slim">Slim</label>
                         </div>
@@ -83,15 +83,15 @@ import { AppMainComponent } from './app.main.component';
                 </div>
 
                 <h6 style="margin-top: 0;">User Profile Mode</h6>
-                <div class="p-grid">
-                    <div class="p-col-6">
-                        <div class="p-field-radiobutton">
+                <div class="grid">
+                    <div class="col-6">
+                        <div class="field-radiobutton">
                             <p-radioButton inputId="inline" name="profileMode" value="inline" [(ngModel)]="app.profileMode"[disabled]="appMain.isHorizontal()"></p-radioButton>
                             <label for="inline">Inline</label>
                         </div>
                     </div>
-                    <div class="p-col-6">
-                        <div class="p-field-radiobutton">
+                    <div class="col-6">
+                        <div class="field-radiobutton">
                             <p-radioButton inputId="top" name="profileMode" value="top" [(ngModel)]="app.profileMode" [disabled]="appMain.isHorizontal()"></p-radioButton>
                             <label for="top">Overlay</label>
                         </div>
@@ -99,12 +99,12 @@ import { AppMainComponent } from './app.main.component';
                 </div>
 
                 <h6 style="margin-top: 0">Input Background</h6>
-                <div class="p-formgroup-inline">
-                    <div class="p-field-radiobutton">
+                <div class="formgroup-inline">
+                    <div class="field-radiobutton">
                         <p-radioButton inputId="input_outlined" name="inputstyle" [(ngModel)]="app.inputStyle"  value="outlined"></p-radioButton>
                         <label for="input_outlined">Outlined</label>
                     </div>
-                    <div class="p-field-radiobutton">
+                    <div class="field-radiobutton">
                         <p-radioButton inputId="input_filled" name="inputstyle" [(ngModel)]="app.inputStyle" value="filled"></p-radioButton>
                         <label for="input_filled">Filled</label>
                     </div>

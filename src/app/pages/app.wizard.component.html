@@ -20,20 +20,20 @@
 
         <div class="wizard-content register" [ngClass]="{'active-content': activeContent === 'register'}">
             <div class="content-header">
-                <div class="p-grid">
-                    <div class="p-col-6 title">
+                <div class="grid">
+                    <div class="col-6 title">
                         <h1>REGISTER</h1>
                         <span>Please complete steps to register</span>
                     </div>
-                    <div class="p-col-6 icon">
+                    <div class="col-6 icon">
                         <img src="assets/layout/images/extensions/icon-register.svg" class="layout-image" alt="avalon-layout" />
                     </div>
                 </div>
             </div>
 
             <div class="content">
-                <div class="p-grid forms">
-                    <div class="p-col-12 p-md-6">
+                <div class="grid forms">
+                    <div class="col-12 md:col-6">
                         <label for="name">Username</label>
                         <input id="name" type="text" placeholder="Name" class="form-element"  pInputText/>
 
@@ -44,7 +44,7 @@
                         <input id="password" type="password" placeholder="Password" class="form-element"  pInputText/>
                     </div>
 
-                    <div class="p-col-12 p-md-6">
+                    <div class="col-12 md:col-6">
                         <label for="timezone">Timezone</label>
                         <p-dropdown id="timezone" [options]="dropdownOptions1" [(ngModel)]="selectDropdownOptions1" styleClass="form-element"></p-dropdown>
 
@@ -55,7 +55,7 @@
                         <p-dropdown id="avalon" [options]="dropdownOptions2" [(ngModel)]="selectDropdownOptions2" styleClass="form-element"></p-dropdown>
                     </div>
                 </div>
-                <div class="p-grid button p-m-0">
+                <div class="grid button m-0">
                     <button pButton class="continue-button" type="button" label="CONTINUE" style="width: 100%" (click)="clickNext('tier')"></button>
                 </div>
             </div>
@@ -64,12 +64,12 @@
 
         <div class="wizard-content tier" [ngClass]="{'active-content': activeContent === 'tier'}">
             <div class="content-header">
-                <div class="p-grid">
-                    <div class="p-col-6 title">
+                <div class="grid">
+                    <div class="col-6 title">
                         <h1>CHOOSE TIER</h1>
                         <span>Now choose your account type</span>
                     </div>
-                    <div class="p-col-6 icon">
+                    <div class="col-6 icon">
                         <img src="assets/layout/images/extensions/icon-tier@2x.png" class="layout-image" alt="avalon-layout" />
                     </div>
                 </div>
@@ -77,15 +77,15 @@
 
 
             <div class="content">
-                <div class="p-grid cards">
-                    <div class="p-col-12 p-md-4">
+                <div class="grid cards">
+                    <div class="col-12 md:col-4">
                         <div class="tier-card basic" [ngClass]="{'active-tier-card': activeCard === 'basic'}" (click)="selectTier('basic')">
                             <div class="tier-card-header">
-                                <div class="p-col-8">
+                                <div class="col-8">
                                     <h1>BEGINNER</h1>
                                     <span>For starters and side projects</span>
                                 </div>
-                                <div class="p-col-4 icon">
+                                <div class="col-4 icon">
                                     <i class="pi pi-check" ></i>
                                 </div>
                             </div>
@@ -100,14 +100,14 @@
                         </div>
                     </div>
 
-                    <div class="p-col-12 p-md-4 ">
+                    <div class="col-12 md:col-4 ">
                         <div class="tier-card pro" [ngClass]="{'active-tier-card': activeCard === 'pro'}" (click)="selectTier('pro')">
                             <div class="tier-card-header">
-                                <div class="p-col-8">
+                                <div class="col-8">
                                     <h1>PROFFESIONAL</h1>
                                     <span>For companies</span>
                                 </div>
-                                <div class="p-col-4 icon">
+                                <div class="col-4 icon">
                                     <i class="pi pi-check" ></i>
                                 </div>
                             </div>
@@ -125,14 +125,14 @@
                         </div>
                     </div>
 
-                    <div class="p-col-12 p-md-4">
+                    <div class="col-12 md:col-4">
                         <div class="tier-card pro-plus" [ngClass]="{'active-tier-card': activeCard === 'pro-plus'}" (click)="selectTier('pro-plus')">
                             <div class="tier-card-header">
-                                <div class="p-col-8">
+                                <div class="col-8">
                                     <h1>ENTERPRISE</h1>
                                     <span>For custom needs</span>
                                 </div>
-                                <div class="p-col-4 icon">
+                                <div class="col-4 icon">
                                     <i class="pi pi-check" ></i>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-grid button p-m-0">
+                <div class="grid button m-0">
                     <button pButton class="continue-button" type="button" label="CONTINUE" style="width: 100%" (click)="clickNext('payment')"></button>
                 </div>
             </div>
@@ -161,135 +161,135 @@
 
 
         <div class="wizard-content payment" [ngClass]="{'active-content': activeContent === 'payment'}">
-            <div class="p-grid p-m-0">
-                <div class="p-col-12 p-md-8 payment-info">
+            <div class="grid m-0">
+                <div class="col-12 md:col-8 payment-info">
                     <div class="content-header">
-                        <div class="p-grid">
-                            <div class="p-col-12 title">
+                        <div class="grid">
+                            <div class="col-12 title">
                                 <h1>PAYMENT</h1>
                                 <span>Give me the money</span>
                             </div>
                         </div>
                     </div>
                     <div class="content">
-                        <div class="p-grid forms">
-                            <div class="p-col-12">
+                        <div class="grid forms">
+                            <div class="col-12">
                                 <label for="cardName">Cardholder Name</label>
                                 <input id="cardName" type="text" placeholder="Cardholder Name" class="form-element"  pInputText/>
                             </div>
 
-                            <div class="p-col-12 p-md-6">
+                            <div class="col-12 md:col-6">
                                 <label for="cardNumber">Card Number</label>
                                 <input id="cardNumber" type="text" placeholder="Card Number" class="form-element"  pInputText/>
                             </div>
 
-                            <div class="p-col-6 p-md-3">
+                            <div class="col-6 md:col-3">
                                 <label for="cardDate">Date</label>
                                 <input id="cardDate" type="text" placeholder="MO/YE" class="form-element"  pInputText/>
                             </div>
 
-                            <div class="p-col-6 p-md-3">
+                            <div class="col-6 md:col-3">
                                 <label for="ccv">CCV</label>
                                 <input id="ccv" type="text" placeholder="XYZ" class="form-element"  pInputText/>
                             </div>
                         </div>
 
-                        <div class="p-grid checkbox p-mx-0">
+                        <div class="grid checkbox mx-0">
                             <p-checkbox [(ngModel)]="checked" binary="true" label="Save credit card information for future usage"></p-checkbox>
                         </div>
-                        <div class="p-grid button p-m-0">
+                        <div class="grid button m-0">
                             <button pButton type="button" class="continue-button" label="CONTINUE" style="width: 100%"></button>
                         </div>
                     </div>
                 </div>
 
-                <div class="p-col-12 p-md-4 order-info">
+                <div class="col-12 md:col-4 order-info">
                     <div class="order order-default">
                         <div class="summary">
-                            <div class="p-grid">
-                                <div class="p-col-12">
+                            <div class="grid">
+                                <div class="col-12">
                                     <h1>ORDER SUMMARY</h1>
                                 </div>
                             </div>
-                            <div class="p-grid">
-                                <div class="p-col-8">Tier - </div>
-                                <div class="p-col-4 price">$0.00</div>
+                            <div class="grid">
+                                <div class="col-8">Tier - </div>
+                                <div class="col-4 price">$0.00</div>
                             </div>
-                            <div class="p-grid">
-                                <div class="p-col-8">VAT (%18)</div>
-                                <div class="p-col-4 price">$0.00</div>
+                            <div class="grid">
+                                <div class="col-8">VAT (%18)</div>
+                                <div class="col-4 price">$0.00</div>
                             </div>
                         </div>
-                        <div class="p-grid total">
-                            <div class="p-col-8">Total</div>
-                            <div class="p-col-4 price">$0.00</div>
-                            <div class="p-col-12">
+                        <div class="grid total">
+                            <div class="col-8">Total</div>
+                            <div class="col-4 price">$0.00</div>
+                            <div class="col-12">
                                 Please select one tier.
                             </div>
                         </div>
                     </div>
                     <div class="order order-basic" [ngClass]="{'selected-order': activeCard === 'basic'}">
                         <div class="summary">
-                            <div class="p-grid">
-                                <div class="p-col-12">
+                            <div class="grid">
+                                <div class="col-12">
                                     <h1>ORDER SUMMARY</h1>
                                 </div>
                             </div>
-                            <div class="p-grid">
-                                <div class="p-col-8">Tier - Basic</div>
-                                <div class="p-col-4 price">$5.00</div>
+                            <div class="grid">
+                                <div class="col-8">Tier - Basic</div>
+                                <div class="col-4 price">$5.00</div>
                             </div>
-                            <div class="p-grid">
-                                <div class="p-col-8">VAT (%18)</div>
-                                <div class="p-col-4 price">$0.90</div>
+                            <div class="grid">
+                                <div class="col-8">VAT (%18)</div>
+                                <div class="col-4 price">$0.90</div>
                             </div>
 
                         </div>
-                        <div class="p-grid total">
-                            <div class="p-col-8">Total</div>
-                            <div class="p-col-4 price">$5.90</div>
+                        <div class="grid total">
+                            <div class="col-8">Total</div>
+                            <div class="col-4 price">$5.90</div>
                         </div>
                     </div>
                     <div class="order order-pro" [ngClass]="{'selected-order': activeCard === 'pro'}">
                         <div class="summary">
-                            <div class="p-grid">
-                                <div class="p-col-12">
+                            <div class="grid">
+                                <div class="col-12">
                                     <h1>ORDER SUMMARY</h1>
                                 </div>
                             </div>
-                            <div class="p-grid">
-                                <div class="p-col-8">Tier - Pro</div>
-                                <div class="p-col-4 price">$25.00</div>
+                            <div class="grid">
+                                <div class="col-8">Tier - Pro</div>
+                                <div class="col-4 price">$25.00</div>
                             </div>
-                            <div class="p-grid">
-                                <div class="p-col-8">VAT (%18)</div>
-                                <div class="p-col-4 price">$4.50</div>
+                            <div class="grid">
+                                <div class="col-8">VAT (%18)</div>
+                                <div class="col-4 price">$4.50</div>
                             </div>
                         </div>
-                        <div class="p-grid total">
-                            <div class="p-col-8">Total</div>
-                            <div class="p-col-4 price">$29.50</div>
+                        <div class="grid total">
+                            <div class="col-8">Total</div>
+                            <div class="col-4 price">$29.50</div>
                         </div>
                     </div>
                     <div class="order order-pro-plus" [ngClass]="{'selected-order': activeCard === 'pro-plus'}">
                         <div class="summary">
-                            <div class="p-grid">
-                                <div class="p-col-12">
+                            <div class="grid">
+                                <div class="col-12">
                                     <h1>ORDER SUMMARY</h1>
                                 </div>
                             </div>
-                            <div class="p-grid">
-                                <div class="p-col-8">Tier - Pro+</div>
-                                <div class="p-col-4 price">$50.00</div>
+                            <div class="grid">
+                                <div class="col-8">Tier - Pro+</div>
+                                <div class="col-4 price">$50.00</div>
                             </div>
-                            <div class="p-grid">
-                                <div class="p-col-8">VAT (%18)</div>
-                                <div class="p-col-4 price">$9.00</div>
+                            <div class="grid">
+                                <div class="col-8">VAT (%18)</div>
+                                <div class="col-4 price">$9.00</div>
                             </div>
                         </div>
-                        <div class="p-grid total">
-                            <div class="p-col-8">Total</div>
-                            <div class="p-col-4 price">$59.00</div>
+                        <div class="grid total">
+                            <div class="col-8">Total</div>
+                            <div class="col-4 price">$59.00</div>
                         </div>
                     </div>
                 </div>
