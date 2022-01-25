@@ -1,5 +1,5 @@
-<div class="dashboard p-grid">
-    <div class="p-col-12 p-md-6 p-lg-3">
+<div class="dashboard grid">
+    <div class="col-12 md:col-6 lg:col-3">
         <div class="widget-overview overview-box-1">
             <div class="overview-box-title">
                 <span>Unread Messages</span>
@@ -7,7 +7,7 @@
             <div class="overview-box-count">150 <i class="pi pi-arrow-up"></i></div>
         </div>
     </div>
-    <div class="p-col-12 p-md-6 p-lg-3">
+    <div class="col-12 md:col-6 lg:col-3">
         <div class="widget-overview overview-box-2">
             <div class="overview-box-title">
                 <span>Check-ins</span>
@@ -15,7 +15,7 @@
             <div class="overview-box-count">532 <i class="pi pi-arrow-up"></i></div>
         </div>
     </div>
-    <div class="p-col-12 p-md-6 p-lg-3">
+    <div class="col-12 md:col-6 lg:col-3">
         <div class="widget-overview overview-box-3">
             <div class="overview-box-title">
                 <span>Files</span>
@@ -23,7 +23,7 @@
             <div class="overview-box-count">450 <i class="pi pi-arrow-down"></i></div>
         </div>
     </div>
-    <div class="p-col-12 p-md-6 p-lg-3">
+    <div class="col-12 md:col-6 lg:col-3">
         <div class="widget-overview overview-box-4">
             <div class="overview-box-title">
                 <span>Users</span>
@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <div class="p-col-12 p-lg-6">
+    <div class="col-12 lg:col-6">
         <div class="card widget-graph">
             <h5>Weekly Overview</h5>
 
@@ -40,18 +40,18 @@
         </div>
     </div>
 
-    <div class="p-col-12 p-lg-6">
+    <div class="col-12 lg:col-6">
         <div class="card widget-goals">
-            <div class="p-d-flex p-ai-center p-jc-between p-mb-4">
+            <div class="flex align-items-center justify-content-between mb-4">
                 <h5>Quarter Goals</h5>
-                <div class="p-ml-auto">
+                <div class="ml-auto">
                     <button pButton pRipple icon="pi pi-ellipsis-v" class="p-button-text p-button-plain p-button-rounded" (click)="menu.toggle($event)"></button>
                     <p-menu #menu [popup]="true" [model]="items"></p-menu>
                 </div>
             </div>
-            <div class="goals-progress p-p-3 p-mb-4">
+            <div class="goals-progress p-3 mb-4">
                 <span class="goals-progress-title">85% <span class="goals-progress-subtitle">(2125/2500)</span></span>
-                <ul class="p-mt-3 p-p-0 p-mx-0 p-d-flex">
+                <ul class="mt-3 p-0 mx-0 flex">
                     <li style="height:1rem" class="goals-progress-cyan"></li>
                     <li style="height:1rem" class="goals-progress-orange"></li>
                     <li style="height:1rem" class="goals-progress-pink"></li>
@@ -61,42 +61,42 @@
                 </ul>
             </div>
 
-            <ul class="p-mt-4 p-p-0 p-mx-0">
-                <li class="p-d-flex p-ai-center p-py-3 goals-list-item">
-                    <span style="width:1rem;height:1rem" class="goals-list-cyan p-mr-3"></span>
+            <ul class="mt-4 p-0 mx-0">
+                <li class="flex align-items-center py-3 goals-list-item">
+                    <span style="width:1rem;height:1rem" class="goals-list-cyan mr-3"></span>
                     <span class="goals-list-title">T-Shirt</span>
-                    <span class="goals-list-value p-ml-auto">89</span>
+                    <span class="goals-list-value ml-auto">89</span>
                 </li>
-                <li class="p-d-flex p-ai-center p-py-3 goals-list-item">
-                    <span style="width:1rem;height:1rem" class="goals-list-orange p-mr-3"></span>
+                <li class="flex align-items-center py-3 goals-list-item">
+                    <span style="width:1rem;height:1rem" class="goals-list-orange mr-3"></span>
                     <span class="goals-list-title">Controller</span>
-                    <span class="goals-list-value p-ml-auto">23</span>
+                    <span class="goals-list-value ml-auto">23</span>
                 </li>
-                <li class="p-d-flex p-ai-center p-py-3 goals-list-item">
-                    <span style="width:1rem;height:1rem" class="goals-list-pink p-mr-3"></span>
+                <li class="flex align-items-center py-3 goals-list-item">
+                    <span style="width:1rem;height:1rem" class="goals-list-pink mr-3"></span>
                     <span class="goals-list-title">Phone Case</span>
-                    <span class="goals-list-value p-ml-auto">134</span>
+                    <span class="goals-list-value ml-auto">134</span>
                 </li>
-                <li class="p-d-flex p-ai-center p-py-3 goals-list-item">
-                    <span style="width:1rem;height:1rem" class="goals-list-purple p-mr-3"></span>
+                <li class="flex align-items-center py-3 goals-list-item">
+                    <span style="width:1rem;height:1rem" class="goals-list-purple mr-3"></span>
                     <span class="goals-list-title">Purple Band</span>
-                    <span class="goals-list-value p-ml-auto">42</span>
+                    <span class="goals-list-value ml-auto">42</span>
                 </li>
-                <li class="p-d-flex p-ai-center p-py-3 goals-list-item">
-                    <span style="width:1rem;height:1rem" class="goals-list-blue p-mr-3"></span>
+                <li class="flex align-items-center py-3 goals-list-item">
+                    <span style="width:1rem;height:1rem" class="goals-list-blue mr-3"></span>
                     <span class="goals-list-title">Blue Band</span>
-                    <span class="goals-list-value p-ml-auto">63</span>
+                    <span class="goals-list-value ml-auto">63</span>
                 </li>
             </ul>
         </div>
     </div>
 
-    <div class="p-col-12 p-lg-4 p-p-3">
+    <div class="col-12 lg:col-4 p-3">
         <div class="widget-colored-stats card">
-            <div class="p-d-flex p-ai-center p-jc-between">
+            <div class="flex align-items-center justify-content-between">
                 <div>
                     <span class="stats-value">450</span>
-                    <p class="p-mt-2 p-mb-0 stats-title">Reviews Received</p>
+                    <p class="mt-2 mb-0 stats-title">Reviews Received</p>
                 </div>
                 <div>
                     <img src="assets/layout/images/dashboard/stats-illustration-1.svg" />
@@ -105,12 +105,12 @@
         </div>
     </div>
 
-    <div class="p-col-12 p-lg-4 p-p-3">
+    <div class="col-12 lg:col-4 p-3">
         <div class="widget-colored-stats card">
-            <div class="p-d-flex p-ai-center p-jc-between">
+            <div class="flex align-items-center justify-content-between">
                 <div>
                     <span class="stats-value">71K</span>
-                    <p class="p-mt-2 p-mb-0 stats-title">Unique Visitors</p>
+                    <p class="mt-2 mb-0 stats-title">Unique Visitors</p>
                 </div>
                 <div>
                     <img src="assets/layout/images/dashboard/stats-illustration-2.svg" />
@@ -119,12 +119,12 @@
         </div>
     </div>
 
-    <div class="p-col-12 p-lg-4 p-p-3">
+    <div class="col-12 lg:col-4 p-3">
         <div class="widget-colored-stats card">
-            <div class="p-d-flex p-ai-center p-jc-between">
+            <div class="flex align-items-center justify-content-between">
                 <div>
                     <span class="stats-value">757</span>
-                    <p class="p-mt-2 p-mb-0 stats-title">Payments Processed</p>
+                    <p class="mt-2 mb-0 stats-title">Payments Processed</p>
                 </div>
                 <div>
                     <img src="assets/layout/images/dashboard/stats-illustration-3.svg" />
@@ -133,127 +133,127 @@
         </div>
     </div>
 
-    <div class="p-col-12 p-lg-8">
-        <div class="card widget-incard p-p-4">
-            <div class="p-d-flex p-ai-center p-jc-between p-mb-4">
+    <div class="col-12 lg:col-8">
+        <div class="card widget-incard p-4">
+            <div class="flex align-items-center justify-content-between mb-4">
                 <h5>Files</h5>
                 <button pButton pRipple icon="pi pi-refresh" class="p-button-rounded p-button-outlined"></button>
             </div>
 
-            <div class="p-grid p-mr-0">
-                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
-                    <div class="p-text-center incard-item">
-                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+            <div class="grid mr-0">
+                <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 p-3">
+                    <div class="text-center incard-item">
+                        <div class="flex align-items-center justify-content-center mb-3 mx-auto incard-image" style="width:90px; height:90px">
                             <img src="assets/layout/images/dashboard/word.svg" style="width: 48px;height: 48px" />
                         </div>
                         <span class="incard-title">resume.docx</span>
-                        <div class="incard-size p-mt-2">520KB</div>
+                        <div class="incard-size mt-2">520KB</div>
                     </div>
                 </div>
-                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
-                    <div class="p-text-center incard-item">
-                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 p-3">
+                    <div class="text-center incard-item">
+                        <div class="flex align-items-center justify-content-center mb-3 mx-auto incard-image" style="width:90px; height:90px">
                             <img src="assets/layout/images/dashboard/excel.svg" style="width: 48px;height: 48px" />
                         </div>
                         <span class="incard-title">customers.xlsx</span>
-                        <div class="incard-size p-mt-2">120KB</div>
+                        <div class="incard-size mt-2">120KB</div>
                     </div>
                 </div>
-                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
-                    <div class="p-text-center incard-item">
-                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 p-3">
+                    <div class="text-center incard-item">
+                        <div class="flex align-items-center justify-content-center mb-3 mx-auto incard-image" style="width:90px; height:90px">
                             <img src="assets/layout/images/dashboard/excel.svg" style="width: 48px;height: 48px" />
                         </div>
                         <span class="incard-title">stats.xlsx</span>
-                        <div class="incard-size p-mt-2">500KB</div>
+                        <div class="incard-size mt-2">500KB</div>
                     </div>
                 </div>
-                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
-                    <div class="p-text-center incard-item">
-                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 p-3">
+                    <div class="text-center incard-item">
+                        <div class="flex align-items-center justify-content-center mb-3 mx-auto incard-image" style="width:90px; height:90px">
                             <img src="assets/layout/images/dashboard/ps.svg" style="width: 48px;height: 48px" />
                         </div>
                         <span class="incard-title">mock.ps</span>
-                        <div class="incard-size p-mt-2">220KB</div>
+                        <div class="incard-size mt-2">220KB</div>
                     </div>
                 </div>
-                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
-                    <div class="p-text-center incard-item">
-                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 p-3">
+                    <div class="text-center incard-item">
+                        <div class="flex align-items-center justify-content-center mb-3 mx-auto incard-image" style="width:90px; height:90px">
                             <img src="assets/layout/images/dashboard/atom.svg" style="width: 48px;height: 48px" />
                         </div>
                         <span class="incard-title">template.js</span>
-                        <div class="incard-size p-mt-2">10KB</div>
+                        <div class="incard-size mt-2">10KB</div>
                     </div>
                 </div>
-                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
-                    <div class="p-text-center incard-item">
-                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 p-3">
+                    <div class="text-center incard-item">
+                        <div class="flex align-items-center justify-content-center mb-3 mx-auto incard-image" style="width:90px; height:90px">
                             <img src="assets/layout/images/dashboard/code.svg" style="width: 48px;height: 48px" />
                         </div>
                         <span class="incard-title">main.css</span>
-                        <div class="incard-size p-mt-2">10KB</div>
+                        <div class="incard-size mt-2">10KB</div>
                     </div>
                 </div>
-                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
-                    <div class="p-text-center incard-item">
-                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 p-3">
+                    <div class="text-center incard-item">
+                        <div class="flex align-items-center justify-content-center mb-3 mx-auto incard-image" style="width:90px; height:90px">
                             <img src="assets/layout/images/dashboard/ai.svg" style="width: 48px;height: 48px" />
                         </div>
                         <span class="incard-title">poc.ai</span>
-                        <div class="incard-size p-mt-2">4.2MB</div>
+                        <div class="incard-size mt-2">4.2MB</div>
                     </div>
                 </div>
-                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
-                    <div class="p-text-center incard-item">
-                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 p-3">
+                    <div class="text-center incard-item">
+                        <div class="flex align-items-center justify-content-center mb-3 mx-auto incard-image" style="width:90px; height:90px">
                             <img src="assets/layout/images/dashboard/word.svg" style="width: 48px;height: 48px" />
                         </div>
                         <span class="incard-title">sales.docx</span>
-                        <div class="incard-size p-mt-2">420KB</div>
+                        <div class="incard-size mt-2">420KB</div>
                     </div>
                 </div>
-                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
-                    <div class="p-text-center incard-item">
-                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 p-3">
+                    <div class="text-center incard-item">
+                        <div class="flex align-items-center justify-content-center mb-3 mx-auto incard-image" style="width:90px; height:90px">
                             <img src="assets/layout/images/dashboard/word.svg" style="width: 48px;height: 48px" />
                         </div>
                         <span class="incard-title">mynotes.one</span>
-                        <div class="incard-size p-mt-2">60KB</div>
+                        <div class="incard-size mt-2">60KB</div>
                     </div>
                 </div>
-                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
-                    <div class="p-text-center incard-item">
-                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 p-3">
+                    <div class="text-center incard-item">
+                        <div class="flex align-items-center justify-content-center mb-3 mx-auto incard-image" style="width:90px; height:90px">
                             <img src="assets/layout/images/dashboard/code.svg" style="width: 48px;height: 48px" />
                         </div>
                         <span class="incard-title">layout.css</span>
-                        <div class="incard-size p-mt-2">25KB</div>
+                        <div class="incard-size mt-2">25KB</div>
                     </div>
                 </div>
-                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
-                    <div class="p-text-center incard-item">
-                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 p-3">
+                    <div class="text-center incard-item">
+                        <div class="flex align-items-center justify-content-center mb-3 mx-auto incard-image" style="width:90px; height:90px">
                             <img src="assets/layout/images/dashboard/word.svg" style="width: 48px;height: 48px" />
                         </div>
                         <span class="incard-title">reports.docx</span>
-                        <div class="incard-size p-mt-2">120KB</div>
+                        <div class="incard-size mt-2">120KB</div>
                     </div>
                 </div>
-                <div class="p-col-12 p-sm-6 p-md-4 p-lg-3 p-xl-2 p-p-3">
-                    <div class="p-text-center incard-item">
-                        <div class="p-d-flex p-ai-center p-jc-center p-mb-3 p-mx-auto incard-image" style="width:90px; height:90px">
+                <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 p-3">
+                    <div class="text-center incard-item">
+                        <div class="flex align-items-center justify-content-center mb-3 mx-auto incard-image" style="width:90px; height:90px">
                             <img src="assets/layout/images/dashboard/ps.svg" style="width: 48px;height: 48px" />
                         </div>
                         <span class="incard-title">design.psd</span>
-                        <div class="incard-size p-mt-2">1.2MB</div>
+                        <div class="incard-size mt-2">1.2MB</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="p-col-12 p-lg-4">
+    <div class="col-12 lg:col-4">
         <div class="card widget-contacts">
             <h5>Team</h5>
             <ul>
@@ -321,7 +321,7 @@
         </div>
     </div>
 
-    <div class="p-col-12 p-lg-8">
+    <div class="col-12 lg:col-8">
         <div class="card widget-chat">
             <h5>Chat</h5>
             <ul>
@@ -387,25 +387,25 @@
                 </ng-template>
                 <ng-template pTemplate="body" let-product>
                     <tr>
-                        <td>
+                        <td style="width:100px;">
                             <span class="p-column-title">Image</span>
                             <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.image" width="50px" />
                         </td>
-                        <td>
+                        <td style="width:200px;">
                             <span class="p-column-title">Name</span>
                             {{product.name}}
                         </td>
-                        <td>
+                        <td style="width:200px;">
                             <span class="p-column-title">Category</span>
                             {{product.category}}
                         </td>
-                        <td>
+                        <td style="width:200px;">
                             <span class="p-column-title">Price</span>
                             {{product.price | currency:'USD'}}
                         </td>
-                        <td>
-                            <button pButton type="button" icon="pi pi-search" class="p-button-success p-button-rounded p-button-outlined p-mr-2 p-mb-1"></button>
-                            <button pButton type="button" icon="pi pi-times" class="p-button-danger p-button-rounded p-button-outlined p-mb-1"></button>
+                        <td style="width:100px;">
+                            <button pButton type="button" icon="pi pi-search" class="p-button-success p-button-rounded p-button-outlined mr-2 mb-1"></button>
+                            <button pButton type="button" icon="pi pi-times" class="p-button-danger p-button-rounded p-button-outlined mb-1"></button>
                         </td>
                     </tr>
                 </ng-template>
@@ -413,14 +413,14 @@
         </div>
     </div>
 
-    <div class="p-col-12 p-lg-4">
+    <div class="col-12 lg:col-4">
         <div class="card widget-timeline p-fluid">
-            <div class="p-grid">
-                <div class="p-col-3">
+            <div class="grid">
+                <div class="col-3">
                     <span class="event-time">just now</span>
                     <i class="pi pi-globe" style="color:#3d8bfd"></i>
                 </div>
-                <div class="p-col-9">
+                <div class="col-9">
                     <span class="event-owner" style="color:#3d8bfd">Katherine May</span>
                     <span class="event-text">Lorem ipsun dolor amet</span>
                     <div class="event-content">
@@ -428,29 +428,29 @@
                     </div>
                 </div>
 
-                <div class="p-col-3">
+                <div class="col-3">
                     <span class="event-time">12h ago</span>
                     <i class="pi pi-star" style="color:#fd9843"></i>
                 </div>
-                <div class="p-col-9">
+                <div class="col-9">
                     <span class="event-owner" style="color:#fd9843">Brandon Santos</span>
                     <span class="event-text">Ab nobis, magnam sunt eum. Laudantium, repudiandae, similique!.</span>
                 </div>
 
-                <div class="p-col-3">
+                <div class="col-3">
                     <span class="event-time">15h ago</span>
                     <i class="pi pi-comment" style="color:#8c68cd"></i>
                 </div>
-                <div class="p-col-9">
+                <div class="col-9">
                     <span class="event-owner" style="color:#8c68cd">Stephan Ward</span>
                     <span class="event-text">Omnis veniam quibusdam ratione est repellat qui nam quisquam ab mollitia dolores ullam voluptates, similique, dignissimos.</span>
                 </div>
 
-                <div class="p-col-3">
+                <div class="col-3">
                     <span class="event-time">2d ago</span>
                     <i class="pi pi-map-marker" style="color:#de5c9d"></i>
                 </div>
-                <div class="p-col-9">
+                <div class="col-9">
                     <span class="event-owner" style="color:#de5c9d">Jason Smith</span>
                     <span class="event-text">Laudantium, repudiandae, similique!</span>
                     <div class="event-content">
@@ -458,25 +458,25 @@
                     </div>
                 </div>
 
-                <div class="p-col-3">
+                <div class="col-3">
                     <span class="event-time">1w ago</span>
                     <i class="pi pi-heart" style="color:#3dd5f3"></i>
                 </div>
-                <div class="p-col-9">
+                <div class="col-9">
                     <span class="event-owner" style="color:#3dd5f3">Kevin Cox</span>
                     <span class="event-text">Quibusdam ratione est repellat qui nam quisquam veniam quibusdam ratione.</span>
                 </div>
 
-                <div class="p-col-3">
+                <div class="col-3">
                     <span class="event-time">2w ago</span>
                     <i class="pi pi-compass" style="color:#479f76"></i>
                 </div>
-                <div class="p-col-9">
+                <div class="col-9">
                     <span class="event-owner" style="color:#479f76">Walter White</span>
                     <span class="event-text">I am the one who knocks!</span>
                 </div>
 
-                <div class="p-col-12">
+                <div class="col-12">
                     <button type="button" pButton label="Refresh" icon="pi pi-refresh" class="rounded-btn raised-btn"></button>
                 </div>
             </div>

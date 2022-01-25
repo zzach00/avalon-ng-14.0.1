@@ -86,6 +86,7 @@ import {TooltipModule} from 'primeng/tooltip';
 import {TreeModule} from 'primeng/tree';
 import {TreeTableModule} from 'primeng/treetable';
 import {VirtualScrollerModule} from 'primeng/virtualscroller';
+import {BlockViewer} from './blocks/blockviewer/blockviewer.component';
 
 import {AppCodeModule} from './app.code.component';
 import {AppComponent} from './app.component';
@@ -126,15 +127,8 @@ import {EmptyDemoComponent} from './demo/view/emptydemo.component';
 import {ChartsDemoComponent} from './demo/view/chartsdemo.component';
 import {FileDemoComponent} from './demo/view/filedemo.component';
 import {DocumentationComponent} from './demo/view/documentation.component';
-import {DisplayComponent} from './utilities/display.component';
-import {ElevationComponent} from './utilities/elevation.component';
-import {FlexboxComponent} from './utilities/flexbox.component';
-import {GridComponent} from './utilities/grid.component';
 import {IconsComponent} from './utilities/icons.component';
-import {SpacingComponent} from './utilities/spacing.component';
-import {TypographyComponent} from './utilities/typography.component';
-import {TextComponent} from './utilities/text.component';
-import {WidgetsComponent} from './utilities/widgets.component';
+import {BlocksComponent} from './blocks/blocks/blocks.component';
 
 import {CountryService} from './demo/service/countryservice';
 import {EventService} from './demo/service/eventservice';
@@ -274,15 +268,7 @@ FullCalendarModule.registerPlugins([
         EmptyDemoComponent,
         FileDemoComponent,
         DocumentationComponent,
-        DisplayComponent,
-        ElevationComponent,
-        FlexboxComponent,
-        GridComponent,
         IconsComponent,
-        SpacingComponent,
-        TypographyComponent,
-        TextComponent,
-        WidgetsComponent,
         AppNotfoundComponent,
         AppErrorComponent,
         AppAccessdeniedComponent,
@@ -292,7 +278,9 @@ FullCalendarModule.registerPlugins([
         AppTimelineDemoComponent,
         AppInvoiceComponent,
         AppHelpComponent,
-        AppWizardComponent
+        AppWizardComponent,
+        BlockViewer,
+        BlocksComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
