@@ -17,7 +17,6 @@ import {ButtonDemoComponent} from './demo/view/buttondemo.component';
 import {PanelsDemoComponent} from './demo/view/panelsdemo.component';
 import {OverlaysDemoComponent} from './demo/view/overlaysdemo.component';
 import {MediaDemoComponent} from './demo/view/mediademo.component';
-import {MenusDemoComponent} from './demo/view/menusdemo.component';
 import {MessagesDemoComponent} from './demo/view/messagesdemo.component';
 import {MiscDemoComponent} from './demo/view/miscdemo.component';
 import {EmptyDemoComponent} from './demo/view/emptydemo.component';
@@ -56,7 +55,7 @@ import {AppTimelineDemoComponent} from './pages/app.timelinedemo.component';
                     {path: 'uikit/panel', component: PanelsDemoComponent},
                     {path: 'uikit/overlay', component: OverlaysDemoComponent},
                     {path: 'uikit/media', component: MediaDemoComponent},
-                    {path: 'uikit/menu', component: MenusDemoComponent},
+                    {path: 'uikit/menu', loadChildren: () => import('./demo/view/menus/menus.module').then(m => m.MenusModule)},
                     {path: 'uikit/message', component: MessagesDemoComponent},
                     {path: 'uikit/misc', component: MiscDemoComponent},
                     {path: 'uikit/charts', component: ChartsDemoComponent},

@@ -1,14 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {SelectItem} from 'primeng/api';
 import { ProductService } from '../service/productservice';
 import { Product } from '../domain/product';
 import { MenuItem } from 'primeng/api';
-
+import {ConfigService} from '../service/app.config.service';
+import {AppConfig} from '../domain/appconfig';
+import {Subscription} from'rxjs';
 @Component({
     templateUrl: './dashboard.component.html',
-    styleUrls: ['./tabledemo.scss']
 })
-export class DashboardDemoComponent implements OnInit {
+export class DashboardDemoComponent implements OnInit, OnDestroy {
 
     products: Product[];
 
@@ -20,9 +21,19 @@ export class DashboardDemoComponent implements OnInit {
 
     items: MenuItem[];
 
-    constructor(private productService: ProductService) { }
+    config: AppConfig;
+
+    subscription: Subscription;
+
+    constructor(private productService: ProductService, public configService: ConfigService) { }
 
     ngOnInit() {
+        this.config = this.configService.config;
+        this.subscription = this.configService.configUpdate$.subscribe(config => {
+            this.config = config;
+            this.updateChartOptions();
+        });
+
         this.productService.getProducts().then(data => this.products = data);
 
         this.items = [
@@ -103,6 +114,7 @@ export class DashboardDemoComponent implements OnInit {
         };
 
         this.getGradient();
+        this.updateChartOptions();
     }
 
     getGradient() {
@@ -129,5 +141,79 @@ export class DashboardDemoComponent implements OnInit {
         gradientFill.addColorStop(1, 'rgba(89, 53, 154, 0.34)');
         gradientFill.addColorStop(0, 'rgba(140, 104, 205, 0.2)');
         this.chartData.datasets[2].backgroundColor = gradientFill;
+    }
+
+    updateChartOptions() {
+        if (this.config.dark)
+            this.applyDarkTheme();
+        else
+            this.applyLightTheme();
+    }
+
+    applyLightTheme() {
+        this.chartOptions = {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#495057'
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: '#495057'
+                    },
+                    grid: {
+                        color:  '#ebedef',
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: '#495057'
+                    },
+                    grid: {
+                        color:  '#ebedef',
+                    }
+                },
+            }
+        };
+    }
+
+    applyDarkTheme() {
+        this.chartOptions = {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#ebedef'
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: '#ebedef'
+                    },
+                    grid: {
+                        color:  'rgba(160, 167, 181, .3)',
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: '#ebedef'
+                    },
+                    grid: {
+                        color:  'rgba(160, 167, 181, .3)',
+                    }
+                },
+            }
+        };
+
+    }
+
+    ngOnDestroy() {
+        if(this.subscription){
+            this.subscription.unsubscribe();
+        }
     }
 }

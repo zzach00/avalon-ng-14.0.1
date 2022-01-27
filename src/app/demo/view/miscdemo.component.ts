@@ -2,19 +2,6 @@ import {Component, OnInit} from '@angular/core';
 
 @Component({
     templateUrl: './miscdemo.component.html',
-    styles: [`
-		:host ::ng-deep .misc-demo .p-button.p-widget {
-		    min-width: 6rem;
-	    }
-
-		:host ::ng-deep .misc-demo .badges .p-badge {
-		    margin-right: .5rem;
-		}
-
-		:host ::ng-deep .misc-demo .badges .p-tag {
-			margin-right: .5rem;
-		}
-    `]
 })
 export class MiscDemoComponent implements OnInit {
 
