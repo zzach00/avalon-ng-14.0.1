@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import { AppComponent } from './app.component';
-import { AppMainComponent } from './app.main.component';
-
+import {AppComponent} from './app.component';
+import {AppMainComponent} from './app.main.component';
+import {AppConfig} from'./demo/domain/appconfig';
+import {ConfigService} from './demo/service/app.config.service';
+import {Subscription} from 'rxjs';
 @Component({
     selector: 'app-config',
     template: `
@@ -145,10 +147,19 @@ export class AppConfigComponent implements OnInit {
     themeColor = 'purple';
 
     layout = 'purple';
+    
+    config: AppConfig;
 
-    constructor(public app: AppComponent, public appMain: AppMainComponent) {}
+    subscription: Subscription;
+
+    constructor(public app: AppComponent, public appMain: AppMainComponent, public configService: ConfigService) {}
 
     ngOnInit() {
+        this.config = this.configService.config;
+        this.subscription = this.configService.configUpdate$.subscribe(config => {
+            this.config = config;
+        });
+
         this.flatLayoutColors = [
             {name: 'Blue', file: 'blue', color: '#0d6efd'},
             {name: 'Indigo', file: 'indigo', color: '#6610f2'},
@@ -183,6 +194,8 @@ export class AppConfigComponent implements OnInit {
         const newURL = urlTokens.join('/');
 
         this.replaceLink(themeLink, newURL);
+
+        this.configService.updateConfig({...this.config, ...{dark:this.app.layoutColor === 'dark'}});
     }
 
     changeLayout(layout: string) {

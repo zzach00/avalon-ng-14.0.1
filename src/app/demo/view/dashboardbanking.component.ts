@@ -5,7 +5,6 @@ import { ProductService } from '../service/productservice';
 
 @Component({
     templateUrl: './dashboardbanking.component.html',
-    styleUrls: ['./tabledemo.scss']
 })
 export class DashboardBankingComponent implements OnInit {
 
