@@ -1,0 +1,580 @@
+.p-button {
+    // color: $color-neutral-L6;
+    color: red;
+    background: $color-primary-7;
+    border: transparent;
+    height: $btn-height-lg;
+    padding: 0 1rem;
+    font-weight: $fw-label1;
+    font-size: $fs-label1;
+    line-height: $lh-label1;
+    letter-spacing: $ls-label1;
+    border-radius: $btn-border-rad-lg;
+//    transition: $formElementTransition;
+
+    &:hover {
+        background: $color-primary-8;
+    }
+    
+    &:active {
+        background: $color-primary-9;
+    }
+
+    &.p-button-outlined {
+        background: transparent;
+        color: $color-primary-D6;
+        border: $btn-border-size-2 solid $color-primary-D6;
+
+        &:hover {
+            background: $color-primary-1;
+        }
+        
+        &:enabled:active {
+            background: $color-primary-2;
+        }
+        
+        // &.p-button-plain {
+        //     color: $color-primary-D6;
+        //     border: none;
+            
+        //     &:enabled:hover {
+        //         background: $color-primary-1;
+        //     }
+            
+        //     &:enabled:active {
+        //         background: $color-primary-2;
+        //     }
+        // }
+    }
+
+    &.p-button-text {
+        background-color: transparent;
+        color: $color-primary-D6;
+        border-color: transparent;
+
+        &:enabled:hover {
+            background: $color-primary-1;
+        }
+
+        &:enabled:active {  
+            background: $color-primary-2;
+        }
+
+        &:focus-visible {
+            border: $btn-border-size-3 solid $color-primary-D1;
+        }
+
+        // &.p-button-plain {
+        //     color: $plainButtonTextColor;
+
+        //     &:enabled:hover {
+        //         background: $plainButtonHoverBgColor;
+        //         color: $plainButtonTextColor;
+        //     }
+    
+        //     &:enabled:active {
+        //         background: $plainButtonActiveBgColor;
+        //         color: $plainButtonTextColor;
+        //     }
+        // }
+    }
+
+    &:focus-visible {
+        border: $btn-border-size-3 solid $color-primary-D1;
+    }
+
+    // Add disabled state
+    &:disabled {
+        background: $color-neutral-M2;
+        color: $color-neutral-M4;
+    }
+
+    .p-button-icon-left {
+        
+        margin-right: 0.5rem;
+    }
+
+    .p-button-icon-right {
+        margin-left: 0.5rem;
+    }
+
+    // .p-button-icon-bottom {
+    //     margin-top: $inlineSpacing;
+    // }
+
+    // .p-button-icon-top {
+    //    margin-bottom: $inlineSpacing;
+    // }
+
+    // .p-badge {
+    //     margin-left: $inlineSpacing;
+    //     min-width: $fontSize;
+    //     height: $fontSize;
+    //     line-height: $fontSize;
+    //     color: $buttonBg;
+    //     background-color: $buttonTextColor; 
+    // }
+
+    // &.p-button-raised {
+    //     box-shadow: $raisedButtonShadow;
+    // }
+
+    // &.p-button-rounded {
+    //     border-radius: $roundedButtonBorderRadius;
+    // }
+
+    &.p-button-icon-only {
+        width: 3rem;
+        height: 3rem;
+        // padding: $buttonIconOnlyPadding;
+
+        .p-button-icon-left,
+        .p-button-icon-right {
+            margin: 0;
+        }
+
+
+        // &.p-button-rounded {
+        //     border-radius: 50%;
+        //     height: $buttonIconOnlyWidth;
+        // }
+
+
+    }
+    
+    // Add medium button size    
+    &.p-button-md {
+        height: $btn-height-md;
+        font-weight: $fw-label2;
+        font-size: $fs-label2;
+        line-height: $lh-label2;
+        letter-spacing: $ls-label2;
+    }
+    
+    &.p-button-sm {
+        // @include scaledFontSize($fontSize, $scaleSM);
+        // @include scaledPadding($buttonPadding, $scaleSM);
+
+        // .p-button-icon {
+        //     @include scaledFontSize($primeIconFontSize, $scaleSM);
+        // }
+
+        height: $btn-height-sm;
+        border-radius: $btn-border-rad-lg;
+        font-weight: $fw-label2;
+        font-size: $fs-label2;
+        line-height: $lh-label2;
+        letter-spacing: $ls-label2;
+    }
+
+    // &.p-button-lg {
+    //     @include scaledFontSize($fontSize, $scaleLG);
+    //     @include scaledPadding($buttonPadding, $scaleLG);
+
+    //     .p-button-icon {
+    //         @include scaledFontSize($primeIconFontSize, $scaleLG);
+    //     }
+    // }
+
+
+    &.p-button-loading-label-only {
+        .p-button-label {
+            margin-left: $inlineSpacing;
+        }
+
+        .p-button-loading-icon {
+            margin-right: 0;
+        }
+    }
+}
+
+.p-fluid {
+    .p-button {
+        width: 100%;
+    }
+    
+    .p-button-icon-only {
+        width: $buttonIconOnlyWidth;
+    }
+
+    .p-buttonset {
+        display: flex;
+        
+        .p-button {
+            flex: 1;
+        }
+    }
+}
+
+// .p-button.p-button-secondary, .p-buttonset.p-button-secondary > .p-button, .p-splitbutton.p-button-secondary > .p-button {
+//     color: $secondaryButtonTextColor;
+//     background: $secondaryButtonBg;
+//     border: $secondaryButtonBorder;
+
+//     &:enabled:hover {
+//         background: $secondaryButtonHoverBg;
+//         color: $secondaryButtonTextHoverColor;
+//         border-color: $secondaryButtonHoverBorderColor;
+//     }
+
+//     &:enabled:focus {
+//         box-shadow: $secondaryButtonFocusShadow;
+//     }
+
+//     &:enabled:active {
+//         background: $secondaryButtonActiveBg;
+//         color: $secondaryButtonTextActiveColor;
+//         border-color: $secondaryButtonActiveBorderColor;
+//     }
+    
+//     &.p-button-outlined {
+//         background-color: transparent;
+//         color: $secondaryButtonBg;
+//         border: $outlinedButtonBorder;
+
+//         &:enabled:hover {
+//             background: rgba($secondaryButtonBg, $textButtonHoverBgOpacity);
+//             color: $secondaryButtonBg;
+//             border: $outlinedButtonBorder;
+//         }
+
+//         &:enabled:active {
+//             background: rgba($secondaryButtonBg, $textButtonActiveBgOpacity);
+//             color: $secondaryButtonBg;
+//             border: $outlinedButtonBorder;
+//         }
+//     }
+
+//     &.p-button-text {
+//         background-color: transparent;
+//         color: $secondaryButtonBg;
+//         border-color: transparent;
+
+//         &:enabled:hover {
+//             background: rgba($secondaryButtonBg, $textButtonHoverBgOpacity);
+//             border-color: transparent;
+//             color: $secondaryButtonBg;
+//         }
+
+//         &:enabled:active {
+//             background: rgba($secondaryButtonBg, $textButtonActiveBgOpacity);
+//             border-color: transparent;
+//             color: $secondaryButtonBg;
+//         }
+//     }
+// }
+
+// .p-button.p-button-info, .p-buttonset.p-button-info > .p-button, .p-splitbutton.p-button-info > .p-button {
+//     color: $infoButtonTextColor;
+//     background: $infoButtonBg;
+//     border: $infoButtonBorder;
+
+//     &:enabled:hover {
+//         background: $infoButtonHoverBg;
+//         color: $infoButtonTextHoverColor;
+//         border-color: $infoButtonHoverBorderColor;
+//     }
+
+//     &:enabled:focus {
+//         box-shadow: $infoButtonFocusShadow;
+//     }
+
+//     &:enabled:active {
+//         background: $infoButtonActiveBg;
+//         color: $infoButtonTextActiveColor;
+//         border-color: $infoButtonActiveBorderColor;
+//     }
+
+//     &.p-button-outlined {
+//         background-color: transparent;
+//         color: $infoButtonBg;
+//         border: $outlinedButtonBorder;
+
+//         &:enabled:hover {
+//             background: rgba($infoButtonBg, $textButtonHoverBgOpacity);
+//             color: $infoButtonBg;
+//             border: $outlinedButtonBorder;
+//         }
+
+//         &:enabled:active {
+//             background: rgba($infoButtonBg, $textButtonActiveBgOpacity);
+//             color: $infoButtonBg;
+//             border: $outlinedButtonBorder;
+//         }
+//     }
+
+//     &.p-button-text {
+//         background-color: transparent;
+//         color: $infoButtonBg;
+//         border-color: transparent;
+
+//         &:enabled:hover {
+//             background: rgba($infoButtonBg, $textButtonHoverBgOpacity);
+//             border-color: transparent;
+//             color: $infoButtonBg;
+//         }
+
+//         &:enabled:active {
+//             background: rgba($infoButtonBg, $textButtonActiveBgOpacity);
+//             border-color: transparent;
+//             color: $infoButtonBg;
+//         }
+//     }
+// }
+
+// .p-button.p-button-success, .p-buttonset.p-button-success > .p-button, .p-splitbutton.p-button-success > .p-button {
+//     color: $successButtonTextColor;
+//     background: $successButtonBg;
+//     border: $successButtonBorder;
+
+//     &:enabled:hover {
+//         background: $successButtonHoverBg;
+//         color: $successButtonTextHoverColor;
+//         border-color: $successButtonHoverBorderColor;
+//     }
+
+//     &:enabled:focus {
+//         box-shadow: $successButtonFocusShadow;
+//     }
+
+//     &:enabled:active {
+//         background: $successButtonActiveBg;
+//         color: $successButtonTextActiveColor;
+//         border-color: $successButtonActiveBorderColor;
+//     }
+
+//     &.p-button-outlined {
+//         background-color: transparent;
+//         color: $successButtonBg;
+//         border: $outlinedButtonBorder;
+
+//         &:enabled:hover {
+//             background: rgba($successButtonBg, $textButtonHoverBgOpacity);
+//             color: $successButtonBg;
+//             border: $outlinedButtonBorder;
+//         }
+
+//         &:enabled:active {
+//             background: rgba($successButtonBg, $textButtonActiveBgOpacity);
+//             color: $successButtonBg;
+//             border: $outlinedButtonBorder;
+//         }
+//     }
+
+//     &.p-button-text {
+//         background-color: transparent;
+//         color: $successButtonBg;
+//         border-color: transparent;
+
+//         &:enabled:hover {
+//             background: rgba($successButtonBg, $textButtonHoverBgOpacity);
+//             border-color: transparent;
+//             color: $successButtonBg;
+//         }
+
+//         &:enabled:active {
+//             background: rgba($successButtonBg, $textButtonActiveBgOpacity);
+//             border-color: transparent;
+//             color: $successButtonBg;
+//         }
+//     }
+// }
+
+// .p-button.p-button-warning, .p-buttonset.p-button-warning > .p-button, .p-splitbutton.p-button-warning > .p-button {
+//     color: $warningButtonTextColor;
+//     background: $warningButtonBg;
+//     border: $warningButtonBorder;
+    
+//     &:enabled:hover {
+//         background: $warningButtonHoverBg;
+//         color: $warningButtonTextHoverColor;
+//         border-color: $warningButtonHoverBorderColor;
+//     }
+
+//     &:enabled:focus {
+//         box-shadow: $warningButtonFocusShadow;
+//     }
+
+//     &:enabled:active {
+//         background: $warningButtonActiveBg;
+//         color: $warningButtonTextActiveColor;
+//         border-color: $warningButtonActiveBorderColor;
+//     }
+
+//     &.p-button-outlined {
+//         background-color: transparent;
+//         color: $warningButtonBg;
+//         border: $outlinedButtonBorder;
+
+//         &:enabled:hover {
+//             background: rgba($warningButtonBg, $textButtonHoverBgOpacity);
+//             color: $warningButtonBg;
+//             border: $outlinedButtonBorder;
+//         }
+
+//         &:enabled:active {
+//             background: rgba($warningButtonBg, $textButtonActiveBgOpacity);
+//             color: $warningButtonBg;
+//             border: $outlinedButtonBorder;
+//         }
+//     }
+
+//     &.p-button-text {
+//         background-color: transparent;
+//         color: $warningButtonBg;
+//         border-color: transparent;
+
+//         &:enabled:hover {
+//             background: rgba($warningButtonBg, $textButtonHoverBgOpacity);
+//             border-color: transparent;
+//             color: $warningButtonBg;
+//         }
+
+//         &:enabled:active {
+//             background: rgba($warningButtonBg, $textButtonActiveBgOpacity);
+//             border-color: transparent;
+//             color: $warningButtonBg;
+//         }
+//     }
+// }
+
+// .p-button.p-button-help, .p-buttonset.p-button-help > .p-button, .p-splitbutton.p-button-help > .p-button {
+//     color: $helpButtonTextColor;
+//     background: $helpButtonBg;
+//     border: $helpButtonBorder;
+
+//     &:enabled:hover {
+//         background: $helpButtonHoverBg;
+//         color: $helpButtonTextHoverColor;
+//         border-color: $helpButtonHoverBorderColor;
+//     }
+
+//     &:enabled:focus {
+//         box-shadow: $helpButtonFocusShadow;
+//     }
+
+//     &:enabled:active {
+//         background: $helpButtonActiveBg;
+//         color: $helpButtonTextActiveColor;
+//         border-color: $helpButtonActiveBorderColor;
+//     }
+
+//     &.p-button-outlined {
+//         background-color: transparent;
+//         color: $helpButtonBg;
+//         border: $outlinedButtonBorder;
+
+//         &:enabled:hover {
+//             background: rgba($helpButtonBg, $textButtonHoverBgOpacity);
+//             color: $helpButtonBg;
+//             border: $outlinedButtonBorder;
+//         }
+
+//         &:enabled:active {
+//             background: rgba($helpButtonBg, $textButtonActiveBgOpacity);
+//             color: $helpButtonBg;
+//             border: $outlinedButtonBorder;
+//         }
+//     }
+
+//     &.p-button-text {
+//         background-color: transparent;
+//         color: $helpButtonBg;
+//         border-color: transparent;
+
+//         &:enabled:hover {
+//             background: rgba($helpButtonBg, $textButtonHoverBgOpacity);
+//             border-color: transparent;
+//             color: $helpButtonBg;
+//         }
+
+//         &:enabled:active {
+//             background: rgba($helpButtonBg, $textButtonActiveBgOpacity);
+//             border-color: transparent;
+//             color: $helpButtonBg;
+//         }
+//     }
+// }
+
+.p-button.p-button-danger, .p-buttonset.p-button-danger > .p-button, .p-splitbutton.p-button-danger > .p-button {
+    color: $color-neutral-L6;
+    background: var(--red-700);
+
+    &:enabled:hover {
+        background: var(--red-800);
+    }
+
+    &:enabled:focus {
+        border: $btn-border-size-3 solid var(--red-500);
+    }
+
+    &:enabled:active {
+        background: var(--red-900);
+    }
+
+    &.p-button-outlined {
+        background-color: transparent;
+        color: var(--red-800);
+        border: $btn-border-size-2 solid var(--red-800);
+
+        &:enabled:hover {
+            background: var(--red-50);
+        }
+        
+        &:enabled:active {
+            background: var(--red-100);
+        }
+
+        // Add focused state
+        &:focus-visible {
+            background-color: var(--red-50);
+            border: $btn-border-size-3 solid var(--red-800);
+        }
+    }
+
+    &.p-button-text {
+        background-color: transparent;
+        color: var(--red-900);
+        border-color: transparent;
+
+        &:enabled:hover {
+            background: var(--red-50);
+            border-color: transparent;
+        }
+
+        &:enabled:active {
+            background: var(--red-200);
+            border-color: transparent;
+            color: $dangerButtonBg;
+        }
+    }
+    
+    // Add disabled state
+    &:disabled {
+        color: $color-neutral-L6;
+        background-color: $color-neutral-M4;
+    }
+}
+
+.p-button.p-button-link {
+    color: $color-neutral-D6;
+    background: transparent;
+    border: transparent;
+
+    &:enabled:hover {
+        color: $color-primary-5;
+        .p-button-label {
+            text-decoration: underline solid $color-primary-6 0.125rem;
+        }
+    }
+
+    &:enabled:focus-visible {
+        color: $color-primary-6;
+    }
+
+    &:enabled:active {
+        background:  transparent;
+        color: $linkButtonColor;
+        border-color:  transparent;
+    }
+}
