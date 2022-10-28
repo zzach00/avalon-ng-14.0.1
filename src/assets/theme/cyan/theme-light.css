@@ -757,13 +757,19 @@ p-checkbox.ng-dirty.ng-invalid > .p-checkbox > .p-checkbox-box {
 }
 .p-chips .p-chips-multiple-container .p-chips-token {
   padding: 0.25rem 0.75rem;
-  margin-right: 0.5rem;
-  background: #0dcaf0;
-  color: #1b1b1c;
-  border-radius: 4px;
+  margin: 0.25rem;
+  background-color: rgba(78, 93, 85, 0.03);
+  color: rgb(18, 18, 18);
+  border-radius: 0.5rem;
+  padding: 0 0.5rem 0 1rem;
+  height: 1.5rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.038rem;
 }
 .p-chips .p-chips-multiple-container .p-chips-token .p-chips-token-icon {
-  margin-left: 0.5rem;
+  margin-left: 0.25rem;
 }
 .p-chips .p-chips-multiple-container .p-chips-input-token {
   padding: 0.25rem 0;
@@ -1990,6 +1996,299 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   flex: 1;
 }
 
+/*
+
+.p-button.p-button-secondary, .p-buttonset.p-button-secondary > .p-button, .p-splitbutton.p-button-secondary > .p-button {
+    color: $secondaryButtonTextColor;
+    background: $secondaryButtonBg;
+    border: $secondaryButtonBorder;
+
+    &:enabled:hover {
+        background: $secondaryButtonHoverBg;
+        color: $secondaryButtonTextHoverColor;
+        border-color: $secondaryButtonHoverBorderColor;
+    }
+
+    &:enabled:focus {
+        box-shadow: $secondaryButtonFocusShadow;
+    }
+
+    &:enabled:active {
+        background: $secondaryButtonActiveBg;
+        color: $secondaryButtonTextActiveColor;
+        border-color: $secondaryButtonActiveBorderColor;
+    }
+
+    &.p-button-outlined {
+        background-color: transparent;
+        color: $secondaryButtonBg;
+        border: $outlinedButtonBorder;
+
+        &:enabled:hover {
+            background: rgba($secondaryButtonBg, $textButtonHoverBgOpacity);
+            color: $secondaryButtonBg;
+            border: $outlinedButtonBorder;
+        }
+
+        &:enabled:active {
+            background: rgba($secondaryButtonBg, $textButtonActiveBgOpacity);
+            color: $secondaryButtonBg;
+            border: $outlinedButtonBorder;
+        }
+    }
+
+    &.p-button-text {
+        background-color: transparent;
+        color: $secondaryButtonBg;
+        border-color: transparent;
+
+        &:enabled:hover {
+            background: rgba($secondaryButtonBg, $textButtonHoverBgOpacity);
+            border-color: transparent;
+            color: $secondaryButtonBg;
+        }
+
+        &:enabled:active {
+            background: rgba($secondaryButtonBg, $textButtonActiveBgOpacity);
+            border-color: transparent;
+            color: $secondaryButtonBg;
+        }
+    }
+}
+
+.p-button.p-button-info, .p-buttonset.p-button-info > .p-button, .p-splitbutton.p-button-info > .p-button {
+    color: $infoButtonTextColor;
+    background: $infoButtonBg;
+    border: $infoButtonBorder;
+
+    &:enabled:hover {
+        background: $infoButtonHoverBg;
+        color: $infoButtonTextHoverColor;
+        border-color: $infoButtonHoverBorderColor;
+    }
+
+    &:enabled:focus {
+        box-shadow: $infoButtonFocusShadow;
+    }
+
+    &:enabled:active {
+        background: $infoButtonActiveBg;
+        color: $infoButtonTextActiveColor;
+        border-color: $infoButtonActiveBorderColor;
+    }
+
+    &.p-button-outlined {
+        background-color: transparent;
+        color: $infoButtonBg;
+        border: $outlinedButtonBorder;
+
+        &:enabled:hover {
+            background: rgba($infoButtonBg, $textButtonHoverBgOpacity);
+            color: $infoButtonBg;
+            border: $outlinedButtonBorder;
+        }
+
+        &:enabled:active {
+            background: rgba($infoButtonBg, $textButtonActiveBgOpacity);
+            color: $infoButtonBg;
+            border: $outlinedButtonBorder;
+        }
+    }
+
+    &.p-button-text {
+        background-color: transparent;
+        color: $infoButtonBg;
+        border-color: transparent;
+
+        &:enabled:hover {
+            background: rgba($infoButtonBg, $textButtonHoverBgOpacity);
+            border-color: transparent;
+            color: $infoButtonBg;
+        }
+
+        &:enabled:active {
+            background: rgba($infoButtonBg, $textButtonActiveBgOpacity);
+            border-color: transparent;
+            color: $infoButtonBg;
+        }
+    }
+}
+
+.p-button.p-button-success, .p-buttonset.p-button-success > .p-button, .p-splitbutton.p-button-success > .p-button {
+    color: $successButtonTextColor;
+    background: $successButtonBg;
+    border: $successButtonBorder;
+
+    &:enabled:hover {
+        background: $successButtonHoverBg;
+        color: $successButtonTextHoverColor;
+        border-color: $successButtonHoverBorderColor;
+    }
+
+    &:enabled:focus {
+        box-shadow: $successButtonFocusShadow;
+    }
+
+    &:enabled:active {
+        background: $successButtonActiveBg;
+        color: $successButtonTextActiveColor;
+        border-color: $successButtonActiveBorderColor;
+    }
+
+    &.p-button-outlined {
+        background-color: transparent;
+        color: $successButtonBg;
+        border: $outlinedButtonBorder;
+
+        &:enabled:hover {
+            background: rgba($successButtonBg, $textButtonHoverBgOpacity);
+            color: $successButtonBg;
+            border: $outlinedButtonBorder;
+        }
+
+        &:enabled:active {
+            background: rgba($successButtonBg, $textButtonActiveBgOpacity);
+            color: $successButtonBg;
+            border: $outlinedButtonBorder;
+        }
+    }
+
+    &.p-button-text {
+        background-color: transparent;
+        color: $successButtonBg;
+        border-color: transparent;
+
+        &:enabled:hover {
+            background: rgba($successButtonBg, $textButtonHoverBgOpacity);
+            border-color: transparent;
+            color: $successButtonBg;
+        }
+
+        &:enabled:active {
+            background: rgba($successButtonBg, $textButtonActiveBgOpacity);
+            border-color: transparent;
+            color: $successButtonBg;
+        }
+    }
+}
+
+.p-button.p-button-warning, .p-buttonset.p-button-warning > .p-button, .p-splitbutton.p-button-warning > .p-button {
+    color: $warningButtonTextColor;
+    background: $warningButtonBg;
+    border: $warningButtonBorder;
+
+    &:enabled:hover {
+        background: $warningButtonHoverBg;
+        color: $warningButtonTextHoverColor;
+        border-color: $warningButtonHoverBorderColor;
+    }
+
+    &:enabled:focus {
+        box-shadow: $warningButtonFocusShadow;
+    }
+
+    &:enabled:active {
+        background: $warningButtonActiveBg;
+        color: $warningButtonTextActiveColor;
+        border-color: $warningButtonActiveBorderColor;
+    }
+
+    &.p-button-outlined {
+        background-color: transparent;
+        color: $warningButtonBg;
+        border: $outlinedButtonBorder;
+
+        &:enabled:hover {
+            background: rgba($warningButtonBg, $textButtonHoverBgOpacity);
+            color: $warningButtonBg;
+            border: $outlinedButtonBorder;
+        }
+
+        &:enabled:active {
+            background: rgba($warningButtonBg, $textButtonActiveBgOpacity);
+            color: $warningButtonBg;
+            border: $outlinedButtonBorder;
+        }
+    }
+
+    &.p-button-text {
+        background-color: transparent;
+        color: $warningButtonBg;
+        border-color: transparent;
+
+        &:enabled:hover {
+            background: rgba($warningButtonBg, $textButtonHoverBgOpacity);
+            border-color: transparent;
+            color: $warningButtonBg;
+        }
+
+        &:enabled:active {
+            background: rgba($warningButtonBg, $textButtonActiveBgOpacity);
+            border-color: transparent;
+            color: $warningButtonBg;
+        }
+    }
+}
+
+.p-button.p-button-help, .p-buttonset.p-button-help > .p-button, .p-splitbutton.p-button-help > .p-button {
+    color: $helpButtonTextColor;
+    background: $helpButtonBg;
+    border: $helpButtonBorder;
+
+    &:enabled:hover {
+        background: $helpButtonHoverBg;
+        color: $helpButtonTextHoverColor;
+        border-color: $helpButtonHoverBorderColor;
+    }
+
+    &:enabled:focus {
+        box-shadow: $helpButtonFocusShadow;
+    }
+
+    &:enabled:active {
+        background: $helpButtonActiveBg;
+        color: $helpButtonTextActiveColor;
+        border-color: $helpButtonActiveBorderColor;
+    }
+
+    &.p-button-outlined {
+        background-color: transparent;
+        color: $helpButtonBg;
+        border: $outlinedButtonBorder;
+
+        &:enabled:hover {
+            background: rgba($helpButtonBg, $textButtonHoverBgOpacity);
+            color: $helpButtonBg;
+            border: $outlinedButtonBorder;
+        }
+
+        &:enabled:active {
+            background: rgba($helpButtonBg, $textButtonActiveBgOpacity);
+            color: $helpButtonBg;
+            border: $outlinedButtonBorder;
+        }
+    }
+
+    &.p-button-text {
+        background-color: transparent;
+        color: $helpButtonBg;
+        border-color: transparent;
+
+        &:enabled:hover {
+            background: rgba($helpButtonBg, $textButtonHoverBgOpacity);
+            border-color: transparent;
+            color: $helpButtonBg;
+        }
+
+        &:enabled:active {
+            background: rgba($helpButtonBg, $textButtonActiveBgOpacity);
+            border-color: transparent;
+            color: $helpButtonBg;
+        }
+    }
+}
+
+*/
 .p-button.p-button-danger, .p-buttonset.p-button-danger > .p-button, .p-splitbutton.p-button-danger > .p-button {
   color: rgb(255, 255, 255);
   background: var(--red-700);
@@ -5871,15 +6170,17 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-chip {
-  background-color: #dee2e6;
-  color: #212529;
-  border-radius: 16px;
-  padding: 0 0.75rem;
+  background-color: rgba(78, 93, 85, 0.03);
+  color: rgb(18, 18, 18);
+  border-radius: 1rem;
+  padding: 0 0.5rem 0 1rem;
+  height: 2rem;
 }
 .p-chip .p-chip-text {
-  line-height: 1.5;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.038rem;
 }
 .p-chip .p-chip-icon {
   margin-right: 0.5rem;
@@ -5887,20 +6188,17 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-chip .pi-chip-remove-icon {
   margin-left: 0.5rem;
 }
-.p-chip img {
-  width: 2rem;
-  height: 2rem;
-  margin-left: -0.75rem;
-  margin-right: 0.5rem;
-}
 .p-chip .pi-chip-remove-icon {
-  border-radius: 4px;
-  transition: box-shadow 0.15s;
+  font-size: 1.188rem;
+  line-height: inherit;
+  border-radius: 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-.p-chip .pi-chip-remove-icon:focus {
-  outline: 0 none;
-  outline-offset: 0;
-  box-shadow: 0 0 0 0.2rem #9deafa;
+.p-chip:disabled {
+  background-color: rgba(78, 93, 85, 0.1);
+  color: rgba(78, 93, 85, 0.75);
 }
 
 .p-inplace .p-inplace-display {
@@ -5961,32 +6259,39 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-tag {
-  background: #0dcaf0;
-  color: #1b1b1c;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.25rem 0.4rem;
-  border-radius: 4px;
+  background: rgba(78, 93, 85, 0.03);
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.038rem;
+  height: 2rem;
+  padding: 0 1rem;
+  border-radius: 1rem;
 }
 .p-tag.p-tag-success {
-  background-color: #28a745;
-  color: #ffffff;
-}
-.p-tag.p-tag-info {
-  background-color: #17a2b8;
-  color: #ffffff;
+  background-color: rgba(16, 212, 35, 0.05);
+  color: rgb(13, 171, 28);
 }
 .p-tag.p-tag-warning {
-  background-color: #ffc107;
-  color: #212529;
+  background-color: var(--yellow-100);
+  color: var(--yellow-900);
 }
 .p-tag.p-tag-danger {
-  background-color: #dc3545;
-  color: #ffffff;
+  background-color: var(--red-100);
+  color: var(--red-900);
 }
 .p-tag .p-tag-icon {
   margin-right: 0.25rem;
+  font-size: 0.875rem;
+}
+.p-tag.p-tag-sm {
+  height: 1.5rem;
+  font-weight: 400;
   font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.069rem;
+  border-radius: 0.75rem;
 }
 
 .p-terminal {

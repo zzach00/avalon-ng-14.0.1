@@ -1,35 +1,48 @@
 @use 'sass:math';
 
 .p-tag {
-    background: $badgeBg;
-    color: $badgeTextColor;
-    font-size: $badgeFontSize;
-    font-weight: $badgeFontWeight;
-    padding: $tagPadding;
-    border-radius: $borderRadius;
+    background: $color-neutral-M1;
+    color: $color-neutral-D5;
+    font-weight: $fw-body1;
+    font-size: $fs-body1;
+    line-height: $lh-body1;
+    letter-spacing: $ls-body1;
+    height: $tag-height-md;
+    padding: 0 1rem;
+    border-radius: $tag-border-radius-md;
 
     &.p-tag-success {
-        background-color: $successButtonBg;
-        color: $successButtonTextColor;
+        background-color: $color-primary-1;
+        color: $color-primary-6;
     }
 
-    &.p-tag-info {
-        background-color: $infoButtonBg;
-        color: $infoButtonTextColor;
-    }
+    // &.p-tag-info {
+    //     background-color: $infoButtonBg;
+    //     color: $infoButtonTextColor;
+    // }
 
     &.p-tag-warning {
-        background-color: $warningButtonBg;
-        color: $warningButtonTextColor;
+        background-color: var(--yellow-100);
+        color: var(--yellow-900);
     }
 
     &.p-tag-danger {
-        background-color: $dangerButtonBg;
-        color: $dangerButtonTextColor;
+        background-color: var(--red-100);
+        color: var(--red-900);
     }
 
     .p-tag-icon {
-        margin-right: math.div($inlineSpacing, 2);
-        font-size: $badgeFontSize;
+        margin-right: 0.25rem;
+        font-size: 0.875rem;
+    }
+
+    //Add tag size
+    &.p-tag-sm {
+        height: $tag-height-sm;
+        font-weight: $fw-body2;
+        font-size: $fs-body2;
+        line-height: $lh-body2;
+        letter-spacing: $ls-body2;
+        border-radius: $tag-border-radius-sm;
     }
 }
