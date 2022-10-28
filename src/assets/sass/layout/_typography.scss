@@ -1,37 +1,115 @@
-h1, h2, h3, h4, h5, h6 {
-    margin: 1.5rem 0 1rem 0;
-    font-family: inherit;
-    font-weight: 600;
-    line-height: 1.2;
-    color: inherit;
-
-    &:first-child {
-        margin-top: 0;
-    }
-}
-
 h1 {
-    font-size: 2.5rem;
+    font-weight: $fw-h1;
+    font-size: $fs-h1;
+    line-height: $lh-h1;
 }
 
 h2 {
-    font-size: 2rem;
+    font-weight: $fw-h2;
+    font-size: $fs-h2;
+    line-height: $lh-h2;
 }
 
 h3 {
-    font-size: 1.75rem;
+    font-weight: $fw-h3;
+    font-size: $fs-h3;
+    line-height: $lh-h3;
 }
 
-h4 {
-    font-size: 1.5rem;
+h4 { 
+    font-weight: $fw-h4;
+    font-size: $fs-h4;
+    line-height: $lh-h4;
 }
 
 h5 {
-    font-size: 1.25rem;
+    font-weight: $fw-h5;
+    font-size: $fs-h5;
+    line-height: $lh-h5;
 }
 
 h6 {
-    font-size: 1rem;
+    font-weight: $fw-h6;
+    font-size: $fs-h6;
+    line-height: $lh-h6;
+    letter-spacing: $ls-h6;
+}
+
+title1 {
+    font-weight: $fw-t1;
+    font-size: $fs-t1;
+    line-height: $lh-t1;
+    letter-spacing: $ls-t1;
+}
+
+title2 {
+    font-weight: $fw-t2;
+    font-size: $fs-t2;
+    line-height: $lh-t2;
+    letter-spacing: $ls-t2;
+}
+
+subtitle1 {
+    font-weight: $fw-subt1;
+    font-size: $fs-subt1;
+    line-height: $lh-subt1;
+    letter-spacing: $ls-subt1;
+}
+
+subtitle2 {
+    font-weight: $fw-subt2;
+    font-size: $fs-subt2;
+    line-height: $lh-subt2;
+    letter-spacing: $ls-subt2;
+}
+
+body1 {
+    font-weight: $fw-body1;
+    font-size: $fs-body1;
+    line-height: $lh-body1;
+    letter-spacing: $ls-body1;
+}
+
+body2 {
+    font-weight: $fw-body2;
+    font-size: $fs-body2;
+    line-height: $lh-body2;
+    letter-spacing: $ls-body2;
+}
+
+mono1 {
+    font-weight: $fw-mono1;
+    font-size: $fs-mono1;
+    line-height: $lh-mono1;
+    letter-spacing: $ls-mono1;
+}
+
+mono2 {
+    font-weight: $fw-mono2;
+    font-size: $fs-mono2;
+    line-height: $lh-mono2;
+    letter-spacing: $ls-mono2;
+}
+
+label1 {
+    font-weight: $fw-label1;
+    font-size: $fs-label1;
+    line-height: $lh-label1;
+    letter-spacing: $ls-label1;
+}
+
+label2 {
+    font-weight: $fw-label2;
+    font-size: $fs-label2;
+    line-height: $lh-label2;
+    letter-spacing: $ls-label2;
+}
+
+caption {
+    font-weight: $fw-caption;
+    font-size: $fs-caption;
+    line-height: $lh-caption;
+    letter-spacing: $ls-caption;
 }
 
 mark {

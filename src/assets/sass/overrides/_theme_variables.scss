@@ -1,1 +1,57 @@
 /* Add your variable customizations of theme here */
+
+//Custom shades
+$shade1: 0px 2px 4px rgba(1, 16, 8, 0.06), 0px 2px 16px rgba(1, 16, 8, 0.04), 0px 8px 24px rgba(1, 16, 8, 0.02);
+$shade1-90: 2px 0px 4px rgba(1, 16, 8, 0.06), 4px 0px 16px rgba(1, 16, 8, 0.04), 8px 0px 24px rgba(1, 16, 8, 0.02);
+$shade2: 0px 4px 8px rgba(1, 16, 8, 0.05), 0px 4px 24px rgba(1, 16, 8, 0.04), 0px 16px 32px rgba(1, 16, 8, 0.03);
+
+//Glows
+$glow1: 0px 0px 4px rgba(85, 212, 97, 0.2), 0px 0px 16px rgba(85, 212, 97, 0.1), 0px 0px 24px rgba(85, 212, 97, 0.02);
+$glow2: 0px 0px 8px rgba(85, 212, 97, 0.22), 0px 0px 24px rgba(85, 212, 97, 0.14), 0px 0px 32px rgba(85, 212, 97, 0.08);
+
+//Color system
+$color-primary-1: rgba(16, 212, 35, 0.05);
+$color-primary-2: rgba(16, 212, 35, 0.12);
+$color-primary-3: rgba(16, 212, 35, 0.45);
+$color-primary-4: rgba(16, 212, 35, 0.65);
+$color-primary-5: rgba(16, 212, 35, 1);
+$color-primary-6: rgba(13, 171, 28, 1);
+$color-primary-7: rgba(10, 130, 21, 1);
+$color-primary-8: rgba(8, 99, 16, 1);
+$color-primary-9: rgba(0, 72, 7, 1);
+
+$color-primary-D1: rgba(201, 222, 206, 1);
+$color-primary-D2: rgba(147, 181, 156, 1);
+$color-primary-D3: rgba(88, 131, 105, 1);
+$color-primary-D4: rgba(45, 103, 69, 1);
+$color-primary-D5: rgba(11, 79, 28, 1);
+$color-primary-D6: rgba(13, 41, 16, 1);
+
+$color-neutral-D1: rgba(0, 0, 0, 0.05);
+$color-neutral-D2: rgba(0, 0, 0, 0.15);
+$color-neutral-D3: rgba(0, 0, 0, 0.35);
+$color-neutral-D4: rgba(0, 0, 0, 0.5);
+$color-neutral-D5: rgba(0, 0, 0, 0.75);
+$color-neutral-D6: rgba(18, 18, 18, 1);
+
+$color-neutral-L1: rgba(255, 255, 255, 0.05);
+$color-neutral-L2: rgba(255, 255, 255, 0.25);
+$color-neutral-L3: rgba(255, 255, 255, 0.35);
+$color-neutral-L4: rgba(255, 255, 255, 0.5);
+$color-neutral-L5: rgba(255, 255, 255, 0.7);
+$color-neutral-L6: rgba(255, 255, 255, 1);
+
+$color-neutral-M1: rgba(78, 93, 85, 0.03);
+$color-neutral-M2: rgba(78, 93, 85, 0.1);
+$color-neutral-M3: rgba(78, 93, 85, 0.4);
+$color-neutral-M4: rgba(78, 93, 85, 0.4);
+$color-neutral-M5: rgba(78, 93, 85, 0.75);
+$color-neutral-M6: rgba(78, 94, 85, 1);
+
+$color-background-D1: rgba(2, 38, 20, 1);
+$color-background-D2: rgba(1, 26, 13, 1);
+$color-background-D3: rgba(1, 16, 8, 1);
+
+$color-background-L1: rgba(235, 250, 235, 1);
+$color-background-L2: rgba(243, 252, 243, 1);
+$color-background-L3: rgba(235, 250, 235, 1);
