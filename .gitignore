@@ -8,7 +8,7 @@ sassdoc
 src/assets/theme/*/*.css
 src/assets/layout/css/*.css
 #src/assets/sass/theme/designer
-src/assets/sass/theme/_vendor_extensions
+#src/assets/sass/theme/_vendor_extensions
 
 # compiled output
 /dist

@@ -1,6 +1,5 @@
 .p-button {
-    // color: $color-neutral-L6;
-    color: red;
+    color: $color-neutral-L6;
     background: $color-primary-7;
     border: transparent;
     height: $btn-height-lg;
@@ -25,7 +24,7 @@
         color: $color-primary-D6;
         border: $btn-border-size-2 solid $color-primary-D6;
 
-        &:hover {
+        &:enabled:hover {
             background: $color-primary-1;
         }
         
