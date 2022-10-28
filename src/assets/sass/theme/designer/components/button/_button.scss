@@ -24,14 +24,18 @@
         color: $color-primary-D6;
         border: $btn-border-size-2 solid $color-primary-D6;
 
-        &:enabled:hover {
+        &:hover {
             background: $color-primary-1;
         }
         
-        &:enabled:active {
+        &:active {
             background: $color-primary-2;
         }
         
+        &:focus {
+            border: $btn-border-size-3 solid $color-primary-D6;
+        }
+
         // &.p-button-plain {
         //     color: $color-primary-D6;
         //     border: none;
@@ -51,11 +55,11 @@
         color: $color-primary-D6;
         border-color: transparent;
 
-        &:enabled:hover {
+        &:hover {
             background: $color-primary-1;
         }
 
-        &:enabled:active {  
+        &:active {  
             background: $color-primary-2;
         }
 
@@ -507,7 +511,7 @@
         border: $btn-border-size-3 solid var(--red-500);
     }
 
-    &:enabled:active {
+    &::active {
         background: var(--red-900);
     }
 
@@ -516,11 +520,11 @@
         color: var(--red-800);
         border: $btn-border-size-2 solid var(--red-800);
 
-        &:enabled:hover {
+        &:hover {
             background: var(--red-50);
         }
         
-        &:enabled:active {
+        &:active {
             background: var(--red-100);
         }
 
@@ -533,18 +537,24 @@
 
     &.p-button-text {
         background-color: transparent;
-        color: var(--red-900);
+        color: var(--red-700);
         border-color: transparent;
 
-        &:enabled:hover {
+        &:hover {
             background: var(--red-50);
             border-color: transparent;
         }
 
-        &:enabled:active {
+        &:active {
             background: var(--red-200);
             border-color: transparent;
             color: $dangerButtonBg;
+        }
+
+        // Add focused state
+        &:focus-visible {
+            background-color: transparent;
+            border: $btn-border-size-3 solid var(--red-700);
         }
     }
     
@@ -559,19 +569,20 @@
     color: $color-neutral-D6;
     background: transparent;
     border: transparent;
+    text-decoration: underline solid $color-neutral-D6 0.125rem;
 
-    &:enabled:hover {
+    &:hover {
         color: $color-primary-5;
         .p-button-label {
             text-decoration: underline solid $color-primary-6 0.125rem;
         }
     }
 
-    &:enabled:focus-visible {
+    &:focus-visible {
         color: $color-primary-6;
     }
 
-    &:enabled:active {
+    &:active {
         background:  transparent;
         color: $linkButtonColor;
         border-color:  transparent;
