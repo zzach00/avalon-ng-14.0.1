@@ -169,7 +169,7 @@ $chip-height-md: 2rem;
 $chip-height-sm: 1.5rem;
 
 
-//Input
+//Input - Inputtext
 $inputtext-padding-lg: 1rem;
 $inputtext-padding-md: 0.75rem;
 $inputtext-padding-sm: 0.5rem;
@@ -180,8 +180,31 @@ $inputtext-border-size-1: 0.125rem;
 $inputtext-border-radius: 0.25rem;
 
 $inputtext-height-lg: 3rem;
-$inputtext-height-md: 2.5rem;
-$inputtext-height-sm: 2rem;
+$inputtext-height-md: 2.75rem;
+$inputtext-height-sm: 2.5rem;
+
+//Input - Dropdown
+$inputdropdown-height-lg: 3rem;
+$inputdropdown-height-md: 2.75rem;
+$inputdropdown-height-sm: 2.5rem;
+
+$inputdropdown-items-padding-lg: 0 0.5rem;
+$inputdropdown-items-padding-md: 0 0.25rem;
+$inputdropdown-items-padding-sm: 0 0.125rem;
+
+
+$inputdropdown-border-size-2: 0.188rem;
+$inputdropdown-border-size-1: 0.125rem;
+
+$inputdropdown-overlayshadow: $shade1;
+
+$inputdropdown-border-radius: 0.25rem;
+$inputdropdown-item-padding: 0 1rem;
+
+
+$inputdropdown-item-lg: 3rem;
+$inputdropdown-item-md: 2.75rem;
+$inputdropdown-item-sm: 2.5rem;
 
 //Tags
 $tag-height-md: 2rem;

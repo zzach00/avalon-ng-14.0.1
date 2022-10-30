@@ -1,57 +1,77 @@
 .p-dropdown {
-    background: $inputBg;
-    border: $inputBorder;
+    background: $color-neutral-M1 !important;
+    // border: $inputBorder;
     transition: $formElementTransition;
-    border-radius: $borderRadius;
+    border-radius: $inputdropdown-border-radius;
+    height: $inputdropdown-height-lg;
 
     &:not(.p-disabled):hover {
-        border-color: $inputHoverBorderColor;
+        outline: $inputdropdown-border-size-1 solid $color-primary-D3;
     }
-
+    
     &:not(.p-disabled).p-focus {
-        @include focused-input();
+        // @include focused-input();
+        outline: $inputdropdown-border-size-2 solid $color-primary-D5;
     }
 
     &.p-dropdown-clearable {
         .p-dropdown-label {
-            padding-right: nth($inputPadding, 2) + $primeIconFontSize;
+            // padding-right: nth($inputPadding, 2) + $primeIconFontSize;
+            padding-right: 2.5rem + $primeIconFontSize;
         }
     }
 
     .p-dropdown-label {
         background: transparent;
-        border: 0 none;
+        border: none;
 
         &.p-placeholder {
-            color: $inputPlaceholderTextColor;
+            color: $color-neutral-D4;
         }
 
         &:enabled:focus {
-            outline: 0 none;
+            outline: none;
             box-shadow: none;
         }
     }
-
+    
+    
+    
     .p-dropdown-trigger {
         background: transparent;
-        color: $inputIconColor;
-        width: $inputGroupAddOnMinWidth;
-        border-top-right-radius: $borderRadius;
-        border-bottom-right-radius: $borderRadius;
+        color: $color-neutral-D4;
+        // width: $inputGroupAddOnMinWidth;
+        width: 1.5rem;
+        font-size: 1rem;
+        margin-right: 1rem;
+        border-radius: $inputdropdown-border-radius;
+        // border-top-right-radius: $borderRadius;
+        // border-bottom-right-radius: $borderRadius;
     }
 
     .p-dropdown-clear-icon {
-        color: $inputIconColor;
-        right: $inputGroupAddOnMinWidth;
+        color: $color-neutral-D6;
+        font-size: 0.8rem;
+
+        //Overrides the dumb and stupid former alignment that set the margin-top: -0.5rem for no reason
+        top: 50% ;
+        transform: translateY(-50%);
+        margin-top: 0;
+        // right: $inputGroupAddOnMinWidth;
+        right: 3rem;
+    }
+    
+    .p-dropdown-panel {
+        top: $inputdropdown-height-lg + 0.5rem !important;
     }
 }
 
 .p-dropdown-panel {
-    background: $inputOverlayBg;
-    color: $inputListTextColor;
-    border: $inputOverlayBorder;
-    border-radius: $borderRadius;
-    box-shadow: $inputOverlayShadow;
+    background: $color-neutral-L6;
+    color: $color-neutral-D6;
+    // border: $inputOverlayBorder;
+    border-radius: $inputdropdown-border-radius;
+    box-shadow: $shade1;
 
     .p-dropdown-header {
         padding: $inputListHeaderPadding;
@@ -74,25 +94,26 @@
     }
 
     .p-dropdown-items {
-        padding: $inputListPadding;
+        padding: nth($inputdropdown-items-padding-lg, 2);
 
         .p-dropdown-item {
-            margin: $inputListItemMargin;
-            padding: $inputListItemPadding;
-            border: $inputListItemBorder;
-            color: $inputListItemTextColor;
-            background: $inputListItemBg;
+            margin: 0.25rem;
+            height: $inputdropdown-height-lg;
+            padding: nth($inputdropdown-item-padding, 2);
+            // border: $inputListItemBorder;
+            color: $color-neutral-D6;
+            background: $color-neutral-L6;
             transition: $listItemTransition;
-            border-radius: $inputListItemBorderRadius;
+            border-radius: $inputdropdown-border-radius;
 
             &.p-highlight {
-                color: $highlightTextColor;
-                background: $highlightBg;
+                color: $color-primary-D6;
+                background: $color-primary-2;
             }
 
             &:not(.p-highlight):not(.p-disabled):hover {
-                color: $inputListItemTextHoverColor;
-                background: $inputListItemHoverBg;
+                // color: $inputListItemTextHoverColor;
+                background: $color-neutral-M1;
             }
         }
 
@@ -118,14 +139,15 @@ p-dropdown.ng-dirty.ng-invalid > .p-dropdown {
 
 .p-input-filled {
     .p-dropdown {
-        background: $inputFilledBg;
+        background: $color-neutral-L6 !important;
 
         &:not(.p-disabled):hover {
-            background-color: $inputFilledHoverBg;
+            outline: $inputdropdown-border-size-1 solid $color-primary-D3;
         }
-
+        
         &:not(.p-disabled).p-focus {
-            background-color: $inputFilledFocusBg;
+            // background-color: $inputFilledFocusBg;
+            outline: $inputdropdown-border-size-2 solid $color-primary-D5;
 
             .p-inputtext {
                 background-color: transparent;

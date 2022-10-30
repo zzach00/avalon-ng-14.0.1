@@ -15,6 +15,19 @@
 				</div>
 			</div>
 
+			<h5>Small inputText </h5>
+			<div class="grid formgrid">
+				<div class="col-12 mb-2 lg:col-4 lg:mb-0 p-inputtext-sm">
+					<input type="text" pInputText  placeholder="Default" >
+				</div>
+				<div class="col-12 mb-2 lg:col-4 lg:mb-0 p-inputtext-sm">
+					<input type="text" pInputText  placeholder="Disabled" [disabled]="true"/>
+				</div>
+				<div class="col-12 mb-2 lg:col-4 lg:mb-0 p-inputtext-sm">
+					<input type="text" pInputText  placeholder="Invalid" class="ng-dirty ng-invalid"/>
+				</div>
+			</div>
+
 			<h5>Icons</h5>
 			<div class="grid formgrid">
 				<div class="col-12 mb-2 lg:col-4 lg:mb-0">
@@ -43,6 +56,12 @@
 				<input id="float-input" type="text" pInputText>
 				<label for="float-input">Username</label>
 			</span>
+			
+			<h5>Small Float Label</h5>
+			<span class="p-float-label p-inputtext-sm">
+				<input id="float-input" type="text" pInputText>
+				<label for="float-input">Username</label>
+			</span>
 
 			<h5>Textarea</h5>
 			<textarea rows="5" cols="30" placeholder="Your Message" pInputTextarea></textarea>
@@ -61,6 +80,7 @@
 			<h5>Chips</h5>
 			<p-chips></p-chips>
 		</div>
+
 
 
 		<div class="card">

@@ -38,11 +38,11 @@
 
     //Add tag size
     &.p-tag-sm {
-        height: $tag-height-sm;
         font-weight: $fw-body2;
         font-size: $fs-body2;
         line-height: $lh-body2;
         letter-spacing: $ls-body2;
         border-radius: $tag-border-radius-sm;
+        height: $tag-height-sm;
     }
 }

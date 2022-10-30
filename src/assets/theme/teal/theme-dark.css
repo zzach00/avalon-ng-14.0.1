@@ -804,52 +804,56 @@ p-chips.p-chips-clearable .p-chips-clear-icon {
 }
 
 .p-dropdown {
-  background: #20262e;
-  border: 1px solid #3f4b5b;
+  background: rgba(78, 93, 85, 0.03) !important;
   transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
-  border-radius: 4px;
+  border-radius: 0.25rem;
+  height: 3rem;
 }
 .p-dropdown:not(.p-disabled):hover {
-  border-color: #3f4b5b;
+  outline: 0.125rem solid rgb(88, 131, 105);
 }
 .p-dropdown:not(.p-disabled).p-focus {
-  outline: 0 none;
-  outline-offset: 0;
-  box-shadow: 0 0 0 1px #b8eede;
-  border-color: #4dd4ac;
+  outline: 0.188rem solid rgb(11, 79, 28);
 }
 .p-dropdown.p-dropdown-clearable .p-dropdown-label {
-  padding-right: 1.75rem;
+  padding-right: 3.5rem;
 }
 .p-dropdown .p-dropdown-label {
   background: transparent;
-  border: 0 none;
+  border: none;
 }
 .p-dropdown .p-dropdown-label.p-placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.5);
 }
 .p-dropdown .p-dropdown-label:enabled:focus {
-  outline: 0 none;
+  outline: none;
   box-shadow: none;
 }
 .p-dropdown .p-dropdown-trigger {
   background: transparent;
-  color: rgba(255, 255, 255, 0.6);
-  width: 2.357rem;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  color: rgba(0, 0, 0, 0.5);
+  width: 1.5rem;
+  font-size: 1rem;
+  margin-right: 1rem;
+  border-radius: 0.25rem;
 }
 .p-dropdown .p-dropdown-clear-icon {
-  color: rgba(255, 255, 255, 0.6);
-  right: 2.357rem;
+  color: rgb(18, 18, 18);
+  font-size: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 0;
+  right: 3rem;
+}
+.p-dropdown .p-dropdown-panel {
+  top: 3.5rem !important;
 }
 
 .p-dropdown-panel {
-  background: #2a323d;
-  color: rgba(255, 255, 255, 0.87);
-  border: 1px solid #3f4b5b;
-  border-radius: 4px;
-  box-shadow: none;
+  background: rgb(255, 255, 255);
+  color: rgb(18, 18, 18);
+  border-radius: 0.25rem;
+  box-shadow: 0px 2px 4px rgba(1, 16, 8, 0.06), 0px 2px 16px rgba(1, 16, 8, 0.04), 0px 8px 24px rgba(1, 16, 8, 0.02);
 }
 .p-dropdown-panel .p-dropdown-header {
   padding: 0.75rem 1.5rem;
@@ -869,24 +873,23 @@ p-chips.p-chips-clearable .p-chips-clear-icon {
   color: rgba(255, 255, 255, 0.6);
 }
 .p-dropdown-panel .p-dropdown-items {
-  padding: 0.5rem 0;
+  padding: 0.5rem;
 }
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
-  margin: 0;
-  padding: 0.5rem 1.5rem;
-  border: 0 none;
-  color: rgba(255, 255, 255, 0.87);
-  background: transparent;
+  margin: 0.25rem;
+  height: 3rem;
+  padding: 1rem;
+  color: rgb(18, 18, 18);
+  background: rgb(255, 255, 255);
   transition: box-shadow 0.15s;
-  border-radius: 0;
+  border-radius: 0.25rem;
 }
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
-  color: #1b1b1c;
-  background: #4dd4ac;
+  color: rgb(13, 41, 16);
+  background: rgba(16, 212, 35, 0.12);
 }
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
-  color: rgba(255, 255, 255, 0.87);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(78, 93, 85, 0.03);
 }
 .p-dropdown-panel .p-dropdown-items .p-dropdown-empty-message {
   padding: 0.5rem 1.5rem;
@@ -906,13 +909,13 @@ p-dropdown.ng-dirty.ng-invalid > .p-dropdown {
 }
 
 .p-input-filled .p-dropdown {
-  background: #3f4b5b;
+  background: rgb(255, 255, 255) !important;
 }
 .p-input-filled .p-dropdown:not(.p-disabled):hover {
-  background-color: #3f4b5b;
+  outline: 0.125rem solid rgb(88, 131, 105);
 }
 .p-input-filled .p-dropdown:not(.p-disabled).p-focus {
-  background-color: #3f4b5b;
+  outline: 0.188rem solid rgb(11, 79, 28);
 }
 .p-input-filled .p-dropdown:not(.p-disabled).p-focus .p-inputtext {
   background-color: transparent;
@@ -1172,7 +1175,7 @@ p-inputswitch.ng-dirty.ng-invalid > .p-inputswitch {
   line-height: 1.125rem;
   letter-spacing: 0.038rem;
   color: rgb(18, 18, 18);
-  background: rgb(255, 255, 255);
+  background: rgba(78, 93, 85, 0.03);
   height: 3rem;
   padding: 1rem;
   border: none;
@@ -1182,28 +1185,43 @@ p-inputswitch.ng-dirty.ng-invalid > .p-inputswitch {
           appearance: none;
   border-radius: 0.25rem;
 }
-.p-inputtext:hover {
+.p-inputtext:enabled:hover {
   border: 0.125rem solid rgba(16, 212, 35, 0.12);
 }
 .p-inputtext:focus-visible {
-  border: 0.125rem solid rgba(16, 212, 35, 0.12);
+  border: 0.188rem solid rgb(88, 131, 105) !important;
+  background-color: rgb(255, 255, 255);
 }
 .p-inputtext.ng-dirty.ng-invalid {
   border: 0.125rem solid var(--red-500);
+  background-color: rgb(255, 255, 255);
 }
 .p-inputtext.p-inputtext-sm {
-  height: 2rem;
+  height: 2.5rem;
   padding: 0.5rem;
 }
-.p-inputtext.p-inputtext-lg {
-  height: 2.5rem;
+.p-inputtext.p-inputtext-md {
+  height: 2.75rem;
   padding: 0.75rem;
+}
+.p-inputtext.p-filled:hover {
+  border: 0.125rem solid rgba(16, 212, 35, 0.12);
+}
+.p-inputtext.p-filled:focus-visible {
+  border: 0.188rem solid rgb(88, 131, 105) !important;
+  background-color: rgb(255, 255, 255);
 }
 
 .p-float-label > label {
-  left: 0.75rem;
+  left: 1rem;
   color: rgba(0, 0, 0, 0.5);
   transition-duration: 0.15s;
+}
+.p-float-label > label.inputtext-md {
+  left: 0.75rem;
+}
+.p-float-label > label.inputtext-sm {
+  left: 0.5rem;
 }
 
 .p-float-label > .ng-invalid.ng-dirty + label {
@@ -1211,25 +1229,55 @@ p-inputswitch.ng-dirty.ng-invalid > .p-inputswitch {
 }
 
 .p-input-icon-left > i:first-of-type {
+  left: 1rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+.p-input-icon-left > i:first-of-type.inputtext-md {
   left: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
+}
+.p-input-icon-left > i:first-of-type.inputtext-sm {
+  left: 0.5rem;
 }
 
 .p-input-icon-left > .p-inputtext {
+  padding-left: 3rem;
+}
+.p-input-icon-left > .p-inputtext.inputtext-md {
   padding-left: 2.5rem;
+}
+.p-input-icon-left > .p-inputtext.inputtext-sm {
+  padding-left: 2rem;
 }
 
 .p-input-icon-left.p-float-label > label {
+  left: 3rem;
+}
+.p-input-icon-left.p-float-label > label.inputtext-md {
   left: 2.5rem;
+}
+.p-input-icon-left.p-float-label > label.inputtext-sm {
+  left: 2rem;
 }
 
 .p-input-icon-right > i:last-of-type {
+  right: 1rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+.p-input-icon-right > i:last-of-type.inputtext-md {
   right: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
+}
+.p-input-icon-right > i:last-of-type.inputtext-sm {
+  right: 0.5rem;
 }
 
 .p-input-icon-right > .p-inputtext {
+  padding-right: 3rem;
+}
+.p-input-icon-right > .p-inputtext.inputtext-md {
   padding-right: 2.5rem;
+}
+.p-input-icon-right > .p-inputtext.inputtext-sm {
+  padding-right: 2rem;
 }
 
 ::-webkit-input-placeholder {
@@ -1248,24 +1296,18 @@ p-inputswitch.ng-dirty.ng-invalid > .p-inputswitch {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.p-input-filled .p-inputtext {
-  background-color: rgb(255, 255, 255);
-}
-.p-input-filled .p-inputtext:hover {
-  border: 0.125rem solid rgba(16, 212, 35, 0.12);
-}
-.p-input-filled .p-inputtext:focus {
-  border: 0.188rem solid rgba(16, 212, 35, 0.45);
-}
-
 .p-inputtext-sm .p-inputtext {
-  font-size: 0.875rem;
-  padding: 0.4375rem 0.65625rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.069rem;
+  height: 2.5rem;
 }
 
-.p-inputtext-lg .p-inputtext {
-  font-size: 1.25rem;
-  padding: 0.625rem 0.9375rem;
+.p-inputtext-md .p-inputtext {
+  height: 2.5rem;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.038rem;
 }
 
 .p-listbox {
@@ -6277,12 +6319,12 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   font-size: 0.875rem;
 }
 .p-tag.p-tag-sm {
-  height: 1.5rem;
   font-weight: 400;
   font-size: 0.75rem;
   line-height: 1rem;
   letter-spacing: 0.069rem;
   border-radius: 0.75rem;
+  height: 1.5rem;
 }
 
 .p-terminal {

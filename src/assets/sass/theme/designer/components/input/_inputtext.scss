@@ -5,7 +5,7 @@
     line-height: $lh-body1;
     letter-spacing: $ls-body1;
     color: $color-neutral-D6;
-    background: $color-neutral-L6;
+    background: $color-neutral-M1;
     height: $inputtext-height-lg;
     padding: $inputtext-padding-lg;
     border: none;
@@ -13,17 +13,19 @@
     appearance: none;
     border-radius: $inputtext-border-radius;
     
-    &:hover {
+    &:enabled:hover {
         border: $inputtext-border-size-1 solid $color-primary-2;
     }
     
     &:focus-visible {
-        border: $inputtext-border-size-1 solid $color-primary-2;
+        border: $inputtext-border-size-2 solid $color-primary-D3 !important;
+        background-color: $color-neutral-L6;
     }
     
     &.ng-dirty.ng-invalid {
         // @include invalid-input();
         border: $inputtext-border-size-1 solid var(--red-500);
+        background-color: $color-neutral-L6;
     }
     
     &.p-inputtext-sm {
@@ -31,25 +33,44 @@
         // @include scaledPadding($inputPadding, $scaleSM);
         height: $inputtext-height-sm;
         padding: $inputtext-padding-sm;
-        
     }
-    
+
     // &.p-inputtext-lg {
     //     @include scaledFontSize($inputTextFontSize, $scaleLG);
     //     @include scaledPadding($inputPadding, $scaleLG);
     // }
     
     //Add medium size
-    &.p-inputtext-lg {
+    &.p-inputtext-md {
         height: $inputtext-height-md;
         padding: $inputtext-padding-md;
+    }
+
+    //Add filled state
+    &.p-filled {
+        &:hover {
+            border: $inputtext-border-size-1 solid $color-primary-2;
+        }
+        
+        &:focus-visible {
+            border: $inputtext-border-size-2 solid $color-primary-D3 !important;
+            background-color: $color-neutral-L6;
+        }
     }
 }
 
 .p-float-label > label {
-    left: nth($inputPadding, 2);
+    left: $inputtext-padding-lg;
     color: $color-neutral-D4;
     transition-duration: $transitionDuration;
+
+    &.inputtext-md {
+        left: $inputtext-padding-md;
+    }
+    
+    &.inputtext-sm {
+        left: $inputtext-padding-sm;
+    }
 }
 
 .p-float-label > .ng-invalid.ng-dirty + label {
@@ -57,55 +78,109 @@
 }
 
 .p-input-icon-left > i:first-of-type {
-    left: nth($inputPadding, 2);
-    color: $inputIconColor;
+    left: $inputtext-padding-lg;
+    color: $color-neutral-D4;
+    
+    &.inputtext-md {
+        left: $inputtext-padding-md;
+    }
+    
+    &.inputtext-sm {
+        left: $inputtext-padding-sm;
+    }
 }
 
 .p-input-icon-left > .p-inputtext {
-    padding-left: nth($inputPadding, 2) * 2 + $primeIconFontSize;
+    padding-left: $inputtext-padding-lg * 2 + $primeIconFontSize;
+    
+    &.inputtext-md {
+        padding-left: $inputtext-padding-md * 2 + $primeIconFontSize;
+    }
+    
+    &.inputtext-sm {
+        padding-left: $inputtext-padding-sm * 2 + $primeIconFontSize;
+    }
 }
 
 .p-input-icon-left.p-float-label > label {
-    left: nth($inputPadding, 2) * 2 + $primeIconFontSize;
+    left: $inputtext-padding-lg * 2 + $primeIconFontSize;
+
+    &.inputtext-md {
+        left: $inputtext-padding-md * 2 + $primeIconFontSize;
+    }
+    
+    &.inputtext-sm {
+        left: $inputtext-padding-sm * 2 + $primeIconFontSize;
+    }
 }
 
 .p-input-icon-right > i:last-of-type  {
-    right: nth($inputPadding, 2);
-    color: $inputIconColor;
+    right: $inputtext-padding-lg;
+    color: $color-neutral-D4;
+
+    &.inputtext-md {
+        right: $inputtext-padding-md;
+    }
+    
+    &.inputtext-sm {
+        right: $inputtext-padding-sm;
+    }
 }
 
 .p-input-icon-right > .p-inputtext {
-    padding-right: nth($inputPadding, 2) * 2 + $primeIconFontSize;
+    padding-right: $inputtext-padding-lg * 2 + $primeIconFontSize;
+
+    &.inputtext-md {
+        padding-right: $inputtext-padding-md * 2 + $primeIconFontSize;
+    }
+    
+    &.inputtext-sm {
+        padding-right: $inputtext-padding-sm * 2 + $primeIconFontSize;
+    }
 }
 
 @include placeholder {
     color: $color-neutral-D4;
 };
 
-.p-input-filled {
-    .p-inputtext {
-        background-color: $color-neutral-L6;
+// .p-input-filled {
+//     .p-inputtext {
+//         background-color: $color-neutral-L6;
 
-        &:hover {
-            border: $inputtext-border-size-1 solid $color-primary-2;
-        }
+//         &:hover {
+//             border: $inputtext-border-size-1 solid $color-primary-2;
+//         }
 
-        &:focus {
-            border: $inputtext-border-size-2 solid $color-primary-3;
-        }
-    }
-}
+//         &:focus {
+//             border: $inputtext-border-size-2 solid $color-primary-3;
+//         }
+//     }
+// }
 
 .p-inputtext-sm {
     .p-inputtext {
-        @include scaledFontSize($inputTextFontSize, $scaleSM);
-        @include scaledPadding($inputPadding, $scaleSM);
+        // @include scaledFontSize($inputTextFontSize, $scaleSM);
+        // @include scaledPadding($inputPadding, $scaleSM);
+        font-size: $fs-body2;
+        line-height: $lh-body2;
+        letter-spacing: $ls-body2;
+        height: $inputtext-height-sm;
     }
 }
 
-.p-inputtext-lg {
+// .p-inputtext-lg {
+    //     .p-inputtext {
+        //         @include scaledFontSize($inputTextFontSize, $scaleLG);
+        //         @include scaledPadding($inputPadding, $scaleLG);
+        //     }
+        // }
+        
+//
+.p-inputtext-md {
     .p-inputtext {
-        @include scaledFontSize($inputTextFontSize, $scaleLG);
-        @include scaledPadding($inputPadding, $scaleLG);
+        height: $inputtext-height-sm;
+        font-size: $fs-body1;
+        line-height: $lh-body1;
+        letter-spacing: $ls-body1;
     }
 }
