@@ -1,45 +1,59 @@
 .p-inputtext {
     font-family: $fontFamily;
-    font-size: $inputTextFontSize;
-    color: $inputTextColor;
-    background: $inputBg;
-    padding: $inputPadding;
-    border: $inputBorder;
+    font-weight: $fw-body1;
+    font-size: $fs-body1;
+    line-height: $lh-body1;
+    letter-spacing: $ls-body1;
+    color: $color-neutral-D6;
+    background: $color-neutral-L6;
+    height: $inputtext-height-lg;
+    padding: $inputtext-padding-lg;
+    border: none;
     transition: $formElementTransition;
     appearance: none;
-    border-radius: $borderRadius;
-
-    &:enabled:hover {
-        border-color: $inputHoverBorderColor;
+    border-radius: $inputtext-border-radius;
+    
+    &:hover {
+        border: $inputtext-border-size-1 solid $color-primary-2;
     }
-
-    &:enabled:focus {
-        @include focused-input();
+    
+    &:focus-visible {
+        border: $inputtext-border-size-1 solid $color-primary-2;
     }
-
+    
     &.ng-dirty.ng-invalid {
-        @include invalid-input();
+        // @include invalid-input();
+        border: $inputtext-border-size-1 solid var(--red-500);
     }
-
+    
     &.p-inputtext-sm {
-        @include scaledFontSize($inputTextFontSize, $scaleSM);
-        @include scaledPadding($inputPadding, $scaleSM);
+        // @include scaledFontSize($inputTextFontSize, $scaleSM);
+        // @include scaledPadding($inputPadding, $scaleSM);
+        height: $inputtext-height-sm;
+        padding: $inputtext-padding-sm;
+        
     }
-
+    
+    // &.p-inputtext-lg {
+    //     @include scaledFontSize($inputTextFontSize, $scaleLG);
+    //     @include scaledPadding($inputPadding, $scaleLG);
+    // }
+    
+    //Add medium size
     &.p-inputtext-lg {
-        @include scaledFontSize($inputTextFontSize, $scaleLG);
-        @include scaledPadding($inputPadding, $scaleLG);
+        height: $inputtext-height-md;
+        padding: $inputtext-padding-md;
     }
 }
 
 .p-float-label > label {
     left: nth($inputPadding, 2);
-    color: $inputPlaceholderTextColor;
+    color: $color-neutral-D4;
     transition-duration: $transitionDuration;
 }
 
 .p-float-label > .ng-invalid.ng-dirty + label {
-    color: $inputErrorBorderColor;
+    color: var(--red-500);
 }
 
 .p-input-icon-left > i:first-of-type {
@@ -65,19 +79,19 @@
 }
 
 @include placeholder {
-    color: $inputPlaceholderTextColor
+    color: $color-neutral-D4;
 };
 
 .p-input-filled {
     .p-inputtext {
-        background-color: $inputFilledBg;
+        background-color: $color-neutral-L6;
 
-        &:enabled:hover {
-            background-color: $inputFilledHoverBg;
+        &:hover {
+            border: $inputtext-border-size-1 solid $color-primary-2;
         }
 
-        &:enabled:focus {
-            background-color: $inputFilledFocusBg;
+        &:focus {
+            border: $inputtext-border-size-2 solid $color-primary-3;
         }
     }
 }

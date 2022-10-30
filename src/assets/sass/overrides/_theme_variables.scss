@@ -63,7 +63,6 @@ $color-background-L3: rgba(235, 250, 235, 1);
     lh: line height
     ls: letter spacing
 */
-
 $fw-h1: 500;
 $fs-h1: 3.563rem;
 $lh-h1: 4.375rem;
@@ -161,8 +160,8 @@ $btn-border-size-2: 0.125rem;
 $btn-border-size-1: 0.1rem;
 
 //Chips
-
 $chip-border-size: 0.063rem;
+
 $chip-border-radius-md: 1rem;
 $chip-border-radius-sm: 0.5rem;
 
@@ -170,8 +169,21 @@ $chip-height-md: 2rem;
 $chip-height-sm: 1.5rem;
 
 
-//Tags
+//Input
+$inputtext-padding-lg: 1rem;
+$inputtext-padding-md: 0.75rem;
+$inputtext-padding-sm: 0.5rem;
 
+$inputtext-border-size-2: 0.188rem;
+$inputtext-border-size-1: 0.125rem;
+
+$inputtext-border-radius: 0.25rem;
+
+$inputtext-height-lg: 3rem;
+$inputtext-height-md: 2.5rem;
+$inputtext-height-sm: 2rem;
+
+//Tags
 $tag-height-md: 2rem;
 $tag-height-sm: 1.5rem;
 
