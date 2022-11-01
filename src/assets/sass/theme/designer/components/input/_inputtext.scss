@@ -6,33 +6,33 @@
     letter-spacing: $ls-body1;
     color: $color-neutral-D6;
     background: $color-neutral-M1;
-    height: $inputtext-height-lg;
+    // height: $inputtext-height-lg;
     padding: $inputtext-padding-lg;
     border: none;
     transition: $formElementTransition;
     appearance: none;
     border-radius: $inputtext-border-radius;
     
-    &:enabled:hover {
-        border: $inputtext-border-size-1 solid $color-primary-2;
+    &:hover {
+        outline: $inputtext-border-size-1 solid $color-primary-2;
     }
     
-    &:focus-visible {
-        border: $inputtext-border-size-2 solid $color-primary-D3 !important;
+    &:focus {
+        outline: $inputtext-border-size-2 solid $color-primary-D3 !important;
         background-color: $color-neutral-L6;
     }
     
     &.ng-dirty.ng-invalid {
         // @include invalid-input();
-        border: $inputtext-border-size-1 solid var(--red-500);
+        outline: $inputtext-border-size-1 solid var(--red-500);
         background-color: $color-neutral-L6;
     }
     
     &.p-inputtext-sm {
         // @include scaledFontSize($inputTextFontSize, $scaleSM);
         // @include scaledPadding($inputPadding, $scaleSM);
-        height: $inputtext-height-sm;
         padding: $inputtext-padding-sm;
+
     }
 
     // &.p-inputtext-lg {
@@ -42,25 +42,25 @@
     
     //Add medium size
     &.p-inputtext-md {
-        height: $inputtext-height-md;
+        // height: $inputtext-height-md;
         padding: $inputtext-padding-md;
     }
 
     //Add filled state
     &.p-filled {
         &:hover {
-            border: $inputtext-border-size-1 solid $color-primary-2;
+            outline: $inputtext-border-size-1 solid $color-primary-2;
         }
         
-        &:focus-visible {
-            border: $inputtext-border-size-2 solid $color-primary-D3 !important;
+        &:focus {
+            outline: $inputtext-border-size-2 solid $color-primary-D3 !important;
             background-color: $color-neutral-L6;
         }
     }
 }
 
 .p-float-label > label {
-    left: $inputtext-padding-lg;
+    left: nth($inputtext-padding-lg, 2);
     color: $color-neutral-D4;
     transition-duration: $transitionDuration;
 
@@ -78,7 +78,7 @@
 }
 
 .p-input-icon-left > i:first-of-type {
-    left: $inputtext-padding-lg;
+    left: nth($inputtext-padding-lg, 2);
     color: $color-neutral-D4;
     
     &.inputtext-md {
@@ -91,31 +91,31 @@
 }
 
 .p-input-icon-left > .p-inputtext {
-    padding-left: $inputtext-padding-lg * 2 + $primeIconFontSize;
+    padding-left: nth($inputtext-padding-lg, 2) * 2 + $primeIconFontSize;
     
     &.inputtext-md {
-        padding-left: $inputtext-padding-md * 2 + $primeIconFontSize;
+        padding-left: nth($inputtext-padding-md, 2) * 2 + $primeIconFontSize;
     }
     
     &.inputtext-sm {
-        padding-left: $inputtext-padding-sm * 2 + $primeIconFontSize;
+        padding-left: nth($inputtext-padding-sm, 2) * 2 + $primeIconFontSize;
     }
 }
 
 .p-input-icon-left.p-float-label > label {
-    left: $inputtext-padding-lg * 2 + $primeIconFontSize;
+    left: nth($inputtext-padding-lg, 2) * 2 + $primeIconFontSize;
 
     &.inputtext-md {
-        left: $inputtext-padding-md * 2 + $primeIconFontSize;
+        left: nth($inputtext-padding-md, 2) * 2 + $primeIconFontSize;
     }
     
     &.inputtext-sm {
-        left: $inputtext-padding-sm * 2 + $primeIconFontSize;
+        left: nth($inputtext-padding-sm, 2) * 2 + $primeIconFontSize;
     }
 }
 
 .p-input-icon-right > i:last-of-type  {
-    right: $inputtext-padding-lg;
+    right: nth($inputtext-padding-lg, 2);
     color: $color-neutral-D4;
 
     &.inputtext-md {
@@ -128,14 +128,14 @@
 }
 
 .p-input-icon-right > .p-inputtext {
-    padding-right: $inputtext-padding-lg * 2 + $primeIconFontSize;
+    padding-right: nth($inputtext-padding-lg, 2) * 2 + $primeIconFontSize;
 
     &.inputtext-md {
-        padding-right: $inputtext-padding-md * 2 + $primeIconFontSize;
+        padding-right: nth($inputtext-padding-md, 2) * 2 + $primeIconFontSize;
     }
     
     &.inputtext-sm {
-        padding-right: $inputtext-padding-sm * 2 + $primeIconFontSize;
+        padding-right: nth($inputtext-padding-sm, 2) * 2 + $primeIconFontSize;
     }
 }
 
@@ -164,7 +164,8 @@
         font-size: $fs-body2;
         line-height: $lh-body2;
         letter-spacing: $ls-body2;
-        height: $inputtext-height-sm;
+        
+        padding: $inputtext-padding-sm;
     }
 }
 
@@ -174,13 +175,19 @@
         //         @include scaledPadding($inputPadding, $scaleLG);
         //     }
         // }
-        
 //
+
+//Add medium size
 .p-inputtext-md {
     .p-inputtext {
-        height: $inputtext-height-sm;
         font-size: $fs-body1;
         line-height: $lh-body1;
         letter-spacing: $ls-body1;
+
+        padding: $inputtext-padding-sm;
     }
+}
+
+:focus-visible{
+    outline: 0 !important;
 }

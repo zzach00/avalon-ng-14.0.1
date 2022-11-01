@@ -1,4 +1,5 @@
 /* Add your variable customizations of theme here */
+@use 'sass:math';
 
 //Custom shades
 $shade1: 0px 2px 4px rgba(1, 16, 8, 0.06), 0px 2px 16px rgba(1, 16, 8, 0.04), 0px 8px 24px rgba(1, 16, 8, 0.02);
@@ -28,7 +29,7 @@ $color-primary-D5: rgba(11, 79, 28, 1);
 $color-primary-D6: rgba(13, 41, 16, 1);
 
 $color-neutral-D1: rgba(0, 0, 0, 0.05);
-$color-neutral-D2: rgba(0, 0, 0, 0.15);
+$color-neutral-D2: rgba(0, 0, 0, 0.125);
 $color-neutral-D3: rgba(0, 0, 0, 0.35);
 $color-neutral-D4: rgba(0, 0, 0, 0.5);
 $color-neutral-D5: rgba(0, 0, 0, 0.75);
@@ -156,8 +157,25 @@ $btn-border-rad-md: 0.25rem;
 $btn-border-rad-sm: 0.125rem;
 
 $btn-border-size-3: 0.188rem;
-$btn-border-size-2: 0.125rem;
-$btn-border-size-1: 0.1rem;
+$btn-border-size-2: 0.175rem;
+$btn-border-size-1: 0.125rem;
+
+//Calendar
+$calendar-datecell-width: 3rem;
+$calendar-datecell-height: 3rem;
+$calendar-datecell-border-radius: math.div($calendar-datecell-height, 2);
+$calendar-grid-padding: 0.25rem;
+$calendar-cell-border: 0.15rem solid $color-primary-D4;
+
+$calendar-header-border-bottom: 0.063rem solid $color-neutral-M2;
+$calendar-header-grid-padding: 0.125rem;
+$calendar-title-padding: 0.438rem 1rem;
+
+
+
+//Checkbox
+$checkbox-border-size: 0.125rem;
+$checkbox-border-radius: 0.25rem; 
 
 //Chips
 $chip-border-size: 0.063rem;
@@ -168,11 +186,13 @@ $chip-border-radius-sm: 0.5rem;
 $chip-height-md: 2rem;
 $chip-height-sm: 1.5rem;
 
+//Dialog
+$dialog-border: 0.5rem;
 
 //Input - Inputtext
-$inputtext-padding-lg: 1rem;
-$inputtext-padding-md: 0.75rem;
-$inputtext-padding-sm: 0.5rem;
+$inputtext-padding-lg: 0.813rem 1rem;
+$inputtext-padding-md: 0.688rem 0.875rem;
+$inputtext-padding-sm: 0.563rem 0.75rem;
 
 $inputtext-border-size-2: 0.188rem;
 $inputtext-border-size-1: 0.125rem;
@@ -188,11 +208,6 @@ $inputdropdown-height-lg: 3rem;
 $inputdropdown-height-md: 2.75rem;
 $inputdropdown-height-sm: 2.5rem;
 
-$inputdropdown-items-padding-lg: 0 0.5rem;
-$inputdropdown-items-padding-md: 0 0.25rem;
-$inputdropdown-items-padding-sm: 0 0.125rem;
-
-
 $inputdropdown-border-size-2: 0.188rem;
 $inputdropdown-border-size-1: 0.125rem;
 
@@ -206,9 +221,14 @@ $inputdropdown-item-lg: 3rem;
 $inputdropdown-item-md: 2.75rem;
 $inputdropdown-item-sm: 2.5rem;
 
+//Messages
+
 //Tags
 $tag-height-md: 2rem;
 $tag-height-sm: 1.5rem;
 
 $tag-border-radius-md: 1rem;
 $tag-border-radius-sm: 0.75rem;
+
+//Scroll bar
+$scrollbar-width: 0.25rem;

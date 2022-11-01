@@ -1,7 +1,8 @@
 .p-button {
     color: $color-neutral-L6;
     background: $color-primary-7;
-    border: transparent;
+    outline: transparent;
+    border: none;
     height: $btn-height-lg;
     padding: 0 1rem;
     font-weight: $fw-label1;
@@ -22,7 +23,7 @@
     &.p-button-outlined {
         background: transparent;
         color: $color-primary-D6;
-        border: $btn-border-size-2 solid $color-primary-D6;
+        outline: $btn-border-size-2 solid $color-primary-D6;
 
         &:hover {
             background: $color-primary-1;
@@ -33,18 +34,18 @@
         }
         
         &:focus {
-            border: $btn-border-size-3 solid $color-primary-D6;
+            outline: $btn-border-size-3 solid $color-primary-D6 !important;
         }
 
         // &.p-button-plain {
         //     color: $color-primary-D6;
-        //     border: none;
+        //     outline: none;
             
-        //     &:enabled:hover {
+        //     &:hover {
         //         background: $color-primary-1;
         //     }
             
-        //     &:enabled:active {
+        //     &:active {
         //         background: $color-primary-2;
         //     }
         // }
@@ -63,27 +64,27 @@
             background: $color-primary-2;
         }
 
-        &:focus-visible {
-            border: $btn-border-size-3 solid $color-primary-D1;
+        &:focus {
+            outline: $btn-border-size-3 solid $color-primary-D1;
         }
 
         // &.p-button-plain {
         //     color: $plainButtonTextColor;
 
-        //     &:enabled:hover {
+        //     &:hover {
         //         background: $plainButtonHoverBgColor;
         //         color: $plainButtonTextColor;
         //     }
     
-        //     &:enabled:active {
+        //     &:active {
         //         background: $plainButtonActiveBgColor;
         //         color: $plainButtonTextColor;
         //     }
         // }
     }
 
-    &:focus-visible {
-        border: $btn-border-size-3 solid $color-primary-D1;
+    &:focus {
+        outline: $btn-border-size-3 solid $color-primary-D1 !important;
     }
 
     // Add disabled state
@@ -215,19 +216,19 @@
 .p-button.p-button-secondary, .p-buttonset.p-button-secondary > .p-button, .p-splitbutton.p-button-secondary > .p-button {
     color: $secondaryButtonTextColor;
     background: $secondaryButtonBg;
-    border: $secondaryButtonBorder;
+    outline: $secondaryButtonBorder;
 
-    &:enabled:hover {
+    &:hover {
         background: $secondaryButtonHoverBg;
         color: $secondaryButtonTextHoverColor;
         border-color: $secondaryButtonHoverBorderColor;
     }
 
-    &:enabled:focus {
+    &:focus {
         box-shadow: $secondaryButtonFocusShadow;
     }
 
-    &:enabled:active {
+    &:active {
         background: $secondaryButtonActiveBg;
         color: $secondaryButtonTextActiveColor;
         border-color: $secondaryButtonActiveBorderColor;
@@ -236,18 +237,18 @@
     &.p-button-outlined {
         background-color: transparent;
         color: $secondaryButtonBg;
-        border: $outlinedButtonBorder;
+        outline: $outlinedButtonBorder;
 
-        &:enabled:hover {
+        &:hover {
             background: rgba($secondaryButtonBg, $textButtonHoverBgOpacity);
             color: $secondaryButtonBg;
-            border: $outlinedButtonBorder;
+            outline: $outlinedButtonBorder;
         }
 
-        &:enabled:active {
+        &:active {
             background: rgba($secondaryButtonBg, $textButtonActiveBgOpacity);
             color: $secondaryButtonBg;
-            border: $outlinedButtonBorder;
+            outline: $outlinedButtonBorder;
         }
     }
 
@@ -256,13 +257,13 @@
         color: $secondaryButtonBg;
         border-color: transparent;
 
-        &:enabled:hover {
+        &:hover {
             background: rgba($secondaryButtonBg, $textButtonHoverBgOpacity);
             border-color: transparent;
             color: $secondaryButtonBg;
         }
 
-        &:enabled:active {
+        &:active {
             background: rgba($secondaryButtonBg, $textButtonActiveBgOpacity);
             border-color: transparent;
             color: $secondaryButtonBg;
@@ -273,19 +274,19 @@
 .p-button.p-button-info, .p-buttonset.p-button-info > .p-button, .p-splitbutton.p-button-info > .p-button {
     color: $infoButtonTextColor;
     background: $infoButtonBg;
-    border: $infoButtonBorder;
+    outline: $infoButtonBorder;
 
-    &:enabled:hover {
+    &:hover {
         background: $infoButtonHoverBg;
         color: $infoButtonTextHoverColor;
         border-color: $infoButtonHoverBorderColor;
     }
 
-    &:enabled:focus {
+    &:focus {
         box-shadow: $infoButtonFocusShadow;
     }
 
-    &:enabled:active {
+    &:active {
         background: $infoButtonActiveBg;
         color: $infoButtonTextActiveColor;
         border-color: $infoButtonActiveBorderColor;
@@ -294,18 +295,18 @@
     &.p-button-outlined {
         background-color: transparent;
         color: $infoButtonBg;
-        border: $outlinedButtonBorder;
+        outline: $outlinedButtonBorder;
 
-        &:enabled:hover {
+        &:hover {
             background: rgba($infoButtonBg, $textButtonHoverBgOpacity);
             color: $infoButtonBg;
-            border: $outlinedButtonBorder;
+            outline: $outlinedButtonBorder;
         }
 
-        &:enabled:active {
+        &:active {
             background: rgba($infoButtonBg, $textButtonActiveBgOpacity);
             color: $infoButtonBg;
-            border: $outlinedButtonBorder;
+            outline: $outlinedButtonBorder;
         }
     }
 
@@ -314,13 +315,13 @@
         color: $infoButtonBg;
         border-color: transparent;
 
-        &:enabled:hover {
+        &:hover {
             background: rgba($infoButtonBg, $textButtonHoverBgOpacity);
             border-color: transparent;
             color: $infoButtonBg;
         }
 
-        &:enabled:active {
+        &:active {
             background: rgba($infoButtonBg, $textButtonActiveBgOpacity);
             border-color: transparent;
             color: $infoButtonBg;
@@ -331,19 +332,19 @@
 .p-button.p-button-success, .p-buttonset.p-button-success > .p-button, .p-splitbutton.p-button-success > .p-button {
     color: $successButtonTextColor;
     background: $successButtonBg;
-    border: $successButtonBorder;
+    outline: $successButtonBorder;
 
-    &:enabled:hover {
+    &:hover {
         background: $successButtonHoverBg;
         color: $successButtonTextHoverColor;
         border-color: $successButtonHoverBorderColor;
     }
 
-    &:enabled:focus {
+    &:focus {
         box-shadow: $successButtonFocusShadow;
     }
 
-    &:enabled:active {
+    &:active {
         background: $successButtonActiveBg;
         color: $successButtonTextActiveColor;
         border-color: $successButtonActiveBorderColor;
@@ -352,18 +353,18 @@
     &.p-button-outlined {
         background-color: transparent;
         color: $successButtonBg;
-        border: $outlinedButtonBorder;
+        outline: $outlinedButtonBorder;
 
-        &:enabled:hover {
+        &:hover {
             background: rgba($successButtonBg, $textButtonHoverBgOpacity);
             color: $successButtonBg;
-            border: $outlinedButtonBorder;
+            outline: $outlinedButtonBorder;
         }
 
-        &:enabled:active {
+        &:active {
             background: rgba($successButtonBg, $textButtonActiveBgOpacity);
             color: $successButtonBg;
-            border: $outlinedButtonBorder;
+            outline: $outlinedButtonBorder;
         }
     }
 
@@ -372,13 +373,13 @@
         color: $successButtonBg;
         border-color: transparent;
 
-        &:enabled:hover {
+        &:hover {
             background: rgba($successButtonBg, $textButtonHoverBgOpacity);
             border-color: transparent;
             color: $successButtonBg;
         }
 
-        &:enabled:active {
+        &:active {
             background: rgba($successButtonBg, $textButtonActiveBgOpacity);
             border-color: transparent;
             color: $successButtonBg;
@@ -389,19 +390,19 @@
 .p-button.p-button-warning, .p-buttonset.p-button-warning > .p-button, .p-splitbutton.p-button-warning > .p-button {
     color: $warningButtonTextColor;
     background: $warningButtonBg;
-    border: $warningButtonBorder;
+    outline: $warningButtonBorder;
     
-    &:enabled:hover {
+    &:hover {
         background: $warningButtonHoverBg;
         color: $warningButtonTextHoverColor;
         border-color: $warningButtonHoverBorderColor;
     }
 
-    &:enabled:focus {
+    &:focus {
         box-shadow: $warningButtonFocusShadow;
     }
 
-    &:enabled:active {
+    &:active {
         background: $warningButtonActiveBg;
         color: $warningButtonTextActiveColor;
         border-color: $warningButtonActiveBorderColor;
@@ -410,18 +411,18 @@
     &.p-button-outlined {
         background-color: transparent;
         color: $warningButtonBg;
-        border: $outlinedButtonBorder;
+        outline: $outlinedButtonBorder;
 
-        &:enabled:hover {
+        &:hover {
             background: rgba($warningButtonBg, $textButtonHoverBgOpacity);
             color: $warningButtonBg;
-            border: $outlinedButtonBorder;
+            outline: $outlinedButtonBorder;
         }
 
-        &:enabled:active {
+        &:active {
             background: rgba($warningButtonBg, $textButtonActiveBgOpacity);
             color: $warningButtonBg;
-            border: $outlinedButtonBorder;
+            outline: $outlinedButtonBorder;
         }
     }
 
@@ -430,13 +431,13 @@
         color: $warningButtonBg;
         border-color: transparent;
 
-        &:enabled:hover {
+        &:hover {
             background: rgba($warningButtonBg, $textButtonHoverBgOpacity);
             border-color: transparent;
             color: $warningButtonBg;
         }
 
-        &:enabled:active {
+        &:active {
             background: rgba($warningButtonBg, $textButtonActiveBgOpacity);
             border-color: transparent;
             color: $warningButtonBg;
@@ -447,19 +448,19 @@
 .p-button.p-button-help, .p-buttonset.p-button-help > .p-button, .p-splitbutton.p-button-help > .p-button {
     color: $helpButtonTextColor;
     background: $helpButtonBg;
-    border: $helpButtonBorder;
+    outline: $helpButtonBorder;
 
-    &:enabled:hover {
+    &:hover {
         background: $helpButtonHoverBg;
         color: $helpButtonTextHoverColor;
         border-color: $helpButtonHoverBorderColor;
     }
 
-    &:enabled:focus {
+    &:focus {
         box-shadow: $helpButtonFocusShadow;
     }
 
-    &:enabled:active {
+    &:active {
         background: $helpButtonActiveBg;
         color: $helpButtonTextActiveColor;
         border-color: $helpButtonActiveBorderColor;
@@ -468,18 +469,18 @@
     &.p-button-outlined {
         background-color: transparent;
         color: $helpButtonBg;
-        border: $outlinedButtonBorder;
+        outline: $outlinedButtonBorder;
 
-        &:enabled:hover {
+        &:hover {
             background: rgba($helpButtonBg, $textButtonHoverBgOpacity);
             color: $helpButtonBg;
-            border: $outlinedButtonBorder;
+            outline: $outlinedButtonBorder;
         }
 
-        &:enabled:active {
+        &:active {
             background: rgba($helpButtonBg, $textButtonActiveBgOpacity);
             color: $helpButtonBg;
-            border: $outlinedButtonBorder;
+            outline: $outlinedButtonBorder;
         }
     }
 
@@ -488,13 +489,13 @@
         color: $helpButtonBg;
         border-color: transparent;
 
-        &:enabled:hover {
+        &:hover {
             background: rgba($helpButtonBg, $textButtonHoverBgOpacity);
             border-color: transparent;
             color: $helpButtonBg;
         }
 
-        &:enabled:active {
+        &:active {
             background: rgba($helpButtonBg, $textButtonActiveBgOpacity);
             border-color: transparent;
             color: $helpButtonBg;
@@ -505,24 +506,24 @@
 */
 .p-button.p-button-danger, .p-buttonset.p-button-danger > .p-button, .p-splitbutton.p-button-danger > .p-button {
     color: $color-neutral-L6;
-    background: var(--red-700);
+    background: var(--red-600);
 
-    &:enabled:hover {
+    &:hover {
+        background: var(--red-700);
+    }
+
+    &:focus {
+        outline: $btn-border-size-3 solid var(--red-300) !important;
+    }
+
+    &:active {
         background: var(--red-800);
-    }
-
-    &:enabled:focus {
-        border: $btn-border-size-3 solid var(--red-500);
-    }
-
-    &::active {
-        background: var(--red-900);
     }
 
     &.p-button-outlined {
         background-color: transparent;
         color: var(--red-800);
-        border: $btn-border-size-2 solid var(--red-800);
+        outline: $btn-border-size-2 solid var(--red-800);
 
         &:hover {
             background: var(--red-50);
@@ -533,9 +534,9 @@
         }
 
         // Add focused state
-        &:focus-visible {
+        &:focus {
             background-color: var(--red-50);
-            border: $btn-border-size-3 solid var(--red-800);
+            outline: $btn-border-size-3 solid var(--red-800) !important;
         }
     }
 
@@ -556,23 +557,23 @@
         }
 
         // Add focused state
-        &:focus-visible {
+        &:focus {
             background-color: transparent;
-            border: $btn-border-size-3 solid var(--red-700);
+            outline: $btn-border-size-3 solid var(--red-700) !important;
         }
     }
     
     // Add disabled state
     &:disabled {
         color: $color-neutral-L6;
-        background-color: $color-neutral-M4;
+        background-color: $color-neutral-M3;
     }
 }
 
 .p-button.p-button-link {
     color: $color-neutral-D6;
     background: transparent;
-    border: transparent;
+    outline: transparent;
     text-decoration: underline solid $color-neutral-D6 0.125rem;
 
     &:hover {
@@ -581,9 +582,10 @@
             text-decoration: underline solid $color-primary-6 0.125rem;
         }
     }
-
-    &:focus-visible {
+    
+    &:focus {
         color: $color-primary-6;
+        text-decoration: underline solid $color-primary-6 0.125rem;
     }
 
     &:active {
@@ -591,4 +593,8 @@
         color: $linkButtonColor;
         border-color:  transparent;
     }
+}
+
+:focus-visible{
+    outline: 0 !important;
 }

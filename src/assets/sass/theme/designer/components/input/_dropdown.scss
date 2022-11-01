@@ -3,7 +3,7 @@
     // border: $inputBorder;
     transition: $formElementTransition;
     border-radius: $inputdropdown-border-radius;
-    height: $inputdropdown-height-lg;
+    // height: $inputdropdown-height-lg;
 
     &:not(.p-disabled):hover {
         outline: $inputdropdown-border-size-1 solid $color-primary-D3;
@@ -72,6 +72,7 @@
     // border: $inputOverlayBorder;
     border-radius: $inputdropdown-border-radius;
     box-shadow: $shade1;
+    padding: 0.5rem;
 
     .p-dropdown-header {
         padding: $inputListHeaderPadding;
@@ -93,13 +94,15 @@
         }
     }
 
+    @include scrollbars($color-neutral-M3);
     .p-dropdown-items {
-        padding: nth($inputdropdown-items-padding-lg, 2);
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding-right: $scrollbar-width + 0.25rem;
 
         .p-dropdown-item {
-            margin: 0.25rem;
-            height: $inputdropdown-height-lg;
-            padding: nth($inputdropdown-item-padding, 2);
+            padding: $inputtext-padding-lg;
             // border: $inputListItemBorder;
             color: $color-neutral-D6;
             background: $color-neutral-L6;
@@ -139,7 +142,7 @@ p-dropdown.ng-dirty.ng-invalid > .p-dropdown {
 
 .p-input-filled {
     .p-dropdown {
-        background: $color-neutral-L6 !important;
+        // background: $color-neutral-L6 !important;
 
         &:not(.p-disabled):hover {
             outline: $inputdropdown-border-size-1 solid $color-primary-D3;

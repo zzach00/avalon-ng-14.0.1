@@ -10,7 +10,8 @@
         }
 
         &:not(.p-disabled).p-focus {
-            @include focused-input();
+            // @include focused-input();
+            outline: $inputtext-border-size-2 solid $color-primary-D5;
         }
 
         .p-chips-token {

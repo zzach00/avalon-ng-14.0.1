@@ -1,19 +1,23 @@
 .p-dialog {
-    border-radius: $borderRadius;
-    box-shadow: $overlayContainerShadow;
-    border: $overlayContentBorder;
+    border-radius: $dialog-border;
+    box-shadow: $shade1;
+    // border: $overlayContentBorder;
+    padding: 1rem;
+    background: $color-neutral-L6;
+    gap: 1.5rem;
 
     .p-dialog-header {
-        border-bottom: $dialogHeaderBorder;
-        background: $dialogHeaderBg;
-        color: $dialogHeaderTextColor;
-        padding: $dialogHeaderPadding;
-        border-top-right-radius: $borderRadius;
-        border-top-left-radius: $borderRadius;
+        // border-bottom: $dialogHeaderBorder;
+        background: $color-neutral-L6;
+        color: $color-neutral-D6;
+        // border-top-right-radius: $borderRadius;
+        // border-top-left-radius: $borderRadius;
 
         .p-dialog-title {
-            font-weight: $dialogHeaderFontWeight;
-            font-size: $dialogHeaderFontSize;
+            font-weight: $fw-t2;
+            font-size: $fs-t2;
+            line-height: $lh-t2;
+            letter-spacing: $ls-t2;
         }
 
         .p-dialog-header-icon {
@@ -27,38 +31,44 @@
     }
 
     .p-dialog-content {
-        background: $overlayContentBg;
-        color: $panelContentTextColor;
-        padding: $dialogContentPadding;
-
-        &:last-of-type {
-            border-bottom-right-radius: $borderRadius;
-            border-bottom-left-radius: $borderRadius;
-        }
+        background: $color-neutral-L6;
+        color: $color-neutral-D6;
+        // padding: $dialogContentPadding;
+        font-weight: $fw-body1;
+        font-size: $fs-body1;
+        line-height: $lh-body1;
+        letter-spacing: $ls-body1;
+        // &:last-of-type {
+        //     border-bottom-right-radius: $borderRadius;
+        //     border-bottom-left-radius: $borderRadius;
+        // }
     }
 
     .p-dialog-footer {
-        border-top:  $dialogFooterBorder;
-        background: $overlayContentBg;
-        color: $panelFooterTextColor;
-        padding: $dialogFooterPadding;
+        // border-top:  $dialogFooterBorder;
+        background: $color-neutral-L6;
+        color: $color-primary-D6;
+        // padding: $dialogFooterPadding;
         text-align: right;
-        border-bottom-right-radius: $borderRadius;
-        border-bottom-left-radius: $borderRadius;
+        // border-bottom-right-radius: $borderRadius;
+        // border-bottom-left-radius: $borderRadius;
 
         button {
-            margin: 0 $inlineSpacing 0 0;
+            margin: 0 0 0 1rem;
             width: auto;
         }
     }
 
     &.p-confirm-dialog {
         .p-confirm-dialog-icon {
-            font-size: $primeIconFontSize * 2;
+            //Hide the icon cause I  don't like it
+            display: none;
+            // font-size: $primeIconFontSize * 2;
         }
 
         .p-confirm-dialog-message {
-            margin-left: $inlineSpacing * 2;
+            // margin-left: $inlineSpacing * 2;
+            width: 100%;
         }
     }
 }

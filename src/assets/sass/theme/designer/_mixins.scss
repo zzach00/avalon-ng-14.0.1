@@ -1,3 +1,23 @@
+@use 'sass:math';
+
+//Add custom mixin
+@mixin scrollbars($foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+    ::-webkit-scrollbar {
+        width:  0.25rem;
+        height: 0.25rem;
+    }
+  
+    ::-webkit-scrollbar-thumb {
+        background: $foreground-color;
+        border-radius: 0.125rem;
+    }
+  
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+}
+
+//Default
 @mixin icon-override($icon) {
 	&:before {
 		content: $icon;
@@ -5,9 +25,9 @@
 }
 
 @mixin focused() {
-	outline: $focusOutline;
-    outline-offset: $focusOutlineOffset;
-    box-shadow: $focusShadow;
+	// outline: $focusOutline;
+    // outline-offset: $focusOutlineOffset;
+    // box-shadow: $focusShadow;
 }
 
 @mixin focused-inset() {
