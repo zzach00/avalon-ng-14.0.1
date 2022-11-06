@@ -14,7 +14,7 @@
     border-radius: $inputtext-border-radius;
     
     &:hover {
-        outline: $inputtext-border-size-1 solid $color-primary-2;
+        cursor: pointer;
     }
     
     &:focus {
@@ -49,7 +49,7 @@
     //Add filled state
     &.p-filled {
         &:hover {
-            outline: $inputtext-border-size-1 solid $color-primary-2;
+            cursor: pointer;
         }
         
         &:focus {

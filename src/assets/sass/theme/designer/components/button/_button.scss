@@ -33,7 +33,7 @@
             background: $color-primary-2;
         }
         
-        &:focus {
+        &:focus-visible {
             outline: $btn-border-size-3 solid $color-primary-D6 !important;
         }
 
@@ -64,7 +64,7 @@
             background: $color-primary-2;
         }
 
-        &:focus {
+        &:focus-visible {
             outline: $btn-border-size-3 solid $color-primary-D1;
         }
 
@@ -83,7 +83,7 @@
         // }
     }
 
-    &:focus {
+    &:focus-visible {
         outline: $btn-border-size-3 solid $color-primary-D1 !important;
     }
 
@@ -224,7 +224,7 @@
         border-color: $secondaryButtonHoverBorderColor;
     }
 
-    &:focus {
+    &:focus-visible {
         box-shadow: $secondaryButtonFocusShadow;
     }
 
@@ -282,7 +282,7 @@
         border-color: $infoButtonHoverBorderColor;
     }
 
-    &:focus {
+    &:focus-visible {
         box-shadow: $infoButtonFocusShadow;
     }
 
@@ -340,7 +340,7 @@
         border-color: $successButtonHoverBorderColor;
     }
 
-    &:focus {
+    &:focus-visible {
         box-shadow: $successButtonFocusShadow;
     }
 
@@ -398,7 +398,7 @@
         border-color: $warningButtonHoverBorderColor;
     }
 
-    &:focus {
+    &:focus-visible {
         box-shadow: $warningButtonFocusShadow;
     }
 
@@ -456,7 +456,7 @@
         border-color: $helpButtonHoverBorderColor;
     }
 
-    &:focus {
+    &:focus-visible {
         box-shadow: $helpButtonFocusShadow;
     }
 
@@ -512,7 +512,7 @@
         background: var(--red-700);
     }
 
-    &:focus {
+    &:focus-visible {
         outline: $btn-border-size-3 solid var(--red-300) !important;
     }
 
@@ -534,7 +534,7 @@
         }
 
         // Add focused state
-        &:focus {
+        &:focus-visible {
             background-color: var(--red-50);
             outline: $btn-border-size-3 solid var(--red-800) !important;
         }
@@ -544,21 +544,23 @@
         background-color: transparent;
         color: var(--red-700);
         border-color: transparent;
-
+        
         &:hover {
             background: var(--red-50);
+            color: var(--red-800);
             border-color: transparent;
         }
-
+        
         &:active {
-            background: var(--red-200);
-            border-color: transparent;
+            background: var(--red-100);
             color: $dangerButtonBg;
+            border-color: transparent;
         }
-
+        
         // Add focused state
-        &:focus {
+        &:focus-visible {
             background-color: transparent;
+            color: var(--red-700);
             outline: $btn-border-size-3 solid var(--red-700) !important;
         }
     }
@@ -583,7 +585,7 @@
         }
     }
     
-    &:focus {
+    &:focus-visible {
         color: $color-primary-6;
         text-decoration: underline solid $color-primary-6 0.125rem;
     }

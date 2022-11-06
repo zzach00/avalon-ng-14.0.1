@@ -7,7 +7,8 @@
     border-radius: 0.25rem;
 
     &:not(.p-disabled):hover {
-        outline: $inputdropdown-border-size-1 solid $color-primary-D2;
+        // outline: $inputdropdown-border-size-1 solid $color-primary-D2;
+        background-color: $color-neutral-M2;
     }
 
     &:not(.p-disabled).p-focus {
@@ -24,6 +25,7 @@
         letter-spacing: 0.038rem;
 
         height: 100%;
+        max-width: $menu-width-max;
         overflow: hidden;
         display: flex;
         flex-direction: row;

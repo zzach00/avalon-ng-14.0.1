@@ -16,10 +16,10 @@
         color: $color-primary-6;
     }
 
-    // &.p-tag-info {
-    //     background-color: $infoButtonBg;
-    //     color: $infoButtonTextColor;
-    // }
+    &.p-tag-info {
+        background-color: var(--blue-50);
+        color: var(--blue-900);
+    }
 
     &.p-tag-warning {
         background-color: var(--yellow-100);

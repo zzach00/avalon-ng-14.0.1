@@ -1,32 +1,38 @@
 .p-panelmenu {
     .p-panelmenu-header {
         > a {
-            padding: $accordionHeaderPadding;
-            border: $accordionHeaderBorder;
-            color: $accordionHeaderTextColor;
-            background: $accordionHeaderBg;
-            font-weight: $accordionHeaderFontWeight;
-            border-radius: $borderRadius;
+            padding: $megamenu-item-padding;
+            color: $color-neutral-M4;
+            background: $color-neutral-L6;
+            font-weight: $fw-t2;
+            font-size: $fs-t2;
+            line-height: $lh-t2;
+            letter-spacing: $ls-t2;
+            border-radius: $menu-border-radius-2;
             transition: $listItemTransition;
+            flex-direction: row-reverse;
+            justify-content: space-between;
 
             .p-panelmenu-icon {
-                margin-right: $inlineSpacing;
+                margin-left: $menu-icon-margin;
             }
 
             .p-menuitem-icon {
-                margin-right: $inlineSpacing;
+                margin-right: $menu-icon-margin;
             }
 
-            &:focus {
-                @include focused();
+            &:focus-visible {
+                // @include focused();
+                outline: $menu-border-size-2 solid $color-primary-6;
+                color: $color-primary-6;
             }
         }
 
         &:not(.p-highlight):not(.p-disabled) {
             > a:hover {
-                background: $accordionHeaderHoverBg;
-                border-color: $accordionHeaderHoverBorderColor;
-                color: $accordionHeaderTextHoverColor;
+                // background: $accordionHeaderHoverBg;
+                // border-color: $accordionHeaderHoverBorderColor;
+                color: $color-primary-5;
             }
         }
 
@@ -34,19 +40,19 @@
             margin-bottom: 0;
 
             > a {
-                background: $accordionHeaderActiveBg;
-                border-color: $accordionHeaderActiveBorderColor;
-                color: $accordionHeaderTextActiveColor;
-                border-bottom-right-radius: 0;
-                border-bottom-left-radius: 0;
+                // background: $accordionHeaderActiveBg;
+                // border-color: $accordionHeaderActiveBorderColor;
+                color: $color-primary-7;
+                // border-bottom-right-radius: 0;
+                // border-bottom-left-radius: 0;
             }
 
             &:not(.p-disabled) {
                 > a {
                     &:hover {
-                        border-color: $accordionHeaderActiveHoverBorderColor;
-                        background: $accordionHeaderActiveHoverBg;
-                        color: $accordionHeaderTextActiveHoverColor;
+                        // border-color: $accordionHeaderActiveHoverBorderColor;
+                        // background: $accordionHeaderActiveHoverBg;
+                        color: $color-primary-8;
                     }
                 }
             }
@@ -54,23 +60,23 @@
     }
 
     .p-panelmenu-content {
-        padding: $verticalMenuPadding;
-        border: $accordionContentBorder;
-        background: $accordionContentBg;
-        color: $accordionContentTextColor;
-        margin-bottom: $accordionSpacing;
-        border-top: 0;
-        border-top-right-radius: 0;
-        border-top-left-radius: 0;
-        border-bottom-right-radius: $borderRadius;
-        border-bottom-left-radius: $borderRadius;
+        // padding: $megamenu-item-padding;
+        // border: $accordionContentBorder;
+        // background: $accordionContentBg;
+        color: $color-neutral-M4;
+        margin-bottom: 0.5rem;
+        // border-top: 0;
+        // border-top-right-radius: 0;
+        // border-top-left-radius: 0;
+        // border-bottom-right-radius: $borderRadius;
+        // border-bottom-left-radius: $borderRadius;
 
         .p-menuitem {
             .p-menuitem-link {
-                @include menuitem-link();
+                @include navbar-rootmenuitem-link();
 
                 .p-panelmenu-icon {
-                    margin-right: $inlineSpacing;
+                    margin-right: $menu-icon-margin;
                 }
             }
         }

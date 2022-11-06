@@ -1,55 +1,87 @@
 @use 'sass:math';
 
 .p-inputswitch {
-    width: $inputSwitchWidth;
-    height: $inputSwitchHeight;
+    height: $inputswitch-height-lg;
+    width: $inputswitch-width-lg;
 
     .p-inputswitch-slider {
-        background: $inputSwitchSliderOffBg;
+        background: $color-neutral-M3;
         transition: $formElementTransition;
-        border-radius: $inputSwitchBorderRadius;
+        border-radius: $inputswitch-border-radius-lg;
 
         &:before {
-            background: $inputSwitchHandleOffBg;
-            width: $inputSwitchHandleWidth;
-            height: $inputSwitchHandleHeight;
-            left: $inputSwitchSliderPadding;
-            margin-top: math.div(-1 * $inputSwitchHandleHeight, 2);
-            border-radius: $inputSwitchHandleBorderRadius;
+            background: $color-neutral-L6;
+            width: $inputswitch-handle-size-lg;
+            height: $inputswitch-handle-size-lg;
+            left: 0.25rem;
+            //Custom vertical center align 'cause the former was made by an idiot
+            top: 0; //Overrides the stupid method that set top: 50%
+            margin-top: math.div($inputswitch-height-lg, 2);
+            transform: translate(0, -50%);
+            border-radius: $inputswitch-border-radius-lg;
             transition-duration: $transitionDuration;
         }
     }
 
     &.p-inputswitch-checked {
         .p-inputswitch-slider:before {
-            transform: translateX($inputSwitchHandleWidth);
+            //Keep the former overrides and add translateX
+            transform: translate($inputswitch-handle-size-lg, -50%);
         }
     }
 
     &.p-focus {
         .p-inputswitch-slider {
-            @include focused();
+            // @include focused();
+            outline: $inputtext-border-size-2 solid $color-neutral-M4;
         }
     }
 
     &:not(.p-disabled):hover {
         .p-inputswitch-slider {
-            background: $inputSwitchSliderOffHoverBg;
+            background: $color-neutral-M4;
+        }
+    }
+
+    //Add disabled state
+    &.p-disabled {
+        .p-inputswitch-slider {
+            background: $color-neutral-M2;
+            &:before {
+                background: $color-neutral-L5;
+            }
         }
     }
 
     &.p-inputswitch-checked {
         .p-inputswitch-slider {
-            background: $inputSwitchSliderOnBg;
+            background: $color-primary-5;
 
             &:before {
-                background: $inputSwitchHandleOnBg;
+                background: $color-neutral-L6;
              }
         }
 
         &:not(.p-disabled):hover {
             .p-inputswitch-slider {
-                background: $inputSwitchSliderOnHoverBg;
+                background: $color-primary-6;
+            }
+        }
+
+        //Add focus state
+        &.p-focus {
+            .p-inputswitch-slider {
+                // @include focused();
+                outline: $inputtext-border-size-2 solid $color-primary-4;
+            }
+        }
+
+        &.p-disabled {
+            .p-inputswitch-slider {
+                background: $color-neutral-M3 !important;
+                &:before {
+                    background: $color-neutral-L5;
+                }
             }
         }
     }

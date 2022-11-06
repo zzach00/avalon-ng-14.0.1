@@ -1,45 +1,46 @@
 .p-tieredmenu {
-    padding: $verticalMenuPadding;
-    background: $menuBg;
-    color: $menuTextColor;
-    border: $menuBorder;
-    border-radius: $borderRadius;
-    width: $menuWidth;
+    padding: 0.5rem 0.25rem;
+    background: $color-neutral-L6;
+    color: $color-neutral-D6;
+    border: $menu-border-size-1 solid $color-neutral-D2;
+    border-radius: $menu-border-radius-1;
+    width: 13.5rem;
 
     .p-menuitem-link {
+        border-radius: $menu-border-radius-1;
         @include menuitem-link();
     }
 
     &.p-tieredmenu-overlay {
-        background: $overlayMenuBg;
-        border: $overlayMenuBorder;
-        box-shadow: $overlayMenuShadow;
+        background: $color-neutral-L6;
+        border: 0.25rem;
+        box-shadow: $shade1;
     }
 
     .p-submenu-list {
-        padding: $verticalMenuPadding;
-        background: $overlayMenuBg;
-        border: $overlayMenuBorder;
-        box-shadow: $overlayMenuShadow;
+        padding: 0.25rem;
+        background: $color-neutral-L6;
+        border: $menu-border-size-1 solid $color-neutral-D2;;
+        box-shadow: $shade1;
     }
 
     .p-menuitem {
-        margin: $verticalMenuitemMargin;
+        margin: 0.25rem;
     
-        &:last-child {
-            margin: 0;
-        }
+        // &:last-child {
+        //     margin-bottom: 0;
+        // }
 
         &.p-menuitem-active {
             > .p-menuitem-link {
-                background: $menuitemActiveBg;
+                background: $color-primary-2;
 
                 .p-menuitem-text {
-                    color: $menuitemTextActiveColor;
+                    color: $color-primary-D5;
                 }
 
                 .p-menuitem-icon, .p-submenu-icon {
-                    color: $menuitemIconActiveColor;
+                    color: $color-primary-D5;
                 }
             }
         }
@@ -47,11 +48,11 @@
 
     .p-menu-separator {
         border-top: $divider;
-        margin: $menuSeparatorMargin;
+        margin: 0.25;
     }
 
     .p-submenu-icon {
-        font-size: $menuitemSubmenuIconFontSize;
+        font-size: $color-neutral-D6;
     }
 
     .p-menuitem-badge {

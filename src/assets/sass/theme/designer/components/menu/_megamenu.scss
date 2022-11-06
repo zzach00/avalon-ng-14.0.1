@@ -1,31 +1,64 @@
 .p-megamenu {
-    padding: $horizontalMenuPadding;
-    background: $horizontalMenuBg;
-    color: $horizontalMenuTextColor;
-    border: $horizontalMenuBorder;
-    border-radius: $borderRadius;
+    padding: 1.5rem;
+    background: $color-neutral-L6;
+    color: $color-neutral-D6;
+    border: 0;
+    border-radius: $menu-border-radius-2;
 
     .p-megamenu-root-list {  
         > .p-menuitem {
             > .p-menuitem-link {
-                @include horizontal-rootmenuitem-link();
+                @include navbar-rootmenuitem-link();
             }
 
             &.p-menuitem-active {
+                border-left: $menu-border-size-2 solid $color-primary-7;
                 > .p-menuitem-link,
                 > .p-menuitem-link:not(.p-disabled):hover {
-                    background: $horizontalMenuRootMenuitemActiveBg;
-            
+                    // background: $horizontalMenuRootMenuitemActiveBg;
                     .p-menuitem-text {
-                        color: $horizontalMenuRootMenuitemTextActiveColor;
+                        color: $color-primary-7;
                     }
             
                     .p-menuitem-icon {
-                        color: $horizontalMenuRootMenuitemIconActiveColor;
+                        color: $color-primary-7;
                     }
                     
                     .p-submenu-icon {
-                        color: $horizontalMenuRootMenuitemIconActiveColor;
+                        color: $color-primary-7;
+                    }
+                }
+            }
+
+            //Add hightlight state
+            &.p-highllight {
+                border-left: $menu-border-size-2 solid $color-primary-7;
+                > .p-menuitem-link{
+                    background: $color-primary-1;
+                    .p-menuitem-text {
+                        color: $color-primary-7;
+                    }
+            
+                    .p-menuitem-icon {
+                        color: $color-primary-7;
+                    }
+                    
+                    .p-submenu-icon {
+                        color: $color-primary-7;
+                    }
+                }
+                > .p-menuitem-link:not(.p-disabled):hover {
+                    background: $color-primary-2;
+                    .p-menuitem-text {
+                        color: $color-primary-7;
+                    }
+            
+                    .p-menuitem-icon {
+                        color: $color-primary-7;
+                    }
+                    
+                    .p-submenu-icon {
+                        color: $color-primary-7;
                     }
                 }
             }
@@ -33,71 +66,83 @@
     }
 
     .p-menuitem-link {
-        @include menuitem-link();
+        // @include menuitem-link();
+        @include megamenu-submenu-link();
     }
 
     .p-megamenu-panel {
-        background: $overlayMenuBg;
-        color: $menuTextColor;
-        border: $overlayMenuBorder;
-        box-shadow: $overlayMenuShadow;
+        background: $color-neutral-L6;
+        // color: $menuTextColor;
+        // border: $overlayMenuBorder;
+        border-radius: $menu-border-radius-1;
+        box-shadow: $shade1;
+        //Again overrides THE STUPID LEFT: 100%, WHAT A F**KING PSYCHO !!!!!
+        left: 0 !important;
+        margin-left: calc(1rem + $navbar-left-width - nth($navbar-link-margin, 2));
     }
 
     .p-megamenu-submenu-header {
-        margin: $submenuHeaderMargin;
-        padding: $submenuHeaderPadding;
-        color: $submenuHeaderTextColor;
-        background: $submenuHeaderBg;
-        font-weight: $submenuHeaderFontWeight;
-        border-top-right-radius: $borderRadius; 
-        border-top-left-radius: $borderRadius; 
+        // margin: $submenuHeaderMargin;
+        padding: 0 1rem;
+        color: $color-neutral-D2;
+        // background: $submenuHeaderBg;
+        text-transform: uppercase;
+        font-weight: $fw-caption;
+        font-size: $fs-caption;
+        line-height: $lh-caption;
+        letter-spacing: $ls-caption;
+        // border-top-right-radius: $borderRadius; 
+        // border-top-left-radius: $borderRadius; 
     }
 
     .p-megamenu-submenu {
-        padding: $verticalMenuPadding;
-        width: $menuWidth;
+        padding: 0.5rem;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
 
-        .p-menu-separator {
-            border-top: $divider;
-            margin: $menuSeparatorMargin;
-        }
+        // .p-menu-separator {
+        //     border-top: $divider;
+        //     margin: $menuSeparatorMargin;
+        // }
 
-        .p-menuitem {
-            margin: $verticalMenuitemMargin;
+        // .p-menuitem {
+        //     margin: $verticalMenuitemMargin;
     
-            &:last-child {
-                margin: 0;
-            }
-        }
+        //     &:last-child {
+        //         margin: 0;
+        //     }
+        // }
     }
 
-    .p-menuitem {
-        &.p-menuitem-active {
-            > .p-menuitem-link {
-                background: $menuitemActiveBg;
+    // .p-menuitem {
+    //     &.p-menuitem-active {
+    //         > .p-menuitem-link {
+    //             background: $menuitemActiveBg;
 
-                .p-menuitem-text {
-                    color: $menuitemTextActiveColor;
-                }
+    //             .p-menuitem-text {
+    //                 color: $menuitemTextActiveColor;
+    //             }
 
-                .p-menuitem-icon, .p-submenu-icon {
-                    color: $menuitemIconActiveColor;
-                }
-            }
-        }
-    }
+    //             .p-menuitem-icon, .p-submenu-icon {
+    //                 color: $menuitemIconActiveColor;
+    //             }
+    //         }
+    //     }
+    // }
 
     &.p-megamenu-vertical {
-        width: $menuWidth;
-        padding: $verticalMenuPadding;
+        width: $navbar-left-width !important;
+        padding: $navbar-left-padding;  
 
-        .p-menuitem {
-            margin: $verticalMenuitemMargin;
+        // .p-menuitem {
+        //     margin: $verticalMenuitemMargin;
     
-            &:last-child {
-                margin: 0;
-            }
-        }
+        //     &:last-child {
+        //         margin-bottom: 0;
+        //     }
+        // }
     }
 
     .p-menuitem-badge {

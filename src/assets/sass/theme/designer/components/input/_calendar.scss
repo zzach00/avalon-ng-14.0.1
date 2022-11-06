@@ -84,8 +84,8 @@ p-calendar.ng-dirty.ng-invalid > .p-calendar > .p-inputtext {
             letter-spacing: $ls-caption;
             text-transform: capitalize;
             > span {
-                width: $calendar-datecell-width;
-                height: $calendar-datecell-height;
+                width: $calendar-cell-number-width;
+                height: $calendar-cell-number-height;
             }
         }
 
@@ -93,9 +93,9 @@ p-calendar.ng-dirty.ng-invalid > .p-calendar > .p-inputtext {
             padding: $calendar-grid-padding;
 
             > span {
-                width: $calendar-datecell-width;
-                height: $calendar-datecell-height;
-                border-radius: $calendar-datecell-border-radius;
+                width: $calendar-cell-number-width;
+                height: $calendar-cell-number-height;
+                border-radius: $calendar-cell-number-border-radius;
                 transition: $listItemTransition;
                 // border: $calendarCellDateBorder;
 
@@ -184,7 +184,7 @@ p-calendar.ng-dirty.ng-invalid > .p-calendar > .p-inputtext {
             position: relative;
             // padding: $calendarCellDatePadding;
             transition: $listItemTransition;
-            border-radius: $calendar-datecell-border-radius;
+            border-radius: $calendar-cell-block-border-radius;
 
             &.p-highlight {
                 color: $color-neutral-L6 !important;
@@ -214,7 +214,7 @@ p-calendar.ng-dirty.ng-invalid > .p-calendar > .p-inputtext {
             position: relative;
             // padding: $calendarCellDatePadding;
             transition: $listItemTransition;
-            border-radius: $calendar-datecell-border-radius;
+            border-radius: $calendar-cell-block-border-radius;
 
             &.p-highlight {
                 color: $color-neutral-L6 !important;

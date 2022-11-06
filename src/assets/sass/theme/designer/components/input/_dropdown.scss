@@ -12,6 +12,7 @@
     &:not(.p-disabled).p-focus {
         // @include focused-input();
         outline: $inputdropdown-border-size-2 solid $color-primary-D5;
+        background-color: $color-neutral-L6 !important;
     }
 
     &.p-dropdown-clearable {
@@ -35,7 +36,10 @@
         }
     }
     
-    
+    //Remove inputtext hover state
+    .p-inputtext {
+        pointer-events: none;
+    }
     
     .p-dropdown-trigger {
         background: transparent;

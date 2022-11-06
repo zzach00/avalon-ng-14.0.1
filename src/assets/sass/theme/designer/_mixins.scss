@@ -1,7 +1,7 @@
 @use 'sass:math';
 
 //Add custom mixin
-@mixin scrollbars($foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+@mixin scrollbars($foreground-color) {
     ::-webkit-scrollbar {
         width:  0.25rem;
         height: 0.25rem;
@@ -15,6 +15,117 @@
     ::-webkit-scrollbar-track {
         background: transparent;
     }
+}
+
+@mixin megamenu-submenu-link() {
+    padding: $megamenu-item-padding;
+	color: $color-neutral-D6;
+    border-radius: $menu-border-radius-1;
+    transition: $listItemTransition;
+    user-select: none;
+    width: max-content;
+
+	.p-menuitem-text {
+        color: $color-neutral-D6;
+	}
+
+    //Selected submenu link
+    &.p-hightlight{
+        background: $color-primary-2;
+        box-shadow: none;
+		.p-menuitem-text {
+			color: $color-primary-D5;
+		}
+    }
+
+	&:not(.p-disabled, .p-hightlight):hover {
+		background: $color-primary-1;
+		.p-menuitem-text {
+			color: $color-primary-D4;
+		}
+	}
+
+	&:not(.p-disabled, .p-hightlight):active {
+		background: $color-primary-2;
+        box-shadow: none;
+		.p-menuitem-text {
+			color: $color-primary-D4;
+		}
+	}
+
+	&:focus-visible {
+		// @include focused-listitem();
+        outline: $menu-border-size-2 solid $color-primary-D5;
+	}
+}
+
+//Custom @mixin horizontal-rootmenuitem-link
+@mixin navbar-rootmenuitem-link {
+	padding: $navbar-left-padding;
+    margin-left: nth($navbar-link-margin, 2);
+	color: $color-neutral-M4;
+    border-radius: $menu-border-radius-2;
+    transition: $listItemTransition;
+    user-select: none;
+    width: auto;
+    font-weight: $fw-t2;
+    font-size: $fs-t2;
+    line-height: $lh-t2;
+    letter-spacing: $ls-t2;
+
+	.p-menuitem-text {
+        color: $color-neutral-M4;
+	}
+
+	.p-menuitem-icon {
+		color: $color-neutral-M4;
+		margin-right: 1rem;
+    }
+
+    .p-submenu-icon {
+        color: $color-neutral-M4;
+        margin-left: 1rem;
+    }
+
+	&:not(.p-disabled):hover {
+		background: $color-neutral-L6;
+        border-radius: $menu-border-radius-2;
+        border: none;
+        box-shadow: none;
+
+		.p-menuitem-text {
+			color: $color-primary-5;
+		}
+
+		.p-menuitem-icon {
+			color: $color-primary-5;
+        }
+
+        .p-submenu-icon {
+            color: $color-primary-5;
+        }
+	}
+
+	&:not(.p-disabled):active {
+		background: $color-primary-2;
+        box-shadow: none;
+		.p-menuitem-text {
+			color: $color-primary-D4;
+		}
+
+		.p-menuitem-icon {
+			color: $color-primary-D4;
+        }
+
+        .p-submenu-icon {
+            color: $color-primary-D4;
+        }
+	}
+
+	&:focus-visible {
+		// @include focused-listitem();
+        outline: $menu-border-size-1 solid $color-primary-D5;
+	}
 }
 
 //Default
@@ -51,88 +162,122 @@
 	border-color: $inputErrorBorderColor;
 }
 
+
+// @mixin menuitem-link {
+// 	padding: $menuitemPadding;
+// 	color: $menuitemTextColor;
+//     border-radius: $menuitemBorderRadius;
+//     transition: $listItemTransition;
+//     user-select: none;
+
+// 	.p-menuitem-text {
+//         color: $menuitemTextColor;
+// 	}
+
+// 	.p-menuitem-icon {
+// 		color: $menuitemIconColor;
+// 		margin-right: $inlineSpacing;
+//     }
+
+//     .p-submenu-icon {
+//         color: $menuitemIconColor;
+//     }
+
+// 	&:not(.p-disabled):hover {
+// 		background: $menuitemHoverBg;
+
+// 		.p-menuitem-text {
+// 			color: $menuitemTextHoverColor;
+// 		}
+
+// 		.p-menuitem-icon {
+// 			color: $menuitemIconHoverColor;
+//         }
+
+//         .p-submenu-icon {
+//             color: $menuitemIconHoverColor;
+//         }
+// 	}
+
+// 	&:focus {
+// 		@include focused-listitem();
+// 	}
+// }
+
+//Custom @mixin menuitem-link
 @mixin menuitem-link {
-	padding: $menuitemPadding;
-	color: $menuitemTextColor;
-    border-radius: $menuitemBorderRadius;
+	padding: $menu-item-padding-lg;
+	color: $color-neutral-D6;
     transition: $listItemTransition;
-    user-select: none;
+    user-select: none; //prevent user from copying
 
 	.p-menuitem-text {
-        color: $menuitemTextColor;
+        color: $color-neutral-D6;
 	}
 
 	.p-menuitem-icon {
-		color: $menuitemIconColor;
-		margin-right: $inlineSpacing;
+		color: $color-neutral-D6;
+		margin-right: $menu-icon-margin;
     }
 
     .p-submenu-icon {
-        color: $menuitemIconColor;
+        color: $color-neutral-D6;
     }
 
 	&:not(.p-disabled):hover {
-		background: $menuitemHoverBg;
-
-		.p-menuitem-text {
-			color: $menuitemTextHoverColor;
-		}
-
-		.p-menuitem-icon {
-			color: $menuitemIconHoverColor;
-        }
-
-        .p-submenu-icon {
-            color: $menuitemIconHoverColor;
-        }
+		background: $color-primary-1;
 	}
 
-	&:focus {
-		@include focused-listitem();
+    &:not(.p-disabled):active {
+		background: $color-primary-2;
+	}
+
+	&:focus-visible {
+        outline: $menu-border-size-2 solid $color-primary-D3;
 	}
 }
 
-@mixin horizontal-rootmenuitem-link {
-	padding: $horizontalMenuRootMenuitemPadding;
-	color: $horizontalMenuRootMenuitemTextColor;
-    border-radius: $horizontalMenuRootMenuitemBorderRadius;
-    transition: $listItemTransition;
-    user-select: none;
+// @mixin horizontal-rootmenuitem-link {
+// 	padding: $horizontalMenuRootMenuitemPadding;
+// 	color: $horizontalMenuRootMenuitemTextColor;
+//     border-radius: $horizontalMenuRootMenuitemBorderRadius;
+//     transition: $listItemTransition;
+//     user-select: none;
 
-	.p-menuitem-text {
-        color: $horizontalMenuRootMenuitemTextColor;
-	}
+// 	.p-menuitem-text {
+//         color: $horizontalMenuRootMenuitemTextColor;
+// 	}
 
-	.p-menuitem-icon {
-		color: $horizontalMenuRootMenuitemIconColor;
-		margin-right: $inlineSpacing;
-    }
+// 	.p-menuitem-icon {
+// 		color: $horizontalMenuRootMenuitemIconColor;
+// 		margin-right: $inlineSpacing;
+//     }
 
-    .p-submenu-icon {
-        color: $horizontalMenuRootMenuitemIconColor;
-        margin-left: $inlineSpacing;
-    }
+//     .p-submenu-icon {
+//         color: $horizontalMenuRootMenuitemIconColor;
+//         margin-left: $inlineSpacing;
+//     }
 
-	&:not(.p-disabled):hover {
-		background: $horizontalMenuRootMenuitemHoverBg;
+// 	&:not(.p-disabled):hover {
+// 		background: $horizontalMenuRootMenuitemHoverBg;
 
-		.p-menuitem-text {
-			color: $horizontalMenuRootMenuitemTextHoverColor;
-		}
+// 		.p-menuitem-text {
+// 			color: $horizontalMenuRootMenuitemTextHoverColor;
+// 		}
 
-		.p-menuitem-icon {
-			color: $horizontalMenuRootMenuitemIconHoverColor;
-        }
+// 		.p-menuitem-icon {
+// 			color: $horizontalMenuRootMenuitemIconHoverColor;
+//         }
 
-        .p-submenu-icon {
-            color: $horizontalMenuRootMenuitemIconHoverColor;
-        }
-	}
+//         .p-submenu-icon {
+//             color: $horizontalMenuRootMenuitemIconHoverColor;
+//         }
+// 	}
 
-	&:focus {
-		@include focused-listitem();
-	}
-}
+// 	&:focus {
+// 		@include focused-listitem();
+// 	}
+// }
 
 @mixin placeholder {
 	::-webkit-input-placeholder {

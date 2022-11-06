@@ -141,7 +141,7 @@ caption {
   font-size: 0.625rem;
   line-height: 0.87rem;
   letter-spacing: 0.125rem;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 mark {

@@ -6,34 +6,35 @@
 }
 
 .p-column-filter-menu-button {
-    width: $actionIconWidth;
-    height: $actionIconHeight;
-    color: $actionIconColor;
-    border: $actionIconBorder;
-    background: $actionIconBg;
-    border-radius: $actionIconBorderRadius;
+    width: $table-cell-icon-container-size;
+    height: $table-cell-icon-container-size;
+    color: $color-neutral-M4;
+    // border: $actionIconBorder;
+    // background: $actionIconBg;
+    // border-radius: $actionIconBorderRadius;
     transition: $actionIconTransition;
 
     &:hover {
-        color: $actionIconHoverColor;
-        border-color: $actionIconHoverBorderColor;
-        background: $actionIconHoverBg;
+        color: $color-primary-D5;
+        // border-color: $actionIconHoverBorderColor;
+        // background: $actionIconHoverBg;
     }
 
     &.p-column-filter-menu-button-open,
     &.p-column-filter-menu-button-open:hover {
-        background: $actionIconHoverBg;
-        color: $actionIconHoverColor;
+        // background: $actionIconHoverBg;
+        color: $color-primary-6;
     }
 
     &.p-column-filter-menu-button-active,
     &.p-column-filter-menu-button-active:hover {
-        background: $highlightBg;
-        color: $highlightTextColor;
+        // background: $highlightBg;
+        color: $color-primary-6
     }
 
     &:focus {
-        @include focused();
+        // @include focused();
+        color: $color-primary-D5;
     }
 
 }
@@ -59,12 +60,12 @@
 }
 
 .p-column-filter-overlay {
-    background: $inputOverlayBg;
-    color: $inputListTextColor;
-    border: $inputOverlayBorder;
-    border-radius: $borderRadius;
-    box-shadow: $inputOverlayShadow;
-    min-width: $menuWidth;
+    background: $color-neutral-L6;
+    // color: $inputListTextColor;
+    // border: $inputOverlayBorder;
+    border-radius: $menu-border-radius-1;
+    box-shadow: $shade1;
+    min-width: $menu-width-min;
 
     .p-column-filter-row-items {
         padding: $inputListPadding;
@@ -102,25 +103,25 @@
 
 .p-column-filter-overlay-menu {
     .p-column-filter-operator {
-        padding: $inputListHeaderPadding;
-        border-bottom: $inputListHeaderBorder;
-        color: $inputListHeaderTextColor;
-        background: $inputOverlayHeaderBg;
+        padding: 1rem;
+        // border-bottom: $inputListHeaderBorder;
+        // color: $inputListHeaderTextColor;
+        background: $color-neutral-L6;
         margin: $inputListHeaderMargin;
         border-top-right-radius: $borderRadius;
         border-top-left-radius: $borderRadius;
     }
 
     .p-column-filter-constraint {
-        padding: $panelContentPadding;
-        border-bottom: $divider;
+        padding: 1rem;
+        border-bottom: $menu-border-size-1 solid $color-neutral-M1;
 
         .p-column-filter-matchmode-dropdown {
-            margin-bottom: $inlineSpacing;
+            margin-bottom: 1rem;
         }
 
         .p-column-filter-remove-button {
-            margin-top: $inlineSpacing;
+            margin-top: 1rem;
         }
 
         &:last-child {
